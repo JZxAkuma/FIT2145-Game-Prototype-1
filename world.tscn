@@ -31,8 +31,6 @@ size = Vector3(100, 1, 100)
 
 [node name="player" parent="." instance=ExtResource("1_f3sb7")]
 transform = Transform3D(1, 0.000169131, 0.000385628, -0.000169436, 1, 0.000843148, -0.000385494, -0.000843209, 1, 0.0192072, 1.38108, 3.93)
-sens = 0.5
-aim_camera_pos = Vector3(0.969, 0.792, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.225614, 0.974217, 0, -0.974217, 0.225614, 0, 9.40327, 0)
