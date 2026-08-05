@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://bye70pqxpcpcf"]
+
+[ext_resource type="Script" uid="uid://btoituocs665x" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://difao83xnsjna" path="res://1545215.png" id="2_onrkg"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fj7yv"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_f3sb7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tlwt5"]
+radius = 0.508611
+height = 2.02295
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_4flbx")
+
+[node name="cast point" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.792579, 1.1859, -0.677856)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42485, 0)
+billboard = 1
+
+[node name="body mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_fj7yv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.669326, 0, 0, 0, 0.454898, 0, 0, 0, 0.227556, 0.000307202, 0.495308, -0.4557)
+mesh = SubResource("SphereMesh_f3sb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_tlwt5")
+
+[node name="camera point" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96931, 0.791513, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="camera point"]
+spring_length = 2.0
+margin = 0.5
+
+[node name="Camera3D" type="Camera3D" parent="camera point/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.50345, 0, 3.08118)
+
+[node name="RayCast3D" type="RayCast3D" parent="camera point/SpringArm3D/Camera3D"]
+transform = Transform3D(1, 0.000113591, -0.000140877, -0.000140846, -0.000338703, -1, -0.00011363, 1, -0.00033869, 0, 0, 0)
+target_position = Vector3(0, -19.89, 0)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="casting to" type="Label" parent="Control"]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_onrkg")
+expand_mode = 1

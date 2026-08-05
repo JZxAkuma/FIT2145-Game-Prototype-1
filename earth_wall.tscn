@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://3l83r27r00a7"]
+
+[ext_resource type="Script" uid="uid://6mvcq83wx3h8" path="res://earth_wall.gd" id="1_7quyf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oupq2"]
+albedo_color = Color(0.274499, 0.113759, 9.62615e-08, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7quyf"]
+material = SubResource("StandardMaterial3D_oupq2")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oupq2"]
+size = Vector3(1.01953, 1.48647, 0.40271)
+
+[node name="earth_wall" type="StaticBody3D" groups=["target"]]
+script = ExtResource("1_7quyf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.68694e-08, 0, 2.00233, 0, 2.85163, 0, -0.385928, 0, -8.75245e-08, -0.000609979, 1.4249, 0)
+mesh = SubResource("BoxMesh_7quyf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.00233, 0, 0, 0, 1.94789, 0, 0, 0, 1, 0.00182711, 1.43297, 0.00079608)
+shape = SubResource("BoxShape3D_oupq2")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.34955, 0)
+billboard = 1
