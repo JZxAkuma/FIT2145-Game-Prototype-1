@@ -42,7 +42,6 @@ margin = 0.5
 
 [node name="RayCast3D" type="RayCast3D" parent="camera point/SpringArm3D/Camera3D"]
 transform = Transform3D(1, 0.000113591, -0.000140877, -0.000140846, -0.000338703, -1, -0.00011363, 1, -0.00033869, 0, 0, 0)
-target_position = Vector3(0, -19.89, 0)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

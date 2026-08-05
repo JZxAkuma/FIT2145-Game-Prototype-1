@@ -8,14 +8,14 @@ const JUMP_VELOCITY = 4.5
 @onready var castline: RayCast3D = $"camera point/SpringArm3D/Camera3D/RayCast3D"
 @onready var debug_label: Label = $"Control/casting to"
 @onready var cast_point: Marker3D = $"cast point"
-@export var aim_camera_pos: Vector3 = Vector3(0.969,0.792,0.0)
+@export var aim_camera_pos: Vector3 = Vector3(0.969, 0.792, 0.0)
 @export var aim_spring_length: float = 2.0
-@export var default_spring_length : float = 5.0
+@export var default_spring_length: float = 5.0
 @onready var crosshair: TextureRect = $Control/Crosshair
-@onready var camera:Camera3D = $"camera point/SpringArm3D/Camera3D"
-@onready var camerapoint : Node3D = $"camera point"
+@onready var camera: Camera3D = $"camera point/SpringArm3D/Camera3D"
+@onready var camerapoint: Node3D = $"camera point"
 @onready var springarm: SpringArm3D = $"camera point/SpringArm3D"
-@export var aim_tween_legnht : float = 0.1
+@export var aim_tween_legnht: float = 0.1
 var aim_tween: Tween
 
 
@@ -29,41 +29,41 @@ enum elements {
 	fire
 }
 
-enum states{
+enum states {
 	default,
 	aiming
 }
 
-var state : states = states.default
+var state: states = states.default
 
 var selection: elements = elements.water
 
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * sens))
 		pivot.rotate_x(deg_to_rad(-event.relative.y * sens))
-		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90),deg_to_rad(45))
-	
-	
+		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
+
+
 func _physics_process(delta: float) -> void:
 	_camera_state()
 	_cast_lenght()
-	if Input.is_action_pressed("aim"):
-		state = states.aiming
-	else:
-		state = states.default
-	
+
+	state = states.aiming if Input.is_action_pressed("aim") else states.default
+
 	if state == states.aiming:
-		if Input.is_action_just_pressed("shoot"):
-			if castline.is_colliding():
-				_cast_selection()
+		if Input.is_action_just_pressed("shoot") and castline.is_colliding():
+			_cast_selection()
 
 	_change_power()
 	_selection_display()
 	_cast_detection()
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -81,91 +81,82 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-	
+
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 
 	move_and_slide()
 
+
 func _cast_detection():
 	debug_label.text = "Fps: " + str(Engine.get_frames_per_second())
+
 
 func _selection_display():
 	$Label3D.text = str(elements.keys()[selection])
 
+
 func _change_power():
-	if Input.is_action_just_pressed("scroll_up"): 
+	if Input.is_action_just_pressed("scroll_up"):
 		selection = (selection + 1) % elements.size()
 	if Input.is_action_just_pressed("scroll_down"):
 		selection = (selection - 1 + elements.size()) % elements.size()
-		
+
+
 func _cast_selection():
 	match selection:
 		elements.water:
-			var waterball = waterball_scene.instantiate()
-			get_tree().current_scene.add_child(waterball)
-			waterball.global_position = cast_point.global_position
-			
-			if castline.is_colliding():
-				var collider = castline.get_collider()
-				waterball.target_position = castline.get_collision_point()
-			
-			else:
-				waterball.target_position = castline.global_position+ (-castline.global_transform.basis.z * 100)
-		
+			_spawn_projectile(waterball_scene)
+
 		elements.fire:
-			var fireball = fireball_scene.instantiate()
-			get_tree().current_scene.add_child(fireball)
-			fireball.global_position = cast_point.global_position
-			
-			if castline.is_colliding():
-				var collider = castline.get_collider()
-				fireball.target_position = castline.get_collision_point()
-			
-			else:
-				fireball.target_position = castline.global_position+ (-castline.global_transform.basis.z * 100)
-		
+			_spawn_projectile(fireball_scene)
+
 		elements.earth:
 			var target = castline.get_collider()
-			if target.is_in_group("floor"):
+			if target and target.is_in_group("floor"):
 				var earthwall = earthwall_scene.instantiate()
 				get_tree().current_scene.add_child(earthwall)
 				earthwall.global_position = castline.get_collision_point()
 				earthwall.global_rotation = global_rotation
 
+
+func _spawn_projectile(scene: PackedScene):
+	var projectile = scene.instantiate()
+	get_tree().current_scene.add_child(projectile)
+	projectile.global_position = cast_point.global_position
+
+	if castline.is_colliding():
+		projectile.target_position = castline.get_collision_point()
+	else:
+		projectile.target_position = castline.global_position + (-castline.global_transform.basis.z * 100)
+
+
 func _cast_lenght():
 	match selection:
 		elements.water:
-			castline.target_position = Vector3(0,-1000,0)
-		
+			castline.target_position = Vector3(0, -1000, 0)
+
 		elements.fire:
-			castline.target_position = Vector3(0,-1000,0)
-		
+			castline.target_position = Vector3(0, -1000, 0)
+
 		elements.earth:
-			castline.target_position = Vector3(0,-300,0)
-			
+			castline.target_position = Vector3(0, -10, 0)
+
+
 func _camera_state():
+	if aim_tween:
+		aim_tween.kill()
+
+	aim_tween = create_tween()
+	aim_tween.set_parallel(true)
+
 	match state:
 		states.aiming:
-			if aim_tween:
-				aim_tween.kill()
-			
-			aim_tween = create_tween()
-			aim_tween.set_parallel(true)
-			aim_tween.tween_property(crosshair,"modulate:a",1,aim_tween_legnht)
-			aim_tween.tween_property(camerapoint,"position",aim_camera_pos,aim_tween_legnht)
-			aim_tween.tween_property(springarm,"spring_length",aim_spring_length,aim_tween_legnht)
-		
+			aim_tween.tween_property(crosshair, "modulate:a", 1, aim_tween_legnht)
+			aim_tween.tween_property(camerapoint, "position", aim_camera_pos, aim_tween_legnht)
+			aim_tween.tween_property(springarm, "spring_length", aim_spring_length, aim_tween_legnht)
+
 		states.default:
-			if aim_tween:
-				aim_tween.kill()
-			
-			aim_tween = create_tween()
-			aim_tween.set_parallel(true)
-			aim_tween.tween_property(crosshair,"modulate:a",0,aim_tween_legnht)
-			aim_tween.tween_property(camerapoint,"position",Vector3.ZERO,aim_tween_legnht)
-			aim_tween.tween_property(springarm,"spring_length",default_spring_length,aim_tween_legnht)
-			
-			
-			
-			
+			aim_tween.tween_property(crosshair, "modulate:a", 0, aim_tween_legnht)
+			aim_tween.tween_property(camerapoint, "position", Vector3.ZERO, aim_tween_legnht)
+			aim_tween.tween_property(springarm, "spring_length", default_spring_length, aim_tween_legnht)
