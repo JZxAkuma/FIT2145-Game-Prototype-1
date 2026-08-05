@@ -13,6 +13,8 @@ size = Vector3(0.526794, 1.06452, 1.00797)
 
 [node name="earth_wall" type="StaticBody3D" groups=["target"]]
 script = ExtResource("1_7quyf")
+erect_speed = 10.0
+decay_speed = 0.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000609979, 1.00442, 0)

@@ -1,9 +1,12 @@
 extends CharacterBody3D
 
 
-@export var sens = 0.5
+@export var default_sens = 0.5
+@export var aim_sens = 0.3
+var sens = 0.5
+
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+@export var JUMP_VELOCITY = 4.5
 @onready var pivot: Node3D = $"camera point"
 @onready var castline: RayCast3D = $"camera point/SpringArm3D/Camera3D/RayCast3D"
 @onready var debug_label: Label = $"Control/casting to"
@@ -22,6 +25,7 @@ var aim_tween: Tween
 var waterball_scene = preload("res://water_ball.tscn")
 var fireball_scene = preload("res://fireball.tscn")
 var earthwall_scene = preload("res://earth_wall.tscn")
+@onready var wall_indicator = preload("res://earth_wall_indicator.tscn").instantiate()
 
 enum elements {
 	water,
@@ -40,8 +44,13 @@ var selection: elements = elements.water
 
 
 func _ready() -> void:
+	wall_indicator.visible = false
+	call_deferred("_add_wall_indicator")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
+
+func _add_wall_indicator():
+	get_tree().current_scene.add_child(wall_indicator)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -49,8 +58,18 @@ func _input(event: InputEvent) -> void:
 		pivot.rotate_x(deg_to_rad(-event.relative.y * sens))
 		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
 
+func _sens_changer():
+	match state:
+		states.aiming:
+			sens = aim_sens
+		
+		states.default:
+			sens = default_sens
+
 
 func _physics_process(delta: float) -> void:
+	_sens_changer()
+	_update_wall_indicator()
 	_camera_state()
 	_cast_lenght()
 
@@ -160,3 +179,18 @@ func _camera_state():
 			aim_tween.tween_property(crosshair, "modulate:a", 0, aim_tween_legnht)
 			aim_tween.tween_property(camerapoint, "position", Vector3.ZERO, aim_tween_legnht)
 			aim_tween.tween_property(springarm, "spring_length", default_spring_length, aim_tween_legnht)
+
+func _update_wall_indicator():
+	if not wall_indicator.is_inside_tree():
+		return
+
+	var show_indicator = false
+
+	if state == states.aiming and selection == elements.earth and castline.is_colliding():
+		var target = castline.get_collider()
+		if target and target.is_in_group("floor"):
+			wall_indicator.global_position = castline.get_collision_point()
+			wall_indicator.global_rotation = global_rotation
+			show_indicator = true
+
+	wall_indicator.visible = show_indicator

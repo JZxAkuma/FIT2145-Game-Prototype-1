@@ -1,23 +1,33 @@
 extends StaticBody3D
-
-enum states{
+enum states {
 	dry,
-	wet
+	wet,
+	erecting
 }
+var state: states = states.erecting
+@export var erect_speed: float = 0.5
+@export var decay_speed : float = 0.1
 
-var state : states = states.dry
-# Called when the node enters the scene tree for the first time.
+const MIN_SCALE := 0.001
+
 func _ready() -> void:
-	pass # Replace with function body.
+	self.scale.y = MIN_SCALE
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	match state:
+		states.wet:
+			self.scale.y -= decay_speed * delta
+			if self.scale.y <= MIN_SCALE:
+				self.scale.y = MIN_SCALE
+				self.queue_free()
+
+		states.erecting:
+			self.scale.y += erect_speed * delta
+			if self.scale.y >= 1:
+				self.scale.y = 1
+				state = states.dry
+
 	$Label3D.text = str(states.keys()[state])
-	if state == states.wet:
-		self.scale.y -= 0.1 * delta
-		if self.scale.y <= 0:
-			self.queue_free()
 
 func _set_wet():
 	state = states.wet
