@@ -54,5 +54,5 @@ text = "test"
 [node name="earth_wall" parent="." instance=ExtResource("4_aqk2v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.392118, 0)
 
-[node name="earth_wall2" parent="." instance=ExtResource("4_aqk2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.92158, 0.278818, 0.00555992)
+[node name="earth_wall" parent="earth_wall" instance=ExtResource("4_aqk2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.92158, -0.1133, 0.00555992)
