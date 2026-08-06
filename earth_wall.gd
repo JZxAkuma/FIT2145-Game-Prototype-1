@@ -4,6 +4,8 @@ enum states {
 	wet,
 	erecting
 }
+
+var wetness = 0
 var state: states = states.erecting
 @export var erect_speed: float = 0.5
 @export var decay_speed : float = 0.1
@@ -16,7 +18,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	match state:
 		states.wet:
-			self.scale.y -= decay_speed * delta
+			self.scale.y -= decay_speed * wetness * delta
 			if self.scale.y <= MIN_SCALE:
 				self.scale.y = MIN_SCALE
 				self.queue_free()
@@ -30,8 +32,10 @@ func _process(delta: float) -> void:
 	$Label3D.text = str(states.keys()[state])
 
 func _set_wet():
+	wetness += 1
 	state = states.wet
 
 func _set_fire():
 	if state == states.wet:
+		wetness = 0
 		state = states.dry
