@@ -13,7 +13,7 @@ height = 2.02295
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_4flbx")
-JUMP_VELOCITY = 8.0
+JUMP_VELOCITY = 7.0
 
 [node name="cast point" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.792579, 1.1859, -0.677856)
