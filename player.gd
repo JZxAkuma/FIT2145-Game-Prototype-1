@@ -145,6 +145,7 @@ func _spawn_projectile(scene: PackedScene):
 	projectile.global_position = cast_point.global_position
 
 	if castline.is_colliding():
+		projectile.target = castline.get_collider()
 		projectile.target_position = castline.get_collision_point()
 	else:
 		projectile.target_position = castline.global_position + (-castline.global_transform.basis.z * 100)
