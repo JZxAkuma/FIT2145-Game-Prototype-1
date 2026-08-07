@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bp06nnjfpsxbw"]
+[gd_scene load_steps=29 format=4 uid="uid://bp06nnjfpsxbw"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://c8h85ayj4cgy1" path="res://world.gd" id="1_fj7yv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://028c08pjbb83" path="res://Environmental_Assets/Grass/Grass.tres" id="6_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://rc1irx78aoba" path="res://Environmental_Assets/Grass/GrassBlocks_standardSurface1_BaseColor.png" id="7_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="8_gbfbk"]
+[ext_resource type="Shader" uid="uid://yco8p8a5gjbo" path="res://Environmental_Assets/Pixelation.gdshader" id="9_ioo17"]
 
 [sub_resource type="Environment" id="Environment_f3sb7"]
 background_color = Color(0.840869, 1, 0.97624, 1)
@@ -207,6 +208,10 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wb3ry")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wse8f"]
+shader = ExtResource("9_ioo17")
+shader_parameter/pixel_size = 4.0
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_fj7yv")
@@ -432,3 +437,13 @@ skeleton = NodePath("")
 
 [node name="Grass block Bevel Bottom" parent="." instance=ExtResource("8_gbfbk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.9367, 0.251518, 5.77436)
+
+[node name="PixelShader" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="PixelShader"]
+material = SubResource("ShaderMaterial_wse8f")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
