@@ -15,6 +15,10 @@ run/main_scene="uid://b48u1qmaslg0w"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+WallManager="*res://wall_manager.tscn"
+
 [display]
 
 window/size/viewport_width=1920

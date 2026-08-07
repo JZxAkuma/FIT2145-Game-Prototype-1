@@ -14,6 +14,7 @@ const MIN_SCALE := 0.001
 
 func _ready() -> void:
 	self.scale.y = MIN_SCALE
+	WallManager.register_wall(self)
 
 func _process(delta: float) -> void:
 	match state:
@@ -39,3 +40,6 @@ func _set_fire():
 	if state == states.wet:
 		wetness = 0
 		state = states.dry
+
+func _expire():
+	self.queue_free()

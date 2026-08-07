@@ -1,9 +1,8 @@
-[gd_scene load_steps=29 format=4 uid="uid://bp06nnjfpsxbw"]
+[gd_scene load_steps=28 format=4 uid="uid://bp06nnjfpsxbw"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://c8h85ayj4cgy1" path="res://world.gd" id="1_fj7yv"]
 [ext_resource type="Script" uid="uid://bajk2gnxublmr" path="res://target.gd" id="3_tlwt5"]
-[ext_resource type="PackedScene" uid="uid://3l83r27r00a7" path="res://earth_wall.tscn" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://bl0at38vfaxk3" path="res://level component/Kinematic stuff/kinematic_door.tscn" id="5_036b0"]
 [ext_resource type="Material" uid="uid://028c08pjbb83" path="res://Environmental_Assets/Grass/Grass.tres" id="6_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://rc1irx78aoba" path="res://Environmental_Assets/Grass/GrassBlocks_standardSurface1_BaseColor.png" id="7_gbfbk"]
@@ -247,12 +246,6 @@ shape = SubResource("SphereShape3D_aqk2v")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08813, 0)
 billboard = 1
 text = "test"
-
-[node name="earth_wall" parent="." instance=ExtResource("4_aqk2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.392118, 0)
-
-[node name="earth_wall2" parent="." instance=ExtResource("4_aqk2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.92158, 0.278818, 0.00555992)
 
 [node name="kinematic door" parent="." instance=ExtResource("5_036b0")]
 transform = Transform3D(3.12097, 0, 0, 0, 4.37051, 0, 0, 0, 0.211135, 3.92343, 4, 0)
