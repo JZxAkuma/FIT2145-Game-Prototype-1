@@ -66,3 +66,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.37098, 2.09042, 4.01288)
 
 [node name="kinematic door3" parent="." instance=ExtResource("5_036b0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.67451, 1.7073, 3.93045)
+
+[node name="kinematic door4" parent="." instance=ExtResource("5_036b0")]
+transform = Transform3D(7.76122, 0, 0, 0, 0.957803, 0, 0, 0, 0.957803, 0.34714, 0.751526, 8.54068)
