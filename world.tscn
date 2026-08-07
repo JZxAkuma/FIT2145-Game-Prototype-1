@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bp06nnjfpsxbw"]
+[gd_scene load_steps=27 format=4 uid="uid://bp06nnjfpsxbw"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://c8h85ayj4cgy1" path="res://world.gd" id="1_fj7yv"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bl0at38vfaxk3" path="res://level component/kinematic_door.tscn" id="5_036b0"]
 [ext_resource type="Material" uid="uid://028c08pjbb83" path="res://Environmental_Assets/Grass/Grass.tres" id="6_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://rc1irx78aoba" path="res://Environmental_Assets/Grass/GrassBlocks_standardSurface1_BaseColor.png" id="7_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="8_gbfbk"]
 
 [sub_resource type="Environment" id="Environment_f3sb7"]
 background_color = Color(0.840869, 1, 0.97624, 1)
@@ -259,143 +260,148 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.67451, 1.7073, 3.93045)
 [node name="kinematic door4" parent="." instance=ExtResource("5_036b0")]
 transform = Transform3D(7.76122, 0, 0, 0, 0.957803, 0, 0, 0, 0.957803, 0.34714, 0.751526, 8.54068)
 
-[node name="NoBevel3" type="MeshInstance3D" parent="."]
-transform = Transform3D(155.218, 0, 0, 0, 155.218, 0, 0, 0, 155.218, -38.9526, 0.251528, 15.746)
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(7.76122, 0, 0, 0, 0.957803, 0, 0, 0, 0.957803, 0.34714, 0.751526, 8.54068)
+
+[node name="NoBevel3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(19.9389, 0, 0, 0, 161.568, 0, 0, 0, 161.568, -5.06411, -0.52098, 7.52849)
 material_override = ExtResource("6_pkg7o")
 mesh = SubResource("ArrayMesh_ioo17")
 skeleton = NodePath("")
 
-[node name="BevelRim3" type="MeshInstance3D" parent="."]
-transform = Transform3D(155.218, 0, 0, 0, 155.218, 0, 0, 0, 155.218, -38.9477, 0.251528, 14.1988)
+[node name="BevelRim3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(19.9389, 0, 0, 0, 161.568, 0, 0, 0, 161.568, -5.06348, -0.52098, 5.918)
 material_override = SubResource("StandardMaterial3D_wse8f")
 mesh = SubResource("ArrayMesh_ic0uy")
 skeleton = NodePath("")
 
-[node name="NoBevel5" type="MeshInstance3D" parent="."]
-transform = Transform3D(155.218, 0, 0, 0, 155.218, 0, 0, 0, 155.218, -37.4246, 0.251528, 15.746)
+[node name="NoBevel5" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(19.9389, 0, 0, 0, 161.568, 0, 0, 0, 161.568, -4.86782, -0.52098, 7.52849)
 material_override = ExtResource("6_pkg7o")
 mesh = SubResource("ArrayMesh_ioo17")
 skeleton = NodePath("")
 
-[node name="BevelRim8" type="MeshInstance3D" parent="."]
-transform = Transform3D(155.218, 0, 0, 0, 155.218, 0, 0, 0, 155.218, -37.4196, 0.251528, 14.1988)
+[node name="BevelRim8" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(19.9389, 0, 0, 0, 161.568, 0, 0, 0, 161.568, -4.86718, -0.52098, 5.918)
 material_override = SubResource("StandardMaterial3D_wse8f")
 mesh = SubResource("ArrayMesh_ic0uy")
 skeleton = NodePath("")
 
-[node name="NoBevel4" type="MeshInstance3D" parent="."]
-transform = Transform3D(155.218, 0, 0, 0, 155.218, 0, 0, 0, 155.218, -40.5007, 0.251528, 15.746)
+[node name="NoBevel4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(19.9389, 0, 0, 0, 161.568, 0, 0, 0, 161.568, -5.26297, -0.52098, 7.52849)
 material_override = ExtResource("6_pkg7o")
 mesh = SubResource("ArrayMesh_ioo17")
 skeleton = NodePath("")
 
-[node name="BevelRim5" type="MeshInstance3D" parent="."]
-transform = Transform3D(155.218, 0, 0, 0, 155.218, 0, 0, 0, 155.218, -40.4958, 0.251528, 14.1988)
+[node name="BevelRim5" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(19.9389, 0, 0, 0, 161.568, 0, 0, 0, 161.568, -5.26234, -0.52098, 5.918)
 material_override = SubResource("StandardMaterial3D_wse8f")
 mesh = SubResource("ArrayMesh_ic0uy")
 skeleton = NodePath("")
 
-[node name="NoBevel6" type="MeshInstance3D" parent="."]
-transform = Transform3D(-6.78478e-06, 0, 244.119, 0, 155.218, 0, -155.218, 0, -1.06708e-05, -40.1838, 0.251528, 18.68)
+[node name="NoBevel6" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-8.71556e-07, 0, 31.3589, 0, 161.568, 0, -161.568, 0, -1.11073e-05, -5.22226, -0.52098, 10.5825)
 material_override = ExtResource("6_pkg7o")
 mesh = SubResource("ArrayMesh_ioo17")
 skeleton = NodePath("")
 
-[node name="BevelRim9" type="MeshInstance3D" parent="."]
-transform = Transform3D(-6.78478e-06, 0, 244.119, 0, 155.218, 0, -155.218, 0, -1.06708e-05, -42.6171, 0.251528, 18.675)
+[node name="BevelRim9" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-8.71556e-07, 0, 31.3589, 0, 161.568, 0, -161.568, 0, -1.11073e-05, -5.53484, -0.52098, 10.5773)
 material_override = SubResource("StandardMaterial3D_wse8f")
 mesh = SubResource("ArrayMesh_ic0uy")
 skeleton = NodePath("")
 
-[node name="NoBevel7" type="MeshInstance3D" parent="."]
-transform = Transform3D(-6.78478e-06, 0, 244.119, 0, 155.218, 0, -155.218, 0, -1.06708e-05, -40.1838, 0.251528, 20.2071)
+[node name="NoBevel7" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-8.71556e-07, 0, 31.3589, 0, 161.568, 0, -161.568, 0, -1.11073e-05, -5.22226, -0.52098, 12.1721)
 material_override = ExtResource("6_pkg7o")
 mesh = SubResource("ArrayMesh_ioo17")
 skeleton = NodePath("")
 
-[node name="BevelRim10" type="MeshInstance3D" parent="."]
-transform = Transform3D(-6.78478e-06, 0, 244.119, 0, 155.218, 0, -155.218, 0, -1.06708e-05, -42.6171, 0.251528, 20.2021)
+[node name="BevelRim10" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-8.71556e-07, 0, 31.3589, 0, 161.568, 0, -161.568, 0, -1.11073e-05, -5.53484, -0.52098, 12.1669)
 material_override = SubResource("StandardMaterial3D_wse8f")
 mesh = SubResource("ArrayMesh_ic0uy")
 skeleton = NodePath("")
 
-[node name="NoBevel8" type="MeshInstance3D" parent="."]
-transform = Transform3D(-6.78478e-06, 0, 244.119, 0, 155.218, 0, -155.218, 0, -1.06708e-05, -40.1838, 0.251528, 21.7279)
+[node name="NoBevel8" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-8.71556e-07, 0, 31.3589, 0, 161.568, 0, -161.568, 0, -1.11073e-05, -5.22226, -0.52098, 13.7551)
 material_override = ExtResource("6_pkg7o")
 mesh = SubResource("ArrayMesh_ioo17")
 skeleton = NodePath("")
 
-[node name="BevelRim11" type="MeshInstance3D" parent="."]
-transform = Transform3D(-6.78478e-06, 0, 244.119, 0, 155.218, 0, -155.218, 0, -1.06708e-05, -42.6171, 0.251528, 21.723)
+[node name="BevelRim11" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-8.71556e-07, 0, 31.3589, 0, 161.568, 0, -161.568, 0, -1.11073e-05, -5.53484, -0.52098, 13.75)
 material_override = SubResource("StandardMaterial3D_wse8f")
 mesh = SubResource("ArrayMesh_ic0uy")
 skeleton = NodePath("")
 
-[node name="BevelRim4" type="MeshInstance3D" parent="."]
-transform = Transform3D(155.218, 0, 0, 0, 155.218, 0, 0, 0, 155.218, -38.9477, 1.64141, 17.2203)
+[node name="BevelRim4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(19.9389, 0, 0, 0, 161.568, 0, 0, 0, 161.568, -5.06348, 0.925762, 9.0631)
 material_override = SubResource("StandardMaterial3D_wse8f")
 mesh = SubResource("ArrayMesh_ic0uy")
 skeleton = NodePath("")
 
-[node name="BevelRim7" type="MeshInstance3D" parent="."]
-transform = Transform3D(155.218, 0, 0, 0, 155.218, 0, 0, 0, 155.218, -37.5178, 1.64141, 17.2203)
+[node name="BevelRim7" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(19.9389, 0, 0, 0, 161.568, 0, 0, 0, 161.568, -4.8798, 0.925762, 9.0631)
 material_override = SubResource("StandardMaterial3D_wse8f")
 mesh = SubResource("ArrayMesh_ic0uy")
 skeleton = NodePath("")
 
-[node name="BevelTop3" type="MeshInstance3D" parent="."]
-transform = Transform3D(445.597, 0, 0, 0, 445.597, 0, 0, 0, 445.597, -40.7453, 0.087943, 21.3498)
+[node name="BevelTop3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(57.2402, 0, 0, 0, 463.826, 0, 0, 0, 463.826, -5.29439, -0.691257, 13.3615)
 material_override = SubResource("StandardMaterial3D_k3n1d")
 mesh = SubResource("ArrayMesh_2o6r5")
 skeleton = NodePath("")
 
-[node name="BevelTop4" type="MeshInstance3D" parent="."]
-transform = Transform3D(155.218, 0, 0, 0, 155.218, 0, 0, 0, 155.218, -41.7371, 1.75298, 17.2204)
+[node name="BevelTop4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(19.9389, 0, 0, 0, 161.568, 0, 0, 0, 161.568, -5.4218, 1.0419, 9.06321)
 material_override = SubResource("StandardMaterial3D_k3n1d")
 mesh = SubResource("ArrayMesh_2o6r5")
 skeleton = NodePath("")
 
-[node name="BevelTop8" type="MeshInstance3D" parent="."]
-transform = Transform3D(234.606, 0, 0, 0, 234.606, 0, 0, 0, 234.606, -44.0824, 1.75298, 17.9738)
+[node name="BevelTop8" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(30.1369, 0, 0, 0, 244.204, 0, 0, 0, 244.204, -5.72307, 1.0419, 9.84743)
 material_override = SubResource("StandardMaterial3D_k3n1d")
 mesh = SubResource("ArrayMesh_2o6r5")
 skeleton = NodePath("")
 
-[node name="BevelTop9" type="MeshInstance3D" parent="."]
-transform = Transform3D(234.606, 0, 0, 0, 234.606, 0, 0, 0, 234.606, -45.016, 0.249839, 17.1343)
+[node name="BevelTop9" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(30.1369, 0, 0, 0, 244.204, 0, 0, 0, 244.204, -5.843, -0.522738, 8.97359)
 material_override = SubResource("StandardMaterial3D_k3n1d")
 mesh = SubResource("ArrayMesh_2o6r5")
 skeleton = NodePath("")
 
-[node name="BevelTop5" type="MeshInstance3D" parent="."]
-transform = Transform3D(234.607, 0, 0, 0, 234.607, 0, 0, 0, 234.607, -42.8718, 0.35394, 15.7537)
+[node name="BevelTop5" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(30.137, 0, 0, 0, 244.205, 0, 0, 0, 244.205, -5.56756, -0.414378, 7.53651)
 material_override = SubResource("StandardMaterial3D_k3n1d")
 mesh = SubResource("ArrayMesh_2o6r5")
 skeleton = NodePath("")
 
-[node name="BevelTop6" type="MeshInstance3D" parent="."]
-transform = Transform3D(234.607, 0, 0, 0, 234.607, 0, 0, 0, 234.607, -35.8938, 0.35394, 15.7537)
+[node name="BevelTop6" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(30.137, 0, 0, 0, 244.205, 0, 0, 0, 244.205, -4.67118, -0.414378, 7.53651)
 material_override = SubResource("StandardMaterial3D_k3n1d")
 mesh = SubResource("ArrayMesh_2o6r5")
 skeleton = NodePath("")
 
-[node name="BevelTop7" type="MeshInstance3D" parent="."]
-transform = Transform3D(295.994, 0, 0, 0, 295.994, 0, 0, 0, 295.994, -36.0044, 0.35394, 18.5865)
+[node name="BevelTop7" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(38.0226, 0, 0, 0, 308.103, 0, 0, 0, 308.103, -4.68539, -0.414378, 10.4852)
 material_override = SubResource("StandardMaterial3D_k3n1d")
 mesh = SubResource("ArrayMesh_2o6r5")
 skeleton = NodePath("")
 
-[node name="BevelRim6" type="MeshInstance3D" parent="."]
-transform = Transform3D(155.218, 0, 0, 0, 155.218, 0, 0, 0, 155.218, -40.4964, 1.64141, 17.2203)
+[node name="BevelRim6" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(19.9389, 0, 0, 0, 161.568, 0, 0, 0, 161.568, -5.26242, 0.925762, 9.0631)
 material_override = SubResource("StandardMaterial3D_wse8f")
 mesh = SubResource("ArrayMesh_ic0uy")
 skeleton = NodePath("")
+
+[node name="actual grasses" type="Node3D" parent="."]
+transform = Transform3D(155.218, 0, 0, 0, 155.218, 0, 0, 0, 155.218, -35.8483, 0.251528, 9.74598)
 
 [node name="GrassSet" type="Node3D" parent="."]
 transform = Transform3D(155.218, 0, 0, 0, 155.218, 0, 0, 0, 155.218, -35.8483, 0.251528, 9.74598)
 
 [node name="BevelBottom2" type="MeshInstance3D" parent="GrassSet"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_70uel")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("6_pkg7o")
@@ -419,7 +425,10 @@ mesh = SubResource("ArrayMesh_2o6r5")
 skeleton = NodePath("")
 
 [node name="BevelSides2" type="MeshInstance3D" parent="GrassSet"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0, 0)
+transform = Transform3D(0.999334, 0, 0, 0, 0.999334, 0, 0, 0, 0.999334, 0.06, 0, 0)
 material_override = SubResource("StandardMaterial3D_hiqwa")
 mesh = SubResource("ArrayMesh_2u3nc")
 skeleton = NodePath("")
+
+[node name="Grass block Bevel Bottom" parent="." instance=ExtResource("8_gbfbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.9367, 0.251518, 5.77436)
