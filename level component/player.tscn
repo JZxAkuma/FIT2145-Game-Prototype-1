@@ -46,7 +46,9 @@ margin = 0.5
 [node name="RayCast3D" type="RayCast3D" parent="camera point/SpringArm3D/Camera3D"]
 transform = Transform3D(1, 0.000113591, -0.000140877, -0.000140846, -0.000338703, -1, -0.00011363, 1, -0.00033869, 0, 0, 0)
 
-[node name="Control" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,12 +56,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="casting to" type="Label" parent="Control"]
+[node name="casting to" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 1
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Crosshair" type="TextureRect" parent="Control"]
+[node name="Crosshair" type="TextureRect" parent="CanvasLayer/Control"]
+modulate = Color(0.833336, 0.425044, 0.572867, 1)
+top_level = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

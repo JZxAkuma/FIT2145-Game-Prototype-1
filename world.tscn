@@ -440,6 +440,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.9367, 0.251518, 5.77436)
 
 [node name="PixelShader" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="ColorRect" type="ColorRect" parent="PixelShader"]
 material = SubResource("ShaderMaterial_wse8f")
