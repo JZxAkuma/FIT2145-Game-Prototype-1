@@ -212,6 +212,7 @@ shadow_mesh = SubResource("ArrayMesh_wb3ry")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wse8f"]
 shader = ExtResource("9_ioo17")
 shader_parameter/pixel_size = 4.0
+shader_parameter/color_levels = 16.0
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_fj7yv")
