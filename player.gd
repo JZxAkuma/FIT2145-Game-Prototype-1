@@ -136,8 +136,7 @@ func _cast_selection():
 				var earthwall = earthwall_scene.instantiate()
 				get_tree().current_scene.add_child(earthwall)
 				earthwall.global_position = castline.get_collision_point()
-				earthwall.global_rotation = global_rotation
-
+				_align_to_surface(earthwall, castline.get_collision_point(), castline.get_collision_normal(),true)
 
 func _spawn_projectile(scene: PackedScene):
 	var projectile = scene.instantiate()
@@ -192,6 +191,27 @@ func _update_wall_indicator():
 		if target and target.is_in_group("floor"):
 			wall_indicator.global_position = castline.get_collision_point()
 			wall_indicator.global_rotation = global_rotation
+			_align_to_surface(wall_indicator, castline.get_collision_point(), castline.get_collision_normal(),false)
 			show_indicator = true
 
 	wall_indicator.visible = show_indicator
+	
+func _align_to_surface(node: Node3D, position: Vector3, normal: Vector3, flip: bool = false) -> void:
+	node.global_position = position
+
+	var up: Vector3 = normal.normalized()
+
+	var forward: Vector3 = -global_transform.basis.z
+	forward = (forward - up * forward.dot(up))
+	if forward.length() < 0.001:
+		forward = global_transform.basis.x
+		forward = (forward - up * forward.dot(up))
+	forward = forward.normalized()
+
+	var right: Vector3 = forward.cross(up).normalized()
+	forward = up.cross(right).normalized()
+
+	node.global_transform.basis = Basis(right, up, forward)
+
+	if flip:
+		node.rotate_object_local(Vector3.RIGHT, PI)
