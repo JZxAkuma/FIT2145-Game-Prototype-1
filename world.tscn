@@ -1,10 +1,10 @@
 [gd_scene load_steps=27 format=4 uid="uid://bp06nnjfpsxbw"]
 
-[ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://player.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://c8h85ayj4cgy1" path="res://world.gd" id="1_fj7yv"]
 [ext_resource type="Script" uid="uid://bajk2gnxublmr" path="res://target.gd" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://3l83r27r00a7" path="res://earth_wall.tscn" id="4_aqk2v"]
-[ext_resource type="PackedScene" uid="uid://bl0at38vfaxk3" path="res://level component/kinematic_door.tscn" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://bl0at38vfaxk3" path="res://level component/Kinematic stuff/kinematic_door.tscn" id="5_036b0"]
 [ext_resource type="Material" uid="uid://028c08pjbb83" path="res://Environmental_Assets/Grass/Grass.tres" id="6_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://rc1irx78aoba" path="res://Environmental_Assets/Grass/GrassBlocks_standardSurface1_BaseColor.png" id="7_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="8_gbfbk"]
