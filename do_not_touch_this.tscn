@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://3ftwg36iyvei"]
+
+[ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_5dnvj"]
+[ext_resource type="PackedScene" uid="uid://dja117pab360a" path="res://level component/checkpoint.tscn" id="1_o3iqb"]
+[ext_resource type="PackedScene" uid="uid://cca0v3u6pvybl" path="res://level component/death_box.tscn" id="2_l88dm"]
+
+[sub_resource type="Environment" id="Environment_cw2en"]
+background_color = Color(0.840869, 1, 0.97624, 1)
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="Do not touch this" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cw2en")
+
+[node name="Checkpoint" parent="." instance=ExtResource("1_o3iqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.973377, 5.58031)
+
+[node name="respawn point" parent="Checkpoint" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22363, 0.739065, 0.436309)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.483894, 0.875127, 0, -0.875127, -0.483894, 0, 9.40327, 0)
+light_color = Color(0.999998, 0.999612, 0.719504, 1)
+sky_mode = 1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." groups=["floor"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85849, 0, -6.67371)
+use_collision = true
+size = Vector3(62.3242, 1, 59.9285)
+
+[node name="player" parent="." instance=ExtResource("1_5dnvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0992, 0)
+
+[node name="Death Box" parent="." instance=ExtResource("2_l88dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.176621, 2.39067, -2.20425)
+
+[editable path="Checkpoint"]
