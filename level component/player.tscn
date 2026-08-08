@@ -16,6 +16,7 @@ script = ExtResource("1_4flbx")
 JUMP_VELOCITY = 7.0
 aim_spring_length = 1.5
 default_spring_length = 7.0
+controller_sens = 5.0
 
 [node name="cast point" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.792579, 1.1859, -0.677856)

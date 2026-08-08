@@ -19,6 +19,9 @@ const SPEED = 5.0
 @onready var camerapoint: Node3D = $"camera point"
 @onready var springarm: SpringArm3D = $"camera point/SpringArm3D"
 @export var aim_tween_legnht: float = 0.1
+@export var controller_sens : float = 3.0
+@export var controller_aim_sens : float = 3.0
+@export var controller_deadzone : float = 0.15
 var aim_tween: Tween
 
 
@@ -68,6 +71,7 @@ func _sens_changer():
 
 
 func _physics_process(delta: float) -> void:
+	_controller_look(delta)
 	_sens_changer()
 	_update_wall_indicator()
 	_camera_state()
@@ -87,7 +91,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -215,3 +219,18 @@ func _align_to_surface(node: Node3D, position: Vector3, normal: Vector3, flip: b
 
 	if flip:
 		node.rotate_object_local(Vector3.RIGHT, PI)
+
+func _controller_look(delta:float) -> void:
+	var sens
+	match state:
+		states.default:
+			sens = controller_sens
+		states.aiming:
+			sens = controller_aim_sens
+	var look_vec := Input.get_vector("look left","look right","look up","look down")
+	if look_vec.length() < controller_deadzone:
+		return
+	
+	rotate_y(-look_vec.x * sens * delta)
+	pivot.rotate_x(-look_vec.y * sens * delta)
+	pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
