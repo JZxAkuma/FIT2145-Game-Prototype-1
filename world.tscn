@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=4 uid="uid://bp06nnjfpsxbw"]
+[gd_scene load_steps=33 format=4 uid="uid://bp06nnjfpsxbw"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://c8h85ayj4cgy1" path="res://world.gd" id="1_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://5rxpnkcqrtao" path="res://Environmental_Assets/Skybox.png" id="2_ioo17"]
+[ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="2_wse8f"]
 [ext_resource type="Script" uid="uid://bajk2gnxublmr" path="res://target.gd" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://bl0at38vfaxk3" path="res://level component/Kinematic stuff/kinematic_door.tscn" id="5_036b0"]
 [ext_resource type="Material" uid="uid://028c08pjbb83" path="res://Environmental_Assets/Grass/Grass.tres" id="6_pkg7o"]
@@ -11,11 +12,12 @@
 [ext_resource type="Material" uid="uid://3gvwu8tc5hqp" path="res://Environmental_Assets/Rocks/RockMaterial.tres" id="8_wse8f"]
 [ext_resource type="Shader" uid="uid://yco8p8a5gjbo" path="res://Environmental_Assets/Pixelation.gdshader" id="9_ioo17"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wse8f"]
-panorama = ExtResource("2_ioo17")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ic0uy"]
+shader = ExtResource("2_wse8f")
+shader_parameter/sky_texture = ExtResource("2_ioo17")
 
 [sub_resource type="Sky" id="Sky_ic0uy"]
-sky_material = SubResource("PanoramaSkyMaterial_wse8f")
+sky_material = SubResource("ShaderMaterial_ic0uy")
 
 [sub_resource type="Environment" id="Environment_f3sb7"]
 background_mode = 2
