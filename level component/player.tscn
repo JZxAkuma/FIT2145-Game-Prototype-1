@@ -11,7 +11,7 @@
 radius = 0.508611
 height = 2.02295
 
-[node name="player" type="CharacterBody3D"]
+[node name="player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_4flbx")
 JUMP_VELOCITY = 7.0
 aim_spring_length = 1.5
@@ -79,3 +79,12 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_onrkg")
 expand_mode = 1
+
+[node name="HurtBox" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
+shape = SubResource("CapsuleShape3D_tlwt5")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

@@ -45,6 +45,7 @@ var state: states = states.default
 
 var selection: elements = elements.water
 
+var player_lock = false
 
 func _ready() -> void:
 	wall_indicator.visible = false
@@ -71,44 +72,45 @@ func _sens_changer():
 
 
 func _physics_process(delta: float) -> void:
-	_controller_look(delta)
-	_sens_changer()
-	_update_wall_indicator()
-	_camera_state()
-	_cast_lenght()
+	if player_lock == false:
+		_controller_look(delta)
+		_sens_changer()
+		_update_wall_indicator()
+		_camera_state()
+		_cast_lenght()
 
-	state = states.aiming if Input.is_action_pressed("aim") else states.default
+		state = states.aiming if Input.is_action_pressed("aim") else states.default
 
-	if state == states.aiming:
-		if Input.is_action_just_pressed("shoot") and castline.is_colliding():
-			_cast_selection()
+		if state == states.aiming:
+			if Input.is_action_just_pressed("shoot") and castline.is_colliding():
+				_cast_selection()
 
-	_change_power()
-	_selection_display()
-	_cast_detection()
+		_change_power()
+		_selection_display()
+		_cast_detection()
 
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+		if not is_on_floor():
+			velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		# Handle jump.
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("left", "right", "up", "down")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		# Get the input direction and handle the movement/deceleration.
+		# As good practice, you should replace UI actions with custom gameplay actions.
+		var input_dir := Input.get_vector("left", "right", "up", "down")
+		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		if direction:
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.z = move_toward(velocity.z, 0, SPEED)
 
-	if Input.is_action_just_pressed("quit"):
-		get_tree().quit()
+		if Input.is_action_just_pressed("quit"):
+			get_tree().quit()
 
-	move_and_slide()
+		move_and_slide()
 
 
 func _cast_detection():
@@ -234,3 +236,17 @@ func _controller_look(delta:float) -> void:
 	rotate_y(-look_vec.x * sens * delta)
 	pivot.rotate_x(-look_vec.y * sens * delta)
 	pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
+
+func _lock_player():
+	if player_lock == false:
+		player_lock = true
+
+func _unlock_player():
+	if player_lock == true:
+		player_lock = false
+
+func _on_hurt_box_area_entered(area: Area3D) -> void:
+	RespawnManager._respawn()
+
+func _to_checkpoint_spot(spawnpoint : Vector3) -> void:
+	pass

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dja117pab360a"]
+
+[ext_resource type="Script" uid="uid://b3xr7rwb8cmku" path="res://level component/checkpoint.gd" id="1_njdjk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rb3n"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1rb3n"]
+radius = 1.00407
+
+[node name="Checkpoint" type="StaticBody3D"]
+script = ExtResource("1_njdjk")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(0.5, 0.5, 0.5)
+material = SubResource("StandardMaterial3D_1rb3n")
+
+[node name="player detection" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player detection"]
+shape = SubResource("SphereShape3D_1rb3n")
+
+[node name="respawn point" type="Marker3D" parent="."]
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.698325, 0)
+
+[connection signal="body_entered" from="player detection" to="." method="_on_player_detection_body_entered"]

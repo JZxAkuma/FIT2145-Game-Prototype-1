@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 WallManager="*res://wall_manager.tscn"
+Settings="*res://settings.tscn"
+RespawnManager="*res://respawn_manager.tscn"
 
 [display]
 
