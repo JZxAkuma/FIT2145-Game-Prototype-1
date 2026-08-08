@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://bp06nnjfpsxbw"]
+[gd_scene load_steps=32 format=4 uid="uid://bp06nnjfpsxbw"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://c8h85ayj4cgy1" path="res://world.gd" id="1_fj7yv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://028c08pjbb83" path="res://Environmental_Assets/Grass/Grass.tres" id="6_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://rc1irx78aoba" path="res://Environmental_Assets/Grass/GrassBlocks_standardSurface1_BaseColor.png" id="7_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="8_gbfbk"]
+[ext_resource type="Material" uid="uid://3gvwu8tc5hqp" path="res://Environmental_Assets/Rocks/RockMaterial.tres" id="8_wse8f"]
 [ext_resource type="Shader" uid="uid://yco8p8a5gjbo" path="res://Environmental_Assets/Pixelation.gdshader" id="9_ioo17"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wse8f"]
@@ -435,6 +436,38 @@ skeleton = NodePath("")
 [node name="BevelSides2" type="MeshInstance3D" parent="GrassSet"]
 transform = Transform3D(0.999334, 0, 0, 0, 0.999334, 0, 0, 0, 0.999334, 0.06, 0, 0)
 material_override = SubResource("StandardMaterial3D_hiqwa")
+mesh = SubResource("ArrayMesh_2u3nc")
+skeleton = NodePath("")
+
+[node name="RockSet" type="Node3D" parent="."]
+transform = Transform3D(155.218, 0, 0, 0, 155.218, 0, 0, 0, 155.218, -35.8483, 0.251528, 2.81)
+
+[node name="BevelBottom2" type="MeshInstance3D" parent="RockSet"]
+mesh = SubResource("ArrayMesh_70uel")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("8_wse8f")
+
+[node name="NoBevel2" type="MeshInstance3D" parent="RockSet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0, 0)
+material_override = ExtResource("8_wse8f")
+mesh = SubResource("ArrayMesh_ioo17")
+skeleton = NodePath("")
+
+[node name="BevelRim2" type="MeshInstance3D" parent="RockSet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0, 0)
+material_override = ExtResource("8_wse8f")
+mesh = SubResource("ArrayMesh_ic0uy")
+skeleton = NodePath("")
+
+[node name="BevelTop2" type="MeshInstance3D" parent="RockSet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0, 0)
+material_override = ExtResource("8_wse8f")
+mesh = SubResource("ArrayMesh_2o6r5")
+skeleton = NodePath("")
+
+[node name="BevelSides2" type="MeshInstance3D" parent="RockSet"]
+transform = Transform3D(0.999334, 0, 0, 0, 0.999334, 0, 0, 0, 0.999334, 0.06, 0, 0)
+material_override = ExtResource("8_wse8f")
 mesh = SubResource("ArrayMesh_2u3nc")
 skeleton = NodePath("")
 
