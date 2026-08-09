@@ -1,0 +1,61 @@
+extends StaticBody3D
+
+var lanterns: Array[StaticBody3D] = []
+@onready var door = $EndDoor1
+var door_tween: Tween
+@export var tween_speed:float = 1.0
+@export var open_rotation_degrees: float = 46.4
+@onready var scene_changer = $"Scene changer"
+@export var change_scene_to : PackedScene = null
+
+enum states{
+	open,
+	close
+}
+var state:states = states.close
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	match state:
+		states.open:
+			scene_changer.monitoring = true
+		states.close:
+			scene_changer.monitoring = false
+
+func _open_door():
+	if state == states.close:
+		state = states.open
+		if door_tween:
+			door_tween.kill()
+		door_tween = create_tween()
+		door_tween.tween_property(door, "rotation:y", deg_to_rad(open_rotation_degrees), tween_speed)
+
+func _close_door():
+	if state == states.open:
+		state = states.close
+		if door_tween:
+			door_tween.kill()
+		door_tween = create_tween()
+		door_tween.tween_property(door, "rotation:y", deg_to_rad(-180), tween_speed)
+			
+func _register_lantern(lantern: StaticBody3D) -> void:
+	lanterns.append(lantern)
+
+func _check_lanterns() -> void:
+	for lantern in lanterns:
+		if lantern.state != lantern.states.lit:
+			_close_door()
+			return
+	_open_door()
+
+func _on_scene_changer_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		if change_scene_to:
+			get_tree().change_scene_to_packed(change_scene_to)
+		
+		else:
+			get_tree().reload_current_scene()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://3ftwg36iyvei"]
+[gd_scene load_steps=6 format=3 uid="uid://3ftwg36iyvei"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_5dnvj"]
 [ext_resource type="PackedScene" uid="uid://dja117pab360a" path="res://level component/checkpoint.tscn" id="1_o3iqb"]
-[ext_resource type="PackedScene" uid="uid://cca0v3u6pvybl" path="res://level component/death_box.tscn" id="2_l88dm"]
+[ext_resource type="PackedScene" uid="uid://yuudxo5edidq" path="res://level component/Door and lantern/door.tscn" id="3_yb07g"]
+[ext_resource type="PackedScene" uid="uid://dead6clwniio3" path="res://level component/Door and lantern/lantern.tscn" id="4_yb07g"]
 
 [sub_resource type="Environment" id="Environment_cw2en"]
 background_color = Color(0.840869, 1, 0.97624, 1)
@@ -36,7 +37,15 @@ size = Vector3(62.3242, 1, 59.9285)
 [node name="player" parent="." instance=ExtResource("1_5dnvj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0992, 0)
 
-[node name="Death Box" parent="." instance=ExtResource("2_l88dm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.176621, 2.39067, -2.20425)
+[node name="Lantern" parent="." instance=ExtResource("4_yb07g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96319, 0.537674, -3.75221)
+
+[node name="Door" parent="." instance=ExtResource("3_yb07g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09071, 0, -3.54584)
+
+[node name="Lantern2" parent="Door" instance=ExtResource("4_yb07g")]
+
+[node name="Lantern" parent="Door" instance=ExtResource("4_yb07g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03826, 0.5062, -0.454049)
 
 [editable path="Checkpoint"]
