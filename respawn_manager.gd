@@ -16,6 +16,9 @@ func _respawn():
 	if current_checkpoint:
 		var player = get_tree().get_first_node_in_group("player")
 		player.global_position = respawn_point
+	
+	else:
+		get_tree().reload_current_scene()
 
 func _set_checkpoint(checkpoint : StaticBody3D, spawn_point : Vector3):
 	if current_checkpoint:

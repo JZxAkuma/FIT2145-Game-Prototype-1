@@ -140,6 +140,7 @@ func _cast_selection():
 			var target = castline.get_collider()
 			if target and target.is_in_group("floor"):
 				var earthwall = earthwall_scene.instantiate()
+				earthwall.player_made = true
 				get_tree().current_scene.add_child(earthwall)
 				earthwall.global_position = castline.get_collision_point()
 				_align_to_surface(earthwall, castline.get_collision_point(), castline.get_collision_normal(),true)
