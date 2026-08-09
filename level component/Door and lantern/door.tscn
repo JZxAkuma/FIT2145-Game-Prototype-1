@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://yuudxo5edidq"]
+[gd_scene load_steps=10 format=4 uid="uid://yuudxo5edidq"]
 
 [ext_resource type="Script" uid="uid://c6rhn37b7isp6" path="res://level component/Door and lantern/door.gd" id="1_5y4bi"]
 [ext_resource type="Material" uid="uid://dwa06qewrvp0n" path="res://Environmental_Assets/Pack1/AssetPack1Material.tres" id="1_i8djr"]
@@ -78,7 +78,10 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fxrfj")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5y4bi"]
-size = Vector3(1.45837, 2.12836, 0.346588)
+size = Vector3(1.45837, 2.12836, 0.304153)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sq4mr"]
+size = Vector3(1.87683, 3.28168, 0.286743)
 
 [node name="Door" type="StaticBody3D" groups=["door"]]
 script = ExtResource("1_5y4bi")
@@ -99,7 +102,11 @@ skeleton = NodePath("")
 [node name="Scene changer" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scene changer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.929993, 1.43082, 0.232529)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.929993, 1.43082, 0.253746)
 shape = SubResource("BoxShape3D_5y4bi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.922424, 1.63541, -0.0641479)
+shape = SubResource("BoxShape3D_sq4mr")
 
 [connection signal="body_entered" from="Scene changer" to="." method="_on_scene_changer_body_entered"]
