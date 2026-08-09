@@ -1,24 +1,21 @@
 extends StaticBody3D
-
 var lanterns: Array[StaticBody3D] = []
 @onready var door = $EndDoor1
 var door_tween: Tween
-@export var tween_speed:float = 1.0
+@export var tween_speed: float = 1.0
 @export var open_rotation_degrees: float = 46.4
 @onready var scene_changer = $"Scene changer"
-@export var change_scene_to : PackedScene = null
-
-enum states{
+@export var change_scene_to: PackedScene = null
+enum states {
 	open,
 	close
 }
-var state:states = states.close
-# Called when the node enters the scene tree for the first time.
+var state: states = states.close
+var closed_rotation_y: float
+
 func _ready() -> void:
-	pass # Replace with function body.
+	closed_rotation_y = door.rotation.y
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	match state:
 		states.open:
@@ -32,7 +29,7 @@ func _open_door():
 		if door_tween:
 			door_tween.kill()
 		door_tween = create_tween()
-		door_tween.tween_property(door, "rotation:y", deg_to_rad(open_rotation_degrees), tween_speed)
+		door_tween.tween_property(door, "rotation:y", closed_rotation_y - deg_to_rad(open_rotation_degrees), tween_speed)
 
 func _close_door():
 	if state == states.open:
@@ -40,8 +37,8 @@ func _close_door():
 		if door_tween:
 			door_tween.kill()
 		door_tween = create_tween()
-		door_tween.tween_property(door, "rotation:y", deg_to_rad(-180), tween_speed)
-			
+		door_tween.tween_property(door, "rotation:y", closed_rotation_y, tween_speed)
+
 func _register_lantern(lantern: StaticBody3D) -> void:
 	lanterns.append(lantern)
 
@@ -56,6 +53,5 @@ func _on_scene_changer_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		if change_scene_to:
 			get_tree().change_scene_to_packed(change_scene_to)
-		
 		else:
 			get_tree().reload_current_scene()

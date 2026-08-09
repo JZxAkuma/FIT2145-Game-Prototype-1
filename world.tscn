@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=4 uid="uid://bp06nnjfpsxbw"]
+[gd_scene load_steps=147 format=4 uid="uid://bp06nnjfpsxbw"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://c8h85ayj4cgy1" path="res://world.gd" id="1_fj7yv"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dulmuj4l3vhpa" path="res://Environmental_Assets/Lava/MagmaWaves.png" id="18_ikiii"]
 [ext_resource type="PackedScene" uid="uid://yuudxo5edidq" path="res://level component/Door and lantern/door.tscn" id="19_26xuy"]
 [ext_resource type="PackedScene" uid="uid://dead6clwniio3" path="res://level component/Door and lantern/lantern.tscn" id="20_bc84e"]
+[ext_resource type="PackedScene" uid="uid://3ftwg36iyvei" path="res://do_not_touch_this.tscn" id="20_wukud"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ic0uy"]
 shader = ExtResource("2_wse8f")
@@ -2617,6 +2618,7 @@ skeleton = NodePath("../..")
 
 [node name="Door" parent="." instance=ExtResource("19_26xuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7254, 0.253453, -26.9621)
+change_scene_to = ExtResource("20_wukud")
 
 [node name="Lantern" parent="Door" instance=ExtResource("20_bc84e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85462, 0.004269, 0.223913)

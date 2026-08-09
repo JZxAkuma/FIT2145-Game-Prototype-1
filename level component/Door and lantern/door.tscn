@@ -82,6 +82,7 @@ size = Vector3(1.45837, 2.12836, 0.346588)
 
 [node name="Door" type="StaticBody3D" groups=["door"]]
 script = ExtResource("1_5y4bi")
+open_rotation_degrees = 110.0
 
 [node name="EndDoorFrame" type="MeshInstance3D" parent="."]
 transform = Transform3D(-188.061, 0, -3.32511e-06, 0, 328.123, 0, 1.64408e-05, 0, -38.0349, -0.930085, 1.63869, 0.189801)
