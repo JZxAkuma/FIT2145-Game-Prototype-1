@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=4 uid="uid://bp06nnjfpsxbw"]
+[gd_scene load_steps=138 format=4 uid="uid://bp06nnjfpsxbw"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://c8h85ayj4cgy1" path="res://world.gd" id="1_fj7yv"]
@@ -12,6 +12,10 @@
 [ext_resource type="Material" uid="uid://3gvwu8tc5hqp" path="res://Environmental_Assets/Rocks/RockMaterial.tres" id="8_wse8f"]
 [ext_resource type="Shader" uid="uid://yco8p8a5gjbo" path="res://Environmental_Assets/Pixelation.gdshader" id="9_ioo17"]
 [ext_resource type="Material" uid="uid://dwa06qewrvp0n" path="res://Environmental_Assets/Pack1/AssetPack1Material.tres" id="12_k3n1d"]
+[ext_resource type="Shader" uid="uid://bdgnhf4eyvr15" path="res://Environmental_Assets/Water/WaterScroller.gdshader" id="13_2o6r5"]
+[ext_resource type="Texture2D" uid="uid://cwr2pq16q5cap" path="res://Environmental_Assets/Water/WaterBG.png" id="14_70uel"]
+[ext_resource type="Shader" uid="uid://eten75ag4e03" path="res://Environmental_Assets/Water/WaterRipples.gdshader" id="15_hiqwa"]
+[ext_resource type="Texture2D" uid="uid://byywba7tr4s77" path="res://Environmental_Assets/Water/WaterWaves.png" id="16_2u3nc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ic0uy"]
 shader = ExtResource("2_wse8f")
@@ -1833,6 +1837,20 @@ _data = {
 &"Take 001": SubResource("Animation_qs5xe")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_70uel"]
+render_priority = 0
+shader = ExtResource("13_2o6r5")
+shader_parameter/water_texture = ExtResource("14_70uel")
+shader_parameter/scroll_speed = 0.1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hiqwa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2u3nc"]
+render_priority = 0
+shader = ExtResource("15_hiqwa")
+shader_parameter/water_texture = ExtResource("16_2u3nc")
+shader_parameter/scroll_speed = 0.04
+
 [node name="world" type="Node3D"]
 script = ExtResource("1_fj7yv")
 
@@ -2418,3 +2436,13 @@ skeleton = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_643ti")
 }
+
+[node name="WaterBase" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.68135, 0, 0, 0, 1, 0, 0, 0, 1.42743, -31.1232, 0.612142, -15.3752)
+material_override = SubResource("ShaderMaterial_70uel")
+mesh = SubResource("PlaneMesh_hiqwa")
+
+[node name="WaterRipples" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.68135, 0, 0, 0, 1, 0, 0, 0, 1.42743, -31.1232, 0.658843, -15.3752)
+material_override = SubResource("ShaderMaterial_2u3nc")
+mesh = SubResource("PlaneMesh_hiqwa")
