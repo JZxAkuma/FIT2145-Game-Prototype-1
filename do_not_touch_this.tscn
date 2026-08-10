@@ -1,27 +1,64 @@
-[gd_scene load_steps=6 format=3 uid="uid://3ftwg36iyvei"]
+[gd_scene load_steps=12 format=3 uid="uid://3ftwg36iyvei"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_5dnvj"]
+[ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="1_m3ehg"]
 [ext_resource type="PackedScene" uid="uid://dja117pab360a" path="res://level component/checkpoint.tscn" id="1_o3iqb"]
+[ext_resource type="Texture2D" uid="uid://5rxpnkcqrtao" path="res://Environmental_Assets/Skybox.png" id="2_oxja2"]
+[ext_resource type="Shader" uid="uid://yco8p8a5gjbo" path="res://Environmental_Assets/Pixelation.gdshader" id="3_cltf4"]
 [ext_resource type="PackedScene" uid="uid://yuudxo5edidq" path="res://level component/Door and lantern/door.tscn" id="3_yb07g"]
 [ext_resource type="PackedScene" uid="uid://dead6clwniio3" path="res://level component/Door and lantern/lantern.tscn" id="4_yb07g"]
 
-[sub_resource type="Environment" id="Environment_cw2en"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2siwp"]
+shader = ExtResource("1_m3ehg")
+shader_parameter/sky_texture = ExtResource("2_oxja2")
+
+[sub_resource type="Sky" id="Sky_ic0uy"]
+sky_material = SubResource("ShaderMaterial_2siwp")
+
+[sub_resource type="Environment" id="Environment_ysvdf"]
+background_mode = 2
 background_color = Color(0.840869, 1, 0.97624, 1)
+sky = SubResource("Sky_ic0uy")
 ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b1f4k"]
+shader = ExtResource("3_cltf4")
+shader_parameter/pixel_size = 4.0
+shader_parameter/color_levels = 16.0
 
 [node name="Do not touch this" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_cw2en")
+environment = SubResource("Environment_ysvdf")
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.483894, 0.875127, 0, -0.875127, -0.483894, 0.0366631, 9.38525, -0.0746479)
+light_color = Color(0.999998, 0.999612, 0.719504, 1)
+light_energy = 2.0
+shadow_enabled = true
+directional_shadow_mode = 1
+sky_mode = 1
+
+[node name="PixelShader" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="PixelShader"]
+material = SubResource("ShaderMaterial_b1f4k")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Checkpoint2" parent="." instance=ExtResource("1_o3iqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.82652, 1.52235, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.82652, 0.51937, 0)
 
 [node name="Checkpoint" parent="." instance=ExtResource("1_o3iqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.973377, 5.58031)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.471269, 5.58031)
 
-[node name="respawn point" parent="Checkpoint" index="2"]
+[node name="respawn point" parent="Checkpoint" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53718, 0.739065, 0.436309)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
