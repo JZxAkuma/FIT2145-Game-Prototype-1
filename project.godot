@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 WallManager="*res://wall_manager.tscn"
 Settings="*res://settings.tscn"
 RespawnManager="*res://respawn_manager.tscn"
+Transition="*res://transition.tscn"
 
 [display]
 

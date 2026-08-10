@@ -53,8 +53,9 @@ func _on_scene_changer_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		RespawnManager.current_checkpoint = null
 		RespawnManager.respawn_point = null
+		body._lock_player()
 		
 		if change_scene_to:
-			get_tree().change_scene_to_packed(change_scene_to)
+			Transition._transition_scene(change_scene_to)
 		else:
 			get_tree().reload_current_scene()
