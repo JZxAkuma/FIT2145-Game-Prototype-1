@@ -5,11 +5,13 @@ var door_tween: Tween
 @export var tween_speed: float = 1.0
 @export var open_rotation_degrees: float = 46.4
 @onready var scene_changer = $"Scene changer"
-@export var change_scene_to: PackedScene = null
+@export var change_scene_to: String
+
 enum states {
 	open,
 	close
 }
+
 var state: states = states.close
 var closed_rotation_y: float
 
@@ -56,6 +58,8 @@ func _on_scene_changer_body_entered(body: Node3D) -> void:
 		body._lock_player()
 		
 		if change_scene_to:
+			#get_tree().change_scene_to_file(change_scene_to)
+			#print(change_scene_to)
 			Transition._transition_scene(change_scene_to)
 		else:
 			get_tree().reload_current_scene()

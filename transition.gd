@@ -12,8 +12,11 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _transition_scene(scene: PackedScene):
+func _transition_scene(scene: String):
 	animation_player.play("fade_in")
 	await animation_player.animation_finished
-	await get_tree().change_scene_to_packed(scene)
+
+	get_tree().change_scene_to_file(scene)
+
+	await get_tree().process_frame
 	animation_player.play("fade_out")
