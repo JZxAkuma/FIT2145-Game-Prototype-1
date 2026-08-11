@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bye70pqxpcpcf"]
+[gd_scene load_steps=12 format=3 uid="uid://bye70pqxpcpcf"]
 
 [ext_resource type="Script" uid="uid://btoituocs665x" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://difao83xnsjna" path="res://1545215.png" id="2_onrkg"]
@@ -9,11 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dpfnb02w8cyq3" path="res://Icons/EarthInactive.png" id="7_84xnk"]
 [ext_resource type="Texture2D" uid="uid://cpn8kogxjm8cn" path="res://Icons/EarthActive.png" id="8_mmloc"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5enqi"]
-albedo_color = Color(1, 0, 0, 1)
-
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fj7yv"]
-material = SubResource("StandardMaterial3D_5enqi")
 
 [sub_resource type="SphereMesh" id="SphereMesh_f3sb7"]
 
