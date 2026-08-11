@@ -22,6 +22,7 @@ const SPEED = 5.0
 @export var controller_sens : float = 3.0
 @export var controller_aim_sens : float = 3.0
 @export var controller_deadzone : float = 0.15
+@export var jump_cut_multiplier: float = 0.5
 var aim_tween: Tween
 
 
@@ -96,6 +97,8 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 
+		if Input.is_action_just_released("jump") and velocity.y > 0:
+			velocity.y *= jump_cut_multiplier
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var input_dir := Input.get_vector("left", "right", "up", "down")

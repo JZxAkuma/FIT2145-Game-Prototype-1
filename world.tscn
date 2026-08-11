@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=4 uid="uid://bp06nnjfpsxbw"]
+[gd_scene load_steps=149 format=4 uid="uid://bp06nnjfpsxbw"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://c8h85ayj4cgy1" path="res://world.gd" id="1_fj7yv"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dead6clwniio3" path="res://level component/Door and lantern/lantern.tscn" id="20_bc84e"]
 [ext_resource type="PackedScene" uid="uid://bvsuboh5lviut" path="res://level component/Deco/tulip.tscn" id="22_wukud"]
 [ext_resource type="PackedScene" uid="uid://mnuogexd636q" path="res://level component/Deco/Wood/bridge.tscn" id="23_il2jm"]
+[ext_resource type="PackedScene" uid="uid://bui78i54bg7k4" path="res://level component/Deco/Trees/mushroom.tscn" id="23_wjb0r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ic0uy"]
 shader = ExtResource("2_wse8f")
@@ -2622,7 +2623,6 @@ skeleton = NodePath("../..")
 
 [node name="Door" parent="." instance=ExtResource("19_26xuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7254, 0.253453, -26.9621)
-tween_speed = 1.0
 change_scene_to = "res://do_not_touch_this.tscn"
 
 [node name="Lantern" parent="Door" instance=ExtResource("20_bc84e")]
@@ -2636,3 +2636,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -5)
 
 [node name="bridge" parent="." instance=ExtResource("23_il2jm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.7005, 0.318442, -37.041)
+
+[node name="Mushroom" parent="." instance=ExtResource("23_wjb0r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.57761, 0.257047, -24.1056)
