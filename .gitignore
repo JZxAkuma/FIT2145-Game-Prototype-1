@@ -1,3 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+level component/player.tscn
+world.gd
+world.gd.uid
+world.tscn
