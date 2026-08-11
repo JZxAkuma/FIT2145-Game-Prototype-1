@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://3ftwg36iyvei"]
+[gd_scene load_steps=17 format=3 uid="uid://3ftwg36iyvei"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_5dnvj"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="1_m3ehg"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="9_ysvdf"]
 [ext_resource type="PackedScene" uid="uid://urioemqqu7sh" path="res://level component/Rock Blocks/rock_block_no_bevel.tscn" id="10_b1f4k"]
 [ext_resource type="PackedScene" uid="uid://bui78i54bg7k4" path="res://level component/Deco/Trees/mushroom.tscn" id="11_ysvdf"]
+[ext_resource type="PackedScene" uid="uid://l45nsc3pipaj" path="res://level component/Deco/Castle/castle_wall.tscn" id="12_b1f4k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2siwp"]
 shader = ExtResource("1_m3ehg")
@@ -118,5 +119,11 @@ transform = Transform3D(4.72703, 0, 0, 0, 1, 0, 0, 0, 5.69645, -3.20859, 18.5408
 
 [node name="Mushroom" parent="." instance=ExtResource("11_ysvdf")]
 transform = Transform3D(0.916041, 0, -0.401085, 0, 1, 0, 0.401085, 0, 0.916041, -0.993749, 0.590874, -5.75815)
+
+[node name="castle wall" parent="." instance=ExtResource("12_b1f4k")]
+transform = Transform3D(2.01489, 0, 0, 0, 4.58126, 0, 0, 0, 1, -4.31036, 0.676731, -24.4462)
+
+[node name="castle wall2" parent="." instance=ExtResource("12_b1f4k")]
+transform = Transform3D(2.01489, 0, 0, 0, 4.58126, 0, 0, 0, 1, -4.31036, 10.0053, -24.4462)
 
 [editable path="Checkpoint"]
