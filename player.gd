@@ -9,12 +9,12 @@ const SPEED = 5.0
 @export var JUMP_VELOCITY = 4.5
 @onready var pivot: Node3D = $"camera point"
 @onready var castline: RayCast3D = $"camera point/SpringArm3D/Camera3D/RayCast3D"
-@onready var debug_label: Label = $"CanvasLayer/Control/casting to"
+@onready var debug_label: Label = $"CanvasLayer/Crosshair/casting to"
 @onready var cast_point: Marker3D = $"cast point"
 @export var aim_camera_pos: Vector3 = Vector3(0.969, 0.792, 0.0)
 @export var aim_spring_length: float = 2.0
 @export var default_spring_length: float = 5.0
-@onready var crosshair: TextureRect = $CanvasLayer/Control/Crosshair
+@onready var crosshair: TextureRect = $CanvasLayer/Crosshair/Crosshair
 @onready var camera: Camera3D = $"camera point/SpringArm3D/Camera3D"
 @onready var camerapoint: Node3D = $"camera point"
 @onready var springarm: SpringArm3D = $"camera point/SpringArm3D"
@@ -23,7 +23,15 @@ const SPEED = 5.0
 @export var controller_aim_sens : float = 3.0
 @export var controller_deadzone : float = 0.15
 @export var jump_cut_multiplier: float = 0.5
+@onready var element_ui = $"CanvasLayer/Elements UI"
+@onready var water_icon:TextureButton=$"CanvasLayer/Elements UI/HBoxContainer/water"
+@onready var fire_icon:TextureButton=$"CanvasLayer/Elements UI/HBoxContainer/fire"
+@onready var earth_icon:TextureButton=$"CanvasLayer/Elements UI/HBoxContainer/earth"
+@onready var water_normal_tex = water_icon.texture_normal
+@onready var fire_normal_tex = fire_icon.texture_normal
+@onready var earth_normal_tex = earth_icon.texture_normal
 var aim_tween: Tween
+var element_ui_tween : Tween
 
 
 var waterball_scene = preload("res://water_ball.tscn")
@@ -39,9 +47,14 @@ enum elements {
 
 enum states {
 	default,
-	aiming
+	aiming,
+	died
 }
 
+enum changing_elements{
+	changing,
+	not_changing
+}
 var state: states = states.default
 
 var selection: elements = elements.water
@@ -79,7 +92,7 @@ func _physics_process(delta: float) -> void:
 		_update_wall_indicator()
 		_camera_state()
 		_cast_lenght()
-
+		_elements_ui()
 		state = states.aiming if Input.is_action_pressed("aim") else states.default
 
 		if state == states.aiming:
@@ -125,10 +138,24 @@ func _selection_display():
 
 
 func _change_power():
-	if Input.is_action_just_pressed("scroll_up"):
-		selection = (selection + 1) % elements.size()
-	if Input.is_action_just_pressed("scroll_down"):
-		selection = (selection - 1 + elements.size()) % elements.size()
+	if Input.is_action_pressed("change element"):
+		Engine.time_scale = 0.2
+		if element_ui_tween:
+			element_ui_tween.kill()
+		element_ui_tween = create_tween()
+		element_ui_tween.tween_property(element_ui, "modulate:a", 1, aim_tween_legnht)
+		
+		if Input.is_action_just_pressed("scroll_up"):
+			selection = (selection + 1) % elements.size()
+		if Input.is_action_just_pressed("scroll_down"):
+			selection = (selection - 1 + elements.size()) % elements.size()
+	
+	else:
+		Engine.time_scale = 1
+		if element_ui_tween:
+			element_ui_tween.kill()
+		element_ui_tween = create_tween()
+		element_ui_tween.tween_property(element_ui, "modulate:a", 0, aim_tween_legnht)
 
 
 func _cast_selection():
@@ -254,3 +281,8 @@ func _on_hurt_box_area_entered(area: Area3D) -> void:
 
 func _to_checkpoint_spot(spawnpoint : Vector3) -> void:
 	pass
+
+func _elements_ui():
+	water_icon.texture_normal = water_icon.texture_hover if selection == elements.water else water_normal_tex
+	fire_icon.texture_normal = fire_icon.texture_hover if selection == elements.fire else fire_normal_tex
+	earth_icon.texture_normal = earth_icon.texture_hover if selection == elements.earth else earth_normal_tex
