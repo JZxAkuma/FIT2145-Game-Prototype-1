@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bye70pqxpcpcf"]
+[gd_scene load_steps=12 format=3 uid="uid://bye70pqxpcpcf"]
 
 [ext_resource type="Script" uid="uid://btoituocs665x" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://difao83xnsjna" path="res://1545215.png" id="2_onrkg"]
@@ -9,11 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dpfnb02w8cyq3" path="res://Icons/EarthInactive.png" id="7_84xnk"]
 [ext_resource type="Texture2D" uid="uid://cpn8kogxjm8cn" path="res://Icons/EarthActive.png" id="8_mmloc"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5enqi"]
-albedo_color = Color(1, 0, 0, 1)
-
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fj7yv"]
-material = SubResource("StandardMaterial3D_5enqi")
 
 [sub_resource type="SphereMesh" id="SphereMesh_f3sb7"]
 
@@ -28,23 +24,19 @@ aim_spring_length = 1.5
 default_spring_length = 7.0
 controller_sens = 5.0
 
-[node name="Player_mesh" type="Node3D" parent="."]
-
-[node name="body mesh" type="MeshInstance3D" parent="Player_mesh"]
-mesh = SubResource("CapsuleMesh_fj7yv")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player_mesh"]
-transform = Transform3D(0.669326, 0, 0, 0, 0.454898, 0, 0, 0, 0.227556, 0.000307202, 0.495308, -0.4557)
-mesh = SubResource("SphereMesh_f3sb7")
-skeleton = NodePath("../..")
-
 [node name="cast point" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.792579, 1.1859, -0.677856)
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42485, 0)
 billboard = 1
+
+[node name="body mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_fj7yv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.669326, 0, 0, 0, 0.454898, 0, 0, 0, 0.227556, 0.000307202, 0.495308, -0.4557)
+mesh = SubResource("SphereMesh_f3sb7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_tlwt5")

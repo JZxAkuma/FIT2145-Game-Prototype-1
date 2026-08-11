@@ -30,8 +30,6 @@ const SPEED = 5.0
 @onready var water_normal_tex = water_icon.texture_normal
 @onready var fire_normal_tex = fire_icon.texture_normal
 @onready var earth_normal_tex = earth_icon.texture_normal
-@onready var player_mesh = $Player_mesh
-@export var mesh_turn_speed: float = 10.0
 var aim_tween: Tween
 var element_ui_tween : Tween
 
@@ -124,8 +122,6 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
-
-		_update_mesh_rotation(delta, input_dir)
 
 		if Input.is_action_just_pressed("quit"):
 			get_tree().quit()
@@ -290,13 +286,3 @@ func _elements_ui():
 	water_icon.texture_normal = water_icon.texture_hover if selection == elements.water else water_normal_tex
 	fire_icon.texture_normal = fire_icon.texture_hover if selection == elements.fire else fire_normal_tex
 	earth_icon.texture_normal = earth_icon.texture_hover if selection == elements.earth else earth_normal_tex
-
-func _update_mesh_rotation(delta: float, input_dir: Vector2) -> void:
-	var target_rotation_y: float = player_mesh.rotation.y
-
-	if state == states.aiming:
-		target_rotation_y = 0.0
-	elif input_dir.length() > 0.1:
-		target_rotation_y = atan2(-input_dir.x, -input_dir.y)
-
-	player_mesh.rotation.y = lerp_angle(player_mesh.rotation.y, target_rotation_y, mesh_turn_speed * delta)
