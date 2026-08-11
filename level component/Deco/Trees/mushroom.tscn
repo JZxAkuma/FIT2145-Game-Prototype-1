@@ -156,7 +156,7 @@ points = PackedVector3Array(0.00988473, -0.00558819, 0.00495714, -0.0174391, 0.0
 
 [node name="Mushroom" type="StaticBody3D"]
 script = ExtResource("1_dcet5")
-bounce_velocity = 10.0
+bounce_velocity = 8
 
 [node name="Big Cap" type="Area3D" parent="."]
 transform = Transform3D(498.872, 0, 0, 0, 315.162, 0, 0, 0, 404.251, 0.648031, 4.37974, 0.742467)

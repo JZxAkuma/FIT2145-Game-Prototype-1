@@ -2639,3 +2639,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.7005, 0.318442, -37.041)
 
 [node name="Mushroom" parent="." instance=ExtResource("23_wjb0r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.57761, 0.257047, -24.1056)
+bounce_velocity = 10
