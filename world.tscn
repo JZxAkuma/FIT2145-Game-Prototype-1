@@ -2661,6 +2661,7 @@ transform = Transform3D(8586.48, 0, 0, 0, 1992.6, 0, 0, 0, 8586.48, 0, 8.90985, 
 surface_material_override/0 = SubResource("StandardMaterial3D_4h6ng")
 
 [node name="DistantMountains2" parent="." instance=ExtResource("23_mc2jv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8364, 0)
 
 [node name="pCylinder1" parent="DistantMountains2" index="0"]
 transform = Transform3D(14022.6, 0, -26333.8, 0, 12630.5, 0, 26333.8, 0, 14022.6, 0, 43.1096, 0)
