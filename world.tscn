@@ -1,7 +1,6 @@
-[gd_scene load_steps=149 format=4 uid="uid://bp06nnjfpsxbw"]
+[gd_scene load_steps=152 format=4 uid="uid://bp06nnjfpsxbw"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_f3sb7"]
-[ext_resource type="Script" uid="uid://c8h85ayj4cgy1" path="res://world.gd" id="1_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://5rxpnkcqrtao" path="res://Environmental_Assets/Skybox.png" id="2_ioo17"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="2_wse8f"]
 [ext_resource type="Script" uid="uid://bajk2gnxublmr" path="res://target.gd" id="3_tlwt5"]
@@ -22,7 +21,9 @@
 [ext_resource type="PackedScene" uid="uid://dead6clwniio3" path="res://level component/Door and lantern/lantern.tscn" id="20_bc84e"]
 [ext_resource type="PackedScene" uid="uid://bvsuboh5lviut" path="res://level component/Deco/tulip.tscn" id="22_wukud"]
 [ext_resource type="PackedScene" uid="uid://mnuogexd636q" path="res://level component/Deco/Wood/bridge.tscn" id="23_il2jm"]
+[ext_resource type="PackedScene" uid="uid://d453vpva4jrf" path="res://Environmental_Assets/BackDrop/DistantMountains.fbx" id="23_mc2jv"]
 [ext_resource type="PackedScene" uid="uid://bui78i54bg7k4" path="res://level component/Deco/Trees/mushroom.tscn" id="23_wjb0r"]
+[ext_resource type="Texture2D" uid="uid://daddx783lvspy" path="res://Environmental_Assets/BackDrop/DistantMountains_standardSurface1_BaseColor.png" id="24_bo7i5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ic0uy"]
 shader = ExtResource("2_wse8f")
@@ -1909,8 +1910,20 @@ shader_parameter/lava_texture = ExtResource("18_ikiii")
 shader_parameter/scroll_speed = 0.01
 shader_parameter/emission_strength = 0.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4h6ng"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("24_bo7i5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3ebs"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_color = Color(0.388235, 0.772549, 1, 1)
+albedo_texture = ExtResource("24_bo7i5")
+
 [node name="world" type="Node3D"]
-script = ExtResource("1_fj7yv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_f3sb7")
@@ -2521,13 +2534,13 @@ mesh = SubResource("ArrayMesh_71tr8")
 skeleton = NodePath("")
 
 [node name="BridgeHandle" type="MeshInstance3D" parent="."]
-transform = Transform3D(229.362, 0, 0, 0, 229.362, 0, 0, 0, 214.227, -16.2275, 2.10106, -14.3116)
+transform = Transform3D(229.362, 0, 0, 0, 229.362, 0, 0, 0, 214.227, -16.2275, 1.34239, -14.3116)
 material_override = ExtResource("12_k3n1d")
 mesh = SubResource("ArrayMesh_1amq5")
 skeleton = NodePath("")
 
 [node name="BridgeBody" type="MeshInstance3D" parent="."]
-transform = Transform3D(606.449, 0, 0, 0, 15.4915, 0, 0, 0, 186.273, -16.2275, -1.82475, -14.3116)
+transform = Transform3D(606.449, 0, 0, 0, 15.4915, 0, 0, 0, 186.273, -16.2275, -2.58342, -14.3116)
 material_override = ExtResource("12_k3n1d")
 mesh = SubResource("ArrayMesh_l5hvu")
 skeleton = NodePath("")
@@ -2551,7 +2564,7 @@ mesh = SubResource("ArrayMesh_vf1x1")
 skeleton = NodePath("")
 
 [node name="RockWall" type="MeshInstance3D" parent="."]
-transform = Transform3D(1028.57, 0, 0, 0, 229.362, 0, 0, 0, 52.7822, -15.7832, 1.38701, -10.3352)
+transform = Transform3D(1028.57, 0, 0, 0, 229.362, 0, 0, 0, 52.7822, -15.738, 1.32122, -10.3123)
 material_override = ExtResource("12_k3n1d")
 mesh = SubResource("ArrayMesh_afx2c")
 skeleton = NodePath("")
@@ -2640,3 +2653,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.7005, 0.318442, -37.041)
 [node name="Mushroom" parent="." instance=ExtResource("23_wjb0r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.57761, 0.257047, -24.1056)
 bounce_velocity = 10
+
+[node name="DistantMountains" parent="." instance=ExtResource("23_mc2jv")]
+
+[node name="pCylinder1" parent="DistantMountains" index="0"]
+transform = Transform3D(8586.48, 0, 0, 0, 1992.6, 0, 0, 0, 8586.48, 0, 8.90985, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_4h6ng")
+
+[node name="DistantMountains2" parent="." instance=ExtResource("23_mc2jv")]
+
+[node name="pCylinder1" parent="DistantMountains2" index="0"]
+transform = Transform3D(14022.6, 0, -26333.8, 0, 12630.5, 0, 26333.8, 0, 14022.6, 0, 43.1096, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_o3ebs")
+
+[editable path="DistantMountains"]
+[editable path="DistantMountains2"]
