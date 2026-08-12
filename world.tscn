@@ -1,7 +1,6 @@
-[gd_scene load_steps=149 format=4 uid="uid://bp06nnjfpsxbw"]
+[gd_scene load_steps=148 format=4 uid="uid://bp06nnjfpsxbw"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_f3sb7"]
-[ext_resource type="Script" uid="uid://c8h85ayj4cgy1" path="res://world.gd" id="1_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://5rxpnkcqrtao" path="res://Environmental_Assets/Skybox.png" id="2_ioo17"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="2_wse8f"]
 [ext_resource type="Script" uid="uid://bajk2gnxublmr" path="res://target.gd" id="3_tlwt5"]
@@ -1910,7 +1909,6 @@ shader_parameter/scroll_speed = 0.01
 shader_parameter/emission_strength = 0.0
 
 [node name="world" type="Node3D"]
-script = ExtResource("1_fj7yv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_f3sb7")
