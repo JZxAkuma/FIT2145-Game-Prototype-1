@@ -13,10 +13,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot"):
-		get_tree().change_scene_to_file("res://world.tscn")
+		Transition._transition_scene("res://world.tscn")
 
 func _fade_in_done():
 	anim_player.play("fade out")
 
 func _fade_out_done():
-	get_tree().change_scene_to_file("res://world.tscn")
+	Transition._transition_scene("res://world.tscn")
