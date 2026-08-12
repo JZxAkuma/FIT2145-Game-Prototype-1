@@ -13,4 +13,3 @@ void fragment() {
 
     ALBEDO = water;
 }
-
