@@ -1913,9 +1913,6 @@ shader_parameter/lava_texture = ExtResource("18_ikiii")
 shader_parameter/scroll_speed = 0.01
 shader_parameter/emission_strength = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qktwf"]
-albedo_texture = ExtResource("24_o3ebs")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xmwtd"]
 resource_name = "standardSurface1"
 vertex_color_use_as_albedo = true
@@ -1959,8 +1956,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5o5wi")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bh8nc"]
-albedo_texture = ExtResource("25_k83mh")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qktwf"]
+albedo_texture = ExtResource("24_o3ebs")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fcgni"]
 _surfaces = [{
@@ -2029,6 +2026,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yr24u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bh8nc"]
+albedo_texture = ExtResource("25_k83mh")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4h6ng"]
 transparency = 2
@@ -2769,6 +2769,162 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -5)
 
 [node name="bridge" parent="." instance=ExtResource("23_il2jm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.7005, 0.318442, -37.041)
+
+[node name="WallsDemoTest" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.57761, 0.257047, -24.1056)
+
+[node name="Rock1" type="MeshInstance3D" parent="WallsDemoTest"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 8.04291, 4.57431, 11.764)
+mesh = SubResource("ArrayMesh_b257b")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Rock2" type="MeshInstance3D" parent="WallsDemoTest"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 9.36664, 6.74342, 6.34973)
+mesh = SubResource("ArrayMesh_va2ql")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Rock3" type="MeshInstance3D" parent="WallsDemoTest"]
+transform = Transform3D(632.23, 0, 0, 0, 1660.98, 0, 0, 0, 901.087, 4.49391, 4.72593, 17.8694)
+mesh = SubResource("ArrayMesh_5jgt6")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Rock4" type="MeshInstance3D" parent="WallsDemoTest"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 6.88662, 4.57431, 5.26753)
+mesh = SubResource("ArrayMesh_b257b")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_bh8nc")
+
+[node name="Rock5" type="MeshInstance3D" parent="WallsDemoTest"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, -0.0574884, 2.484, 20.3594)
+mesh = SubResource("ArrayMesh_va2ql")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_bh8nc")
+
+[node name="Rock6" type="MeshInstance3D" parent="WallsDemoTest"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 10.979, 9.52795, 13.0738)
+mesh = SubResource("ArrayMesh_5jgt6")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_bh8nc")
+
+[node name="WallsDemoTest3" type="Node3D" parent="."]
+transform = Transform3D(-0.936764, 0, 0.349962, 0, 1, 0, -0.349962, 0, -0.936764, -45.5744, -0.928845, -19.3695)
+
+[node name="Rock1" type="MeshInstance3D" parent="WallsDemoTest3"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 8.04291, 4.57431, 11.764)
+mesh = SubResource("ArrayMesh_b257b")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Rock2" type="MeshInstance3D" parent="WallsDemoTest3"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 9.36664, 6.74342, 6.34973)
+mesh = SubResource("ArrayMesh_va2ql")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Rock3" type="MeshInstance3D" parent="WallsDemoTest3"]
+transform = Transform3D(632.23, 0, 0, 0, 1660.98, 0, 0, 0, 901.087, 4.49391, 4.72593, 17.8694)
+mesh = SubResource("ArrayMesh_5jgt6")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Rock4" type="MeshInstance3D" parent="WallsDemoTest3"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 6.88662, 4.57431, 5.26753)
+mesh = SubResource("ArrayMesh_b257b")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_bh8nc")
+
+[node name="Rock5" type="MeshInstance3D" parent="WallsDemoTest3"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, -0.0574884, 2.484, 20.3594)
+mesh = SubResource("ArrayMesh_va2ql")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_bh8nc")
+
+[node name="Rock6" type="MeshInstance3D" parent="WallsDemoTest3"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 10.979, 9.52795, 13.0738)
+mesh = SubResource("ArrayMesh_5jgt6")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_bh8nc")
+
+[node name="WallsDemoTest2" type="Node3D" parent="."]
+transform = Transform3D(0.701258, 0, 0.712908, 0, 1, 0, -0.712908, 0, 0.701258, -17.6613, -4.57465, -38.7727)
+
+[node name="Rock1" type="MeshInstance3D" parent="WallsDemoTest2"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 8.04291, 4.57431, 11.764)
+mesh = SubResource("ArrayMesh_b257b")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Rock2" type="MeshInstance3D" parent="WallsDemoTest2"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 9.36664, 6.74342, 6.34973)
+mesh = SubResource("ArrayMesh_va2ql")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Rock3" type="MeshInstance3D" parent="WallsDemoTest2"]
+transform = Transform3D(632.23, 0, 0, 0, 1660.98, 0, 0, 0, 901.087, 4.49391, 4.72593, 17.8694)
+mesh = SubResource("ArrayMesh_5jgt6")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Rock4" type="MeshInstance3D" parent="WallsDemoTest2"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 6.88662, 4.57431, 5.26753)
+mesh = SubResource("ArrayMesh_b257b")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_bh8nc")
+
+[node name="Rock5" type="MeshInstance3D" parent="WallsDemoTest2"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, -0.0574884, 2.484, 20.3594)
+mesh = SubResource("ArrayMesh_va2ql")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_bh8nc")
+
+[node name="Rock6" type="MeshInstance3D" parent="WallsDemoTest2"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 10.979, 9.52795, 13.0738)
+mesh = SubResource("ArrayMesh_5jgt6")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_bh8nc")
+
+[node name="WallsDemoTest4" type="Node3D" parent="."]
+transform = Transform3D(-0.833992, 0, -0.551777, 0, 1, 0, 0.551777, 0, -0.833992, -34.6521, -3.44584, -6.00761)
+
+[node name="Rock1" type="MeshInstance3D" parent="WallsDemoTest4"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 8.04291, 4.57431, 11.764)
+mesh = SubResource("ArrayMesh_b257b")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Rock2" type="MeshInstance3D" parent="WallsDemoTest4"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 9.36664, 6.74342, 6.34973)
+mesh = SubResource("ArrayMesh_va2ql")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Rock3" type="MeshInstance3D" parent="WallsDemoTest4"]
+transform = Transform3D(632.23, 0, 0, 0, 1660.98, 0, 0, 0, 901.087, 4.49391, 4.72593, 17.8694)
+mesh = SubResource("ArrayMesh_5jgt6")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Rock4" type="MeshInstance3D" parent="WallsDemoTest4"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 6.88662, 4.57431, 5.26753)
+mesh = SubResource("ArrayMesh_b257b")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_bh8nc")
+
+[node name="Rock5" type="MeshInstance3D" parent="WallsDemoTest4"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, -0.0574884, 2.484, 20.3594)
+mesh = SubResource("ArrayMesh_va2ql")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_bh8nc")
+
+[node name="Rock6" type="MeshInstance3D" parent="WallsDemoTest4"]
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 10.979, 9.52795, 13.0738)
+mesh = SubResource("ArrayMesh_5jgt6")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_bh8nc")
 
 [node name="Mushroom" parent="." instance=ExtResource("23_wjb0r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.57761, 0.257047, -24.1056)
