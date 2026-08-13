@@ -48,6 +48,8 @@ var waterball_scene = preload("res://water_ball.tscn")
 var fireball_scene = preload("res://fireball.tscn")
 var earthwall_scene = preload("res://earth_wall.tscn")
 
+@export var element_ui_offset: Vector3 = Vector3(0, 1.5, 0)
+
 enum elements {
 	water,
 	earth,
@@ -114,6 +116,7 @@ func _physics_process(delta: float) -> void:
 	_camera_state()
 	_cast_lenght()
 	_elements_ui()
+	_update_elements_ui_position()
 
 	_set_state(states.aiming if Input.is_action_pressed("aim") else states.default)
 
@@ -365,3 +368,14 @@ func _update_animation_state() -> void:
 		# anim_tree.set("parameters/conditions/is_grounded", is_grounded)
 		# anim_tree.set("parameters/conditions/is_aiming", is_aiming)
 		# anim_tree.set("parameters/Selection/blend_position", selection)
+
+func _update_elements_ui_position() -> void:
+	var world_pos = global_position + element_ui_offset
+
+	if camera.is_position_behind(world_pos):
+		element_ui.visible = false
+		return
+
+	element_ui.visible = true
+	var screen_pos = camera.unproject_position(world_pos)
+	element_ui.position = screen_pos - (element_ui.size / 2.0)
