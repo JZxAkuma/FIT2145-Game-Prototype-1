@@ -24,9 +24,9 @@ height = 2.02295
 [node name="player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_4flbx")
 JUMP_VELOCITY = 7.0
+controller_sens = 5.0
 aim_spring_length = 1.5
 default_spring_length = 7.0
-controller_sens = 5.0
 
 [node name="Player_mesh" type="Node3D" parent="."]
 
@@ -152,5 +152,10 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
 shape = SubResource("CapsuleShape3D_tlwt5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+anim_player = NodePath("../AnimationPlayer")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
