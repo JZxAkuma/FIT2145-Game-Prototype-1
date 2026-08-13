@@ -49,11 +49,11 @@ size = Vector3(8.29817, 4.10938, 4.10449)
 [node name="rock_block_no_bevel" type="StaticBody3D"]
 
 [node name="NoBevel" type="MeshInstance3D" parent="."]
-transform = Transform3D(155.218, 0, 0, 0, 155.218, 0, 0, 0, 155.218, 0, 0, 0)
+transform = Transform3D(155.218, 0, 0, 0, 155.218, 0, 0, 0, 155.218, 0, 0, 1.55581)
 material_override = ExtResource("1_kbxxr")
 mesh = SubResource("ArrayMesh_qjh8e")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.187185, 0, 0, 0, 0.378483, 0, 0, 0, 0.378483, 0.777052, 0.777791, -0.77674)
+transform = Transform3D(0.187185, 0, 0, 0, 0.378483, 0, 0, 0, 0.378483, 0.777052, 0.777791, 0.779066)
 shape = SubResource("BoxShape3D_qcvf5")

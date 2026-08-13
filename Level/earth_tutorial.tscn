@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://fiqtqeg3x8sk"]
+
+[ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="1_os4bw"]
+[ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="2_5ii16"]
+
+[node name="Earth_Tutorial" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource("2_5ii16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.54078, 2.59459, 14.8027)
+
+[node name="Grass block Bevel Bottom" parent="." instance=ExtResource("1_os4bw")]
+transform = Transform3D(9.91434, 0, 0, 0, 1, 0, 0, 0, 10.8138, 0, 0, 0)
