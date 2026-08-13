@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bye70pqxpcpcf"]
+[gd_scene load_steps=14 format=3 uid="uid://bye70pqxpcpcf"]
 
 [ext_resource type="Script" uid="uid://btoituocs665x" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://difao83xnsjna" path="res://1545215.png" id="2_onrkg"]
@@ -20,6 +20,10 @@ material = SubResource("StandardMaterial3D_5enqi")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tlwt5"]
 radius = 0.508611
 height = 2.02295
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5enqi"]
+states/End/position = Vector2(932, 127)
+states/Start/position = Vector2(344, 134)
 
 [node name="player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_4flbx")
@@ -156,6 +160,7 @@ shape = SubResource("CapsuleShape3D_tlwt5")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_5enqi")
 anim_player = NodePath("../AnimationPlayer")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
