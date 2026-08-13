@@ -31,7 +31,8 @@ window/size/viewport_height=1080
 
 folder_colors={
 "res://level component/": "red",
-"res://level component/Grass Blocks/": "yellow"
+"res://level component/Grass Blocks/": "yellow",
+"res://level component/Rock Blocks/": "yellow"
 }
 
 [global_group]
