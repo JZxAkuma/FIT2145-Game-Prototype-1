@@ -27,6 +27,12 @@ Transition="*res://transition.tscn"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[file_customization]
+
+folder_colors={
+"res://level component/": "red"
+}
+
 [global_group]
 
 floor=""
