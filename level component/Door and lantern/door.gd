@@ -14,9 +14,11 @@ enum states {
 
 var state: states = states.close
 var closed_rotation_y: float
+var count = 0
 
 func _ready() -> void:
 	closed_rotation_y = door.rotation.y
+	_check_lanterns()
 
 func _process(delta: float) -> void:
 	match state:

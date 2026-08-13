@@ -60,7 +60,7 @@ var earthwall_scene = preload("res://earth_wall.tscn")
 var longest_offset = 1.5
 var shortest_offset = 1.1
 
-
+var camera_swap = false
 enum elements {
 	water,
 	earth,
@@ -137,7 +137,7 @@ func _physics_process(delta: float) -> void:
 	_selection_display()
 	
 	
-
+	
 	_set_state(states.aiming if Input.is_action_pressed("aim") else states.default)
 
 	if state == states.aiming:
@@ -156,7 +156,9 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_released("jump") and velocity.y > 0:
 		velocity.y *= jump_cut_multiplier
-
+	
+	if Input.is_action_just_pressed("camera swap"):
+		_camera_swap()
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "up", "down")
@@ -185,6 +187,8 @@ func _cast_detection():
 func _selection_display():
 	$Label3D.text = str(elements.keys()[selection])
 
+func _camera_swap():
+	aim_camera_pos.x = -aim_camera_pos.x
 
 func _change_power():
 	if Input.is_action_pressed("change element"):

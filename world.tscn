@@ -2045,6 +2045,9 @@ albedo_texture = ExtResource("24_bo7i5")
 
 [node name="world" type="Node3D"]
 
+[node name="player" parent="." instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3511, 2.31531, -16.9536)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_f3sb7")
 
@@ -2052,9 +2055,6 @@ environment = SubResource("Environment_f3sb7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.248474, 0)
 use_collision = true
 size = Vector3(100, 1, 100)
-
-[node name="player" parent="." instance=ExtResource("1_f3sb7")]
-transform = Transform3D(1, 0.000169131, 0.000385628, -0.000169436, 1, 0.000843148, -0.000385494, -0.000843209, 1, -12.6209, 1.38108, -20.179)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.483894, 0.875127, 0, -0.875127, -0.483894, 0.0366631, 9.38525, -0.0746479)
@@ -2386,7 +2386,6 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.9367, 0.251518, 5.77436)
 
 [node name="PixelShader" type="CanvasLayer" parent="."]
-layer = 0
 
 [node name="ColorRect" type="ColorRect" parent="PixelShader"]
 material = SubResource("ShaderMaterial_wse8f")

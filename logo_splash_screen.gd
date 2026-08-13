@@ -2,6 +2,8 @@ extends CanvasLayer
 
 @onready var logo = $Control/logo
 @onready var anim_player = $AnimationPlayer
+
+var start_level = "res://Level/earth_tutorial.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	anim_player.play("fade_in")
@@ -12,11 +14,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("shoot"):
-		Transition._transition_scene("res://world.tscn")
+	if Input.is_action_just_pressed("shoot") or Input.is_action_just_pressed("jump"):
+		Transition._transition_scene(start_level)
 
 func _fade_in_done():
 	anim_player.play("fade out")
 
 func _fade_out_done():
-	Transition._transition_scene("res://world.tscn")
+	Transition._transition_scene(start_level)

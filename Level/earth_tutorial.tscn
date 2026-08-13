@@ -57,12 +57,7 @@ shadow_enabled = true
 directional_shadow_mode = 1
 sky_mode = 1
 
-[node name="Death Box" parent="." instance=ExtResource("9_p5lns")]
-transform = Transform3D(213.15, 0, 0, 0, 1, 0, 0, 0, 220.8, 0, -3, 0)
-
 [node name="PixelShader" type="CanvasLayer" parent="."]
-layer = 0
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="PixelShader"]
 material = SubResource("ShaderMaterial_rl1io")
@@ -72,6 +67,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Death Box" parent="." instance=ExtResource("9_p5lns")]
+transform = Transform3D(213.15, 0, 0, 0, 1, 0, 0, 0, 220.8, 0, -3, 0)
 
 [node name="grass_block_no_bevel" parent="." instance=ExtResource("4_le0xd")]
 transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, -9)
@@ -206,7 +204,7 @@ transform = Transform3D(16, 0, 0, 0, 5, 0, 0, 0, 1, 23, 17, 24)
 transform = Transform3D(26, 0, 0, 0, 4, 0, 0, 0, 1, 5, 9, 24)
 
 [node name="grass_block_no_bevel11" parent="." instance=ExtResource("4_le0xd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 13, 24)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 30, 14, 24)
 
 [node name="rock_block_no_bevel3" parent="." instance=ExtResource("11_ay5la")]
 transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 30, 14, 24)
@@ -236,7 +234,7 @@ transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 1, 26, 13, 24)
 transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 1, 24, 13, 24)
 
 [node name="grass_block_no_bevel12" parent="." instance=ExtResource("4_le0xd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 14, 24)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 29, 15, 24)
 
 [node name="rock_block_no_bevel7" parent="." instance=ExtResource("11_ay5la")]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 27, 15, 24)
@@ -245,13 +243,13 @@ transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 27, 15, 24)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 13, 24)
 
 [node name="grass_block_no_bevel13" parent="." instance=ExtResource("4_le0xd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 14, 24)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 27, 15, 24)
 
 [node name="grass_block_no_bevel15" parent="." instance=ExtResource("4_le0xd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 16, 24)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 23, 17, 24)
 
 [node name="grass_block_no_bevel14" parent="." instance=ExtResource("4_le0xd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 15, 24)
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, 25, 16, 24)
 
 [node name="rock_block_no_bevel14" parent="." instance=ExtResource("11_ay5la")]
 transform = Transform3D(1, 0, 0, 0, 8, 0, 0, 0, 13, 4, 9, 11)
