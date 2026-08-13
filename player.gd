@@ -33,10 +33,10 @@ var aim_tween: Tween
 @export var mesh_turn_speed: float = 10.0
 var last_world_facing_angle: float = 0.0
 
-@onready var element_ui = $"CanvasLayer/Elements UI"
-@onready var water_icon: TextureButton = $"CanvasLayer/Elements UI/HBoxContainer/water"
-@onready var fire_icon: TextureButton = $"CanvasLayer/Elements UI/HBoxContainer/fire"
-@onready var earth_icon: TextureButton = $"CanvasLayer/Elements UI/HBoxContainer/earth"
+@onready var element_ui = $"CanvasLayer2/Elements UI"
+@onready var water_icon: TextureButton = $"CanvasLayer2/Elements UI/HBoxContainer/water"
+@onready var fire_icon: TextureButton = $"CanvasLayer2/Elements UI/HBoxContainer/fire"
+@onready var earth_icon: TextureButton = $"CanvasLayer2/Elements UI/HBoxContainer/earth"
 @onready var water_normal_tex = water_icon.texture_normal
 @onready var fire_normal_tex = fire_icon.texture_normal
 @onready var earth_normal_tex = earth_icon.texture_normal
@@ -49,6 +49,15 @@ var fireball_scene = preload("res://fireball.tscn")
 var earthwall_scene = preload("res://earth_wall.tscn")
 
 @export var element_ui_offset: Vector3 = Vector3(0, 1.5, 0)
+@onready var selected_icon = $CanvasLayer2/selected_ui
+@onready var selected_icon_text = $CanvasLayer2/selected_ui/TextureRect
+@onready var water_icon_text = load("res://Icons/WaterActive.png")
+@onready var fire_icon_text = load("res://Icons/FireActive.png")
+@onready var earth_icon_text = load("res://Icons/EarthActive.png")
+
+var longest_offset = 1.5
+var shortest_offset = 1.1
+
 
 enum elements {
 	water,
@@ -117,6 +126,7 @@ func _physics_process(delta: float) -> void:
 	_cast_lenght()
 	_elements_ui()
 	_update_elements_ui_position()
+	_selected_elements_icon()
 
 	_set_state(states.aiming if Input.is_action_pressed("aim") else states.default)
 
@@ -169,10 +179,13 @@ func _selection_display():
 
 func _change_power():
 	if Input.is_action_pressed("change element"):
-		Engine.time_scale = element_change_time_scale
+		Engine.time_scale =1
 		if element_ui_tween:
 			element_ui_tween.kill()
 		element_ui_tween = create_tween()
+		element_ui_tween.set_parallel(true)
+		
+		element_ui_tween.tween_property(selected_icon, "modulate:a", 0, aim_tween_legnht)
 		element_ui_tween.tween_property(element_ui, "modulate:a", 1, aim_tween_legnht)
 
 		if Input.is_action_just_pressed("scroll_up"):
@@ -185,6 +198,9 @@ func _change_power():
 		if element_ui_tween:
 			element_ui_tween.kill()
 		element_ui_tween = create_tween()
+		element_ui_tween.set_parallel(true)
+		
+		element_ui_tween.tween_property(selected_icon, "modulate:a", 1, aim_tween_legnht)
 		element_ui_tween.tween_property(element_ui, "modulate:a", 0, aim_tween_legnht)
 
 
@@ -247,7 +263,8 @@ func _camera_state():
 			aim_tween.tween_property(crosshair, "modulate:a", 0, aim_tween_legnht)
 			aim_tween.tween_property(camerapoint, "position", Vector3.ZERO, aim_tween_legnht)
 			aim_tween.tween_property(springarm, "spring_length", default_spring_length, aim_tween_legnht)
-
+	
+	element_ui_offset.y = shortest_offset + (springarm.spring_length - aim_spring_length) * (longest_offset - shortest_offset) / (default_spring_length - aim_spring_length)
 
 func _update_wall_indicator():
 	if not wall_indicator.is_inside_tree():
@@ -362,13 +379,6 @@ func _update_animation_state() -> void:
 	is_moving = horizontal_speed > 0.1
 	is_grounded = is_on_floor()
 
-	if anim_tree:
-		pass
-		# anim_tree.set("parameters/Move/blend_position", move_speed_ratio)
-		# anim_tree.set("parameters/conditions/is_grounded", is_grounded)
-		# anim_tree.set("parameters/conditions/is_aiming", is_aiming)
-		# anim_tree.set("parameters/Selection/blend_position", selection)
-
 func _update_elements_ui_position() -> void:
 	var world_pos = global_position + element_ui_offset
 
@@ -379,3 +389,29 @@ func _update_elements_ui_position() -> void:
 	element_ui.visible = true
 	var screen_pos = camera.unproject_position(world_pos)
 	element_ui.position = screen_pos - (element_ui.size / 2.0)
+
+func _selected_elements_icon() -> void:
+	var world_pos = global_position + element_ui_offset
+	
+	match selection:
+		elements.water:
+			selected_icon_text.texture = water_icon_text
+		elements.fire:
+			selected_icon_text.texture = fire_icon_text
+		elements.earth:
+			selected_icon_text.texture = earth_icon_text
+	
+	if camera.is_position_behind(world_pos):
+		selected_icon.visible = false
+		return
+
+	selected_icon.visible = true
+	var screen_pos = camera.unproject_position(world_pos)
+	selected_icon.position = screen_pos - (selected_icon.size / 2.0)
+
+	if anim_tree:
+		pass
+		# anim_tree.set("parameters/Move/blend_position", move_speed_ratio)
+		# anim_tree.set("parameters/conditions/is_grounded", is_grounded)
+		# anim_tree.set("parameters/conditions/is_aiming", is_aiming)
+		# anim_tree.set("parameters/Selection/blend_position", selection)

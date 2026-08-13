@@ -49,6 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.792579, 1.1859, -0.677856)
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42485, 0)
+visible = false
 billboard = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -65,6 +66,78 @@ margin = 0.5
 
 [node name="RayCast3D" type="RayCast3D" parent="camera point/SpringArm3D/Camera3D"]
 transform = Transform3D(1, 0.000113591, -0.000140877, -0.000140846, -0.000338703, -1, -0.00011363, 1, -0.00033869, 0, 0, 0)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Elements UI" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/Elements UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -185.0
+offset_right = 2680.0
+offset_bottom = 815.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.213167, 0.207023)
+size_flags_horizontal = 4
+
+[node name="water" type="TextureButton" parent="CanvasLayer2/Elements UI/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_5enqi")
+texture_hover = ExtResource("4_8v1cs")
+stretch_mode = 0
+
+[node name="fire" type="TextureButton" parent="CanvasLayer2/Elements UI/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_os2xl")
+texture_hover = ExtResource("6_cx4s4")
+stretch_mode = 0
+
+[node name="earth" type="TextureButton" parent="CanvasLayer2/Elements UI/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_84xnk")
+texture_hover = ExtResource("8_mmloc")
+stretch_mode = 0
+
+[node name="selected_ui" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/selected_ui"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -64.0
+offset_right = 961.0
+offset_bottom = 936.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.0783706, 0.0746698)
+texture = ExtResource("6_cx4s4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -98,45 +171,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_onrkg")
 expand_mode = 1
-
-[node name="Elements UI" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-size_flags_horizontal = 4
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Elements UI"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -337.0
-offset_top = -134.0
-offset_right = 2671.0
-offset_bottom = 866.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.213167, 0.207023)
-size_flags_horizontal = 4
-
-[node name="water" type="TextureButton" parent="CanvasLayer/Elements UI/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("3_5enqi")
-texture_hover = ExtResource("4_8v1cs")
-stretch_mode = 0
-
-[node name="fire" type="TextureButton" parent="CanvasLayer/Elements UI/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("5_os2xl")
-texture_hover = ExtResource("6_cx4s4")
-stretch_mode = 0
-
-[node name="earth" type="TextureButton" parent="CanvasLayer/Elements UI/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("7_84xnk")
-texture_hover = ExtResource("8_mmloc")
-stretch_mode = 0
 
 [node name="HurtBox" type="Area3D" parent="."]
 collision_layer = 2
