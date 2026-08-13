@@ -30,6 +30,7 @@ window/size/viewport_height=1080
 [file_customization]
 
 folder_colors={
+"res://Environmental_Assets/": "teal",
 "res://level component/": "red",
 "res://level component/Grass Blocks/": "yellow",
 "res://level component/Rock Blocks/": "yellow"
