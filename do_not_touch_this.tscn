@@ -48,7 +48,6 @@ directional_shadow_mode = 1
 sky_mode = 1
 
 [node name="PixelShader" type="CanvasLayer" parent="."]
-layer = 0
 
 [node name="ColorRect" type="ColorRect" parent="PixelShader"]
 material = SubResource("ShaderMaterial_b1f4k")
@@ -77,9 +76,6 @@ sky_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85849, 0, -6.67371)
 use_collision = true
 size = Vector3(62.3242, 1, 59.9285)
-
-[node name="player" parent="." instance=ExtResource("1_5dnvj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.5326, -15.5398)
 
 [node name="Lantern" parent="." instance=ExtResource("4_yb07g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1236, 0.537674, -3.75221)
@@ -129,5 +125,8 @@ transform = Transform3D(2.01489, 0, 0, 0, 4.58126, 0, 0, 0, 1, -4.31036, 10.0053
 
 [node name="earth_wall" parent="." instance=ExtResource("13_e10v3")]
 transform = Transform3D(-5.96046e-08, 1, 0, -1, -5.96046e-08, 0, 0, 0, 1, -3.24202, 7.413, -10.0528)
+
+[node name="player" parent="." instance=ExtResource("1_5dnvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1645, 1.5, 12.8317)
 
 [editable path="Checkpoint"]

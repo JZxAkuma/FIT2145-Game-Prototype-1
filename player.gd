@@ -55,6 +55,8 @@ var earthwall_scene = preload("res://earth_wall.tscn")
 @onready var fire_icon_text = load("res://Icons/FireActive.png")
 @onready var earth_icon_text = load("res://Icons/EarthActive.png")
 
+@export var test_element_change_system = false
+
 var longest_offset = 1.5
 var shortest_offset = 1.1
 
@@ -125,8 +127,16 @@ func _physics_process(delta: float) -> void:
 	_camera_state()
 	_cast_lenght()
 	_elements_ui()
+
+	$CanvasLayer2/selected_ui.show()
+	$"CanvasLayer2/Elements UI".show()
+		
 	_update_elements_ui_position()
 	_selected_elements_icon()
+	_change_power()
+	_selection_display()
+	
+	
 
 	_set_state(states.aiming if Input.is_action_pressed("aim") else states.default)
 
@@ -134,8 +144,7 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("shoot") and castline.is_colliding():
 			_cast_selection()
 
-	_change_power()
-	_selection_display()
+	
 	_cast_detection()
 
 	if not is_on_floor():
@@ -183,13 +192,22 @@ func _change_power():
 		if element_ui_tween:
 			element_ui_tween.kill()
 		element_ui_tween = create_tween()
+		element_ui_tween.set_parallel(true)
 		
 		element_ui_tween.tween_property(element_ui, "modulate:a", 1, aim_tween_legnht)
+		element_ui_tween.tween_property(selected_icon, "modulate:a", 0, aim_tween_legnht)
 
 		if Input.is_action_just_pressed("scroll_up"):
 			_set_selection((selection + 1) % elements.size())
 		if Input.is_action_just_pressed("scroll_down"):
 			_set_selection((selection - 1 + elements.size()) % elements.size())
+		
+		if Input.is_action_just_pressed("controller_water"):
+			_set_selection(elements.water)
+		if Input.is_action_just_pressed("controller_fire"):
+			_set_selection(elements.fire)
+		if Input.is_action_just_pressed("controller_earth"):
+			_set_selection(elements.earth)
 
 	else:
 		Engine.time_scale = 1
@@ -197,6 +215,7 @@ func _change_power():
 			element_ui_tween.kill()
 		element_ui_tween = create_tween()
 		
+		element_ui_tween.set_parallel(true)
 		element_ui_tween.tween_property(element_ui, "modulate:a", 0, aim_tween_legnht)
 
 
@@ -204,9 +223,10 @@ func _cast_selection():
 	match selection:
 		elements.water:
 			_spawn_projectile(waterball_scene)
-
+			Input.start_joy_vibration(0,0.5,0,0.1)
 		elements.fire:
 			_spawn_projectile(fireball_scene)
+			Input.start_joy_vibration(0,0,0.5,0.1)
 
 		elements.earth:
 			var target = castline.get_collider()
@@ -228,6 +248,7 @@ func _spawn_projectile(scene: PackedScene):
 		projectile.target_position = castline.get_collision_point()
 	else:
 		projectile.target_position = castline.global_position + (-castline.global_transform.basis.z * 100)
+	
 
 
 func _cast_lenght():
@@ -343,7 +364,6 @@ func _elements_ui():
 	water_icon.texture_normal = water_icon.texture_hover if selection == elements.water else water_normal_tex
 	fire_icon.texture_normal = fire_icon.texture_hover if selection == elements.fire else fire_normal_tex
 	earth_icon.texture_normal = earth_icon.texture_hover if selection == elements.earth else earth_normal_tex
-
 
 func _update_mesh_rotation(delta: float, direction: Vector3) -> void:
 	var target_rotation_y: float

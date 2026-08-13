@@ -26,9 +26,11 @@ func _process(delta: float) -> void:
 				self.queue_free()
 
 		states.erecting:
+			Input.start_joy_vibration(0,0.5,0.5)
 			self.scale.y += erect_speed * delta
 			if self.scale.y >= 1:
 				self.scale.y = 1
+				Input.stop_joy_vibration(0)
 				state = states.dry
 
 	$Label3D.text = str(states.keys()[state])

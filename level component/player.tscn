@@ -32,6 +32,7 @@ controller_sens = 5.0
 controller_aim_sens = 1.0
 aim_spring_length = 1.5
 default_spring_length = 7.0
+test_element_change_system = true
 
 [node name="Player_mesh" type="Node3D" parent="."]
 
@@ -130,13 +131,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.0
-offset_top = -64.0
-offset_right = 961.0
-offset_bottom = 936.0
+offset_left = -67.0
+offset_top = -109.0
+offset_right = 933.0
+offset_bottom = 891.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.0783706, 0.0746698)
+scale = Vector2(0.126329, 0.120363)
 texture = ExtResource("6_cx4s4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
