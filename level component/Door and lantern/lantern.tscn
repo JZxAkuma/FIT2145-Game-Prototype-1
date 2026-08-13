@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dead6clwniio3"]
+[gd_scene load_steps=11 format=4 uid="uid://dead6clwniio3"]
 
 [ext_resource type="Material" uid="uid://dwa06qewrvp0n" path="res://Environmental_Assets/Pack1/AssetPack1Material.tres" id="1_qo53s"]
 [ext_resource type="Script" uid="uid://c1nj83g0mysad" path="res://level component/Door and lantern/lantern.gd" id="1_vphlf"]
@@ -82,6 +82,9 @@ size = Vector3(1.32123, 1.06494, 1.31396)
 
 [sub_resource type="SphereMesh" id="SphereMesh_vphlf"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_vphlf"]
+size = Vector3(0.986084, 1.25879, 0.995605)
+
 [node name="Lantern" type="StaticBody3D" groups=["lantern"]]
 script = ExtResource("1_vphlf")
 
@@ -105,3 +108,9 @@ shape = SubResource("BoxShape3D_e6xen")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.653328, 2.0562, 0.623964)
 emitting = false
 mesh = SubResource("SphereMesh_vphlf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.30247, 0, 0, 0, 1.30247, 0, 0, 0, 1.30247, 0.654572, 0.850292, 0.623568)
+shape = SubResource("BoxShape3D_vphlf")

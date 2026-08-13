@@ -2928,7 +2928,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_bh8nc")
 
 [node name="Mushroom" parent="." instance=ExtResource("23_wjb0r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.57761, 0.257047, -24.1056)
-bounce_velocity = 10
 
 [node name="CloseMountains" parent="." instance=ExtResource("23_4h6ng")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8364, 0)

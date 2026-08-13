@@ -29,6 +29,7 @@ states/Start/position = Vector2(344, 134)
 script = ExtResource("1_4flbx")
 JUMP_VELOCITY = 7.0
 controller_sens = 5.0
+controller_aim_sens = 1.0
 aim_spring_length = 1.5
 default_spring_length = 7.0
 

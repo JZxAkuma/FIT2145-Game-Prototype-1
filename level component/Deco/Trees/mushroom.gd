@@ -2,7 +2,7 @@ extends StaticBody3D
 
 @onready var big_cap = $"Big Cap/BigCap"
 @onready var small_cap = $"Small cap/SmallCap"
-@export var bounce_velocity = 10
+var bounce_velocity = 11
 var big_cap_tween : Tween
 @export var bounce_scale = 0.8
 # Called when the node enters the scene tree for the first time.
@@ -26,5 +26,6 @@ func _on_big_cap_body_entered(body: Node3D) -> void:
 
 
 func _bounce(player: Node3D):
+	player.velocity.y = 0
 	player.velocity.y = bounce_velocity
 	
