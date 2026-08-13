@@ -183,9 +183,7 @@ func _change_power():
 		if element_ui_tween:
 			element_ui_tween.kill()
 		element_ui_tween = create_tween()
-		element_ui_tween.set_parallel(true)
 		
-		element_ui_tween.tween_property(selected_icon, "modulate:a", 0, aim_tween_legnht)
 		element_ui_tween.tween_property(element_ui, "modulate:a", 1, aim_tween_legnht)
 
 		if Input.is_action_just_pressed("scroll_up"):
@@ -198,9 +196,7 @@ func _change_power():
 		if element_ui_tween:
 			element_ui_tween.kill()
 		element_ui_tween = create_tween()
-		element_ui_tween.set_parallel(true)
 		
-		element_ui_tween.tween_property(selected_icon, "modulate:a", 1, aim_tween_legnht)
 		element_ui_tween.tween_property(element_ui, "modulate:a", 0, aim_tween_legnht)
 
 
@@ -255,11 +251,13 @@ func _camera_state():
 
 	match state:
 		states.aiming:
+			aim_tween.tween_property(selected_icon, "modulate:a", 1, aim_tween_legnht)
 			aim_tween.tween_property(crosshair, "modulate:a", 1, aim_tween_legnht)
 			aim_tween.tween_property(camerapoint, "position", aim_camera_pos, aim_tween_legnht)
 			aim_tween.tween_property(springarm, "spring_length", aim_spring_length, aim_tween_legnht)
 
 		states.default:
+			aim_tween.tween_property(selected_icon, "modulate:a", 0, aim_tween_legnht)
 			aim_tween.tween_property(crosshair, "modulate:a", 0, aim_tween_legnht)
 			aim_tween.tween_property(camerapoint, "position", Vector3.ZERO, aim_tween_legnht)
 			aim_tween.tween_property(springarm, "spring_length", default_spring_length, aim_tween_legnht)
