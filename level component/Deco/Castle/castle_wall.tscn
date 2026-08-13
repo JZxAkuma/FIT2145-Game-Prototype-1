@@ -48,11 +48,11 @@ size = Vector3(10.6655, 2.28717, 0.89209)
 [node name="castle wall" type="StaticBody3D"]
 
 [node name="RockWall" type="MeshInstance3D" parent="."]
-transform = Transform3D(1028.57, 0, 0, 0, 229.362, 0, 0, 0, 52.7822, 5.32978, 1.15357, 0.490567)
+transform = Transform3D(1026.48, 0, 0, 0, 228.895, 0, 0, 0, 52.6748, 5.32978, 1.15356, 0.490573)
 material_override = ExtResource("1_tdpjd")
 mesh = SubResource("ArrayMesh_dxm0l")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.32535, 1.13968, 0.496338)
+transform = Transform3D(0.997965, 0, 0, 0, 0.997965, 0, 0, 0, 0.997965, 5.32535, 1.13969, 0.496332)
 shape = SubResource("BoxShape3D_tdpjd")
