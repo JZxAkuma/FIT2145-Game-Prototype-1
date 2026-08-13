@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://fiqtqeg3x8sk"]
+[gd_scene load_steps=16 format=3 uid="uid://fiqtqeg3x8sk"]
 
 [ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="1_os4bw"]
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="2_5ii16"]
@@ -8,7 +8,9 @@
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="6_tab02"]
 [ext_resource type="Texture2D" uid="uid://5rxpnkcqrtao" path="res://Environmental_Assets/Skybox.png" id="7_p5lns"]
 [ext_resource type="Shader" uid="uid://yco8p8a5gjbo" path="res://Environmental_Assets/Pixelation.gdshader" id="8_ayxjy"]
+[ext_resource type="PackedScene" uid="uid://dvtafyqvs75ib" path="res://level component/Grass Blocks/grass_block_bevel_rim.tscn" id="8_yybeu"]
 [ext_resource type="PackedScene" uid="uid://cca0v3u6pvybl" path="res://level component/death_box.tscn" id="9_p5lns"]
+[ext_resource type="PackedScene" uid="uid://chgqcc2cl1grc" path="res://level component/Grass Blocks/grass_block_bevel_top.tscn" id="10_m7pm6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yybeu"]
 shader = ExtResource("6_tab02")
@@ -40,15 +42,6 @@ transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107
 [node name="castle wall" parent="." instance=ExtResource("3_5ii16")]
 transform = Transform3D(1, 0, 0, 0, 4.092, 0, 0, 0, 1, 0.441759, 0.732186, 5.93958)
 
-[node name="grass_block_no_bevel" parent="." instance=ExtResource("4_le0xd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -1)
-
-[node name="Grass block Bevel Bottom2" parent="." instance=ExtResource("1_os4bw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -1)
-
-[node name="grass_block_bevel_sides" parent="." instance=ExtResource("5_nvumb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 10)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m7pm6")
 
@@ -75,3 +68,18 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Death Box" parent="." instance=ExtResource("9_p5lns")]
 transform = Transform3D(213.15, 0, 0, 0, 1, 0, 0, 0, 220.8, 0, -3, 0)
+
+[node name="Grass block Bevel Bottom3" parent="." instance=ExtResource("1_os4bw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="grass_block_bevel_rim" parent="." instance=ExtResource("8_yybeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="grass_block_bevel_sides2" parent="." instance=ExtResource("5_nvumb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="grass_block_bevel_top" parent="." instance=ExtResource("10_m7pm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="grass_block_no_bevel" parent="." instance=ExtResource("4_le0xd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)

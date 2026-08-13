@@ -30,7 +30,8 @@ window/size/viewport_height=1080
 [file_customization]
 
 folder_colors={
-"res://level component/": "red"
+"res://level component/": "red",
+"res://level component/Grass Blocks/": "yellow"
 }
 
 [global_group]
