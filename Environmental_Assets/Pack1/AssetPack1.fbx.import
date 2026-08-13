@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/AssetPack1.fbx-09157df6f117057f20a374ab4f96a0
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="Node3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=100.0
