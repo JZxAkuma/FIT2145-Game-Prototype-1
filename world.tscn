@@ -1,4 +1,4 @@
-[gd_scene load_steps=167 format=4 uid="uid://bp06nnjfpsxbw"]
+[gd_scene load_steps=166 format=4 uid="uid://bp06nnjfpsxbw"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://5rxpnkcqrtao" path="res://Environmental_Assets/Skybox.png" id="2_ioo17"]
@@ -28,8 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://daddx783lvspy" path="res://Environmental_Assets/BackDrop/DistantMountains_standardSurface1_BaseColor.png" id="24_bo7i5"]
 [ext_resource type="Texture2D" uid="uid://ktwm3opux8w8" path="res://Environmental_Assets/CloseMountains/CloseMountains_Grassy (1).png" id="24_o3ebs"]
 [ext_resource type="Texture2D" uid="uid://bivg20dce5afp" path="res://Environmental_Assets/CloseMountains/CloseMountains_Rocky.png" id="25_k83mh"]
-[ext_resource type="PackedScene" uid="uid://b7duvifqvhhtx" path="res://Environmental_Assets/MobyPropVersion/MobyProp.fbx" id="25_qktwf"]
-[ext_resource type="Material" uid="uid://be7o2iqhqd43h" path="res://Character_Assets/MobyTexture.tres" id="26_qktwf"]
+[ext_resource type="PackedScene" uid="uid://cjpdnm3o6nrrm" path="res://level component/Deco/moby_prop.tscn" id="29_k83mh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ic0uy"]
 shader = ExtResource("2_wse8f")
@@ -2891,36 +2890,6 @@ mesh = SubResource("ArrayMesh_5jgt6")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_bh8nc")
 
-[node name="MobyProp" parent="." instance=ExtResource("25_qktwf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.2982, 0.49268, -32.6402)
-
-[node name="Tail1" parent="MobyProp/MobyProp/Tail" index="0"]
-material_override = ExtResource("26_qktwf")
-
-[node name="Tail2" parent="MobyProp/MobyProp/Tail" index="1"]
-material_override = ExtResource("26_qktwf")
-
-[node name="Thorax" parent="MobyProp/MobyProp/BodyGroup" index="0"]
-material_override = ExtResource("26_qktwf")
-
-[node name="Abdomen" parent="MobyProp/MobyProp/BodyGroup" index="1"]
-material_override = ExtResource("26_qktwf")
-
-[node name="Head" parent="MobyProp/MobyProp/HeadGroup" index="0"]
-material_override = ExtResource("26_qktwf")
-
-[node name="RightAntenna" parent="MobyProp/MobyProp/HeadGroup" index="1"]
-material_override = ExtResource("26_qktwf")
-
-[node name="LeftAntenna" parent="MobyProp/MobyProp/HeadGroup" index="2"]
-material_override = ExtResource("26_qktwf")
-
-[node name="RightEye" parent="MobyProp/MobyProp/HeadGroup" index="3"]
-material_override = ExtResource("26_qktwf")
-
-[node name="LeftEye" parent="MobyProp/MobyProp/HeadGroup" index="4"]
-material_override = ExtResource("26_qktwf")
-
 [node name="WallsDemoTest4" type="Node3D" parent="."]
 transform = Transform3D(-0.833992, 0, -0.551777, 0, 1, 0, 0.551777, 0, -0.833992, -34.6521, -3.44584, -6.00761)
 
@@ -3015,7 +2984,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8364, 0)
 transform = Transform3D(14022.6, 0, -26333.8, 0, 12630.5, 0, 26333.8, 0, 14022.6, 0, 43.1096, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_o3ebs")
 
-[editable path="MobyProp"]
+[node name="MobyProp" parent="." instance=ExtResource("29_k83mh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8041, -0.416674, -31.4549)
+
 [editable path="CloseMountains"]
 [editable path="DistantMountains"]
 [editable path="DistantMountains2"]
