@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://fiqtqeg3x8sk"]
+[gd_scene load_steps=28 format=3 uid="uid://fiqtqeg3x8sk"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_ef6fe"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="2_7xy2x"]
@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://goasctnx4yg3" path="res://level component/Deco/Trees/Pine/pine_tree_big.tscn" id="19_6iedy"]
 [ext_resource type="PackedScene" uid="uid://cctneuw004bw7" path="res://level component/Deco/Trees/Pine/pine_tree_small.tscn" id="20_rw3xk"]
 [ext_resource type="PackedScene" uid="uid://btv50087nq4jk" path="res://level component/Deco/Wood/wood_fences.tscn" id="21_hictx"]
+[ext_resource type="PackedScene" uid="uid://bdkrj3i614fqb" path="res://level component/Rock Blocks/rock_block_bevel_bottom.tscn" id="22_7xy2x"]
+[ext_resource type="PackedScene" uid="uid://coyj86rw84xir" path="res://level component/Rock Blocks/rock_block_bevel_sides.tscn" id="23_wwjdc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yybeu"]
 shader = ExtResource("2_7xy2x")
@@ -325,3 +327,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 9, 18)
 
 [node name="Wood Fences2" parent="." instance=ExtResource("21_hictx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 24)
+
+[node name="rock block bevel bottom" parent="." instance=ExtResource("22_7xy2x")]
+transform = Transform3D(6.30373, 0, 0, 0, 4.07976, 0, 0, 0, 1, 25.2163, 0.199903, 0.57854)
+
+[node name="rock_block_bevel_sides" parent="." instance=ExtResource("23_wwjdc")]
+transform = Transform3D(3.92241, 0, 0, 0, 1.0055, 0, 0, 0, 1.0055, 27.3412, 0.575439, 1.57854)
+
+[node name="rock block bevel bottom2" parent="." instance=ExtResource("22_7xy2x")]
+transform = Transform3D(30.5758, 0, 0, 0, 1.26844, 0, 0, 0, 1.22645, 6.78203, 7, 10.3242)
+
+[node name="rock block bevel bottom3" parent="." instance=ExtResource("22_7xy2x")]
+transform = Transform3D(6.08447, 0, 0, 0, 1.2208, 0, 0, 0, 1, 0.319323, 6.91241, 10.5269)
