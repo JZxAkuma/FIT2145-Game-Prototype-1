@@ -182,7 +182,13 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.6425
 transform = Transform3D(8, 0, 0, 0, 4, 0, 0, 0, 1, 31, 13, 24)
 
 [node name="grass_block_no_bevel16" parent="." instance=ExtResource("6_5ylc0")]
-transform = Transform3D(18, 0, 0, 0, 6, 0, 0, 0, 1, 5, 13, 24)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 1, 5, 13, 24)
+
+[node name="grass_block_no_bevel17" parent="." instance=ExtResource("6_5ylc0")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 1, 11, 13, 24)
+
+[node name="grass_block_no_bevel18" parent="." instance=ExtResource("6_5ylc0")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 1, 17, 13, 24)
 
 [node name="earth_wall4" parent="." instance=ExtResource("11_ceggk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 13, 18)
