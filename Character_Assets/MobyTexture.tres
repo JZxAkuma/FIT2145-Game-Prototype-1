@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://be7o2iqhqd43h"]
+
+[ext_resource type="Texture2D" uid="uid://dv4yxj1bnndoj" path="res://Character_Assets/MobyRig_0.png" id="1_8nj8e"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_8nj8e")
