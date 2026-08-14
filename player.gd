@@ -24,7 +24,7 @@ var sens = 0.5
 
 @onready var anim_tree: AnimationTree = $AnimationTree
 
-@export var aim_camera_pos: Vector3 = Vector3(0.969, 0.792, 0.0)
+@export var aim_camera_pos: Vector3 = Vector3(0.969, 0.9, 0.0)
 @export var aim_spring_length: float = 2.0
 @export var default_spring_length: float = 5.0
 @export var aim_tween_legnht: float = 0.1
@@ -59,6 +59,8 @@ var earthwall_scene = preload("res://earth_wall.tscn")
 
 var longest_offset = 1.5
 var shortest_offset = 1.1
+
+
 
 var camera_swap = false
 enum elements {
@@ -276,12 +278,14 @@ func _camera_state():
 
 	match state:
 		states.aiming:
+			#aim_tween.tween_property(mat,"albedo_color:a",57,aim_tween_legnht)
 			aim_tween.tween_property(selected_icon, "modulate:a", 1, aim_tween_legnht)
 			aim_tween.tween_property(crosshair, "modulate:a", 1, aim_tween_legnht)
 			aim_tween.tween_property(camerapoint, "position", aim_camera_pos, aim_tween_legnht)
 			aim_tween.tween_property(springarm, "spring_length", aim_spring_length, aim_tween_legnht)
 
 		states.default:
+			#aim_tween.tween_property(mat,"albedo_color:a",255,aim_tween_legnht)
 			aim_tween.tween_property(selected_icon, "modulate:a", 0, aim_tween_legnht)
 			aim_tween.tween_property(crosshair, "modulate:a", 0, aim_tween_legnht)
 			aim_tween.tween_property(camerapoint, "position", Vector3.ZERO, aim_tween_legnht)

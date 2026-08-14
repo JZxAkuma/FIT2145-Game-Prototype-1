@@ -1,0 +1,336 @@
+[gd_scene load_steps=26 format=3 uid="uid://dhiy5eean2ge3"]
+
+[ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="2_5ii16"]
+[ext_resource type="PackedScene" uid="uid://l45nsc3pipaj" path="res://level component/Deco/Castle/castle_wall.tscn" id="3_5ii16"]
+[ext_resource type="PackedScene" uid="uid://d31a4mjnbjw41" path="res://level component/Grass Blocks/grass_block_no_bevel.tscn" id="4_le0xd"]
+[ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="6_tab02"]
+[ext_resource type="Texture2D" uid="uid://5rxpnkcqrtao" path="res://Environmental_Assets/Skybox.png" id="7_p5lns"]
+[ext_resource type="Shader" uid="uid://yco8p8a5gjbo" path="res://Environmental_Assets/Pixelation.gdshader" id="8_ayxjy"]
+[ext_resource type="PackedScene" uid="uid://ce8xcoegr1xsj" path="res://level component/Rock Blocks/rock_block_bevel_rim.tscn" id="8_m7pm6"]
+[ext_resource type="PackedScene" uid="uid://gcthslii3g5a" path="res://level component/Deco/Castle/castle_tower.tscn" id="8_p5lns"]
+[ext_resource type="PackedScene" uid="uid://dvtafyqvs75ib" path="res://level component/Grass Blocks/grass_block_bevel_rim.tscn" id="8_yybeu"]
+[ext_resource type="PackedScene" uid="uid://cca0v3u6pvybl" path="res://level component/death_box.tscn" id="9_p5lns"]
+[ext_resource type="PackedScene" uid="uid://urioemqqu7sh" path="res://level component/Rock Blocks/rock_block_no_bevel.tscn" id="11_ay5la"]
+[ext_resource type="PackedScene" uid="uid://3l83r27r00a7" path="res://earth_wall.tscn" id="11_yybeu"]
+[ext_resource type="PackedScene" uid="uid://yuudxo5edidq" path="res://level component/Door and lantern/door.tscn" id="12_rl1io"]
+[ext_resource type="PackedScene" uid="uid://bdkerhb0b85q2" path="res://level component/Deco/bush.tscn" id="14_mf4pl"]
+[ext_resource type="PackedScene" uid="uid://bvsuboh5lviut" path="res://level component/Deco/tulip.tscn" id="15_vn2tu"]
+[ext_resource type="PackedScene" uid="uid://v245p8f6nnsr" path="res://level component/Deco/rock.tscn" id="16_5crmc"]
+[ext_resource type="PackedScene" uid="uid://1v3yumh8vrod" path="res://level component/Deco/Trees/palm_tree.tscn" id="17_ugmg2"]
+[ext_resource type="PackedScene" uid="uid://bui78i54bg7k4" path="res://level component/Deco/Trees/mushroom.tscn" id="18_taa3r"]
+[ext_resource type="PackedScene" uid="uid://goasctnx4yg3" path="res://level component/Deco/Trees/Pine/pine_tree_big.tscn" id="19_6fre4"]
+[ext_resource type="PackedScene" uid="uid://cctneuw004bw7" path="res://level component/Deco/Trees/Pine/pine_tree_small.tscn" id="20_al6ok"]
+[ext_resource type="PackedScene" uid="uid://btv50087nq4jk" path="res://level component/Deco/Wood/wood_fences.tscn" id="21_vn2tu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yybeu"]
+shader = ExtResource("6_tab02")
+shader_parameter/sky_texture = ExtResource("7_p5lns")
+
+[sub_resource type="Sky" id="Sky_il2jm"]
+sky_material = SubResource("ShaderMaterial_yybeu")
+
+[sub_resource type="Environment" id="Environment_m7pm6"]
+background_mode = 2
+background_color = Color(0.840869, 1, 0.97624, 1)
+sky = SubResource("Sky_il2jm")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rl1io"]
+shader = ExtResource("8_ayxjy")
+shader_parameter/pixel_size = 4.0
+shader_parameter/color_levels = 16.0
+
+[node name="Earth_Tutorial" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource("2_5ii16")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 2, 2, 2)
+jump_cut_multiplier = 0.5
+default_sens = 0.5
+aim_sens = 0.3
+controller_deadzone = 0.15
+aim_camera_pos = Vector3(0.969, 0.9, 0)
+aim_tween_legnht = 0.1
+mesh_turn_speed = 10.0
+element_change_time_scale = 0.2
+element_ui_offset = Vector3(0, 1.5, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_m7pm6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.483894, 0.875127, 0, -0.875127, -0.483894, 0.0366631, 9.38525, -0.0746479)
+light_color = Color(0.999998, 0.999612, 0.719504, 1)
+light_energy = 2.0
+shadow_enabled = true
+directional_shadow_mode = 1
+sky_mode = 1
+
+[node name="PixelShader" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="PixelShader"]
+material = SubResource("ShaderMaterial_rl1io")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Death Box" parent="." instance=ExtResource("9_p5lns")]
+transform = Transform3D(213.15, 0, 0, 0, 1, 0, 0, 0, 220.8, 0, -3, 0)
+
+[node name="grass_block_no_bevel" parent="." instance=ExtResource("4_le0xd")]
+transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, -9)
+
+[node name="grass_block_no_bevel9" parent="." instance=ExtResource("4_le0xd")]
+transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 14, 0, 8, 11)
+
+[node name="castle wall" parent="." instance=ExtResource("3_5ii16")]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 20, 1, 9)
+
+[node name="castle wall2" parent="." instance=ExtResource("3_5ii16")]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 0, 1, 9)
+
+[node name="Castle Tower" parent="." instance=ExtResource("8_p5lns")]
+transform = Transform3D(-3, 0, 7.15295e-08, 0, 3, 0, -7.15295e-08, 0, -3, 9, 1, 11)
+
+[node name="grass_block_bevel_rim" parent="." instance=ExtResource("8_yybeu")]
+transform = Transform3D(6.03983e-07, 1.13999e-14, 1, -1.20797e-06, 1, 0, 8, 1.50996e-07, -7.54979e-08, 15, 1, -7)
+
+[node name="grass_block_no_bevel2" parent="." instance=ExtResource("4_le0xd")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 8, 16, 1, -7)
+
+[node name="grass_block_bevel_rim2" parent="." instance=ExtResource("8_yybeu")]
+transform = Transform3D(6.03983e-07, 1.13999e-14, 1, -1.20797e-06, 1, 0, 8, 1.50996e-07, -7.54979e-08, 20, 2, -7)
+
+[node name="grass_block_no_bevel3" parent="." instance=ExtResource("4_le0xd")]
+transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 8, 21, 1, -7)
+
+[node name="grass_block_bevel_rim3" parent="." instance=ExtResource("8_yybeu")]
+transform = Transform3D(6.03983e-07, 1.13999e-14, 1, -1.20797e-06, 1, 0, 8, 1.50996e-07, -7.54979e-08, 25, 4, -7)
+
+[node name="grass_block_no_bevel4" parent="." instance=ExtResource("4_le0xd")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 8, 26, 4, -7)
+
+[node name="grass_block_no_bevel6" parent="." instance=ExtResource("4_le0xd")]
+transform = Transform3D(8, 0, 0, 0, 1, 0, 0, 0, 17, 31, 8, -7)
+
+[node name="grass_block_no_bevel7" parent="." instance=ExtResource("4_le0xd")]
+transform = Transform3D(8, 0, 0, 0, 4, 0, 0, 0, 13, 31, 9, 11)
+
+[node name="grass_block_no_bevel8" parent="." instance=ExtResource("4_le0xd")]
+transform = Transform3D(4, 0, 0, 0, 8, 0, 0, 0, 13, 0, 9, 11)
+
+[node name="grass_block_no_bevel5" parent="." instance=ExtResource("4_le0xd")]
+transform = Transform3D(4, 0, 0, 0, 3, 0, 0, 0, 8, 25, 1, -7)
+
+[node name="rock_block_bevel_rim13" parent="." instance=ExtResource("8_m7pm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 30, 5, -3)
+
+[node name="rock_block_bevel_rim14" parent="." instance=ExtResource("8_m7pm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 30, 6, -3)
+
+[node name="rock_block_bevel_rim15" parent="." instance=ExtResource("8_m7pm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 30, 7, -3)
+
+[node name="rock_block_bevel_rim16" parent="." instance=ExtResource("8_m7pm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 30, 8, -3)
+
+[node name="rock_block_bevel_rim17" parent="." instance=ExtResource("8_m7pm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 30, 5, -7)
+
+[node name="rock_block_bevel_rim18" parent="." instance=ExtResource("8_m7pm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 30, 6, -7)
+
+[node name="rock_block_bevel_rim19" parent="." instance=ExtResource("8_m7pm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 30, 7, -7)
+
+[node name="rock_block_bevel_rim20" parent="." instance=ExtResource("8_m7pm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 30, 8, -7)
+
+[node name="rock_block_bevel_rim5" parent="." instance=ExtResource("8_m7pm6")]
+transform = Transform3D(-4.37114e-08, 0, -4, 0, 1, 0, 1, 0, -1.74846e-07, 39, 9, 10)
+
+[node name="rock_block_bevel_rim6" parent="." instance=ExtResource("8_m7pm6")]
+transform = Transform3D(-4.37114e-08, 0, -4, 0, 1, 0, 1, 0, -1.74846e-07, 39, 10, 10)
+
+[node name="rock_block_bevel_rim7" parent="." instance=ExtResource("8_m7pm6")]
+transform = Transform3D(-4.37114e-08, 0, -4, 0, 1, 0, 1, 0, -1.74846e-07, 39, 11, 10)
+
+[node name="rock_block_bevel_rim8" parent="." instance=ExtResource("8_m7pm6")]
+transform = Transform3D(-4.37114e-08, 0, -4, 0, 1, 0, 1, 0, -1.74846e-07, 39, 12, 10)
+
+[node name="rock_block_bevel_rim9" parent="." instance=ExtResource("8_m7pm6")]
+transform = Transform3D(5.96046e-08, 0, 4, 0, 1, 0, -1, 0, 2.38419e-07, 31, 9, 11)
+
+[node name="rock_block_bevel_rim10" parent="." instance=ExtResource("8_m7pm6")]
+transform = Transform3D(5.96046e-08, 0, 4, 0, 1, 0, -1, 0, 2.38419e-07, 31, 10, 11)
+
+[node name="rock_block_bevel_rim11" parent="." instance=ExtResource("8_m7pm6")]
+transform = Transform3D(5.96046e-08, 0, 4, 0, 1, 0, -1, 0, 2.38419e-07, 31, 11, 11)
+
+[node name="rock_block_bevel_rim12" parent="." instance=ExtResource("8_m7pm6")]
+transform = Transform3D(5.96046e-08, 0, 4, 0, 1, 0, -1, 0, 2.38419e-07, 31, 12, 11)
+
+[node name="earth_wall" parent="." instance=ExtResource("11_yybeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 5, -3)
+
+[node name="earth_wall2" parent="." instance=ExtResource("11_yybeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 9, -4)
+
+[node name="earth_wall3" parent="." instance=ExtResource("11_yybeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 9, 1)
+
+[node name="Door" parent="." instance=ExtResource("12_rl1io")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.64251, 17, 16)
+
+[node name="grass_block_no_bevel10" parent="." instance=ExtResource("4_le0xd")]
+transform = Transform3D(8, 0, 0, 0, 4, 0, 0, 0, 1, 31, 13, 24)
+
+[node name="grass_block_no_bevel16" parent="." instance=ExtResource("4_le0xd")]
+transform = Transform3D(18, 0, 0, 0, 6, 0, 0, 0, 1, 5, 13, 24)
+
+[node name="earth_wall4" parent="." instance=ExtResource("11_yybeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 13, 18)
+
+[node name="earth_wall5" parent="." instance=ExtResource("11_yybeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 13, 12)
+
+[node name="earth_wall6" parent="." instance=ExtResource("11_yybeu")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 38, 14, 24)
+
+[node name="earth_wall7" parent="." instance=ExtResource("11_yybeu")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 35, 16, 24)
+
+[node name="earth_wall8" parent="." instance=ExtResource("11_yybeu")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 23.4429, 16.4552, 24)
+
+[node name="rock_block_no_bevel" parent="." instance=ExtResource("11_ay5la")]
+transform = Transform3D(16, 0, 0, 0, 5, 0, 0, 0, 1, 23, 17, 24)
+
+[node name="rock_block_no_bevel2" parent="." instance=ExtResource("11_ay5la")]
+transform = Transform3D(26, 0, 0, 0, 4, 0, 0, 0, 1, 5, 9, 24)
+
+[node name="grass_block_no_bevel11" parent="." instance=ExtResource("4_le0xd")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 30, 14, 24)
+
+[node name="rock_block_no_bevel3" parent="." instance=ExtResource("11_ay5la")]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 30, 14, 24)
+
+[node name="rock_block_no_bevel12" parent="." instance=ExtResource("11_ay5la")]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 23, 13, 24)
+
+[node name="rock_block_no_bevel4" parent="." instance=ExtResource("11_ay5la")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 29, 15, 24)
+
+[node name="rock_block_no_bevel11" parent="." instance=ExtResource("11_ay5la")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 25, 13, 24)
+
+[node name="rock_block_no_bevel5" parent="." instance=ExtResource("11_ay5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 13, 24)
+
+[node name="rock_block_no_bevel10" parent="." instance=ExtResource("11_ay5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 16, 24)
+
+[node name="rock_block_no_bevel6" parent="." instance=ExtResource("11_ay5la")]
+transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 1, 28, 13, 24)
+
+[node name="rock_block_no_bevel9" parent="." instance=ExtResource("11_ay5la")]
+transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 1, 26, 13, 24)
+
+[node name="rock_block_no_bevel13" parent="." instance=ExtResource("11_ay5la")]
+transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 1, 24, 13, 24)
+
+[node name="grass_block_no_bevel12" parent="." instance=ExtResource("4_le0xd")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 29, 15, 24)
+
+[node name="rock_block_no_bevel7" parent="." instance=ExtResource("11_ay5la")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 27, 15, 24)
+
+[node name="rock_block_no_bevel8" parent="." instance=ExtResource("11_ay5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 13, 24)
+
+[node name="grass_block_no_bevel13" parent="." instance=ExtResource("4_le0xd")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 27, 15, 24)
+
+[node name="grass_block_no_bevel15" parent="." instance=ExtResource("4_le0xd")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 23, 17, 24)
+
+[node name="grass_block_no_bevel14" parent="." instance=ExtResource("4_le0xd")]
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, 25, 16, 24)
+
+[node name="rock_block_no_bevel14" parent="." instance=ExtResource("11_ay5la")]
+transform = Transform3D(1, 0, 0, 0, 8, 0, 0, 0, 13, 4, 9, 11)
+
+[node name="rock_block_no_bevel15" parent="." instance=ExtResource("11_ay5la")]
+transform = Transform3D(18, 0, 0, 0, 3, 0, 0, 0, 1, 5, 19, 24)
+
+[node name="bush" parent="." instance=ExtResource("14_mf4pl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, 5)
+
+[node name="Tulip" parent="." instance=ExtResource("15_vn2tu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 2, -3)
+
+[node name="Rock" parent="." instance=ExtResource("16_5crmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, 7)
+
+[node name="palm tree2" parent="." instance=ExtResource("17_ugmg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 9, -7)
+
+[node name="Mushroom" parent="." instance=ExtResource("18_taa3r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1, 7)
+
+[node name="Pine Tree Big" parent="." instance=ExtResource("19_6fre4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 7)
+
+[node name="Pine Tree Small" parent="." instance=ExtResource("20_al6ok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 9, 13)
+
+[node name="Pine Tree Big2" parent="." instance=ExtResource("19_6fre4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 1, 7)
+
+[node name="Pine Tree Small2" parent="." instance=ExtResource("20_al6ok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 1, 5)
+
+[node name="Rock2" parent="." instance=ExtResource("16_5crmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 9, 12)
+
+[node name="rock_block_no_bevel16" parent="." instance=ExtResource("11_ay5la")]
+transform = Transform3D(1, 0, 0, 0, 8, 0, 0, 0, 9, 30, 1, 1)
+
+[node name="bush2" parent="." instance=ExtResource("14_mf4pl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -5)
+
+[node name="Rock3" parent="." instance=ExtResource("16_5crmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1, -9)
+
+[node name="Wood Fences" parent="." instance=ExtResource("21_vn2tu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2, -7.01342)
+
+[node name="Tulip2" parent="." instance=ExtResource("15_vn2tu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 13, 15)
+
+[node name="Tulip3" parent="." instance=ExtResource("15_vn2tu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 9, 14)
+
+[node name="Rock4" parent="." instance=ExtResource("16_5crmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 9, 18)
+
+[node name="palm tree" parent="." instance=ExtResource("17_ugmg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 1, -9)
+
+[node name="palm tree3" parent="." instance=ExtResource("17_ugmg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 13, 12)
+
+[node name="palm tree4" parent="." instance=ExtResource("17_ugmg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 17, 21)
+
+[node name="Tulip4" parent="." instance=ExtResource("15_vn2tu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 17, 12)
+
+[node name="bush3" parent="." instance=ExtResource("14_mf4pl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 9, 18)
+
+[node name="Wood Fences2" parent="." instance=ExtResource("21_vn2tu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 24)
