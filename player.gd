@@ -343,7 +343,7 @@ func _controller_look(delta: float) -> void:
 
 	rotate_y(-look_vec.x * look_sens * delta)
 	pivot.rotate_x(-look_vec.y * look_sens * delta)
-	pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
+	pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(60))
 
 
 func _lock_player():
