@@ -278,14 +278,13 @@ func _camera_state():
 
 	match state:
 		states.aiming:
-			aim_tween.tween_property(mat,"albedo_color:a",57,aim_tween_legnht)
+			
 			aim_tween.tween_property(selected_icon, "modulate:a", 1, aim_tween_legnht)
 			aim_tween.tween_property(crosshair, "modulate:a", 1, aim_tween_legnht)
 			aim_tween.tween_property(camerapoint, "position", aim_camera_pos, aim_tween_legnht)
 			aim_tween.tween_property(springarm, "spring_length", aim_spring_length, aim_tween_legnht)
 
 		states.default:
-			aim_tween.tween_property(mat,"albedo_color:a",255,aim_tween_legnht)
 			aim_tween.tween_property(selected_icon, "modulate:a", 0, aim_tween_legnht)
 			aim_tween.tween_property(crosshair, "modulate:a", 0, aim_tween_legnht)
 			aim_tween.tween_property(camerapoint, "position", Vector3.ZERO, aim_tween_legnht)
