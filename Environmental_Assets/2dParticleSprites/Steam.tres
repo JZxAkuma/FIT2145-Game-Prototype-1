@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://btquq4vbniybt"]
+
+[ext_resource type="Texture2D" uid="uid://crsfasoiutpgq" path="res://Environmental_Assets/2dParticleSprites/Cloud.png" id="1_uy452"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_uy452")
+billboard_mode = 1

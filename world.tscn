@@ -1,4 +1,4 @@
-[gd_scene load_steps=166 format=4 uid="uid://bp06nnjfpsxbw"]
+[gd_scene load_steps=170 format=4 uid="uid://bp06nnjfpsxbw"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://5rxpnkcqrtao" path="res://Environmental_Assets/Skybox.png" id="2_ioo17"]
@@ -28,7 +28,11 @@
 [ext_resource type="Texture2D" uid="uid://daddx783lvspy" path="res://Environmental_Assets/BackDrop/DistantMountains_standardSurface1_BaseColor.png" id="24_bo7i5"]
 [ext_resource type="Texture2D" uid="uid://ktwm3opux8w8" path="res://Environmental_Assets/CloseMountains/CloseMountains_Grassy (1).png" id="24_o3ebs"]
 [ext_resource type="Texture2D" uid="uid://bivg20dce5afp" path="res://Environmental_Assets/CloseMountains/CloseMountains_Rocky.png" id="25_k83mh"]
-[ext_resource type="PackedScene" path="res://level component/Deco/moby_prop.tscn" id="29_k83mh"]
+[ext_resource type="PackedScene" uid="uid://c3qiwoi0pani" path="res://Environmental_Assets/Pack2/AssetPack2.fbx" id="27_jjr1n"]
+[ext_resource type="Material" uid="uid://c1l7vrr8nrtuc" path="res://Environmental_Assets/Pack2/Pack2.tres" id="28_gggvi"]
+[ext_resource type="PackedScene" uid="uid://cjpdnm3o6nrrm" path="res://level component/Deco/moby_prop.tscn" id="29_k83mh"]
+[ext_resource type="Material" uid="uid://b1feelcw1cj5n" path="res://Environmental_Assets/Pack2/Glass.tres" id="29_w44yn"]
+[ext_resource type="PackedScene" uid="uid://bxvjo2y018838" path="res://level component/Deco/moby_house.tscn" id="32_gggvi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ic0uy"]
 shader = ExtResource("2_wse8f")
@@ -2971,11 +2975,203 @@ mesh = SubResource("ArrayMesh_5jgt6")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_bh8nc")
 
+[node name="AssetPack2" parent="." instance=ExtResource("27_jjr1n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1016, 0.142592, 58.4522)
+
+[node name="IceWall" parent="AssetPack2/IceExperiment" index="0"]
+transform = Transform3D(0.396581, 0, 0, 0, 1.79012, 0, 0, 0, 3.3342, 7.40509, 2.38012, -16.5994)
+material_override = ExtResource("28_gggvi")
+
+[node name="IceWallInvert" parent="AssetPack2/IceExperiment" index="1"]
+transform = Transform3D(0.470401, 0, 0, 0, 1.92358, 0, 0, 0, 3.58278, 7.40509, 2.38012, -16.5994)
+material_override = ExtResource("28_gggvi")
+
+[node name="Crate" parent="AssetPack2" index="1"]
+transform = Transform3D(0.553857, 0, 0, 0, 0.553857, 0, 0, 0, 0.553857, 0, 1.33352, -13.2454)
+material_override = ExtResource("28_gggvi")
+
+[node name="Lid" parent="AssetPack2/Chest" index="0"]
+transform = Transform3D(0.52278, 0, 0, 0, 0.403362, 0, 0, 0, 0.890485, 0, 1.16979, -21.485)
+material_override = ExtResource("28_gggvi")
+
+[node name="Body" parent="AssetPack2/Chest" index="1"]
+transform = Transform3D(0.52278, 0, 0, 0, 0.403362, 0, 0, 0, 0.890485, 0, 1.16979, -21.485)
+material_override = ExtResource("28_gggvi")
+
+[node name="Log" parent="AssetPack2" index="3"]
+transform = Transform3D(0.377865, 0, 0, 0, 0, 0.377865, 0, -1.80727, 0, 2.37466, 0.612159, -18.6683)
+material_override = ExtResource("28_gggvi")
+
+[node name="HouseDoor" parent="AssetPack2/MobyHouse" index="0"]
+transform = Transform3D(1.48498, 0, 0, 0, 1.48498, 0, 0, 0, 1.48498, 4.53169, 1.84796, -24.1992)
+material_override = ExtResource("28_gggvi")
+
+[node name="HouseBody" parent="AssetPack2/MobyHouse" index="1"]
+transform = Transform3D(1.48498, 0, 0, 0, 1.48498, 0, 0, 0, 1.48498, 3.8178, 2.04602, -24.1992)
+material_override = ExtResource("28_gggvi")
+
+[node name="Collector" parent="AssetPack2/MobyHouse" index="2"]
+transform = Transform3D(2.10211, 0, 0, 0, -0.490372, 2.57426e-16, 0, -6.00512e-17, -2.10211, 3.80871, 3.9297, -24.1752)
+material_override = ExtResource("28_gggvi")
+
+[node name="Window" parent="AssetPack2/MobyHouse" index="3"]
+transform = Transform3D(0.693088, 0, 0, 0, 0.693088, 0, 0, 0, 0.0867742, 3.7225, 2.0228, -25.7202)
+material_override = ExtResource("28_gggvi")
+
+[node name="Chimney" parent="AssetPack2/MobyHouse" index="4"]
+transform = Transform3D(0.478312, 0, 0, 0, 0.478312, 0, 0, 0, 0.478312, 3.79526, 4.60338, -24.2126)
+material_override = ExtResource("28_gggvi")
+
+[node name="Window2" parent="AssetPack2/MobyHouse" index="5"]
+transform = Transform3D(-0.693088, 0, -8.76974e-17, 0, 0.693088, 0, 7.00462e-16, 0, -0.0867742, 3.7225, 2.0228, -22.6673)
+material_override = ExtResource("28_gggvi")
+
+[node name="Ladder" parent="AssetPack2" index="5"]
+transform = Transform3D(0.641085, 0, 0, 0, 0.641085, 0, 0, 0, 0.641085, -3.49805, 0.666332, -19.4426)
+material_override = ExtResource("28_gggvi")
+
+[node name="LanternTop" parent="AssetPack2/ClosedLantern" index="0"]
+transform = Transform3D(0.97797, 0, 0, 0, 1.73373, 0, 0, 0, 0.97797, -15.6269, 2.61845, -9.71869)
+material_override = ExtResource("28_gggvi")
+
+[node name="LanternBase" parent="AssetPack2/ClosedLantern" index="1"]
+transform = Transform3D(0.564083, 0, 0, 0, 1, 0, 0, 0, 0.564083, -15.6269, 1.50861, -9.71869)
+material_override = ExtResource("28_gggvi")
+
+[node name="LanternGlass" parent="AssetPack2/ClosedLantern" index="2"]
+transform = Transform3D(0.321308, 0, 0, 0, 0.321308, 0, 0, 0, 0.321308, -15.6257, 2.3129, -9.71629)
+material_override = ExtResource("28_gggvi")
+
+[node name="Sygil" parent="AssetPack2" index="7"]
+transform = Transform3D(0.596094, 0, 0, 0, 0.0426356, 0, 0, 0, 0.596094, 0, 0.904595, -17.1968)
+material_override = ExtResource("28_gggvi")
+
+[node name="Wood" parent="AssetPack2/BrokenFence" index="0"]
+transform = Transform3D(0.131661, 0, 0, 0, 0.88522, 0, 0, 0, 0.0450523, -7.98367, 1.48579, -16.6189)
+material_override = ExtResource("28_gggvi")
+
+[node name="Wood1" parent="AssetPack2/BrokenFence" index="1"]
+transform = Transform3D(0.0933863, 0.624004, 0, -0.0928098, 0.627881, 0, 0, 0, 0.0450523, -8.13276, 1.11159, -16.6189)
+material_override = ExtResource("28_gggvi")
+
+[node name="Wood3" parent="AssetPack2/BrokenFence" index="2"]
+transform = Transform3D(0.121596, -0.339453, 0, 0.0504878, 0.817549, 0, 0, 0, 0.0450523, -8.63303, 1.15728, -16.6189)
+material_override = ExtResource("28_gggvi")
+
+[node name="Wood4" parent="AssetPack2/BrokenFence" index="3"]
+transform = Transform3D(0.131661, 0, 0, 0, 0.88522, 0, 0, 0, 0.0450523, -9.28872, 0.909135, -16.6189)
+material_override = ExtResource("28_gggvi")
+
+[node name="Wood5" parent="AssetPack2/BrokenFence" index="4"]
+transform = Transform3D(0.125103, 0.275895, 0, -0.0410347, 0.841128, 0, 0, 0, 0.0450523, -8.97083, 0.821553, -16.6189)
+material_override = ExtResource("28_gggvi")
+
+[node name="Wood6" parent="AssetPack2/BrokenFence" index="5"]
+transform = Transform3D(0.0351845, -0.853026, 0, 0.126873, 0.236562, 0, 0, 0, 0.0919392, -8.62811, 1.10704, -16.6227)
+material_override = ExtResource("28_gggvi")
+
+[node name="TallPath" parent="AssetPack2" index="9"]
+transform = Transform3D(0.714045, 0, 0, 0, 0.617803, 0, 0, 0, 9.7034, -13.7807, 5.99915, -24.8609)
+material_override = ExtResource("28_gggvi")
+
+[node name="Jug" parent="AssetPack2" index="10"]
+transform = Transform3D(0.560483, 0, 0, 0, 0.560483, 0, 0, 0, 0.560483, 3.70253, 1.37642, -28.2721)
+material_override = ExtResource("28_gggvi")
+
+[node name="Vine" parent="AssetPack2/Plant" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.56959, 0.49816, -20.3359)
+material_override = ExtResource("28_gggvi")
+
+[node name="Leaf8" parent="AssetPack2/Plant" index="1"]
+transform = Transform3D(0.144705, 0.0177131, 0, -0.200266, 0.0127989, 0, 0, 0, 0.247075, -7.91559, 1.81773, -19.6718)
+material_override = ExtResource("28_gggvi")
+
+[node name="Leaf1" parent="AssetPack2/Plant" index="2"]
+transform = Transform3D(0.299745, -0.0116651, 0, 0.131887, 0.0265118, 0, 0, 0, 0.327477, -8.15814, 1.49177, -19.7037)
+material_override = ExtResource("28_gggvi")
+
+[node name="Leaf9" parent="AssetPack2/Plant" index="3"]
+transform = Transform3D(0.0224782, 0.014838, 0.0280368, -0.0459761, 0.0029383, -0.161917, -0.163755, 0.00121181, 0.0493088, -7.4697, 2.82364, -20.7195)
+material_override = ExtResource("28_gggvi")
+
+[node name="pCylinder4" parent="AssetPack2/WaterIdol/WaterStorage" index="0"]
+transform = Transform3D(0.362213, 0, 0, 0, 0.362213, 0, 0, 0, 0.362213, 0.00732803, 2.77439, -9.47931)
+material_override = ExtResource("28_gggvi")
+
+[node name="polySurface1" parent="AssetPack2/WaterIdol/WaterStorage" index="1"]
+transform = Transform3D(0.274062, 0, 0, 0, 2.69404, 0, 0, 0, 0.274062, 0.00732803, 6.20921, -9.47931)
+material_override = ExtResource("29_w44yn")
+
+[node name="pCylinder3" parent="AssetPack2/WaterIdol/WaterStorage" index="2"]
+transform = Transform3D(0.362213, 0, 0, 0, 0.362213, 0, 0, 0, 0.362213, 0.00732803, 1.3855, -9.47931)
+material_override = ExtResource("28_gggvi")
+
+[node name="Water" parent="AssetPack2/WaterIdol/WaterStorage" index="3"]
+transform = Transform3D(0.249067, 0, 0, 0, 0.254613, 0, 0, 0, 0.249067, 0.00732803, 1.34286, -9.47931)
+material_override = ExtResource("28_gggvi")
+
+[node name="IdolEye1" parent="AssetPack2/WaterIdol/WaterIdol2" index="0"]
+transform = Transform3D(0.36803, 0, 0, 0, 0.408953, 0, 0, 0, 0.408953, -0.748667, 5.93067, -10.2788)
+material_override = ExtResource("28_gggvi")
+
+[node name="IdolEye" parent="AssetPack2/WaterIdol/WaterIdol2" index="1"]
+transform = Transform3D(0.36803, 0, 0, 0, 0.408953, 0, 0, 0, 0.408953, 0.761869, 5.93067, -10.2788)
+material_override = ExtResource("28_gggvi")
+
+[node name="Idol" parent="AssetPack2/WaterIdol/WaterIdol2" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.74923, -9.30443)
+material_override = ExtResource("28_gggvi")
+
+[node name="Mobyhouse2" parent="AssetPack2/RoundMobyHouse" index="0"]
+material_override = ExtResource("28_gggvi")
+
+[node name="Door" parent="AssetPack2/RoundMobyHouse" index="1"]
+material_override = ExtResource("28_gggvi")
+
+[node name="Window3" parent="AssetPack2/RoundMobyHouse" index="2"]
+material_override = ExtResource("28_gggvi")
+
+[node name="Chimney1" parent="AssetPack2/RoundMobyHouse" index="3"]
+material_override = ExtResource("28_gggvi")
+
+[node name="Water3" parent="AssetPack2/WaterTower" index="2"]
+material_override = ExtResource("28_gggvi")
+
+[node name="Water2" parent="AssetPack2/WaterTower" index="3"]
+material_override = ExtResource("28_gggvi")
+
+[node name="Water1" parent="AssetPack2/WaterTower" index="4"]
+material_override = ExtResource("28_gggvi")
+
+[node name="Waterfall2" parent="AssetPack2/WaterTower" index="5"]
+material_override = ExtResource("28_gggvi")
+
+[node name="Waterfall1" parent="AssetPack2/WaterTower" index="6"]
+material_override = ExtResource("28_gggvi")
+
+[node name="Collector3" parent="AssetPack2/WaterTower" index="7"]
+material_override = ExtResource("28_gggvi")
+
+[node name="Collector2" parent="AssetPack2/WaterTower" index="8"]
+material_override = ExtResource("28_gggvi")
+
+[node name="Collector1" parent="AssetPack2/WaterTower" index="9"]
+material_override = ExtResource("28_gggvi")
+
+[node name="TowerBody" parent="AssetPack2/WaterTower" index="10"]
+material_override = ExtResource("28_gggvi")
+
+[node name="pCube317" parent="AssetPack2/WaterTower" index="11"]
+material_override = ExtResource("28_gggvi")
+
 [node name="DistantMountains" parent="." instance=ExtResource("23_mc2jv")]
 
 [node name="pCylinder1" parent="DistantMountains" index="0"]
 transform = Transform3D(8586.48, 0, 0, 0, 1992.6, 0, 0, 0, 8586.48, 0, 8.90985, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_4h6ng")
+
+[node name="MobyHouse" parent="." instance=ExtResource("32_gggvi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8364, 0)
 
 [node name="DistantMountains2" parent="." instance=ExtResource("23_mc2jv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8364, 0)
@@ -2987,6 +3183,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_o3ebs")
 [node name="MobyProp" parent="." instance=ExtResource("29_k83mh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8041, -0.416674, -31.4549)
 
+[node name="MobyHouse2" parent="." instance=ExtResource("32_gggvi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2838, 0.514597, -43.5517)
+
 [editable path="CloseMountains"]
+[editable path="AssetPack2"]
 [editable path="DistantMountains"]
 [editable path="DistantMountains2"]
