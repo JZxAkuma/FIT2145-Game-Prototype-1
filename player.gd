@@ -72,6 +72,10 @@ var squash_stretch_scale: Vector3 = Vector3.ONE
 
 var flat_surface_threshold: float = 0.9
 
+@export var water_available : bool= true
+@export var fire_available : bool = true
+@export var earth_available : bool = true
+
 var camera_swap = false
 enum elements {
 	water,
@@ -108,7 +112,7 @@ func _ready() -> void:
 	wall_indicator.visible = false
 	call_deferred("_add_wall_indicator")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
+	print("water: ", water_available, " fire: ", fire_available, " earth: ", earth_available)
 
 func _add_wall_indicator():
 	get_tree().current_scene.add_child(wall_indicator)
@@ -139,6 +143,8 @@ func _physics_process(delta: float) -> void:
 	_camera_state()
 	_cast_lenght()
 	_elements_ui()
+	if not _is_element_available(selection):
+		_set_selection(_get_next_available_selection(selection, 1))
 	_update_mesh_squash_stretch(delta)
 
 	$CanvasLayer2/selected_ui.show()
@@ -215,15 +221,15 @@ func _change_power():
 		element_ui_tween.tween_property(selected_icon, "modulate:a", 0, aim_tween_legnht)
 
 		if Input.is_action_just_pressed("scroll_up"):
-			_set_selection((selection + 1) % elements.size())
+			_set_selection(_get_next_available_selection(selection, 1))
 		if Input.is_action_just_pressed("scroll_down"):
-			_set_selection((selection - 1 + elements.size()) % elements.size())
-		
-		if Input.is_action_just_pressed("controller_water"):
+			_set_selection(_get_next_available_selection(selection, -1))
+
+		if Input.is_action_just_pressed("controller_water") and water_available:
 			_set_selection(elements.water)
-		if Input.is_action_just_pressed("controller_fire"):
+		if Input.is_action_just_pressed("controller_fire") and fire_available:
 			_set_selection(elements.fire)
-		if Input.is_action_just_pressed("controller_earth"):
+		if Input.is_action_just_pressed("controller_earth") and earth_available:
 			_set_selection(elements.earth)
 
 	else:
@@ -387,6 +393,10 @@ func _to_checkpoint_spot(spawnpoint: Vector3) -> void:
 
 
 func _elements_ui():
+	water_icon.visible = water_available
+	fire_icon.visible = fire_available
+	earth_icon.visible = earth_available
+
 	water_icon.texture_normal = water_icon.texture_hover if selection == elements.water else water_normal_tex
 	fire_icon.texture_normal = fire_icon.texture_hover if selection == elements.fire else fire_normal_tex
 	earth_icon.texture_normal = earth_icon.texture_hover if selection == elements.earth else earth_normal_tex
@@ -452,6 +462,25 @@ func _update_mesh_squash_stretch(delta: float) -> void:
 
 	squash_stretch_scale = squash_stretch_scale.lerp(target_scale, squash_stretch_speed * delta)
 	player_mesh.scale = squash_stretch_scale
+
+func _is_element_available(e: elements) -> bool:
+	match e:
+		elements.water:
+			return water_available
+		elements.fire:
+			return fire_available
+		elements.earth:
+			return earth_available
+	return false
+
+
+func _get_next_available_selection(current: elements, step: int) -> elements:
+	var candidate = current
+	for i in range(elements.size()):
+		candidate = (candidate + step + elements.size()) % elements.size()
+		if _is_element_available(candidate):
+			return candidate
+	return current
 
 func _selected_elements_icon() -> void:
 	var world_pos = global_position + element_ui_offset
