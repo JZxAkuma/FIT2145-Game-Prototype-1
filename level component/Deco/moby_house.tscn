@@ -216,12 +216,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_trmgk")
 
-[sub_resource type="Curve" id="Curve_s3dmt"]
-_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
-point_count = 2
+[sub_resource type="Gradient" id="Gradient_eyhup"]
+offsets = PackedFloat32Array(0, 0.580311, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.419689, 1, 1, 1, 0)
 
-[sub_resource type="CurveTexture" id="CurveTexture_dpgsl"]
-curve = SubResource("Curve_s3dmt")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s3dmt"]
+gradient = SubResource("Gradient_eyhup")
 
 [sub_resource type="Curve" id="Curve_kg20c"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -236,11 +236,12 @@ initial_velocity_min = 0.5
 initial_velocity_max = 1.5
 gravity = Vector3(0, 0, 0)
 scale_curve = SubResource("CurveTexture_0xows")
-color = Color(0.637843, 0.637843, 0.637843, 1)
-alpha_curve = SubResource("CurveTexture_dpgsl")
+color = Color(0.991164, 0.991164, 0.991164, 1)
+color_ramp = SubResource("GradientTexture1D_s3dmt")
 
-[sub_resource type="QuadMesh" id="QuadMesh_l5xk2"]
+[sub_resource type="QuadMesh" id="QuadMesh_dpgsl"]
 material = ExtResource("2_dpgsl")
+size = Vector2(2, 2)
 
 [node name="MobyHouse" type="Node3D"]
 
@@ -282,8 +283,8 @@ skeleton = NodePath("")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.234013, 5.35927, -0.181681)
-amount = 3
-lifetime = 2.0
+amount = 10
+lifetime = 4.0
 randomness = 0.3
 process_material = SubResource("ParticleProcessMaterial_gmfc0")
-draw_pass_1 = SubResource("QuadMesh_l5xk2")
+draw_pass_1 = SubResource("QuadMesh_dpgsl")

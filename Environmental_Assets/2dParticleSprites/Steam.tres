@@ -4,5 +4,7 @@
 
 [resource]
 transparency = 1
+vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_uy452")
 billboard_mode = 1
+billboard_keep_scale = true
