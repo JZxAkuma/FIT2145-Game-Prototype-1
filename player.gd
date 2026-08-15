@@ -259,6 +259,9 @@ func _cast_selection():
 				get_tree().current_scene.add_child(earthwall)
 				earthwall.global_position = castline.get_collision_point()
 				_align_to_surface(earthwall, castline.get_collision_point(), castline.get_collision_normal(), true)
+			
+			if target and target.has_method("_earth_reset"):
+				target._earth_reset()
 
 
 func _spawn_projectile(scene: PackedScene):

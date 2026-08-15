@@ -44,5 +44,9 @@ func _set_fire():
 		wetness = 0
 		state = states.dry
 
+func _earth_reset():
+	if state != states.wet:
+		state = states.erecting
+
 func _expire():
 	self.queue_free()
