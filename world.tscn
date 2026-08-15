@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://daddx783lvspy" path="res://Environmental_Assets/BackDrop/DistantMountains_standardSurface1_BaseColor.png" id="24_bo7i5"]
 [ext_resource type="Texture2D" uid="uid://ktwm3opux8w8" path="res://Environmental_Assets/CloseMountains/CloseMountains_Grassy (1).png" id="24_o3ebs"]
 [ext_resource type="Texture2D" uid="uid://bivg20dce5afp" path="res://Environmental_Assets/CloseMountains/CloseMountains_Rocky.png" id="25_k83mh"]
-[ext_resource type="PackedScene" uid="uid://cjpdnm3o6nrrm" path="res://level component/Deco/moby_prop.tscn" id="29_k83mh"]
+[ext_resource type="PackedScene" path="res://level component/Deco/moby_prop.tscn" id="29_k83mh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ic0uy"]
 shader = ExtResource("2_wse8f")

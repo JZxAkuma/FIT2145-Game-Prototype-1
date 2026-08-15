@@ -62,6 +62,16 @@ var shortest_offset = 1.1
 
 @export var mat:BaseMaterial3D
 
+var squash_stretch_strength: float = 0.03
+var squash_stretch_speed: float = 8.0
+var landing_squash_strength: float = 0.03
+var max_squash_stretch: float = 0.3
+
+var was_grounded: bool = true
+var squash_stretch_scale: Vector3 = Vector3.ONE
+
+var flat_surface_threshold: float = 0.9
+
 var camera_swap = false
 enum elements {
 	water,
@@ -129,6 +139,7 @@ func _physics_process(delta: float) -> void:
 	_camera_state()
 	_cast_lenght()
 	_elements_ui()
+	_update_mesh_squash_stretch(delta)
 
 	$CanvasLayer2/selected_ui.show()
 	$"CanvasLayer2/Elements UI".show()
@@ -312,15 +323,24 @@ func _update_wall_indicator():
 func _align_to_surface(node: Node3D, position: Vector3, normal: Vector3, flip: bool = false) -> void:
 	node.global_position = position
 
+	var is_flat: bool = normal.dot(Vector3.UP) > flat_surface_threshold
 	var up: Vector3 = normal.normalized()
+	var forward: Vector3
 
-	var forward: Vector3 = -global_transform.basis.z
-	forward = (forward - up * forward.dot(up))
-	if forward.length() < 0.001:
-		forward = global_transform.basis.x
+	if is_flat:
+		forward = -global_transform.basis.z
 		forward = (forward - up * forward.dot(up))
-	forward = forward.normalized()
+		if forward.length() < 0.001:
+			forward = global_transform.basis.x
+			forward = (forward - up * forward.dot(up))
+	else:
+		forward = Vector3.UP
+		forward = (forward - up * forward.dot(up))
+		if forward.length() < 0.001:
+			forward = Vector3.FORWARD
+			forward = (forward - up * forward.dot(up))
 
+	forward = forward.normalized()
 	var right: Vector3 = forward.cross(up).normalized()
 	forward = up.cross(right).normalized()
 
@@ -328,7 +348,6 @@ func _align_to_surface(node: Node3D, position: Vector3, normal: Vector3, flip: b
 
 	if flip:
 		node.rotate_object_local(Vector3.RIGHT, PI)
-
 
 func _controller_look(delta: float) -> void:
 	var look_sens: float
@@ -414,6 +433,25 @@ func _update_elements_ui_position() -> void:
 	element_ui.visible = true
 	var screen_pos = camera.unproject_position(world_pos)
 	element_ui.position = screen_pos - (element_ui.size / 2.0)
+
+
+func _update_mesh_squash_stretch(delta: float) -> void:
+	var target_scale := Vector3.ONE
+
+	if not is_grounded:
+		var stretch = clamp(abs(velocity.y) * squash_stretch_strength, 0.0, max_squash_stretch)
+		target_scale.y = 1.0 + stretch
+		target_scale.x = 1.0 - stretch * 0.5
+		target_scale.z = 1.0 - stretch * 0.5
+
+	if is_grounded and not was_grounded:
+		var impact = clamp(abs(velocity.y) * landing_squash_strength, 0.0, max_squash_stretch)
+		squash_stretch_scale = Vector3(1.0 + impact * 0.5, 1.0 - impact, 1.0 + impact * 0.5)
+
+	was_grounded = is_grounded
+
+	squash_stretch_scale = squash_stretch_scale.lerp(target_scale, squash_stretch_speed * delta)
+	player_mesh.scale = squash_stretch_scale
 
 func _selected_elements_icon() -> void:
 	var world_pos = global_position + element_ui_offset

@@ -313,55 +313,55 @@ shadow_mesh = SubResource("ArrayMesh_yws8s")
 [node name="Tulip" type="Node3D"]
 
 [node name="pCube199" type="MeshInstance3D" parent="."]
-transform = Transform3D(25.3186, 0, 0, 0, 25.3186, 0, 0, 0, 25.3186, -0.83376, 0.559252, -0.96301)
+transform = Transform3D(14.1118, 0, 0, 0, 14.1118, 0, 0, 0, 14.1118, 0.321655, 0.320605, 0.191799)
 material_override = ExtResource("1_868og")
 mesh = SubResource("ArrayMesh_bqvis")
 skeleton = NodePath("")
 
 [node name="pCube198" type="MeshInstance3D" parent="."]
-transform = Transform3D(25.3186, 0, 0, 0, 25.3186, 0, 0, 0, 25.3186, -0.0393786, 0.559252, -0.678733)
+transform = Transform3D(14.1118, 0, 0, 0, 14.1118, 0, 0, 0, 14.1118, 0.764419, 0.320605, 0.350246)
 material_override = ExtResource("1_868og")
 mesh = SubResource("ArrayMesh_lv64l")
 skeleton = NodePath("")
 
 [node name="pCube197" type="MeshInstance3D" parent="."]
-transform = Transform3D(25.3186, 0, 0, 0, 25.3186, 0, 0, 0, 25.3186, -0.543221, 0.559252, -0.176361)
+transform = Transform3D(14.1118, 0, 0, 0, 14.1118, 0, 0, 0, 14.1118, 0.483592, 0.320605, 0.630252)
 material_override = ExtResource("1_868og")
 mesh = SubResource("ArrayMesh_o4eo8")
 skeleton = NodePath("")
 
 [node name="pCube204" type="MeshInstance3D" parent="."]
-transform = Transform3D(18.7108, 0, 0, 0, 18.7108, 0, 0, 0, 18.7108, -0.459589, 1.23994, -1.0546)
+transform = Transform3D(10.4288, 0, 0, 0, 10.4288, 0, 0, 0, 10.4288, 0.530206, 0.699999, 0.140749)
 material_override = ExtResource("1_868og")
 mesh = SubResource("ArrayMesh_icw88")
 skeleton = NodePath("")
 
 [node name="pCube203" type="MeshInstance3D" parent="."]
-transform = Transform3D(18.7108, 0, 0, 0, 18.7108, 0, 0, 0, 18.7108, -0.902309, 1.20418, -0.667197)
+transform = Transform3D(10.4288, 0, 0, 0, 10.4288, 0, 0, 0, 10.4288, 0.283448, 0.680068, 0.356676)
 material_override = ExtResource("1_868og")
 mesh = SubResource("ArrayMesh_hqpiv")
 skeleton = NodePath("")
 
 [node name="pCube202" type="MeshInstance3D" parent="."]
-transform = Transform3D(18.7108, 0, 0, 0, 18.7108, 0, 0, 0, 18.7108, -0.499774, 1.13352, -0.160922)
+transform = Transform3D(10.4288, 0, 0, 0, 10.4288, 0, 0, 0, 10.4288, 0.507808, 0.640684, 0.638858)
 material_override = ExtResource("1_868og")
 mesh = SubResource("ArrayMesh_t2e8t")
 skeleton = NodePath("")
 
 [node name="pCube201" type="MeshInstance3D" parent="."]
-transform = Transform3D(18.7108, 0, 0, 0, 18.7108, 0, 0, 0, 18.7108, -0.11906, 1.31639, -0.554146)
+transform = Transform3D(10.4288, 0, 0, 0, 10.4288, 0, 0, 0, 10.4288, 0.720007, 0.74261, 0.419687)
 material_override = ExtResource("1_868og")
 mesh = SubResource("ArrayMesh_14tvm")
 skeleton = NodePath("")
 
 [node name="pCube200" type="MeshInstance3D" parent="."]
-transform = Transform3D(20.6129, 0, 0, 0, 20.6129, 0, 0, 0, 20.6129, -0.467727, 0.202285, -0.634655)
+transform = Transform3D(11.489, 0, 0, 0, 11.489, 0, 0, 0, 11.489, 0.52567, 0.121643, 0.374813)
 material_override = ExtResource("1_868og")
 mesh = SubResource("ArrayMesh_jmqmj")
 skeleton = NodePath("")
 
 [node name="pCube205" type="MeshInstance3D" parent="."]
-transform = Transform3D(20.6129, 0, 0, 0, 20.6129, 0, 0, 0, 20.6129, -0.478975, 0.953515, -0.629749)
+transform = Transform3D(11.489, 0, 0, 0, 11.489, 0, 0, 0, 11.489, 0.519401, 0.540355, 0.377548)
 material_override = ExtResource("1_868og")
 mesh = SubResource("ArrayMesh_5yn5h")
 skeleton = NodePath("")
