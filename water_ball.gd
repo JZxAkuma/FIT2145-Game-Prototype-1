@@ -15,13 +15,11 @@ func _physics_process(delta: float) -> void:
 		if is_instance_valid(target) and target.has_method("_set_wet"):
 			target._set_wet()
 		global_position = target_position
-		queue_free()
+		_splash()
 		return
 	look_at(target_position, Vector3.UP)
 	global_position += -global_transform.basis.z * step
 
-func _on_area_entered(area: Area3D) -> void:
-	_splash()
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is RigidBody3D:
