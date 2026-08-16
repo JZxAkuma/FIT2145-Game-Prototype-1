@@ -25,11 +25,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	match state:
 		states.open:
-			#light.light_energy = 1
 			particle.emitting = true
 			scene_changer.monitoring = true
 		states.close:
-			#light.light_energy = 0
 			particle.emitting = false
 			scene_changer.monitoring = false
 

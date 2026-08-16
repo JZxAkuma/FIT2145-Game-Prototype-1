@@ -200,8 +200,7 @@ func _physics_process(delta: float) -> void:
 
 	_update_mesh_rotation(delta, direction)
 
-	if Input.is_action_just_pressed("quit"):
-		get_tree().quit()
+	
 
 	move_and_slide()
 	_push_rigid_bodies()
