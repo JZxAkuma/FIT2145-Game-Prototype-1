@@ -9,6 +9,7 @@ var state:states = states.not_lit
 @onready var particles = $CPUParticles3D
 @onready var glass =  $LanternGlass
 @onready var fire_detector = $CollisionShape3D
+@onready var light = $OmniLight3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var parent = self.get_parent()
@@ -30,8 +31,10 @@ func _process(delta: float) -> void:
 	match state:
 		states.lit:
 			particles.emitting = true
+			light.light_energy = 2
 		states.not_lit:
 			particles.emitting = false
+			light.light_energy = 0
 
 func _set_fire():
 	if state == states.not_lit:

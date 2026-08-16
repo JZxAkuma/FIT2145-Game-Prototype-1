@@ -183,3 +183,8 @@ visible = false
 material_override = ExtResource("3_dta71")
 mesh = SubResource("ArrayMesh_e6xen")
 skeleton = NodePath("")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.656744, 2.00499, 0.646986)
+light_color = Color(0.622797, 0.287709, 1.92523e-07, 1)
+omni_range = 5.26182
