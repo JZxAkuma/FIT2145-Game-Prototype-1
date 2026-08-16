@@ -1,5 +1,7 @@
-[gd_scene load_steps=33 format=4 uid="uid://cjpdnm3o6nrrm"]
+[gd_scene load_steps=36 format=4 uid="uid://cjpdnm3o6nrrm"]
 
+[ext_resource type="Script" uid="uid://vys6nitxr6q4" path="res://level component/Deco/npc.gd" id="1_3tqb5"]
+[ext_resource type="FontFile" uid="uid://b8nmcbfik7r5n" path="res://Environmental_Assets/FontsUI/PixelifySans-SemiBold.ttf" id="2_lpl1l"]
 [ext_resource type="Material" uid="uid://be7o2iqhqd43h" path="res://Character_Assets/MobyTexture.tres" id="2_qg5rv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2mb08"]
@@ -383,7 +385,10 @@ _data = {
 &"RESET": SubResource("Animation_qg5rv")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_jexdp"]
+
 [node name="MobyProp" type="Node3D"]
+script = ExtResource("1_3tqb5")
 
 [node name="Tail" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.11022e-16, -0.219111)
@@ -501,3 +506,27 @@ libraries = {
 &"": SubResource("AnimationLibrary_disms")
 }
 autoplay = "HeadBop"
+
+[node name="InteractionArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 1.52671, 0)
+shape = SubResource("SphereShape3D_jexdp")
+
+[node name="TalkIndicator" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.61289, 0.198076)
+visible = false
+billboard = 1
+text = "..."
+font = ExtResource("2_lpl1l")
+font_size = 50
+
+[node name="DialogueBubble" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.96056, 0)
+visible = false
+billboard = 1
+text = "hey"
+font = ExtResource("2_lpl1l")
+font_size = 50
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]

@@ -3185,7 +3185,7 @@ bones/2/position = Vector3(0.269716, 1.43312e-16, 1.73472e-16)
 bones/2/rotation = Quaternion(-3.82105e-31, -1.38778e-17, -4.93038e-32, 1)
 
 [node name="MobyHouse" parent="." instance=ExtResource("32_gggvi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8364, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08615, 11.8184, -8.2498)
 
 [node name="PowerPlatform" parent="." instance=ExtResource("34_g1i3r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1902, 1.02001, -39.9039)
