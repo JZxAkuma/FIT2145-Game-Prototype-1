@@ -3205,6 +3205,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_o3ebs")
 
 [node name="MobyProp" parent="." instance=ExtResource("29_k83mh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8041, -0.416674, -31.4549)
+dialogue_text = "Fuck you"
 
 [node name="Sygil" parent="." instance=ExtResource("38_yx0jh")]
 transform = Transform3D(0.596094, 0, 0, 0, 0.0426356, 0, 0, 0, 0.596094, -18.6151, 0.366243, -33.8414)
