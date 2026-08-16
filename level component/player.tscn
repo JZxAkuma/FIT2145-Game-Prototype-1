@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bye70pqxpcpcf"]
+[gd_scene load_steps=26 format=3 uid="uid://bye70pqxpcpcf"]
 
 [ext_resource type="Script" uid="uid://btoituocs665x" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://dhphdaphrwcbm" path="res://Character_Assets/MobyRig.fbx" id="2_8v1cs"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b82u8pqbd754g" path="res://Icons/FireActive.png" id="6_cx4s4"]
 [ext_resource type="Texture2D" uid="uid://dpfnb02w8cyq3" path="res://Icons/EarthInactive.png" id="7_84xnk"]
 [ext_resource type="Texture2D" uid="uid://cpn8kogxjm8cn" path="res://Icons/EarthActive.png" id="8_mmloc"]
+[ext_resource type="Material" uid="uid://dpcwpjbtnlgoj" path="res://Environmental_Assets/2dParticleSprites/Squares.tres" id="12_84xnk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5enqi"]
 albedo_color = Color(1, 0, 0, 1)
@@ -35,6 +36,35 @@ _data = {
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5enqi"]
 states/End/position = Vector2(932, 127)
 states/Start/position = Vector2(344, 134)
+
+[sub_resource type="Gradient" id="Gradient_mmloc"]
+colors = PackedColorArray(1, 1, 1, 0.882353, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s3dmt"]
+gradient = SubResource("Gradient_mmloc")
+
+[sub_resource type="Curve" id="Curve_2dbpi"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_dpgsl"]
+curve = SubResource("Curve_2dbpi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_stime"]
+emission_shape = 3
+emission_box_extents = Vector3(0.15, 0.1, 0.1)
+direction = Vector3(0, 0, 0)
+spread = 10.0
+initial_velocity_min = 0.2
+initial_velocity_max = 0.6
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_dpgsl")
+color = Color(0.969355, 0.96781, 0.977734, 1)
+color_ramp = SubResource("GradientTexture1D_s3dmt")
+
+[sub_resource type="QuadMesh" id="QuadMesh_qg01u"]
+material = ExtResource("12_84xnk")
+size = Vector2(0.2, 0.2)
 
 [node name="player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_4flbx")
@@ -275,6 +305,13 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_5enqi")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.92185e-05, -0.832817, 0.170744)
+amount = 5
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_stime")
+draw_pass_1 = SubResource("QuadMesh_qg01u")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 
