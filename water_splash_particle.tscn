@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://blaytncgnc5hg"]
+
+[ext_resource type="Material" path="res://Environmental_Assets/2dParticleSprites/SolidCircle.tres" id="1_bpc64"]
+[ext_resource type="Script" uid="uid://nmbvyq4mnmkm" path="res://water_splash_particle.gd" id="2_nmwew"]
+
+[sub_resource type="Gradient" id="Gradient_nmwew"]
+colors = PackedColorArray(0.165681, 0.321804, 0.655956, 1, 0.285971, 0.846955, 0.818159, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_m4jgb"]
+gradient = SubResource("Gradient_nmwew")
+
+[sub_resource type="Curve" id="Curve_618kf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.98718, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_lrxwi"]
+curve = SubResource("Curve_618kf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2o4fu"]
+emission_shape = 1
+emission_sphere_radius = 0.53
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_min = 2.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_lrxwi")
+color_ramp = SubResource("GradientTexture1D_m4jgb")
+
+[sub_resource type="QuadMesh" id="QuadMesh_qnct5"]
+material = ExtResource("1_bpc64")
+size = Vector2(0.3, 0.3)
+
+[node name="Water splash particle" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00315055, 0.000821885, -0.0124031)
+emitting = false
+amount = 10
+one_shot = true
+explosiveness = 1.0
+randomness = 0.6
+process_material = SubResource("ParticleProcessMaterial_2o4fu")
+draw_pass_1 = SubResource("QuadMesh_qnct5")
+script = ExtResource("2_nmwew")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
