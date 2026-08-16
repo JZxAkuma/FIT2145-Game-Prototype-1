@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://blaytncgnc5hg"]
 
-[ext_resource type="Material" path="res://Environmental_Assets/2dParticleSprites/SolidCircle.tres" id="1_bpc64"]
+[ext_resource type="Material" uid="uid://rn5sicuqjcqk" path="res://Environmental_Assets/2dParticleSprites/SolidCircle.tres" id="1_bpc64"]
 [ext_resource type="Script" uid="uid://nmbvyq4mnmkm" path="res://water_splash_particle.gd" id="2_nmwew"]
 
 [sub_resource type="Gradient" id="Gradient_nmwew"]
-colors = PackedColorArray(0.165681, 0.321804, 0.655956, 1, 0.285971, 0.846955, 0.818159, 1)
+colors = PackedColorArray(0.222344, 0.400849, 0.778927, 1, 0.514857, 0.952915, 0.925181, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_m4jgb"]
 gradient = SubResource("Gradient_nmwew")
@@ -34,7 +34,8 @@ size = Vector2(0.3, 0.3)
 [node name="Water splash particle" type="GPUParticles3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00315055, 0.000821885, -0.0124031)
 emitting = false
-amount = 10
+amount = 5
+lifetime = 0.25
 one_shot = true
 explosiveness = 1.0
 randomness = 0.6

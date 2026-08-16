@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dphue818l1f60"]
 
 [ext_resource type="Script" uid="uid://3rnfehv2i3px" path="res://water_ball.gd" id="1_vun2w"]
-[ext_resource type="Material" path="res://Environmental_Assets/2dParticleSprites/SolidCircle.tres" id="2_m4jgb"]
+[ext_resource type="Material" uid="uid://rn5sicuqjcqk" path="res://Environmental_Assets/2dParticleSprites/SolidCircle.tres" id="2_m4jgb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ffxtb"]
 radius = 0.52963
