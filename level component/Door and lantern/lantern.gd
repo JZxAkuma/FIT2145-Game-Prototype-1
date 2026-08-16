@@ -7,14 +7,21 @@ enum states{
 
 var state:states = states.not_lit
 @onready var particles = $CPUParticles3D
-
+@onready var glass =  $LanternGlass
+@onready var fire_detector = $CollisionShape3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var parent = self.get_parent()
 	if parent.is_in_group("door"):
 		state = states.not_lit
 		parent._register_lantern(self)
+		fire_detector.show()
+		glass.hide()
+		particles.show()
 	else:
+		particles.hide()
+		fire_detector.hide()
+		glass.show()
 		state = states.lit
 
 
