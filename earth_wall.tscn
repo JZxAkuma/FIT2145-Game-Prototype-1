@@ -68,6 +68,15 @@ mesh = SubResource("ArrayMesh_7quyf")
 skeleton = NodePath("")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+mass = 0.001
+gravity_scale = 0.0
+freeze_mode = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0117613, 0.997979, -0.000134706)
