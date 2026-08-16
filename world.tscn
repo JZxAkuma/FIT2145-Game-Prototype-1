@@ -1,4 +1,4 @@
-[gd_scene load_steps=174 format=4 uid="uid://bp06nnjfpsxbw"]
+[gd_scene load_steps=175 format=4 uid="uid://bp06nnjfpsxbw"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://5rxpnkcqrtao" path="res://Environmental_Assets/Skybox.png" id="2_ioo17"]
@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://bkqhrej0ky8xc" path="res://level component/Deco/water_tower.tscn" id="34_6ah6f"]
 [ext_resource type="PackedScene" uid="uid://dp15gxl53fdn6" path="res://level component/power_platform.tscn" id="34_g1i3r"]
 [ext_resource type="PackedScene" uid="uid://clnnxo4nuolkh" path="res://level component/flat_shroom.tscn" id="36_my276"]
+[ext_resource type="PackedScene" uid="uid://dgwaxykd3dvw7" path="res://level component/sygil.tscn" id="38_yx0jh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ic0uy"]
 shader = ExtResource("2_wse8f")
@@ -3177,6 +3178,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4h6ng")
 [node name="MobyTail" parent="." instance=ExtResource("32_w44yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9333, 0, -19.7809)
 
+[node name="Skeleton3D" parent="MobyTail" index="1"]
+bones/1/position = Vector3(0.518461, -1.16919e-16, -1.73472e-16)
+bones/1/rotation = Quaternion(3.0816e-16, 0.121768, 3.82837e-17, 0.992559)
+bones/2/position = Vector3(0.269716, 1.43312e-16, 1.73472e-16)
+bones/2/rotation = Quaternion(-3.82105e-31, -1.38778e-17, -4.93038e-32, 1)
+
 [node name="MobyHouse" parent="." instance=ExtResource("32_gggvi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8364, 0)
 
@@ -3198,6 +3205,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_o3ebs")
 
 [node name="MobyProp" parent="." instance=ExtResource("29_k83mh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8041, -0.416674, -31.4549)
+
+[node name="Sygil" parent="." instance=ExtResource("38_yx0jh")]
+transform = Transform3D(0.596094, 0, 0, 0, 0.0426356, 0, 0, 0, 0.596094, -18.6151, 0.366243, -33.8414)
 
 [node name="MobyHouse2" parent="." instance=ExtResource("32_gggvi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2838, 0.514597, -43.5517)

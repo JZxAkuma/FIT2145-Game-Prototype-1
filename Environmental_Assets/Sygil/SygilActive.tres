@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b7uu1qrwr7pb8"]
+
+[ext_resource type="Texture2D" uid="uid://crykgxd28qtn8" path="res://Environmental_Assets/Sygil/Sygil_standardSurface1_BaseColor.png" id="1_sp2of"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_sp2of")
+emission_enabled = true
+emission_texture = ExtResource("1_sp2of")
