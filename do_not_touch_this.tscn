@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://3ftwg36iyvei"]
+[gd_scene load_steps=21 format=3 uid="uid://3ftwg36iyvei"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_5dnvj"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="1_m3ehg"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://l45nsc3pipaj" path="res://level component/Deco/Castle/castle_wall.tscn" id="12_b1f4k"]
 [ext_resource type="PackedScene" uid="uid://3l83r27r00a7" path="res://earth_wall.tscn" id="13_e10v3"]
 [ext_resource type="PackedScene" uid="uid://c8iyy4ydwtace" path="res://level component/Kinematic stuff/wood_crate.tscn" id="14_lhu64"]
+[ext_resource type="PackedScene" uid="uid://begtm20kqwkly" path="res://level component/sygil.tscn" id="15_tcu0g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2siwp"]
 shader = ExtResource("1_m3ehg")
@@ -33,6 +34,9 @@ ambient_light_color = Color(1, 1, 1, 1)
 shader = ExtResource("3_cltf4")
 shader_parameter/pixel_size = 4.0
 shader_parameter/color_levels = 16.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v2mwr"]
+albedo_color = Color(0, 0, 0, 1)
 
 [node name="Do not touch this" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00124669, -0.0135469, 0.00641441)
@@ -77,6 +81,7 @@ sky_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85849, 0, -6.67371)
 use_collision = true
 size = Vector3(62.3242, 1, 59.9285)
+material = SubResource("StandardMaterial3D_v2mwr")
 
 [node name="Lantern" parent="." instance=ExtResource("4_yb07g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1236, 0.537674, -3.75221)
@@ -132,5 +137,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1645, 1.5, 12.8317)
 
 [node name="wood crate" parent="." instance=ExtResource("14_lhu64")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9457, 1.05386, 2.88584)
+
+[node name="Door2" parent="." instance=ExtResource("3_yb07g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5177, 0.501922, 4.24407)
+
+[node name="sygil" parent="Door2" instance=ExtResource("15_tcu0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.20589, 0.0978412, 5.55003)
+
+[node name="sygil2" parent="Door2" instance=ExtResource("15_tcu0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.56776, 0.281781, 6.0871)
 
 [editable path="Checkpoint"]

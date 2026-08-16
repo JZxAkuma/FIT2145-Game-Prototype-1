@@ -1,11 +1,13 @@
 extends StaticBody3D
-var lanterns: Array[StaticBody3D] = []
+var lanterns: Array[Node3D] = []
 @onready var door = $EndDoor1
 var door_tween: Tween
 @export var tween_speed: float = 1.0
 @export var open_rotation_degrees: float = 46.4
 @onready var scene_changer = $"Scene changer"
 @export var change_scene_to: String
+@onready var particle = $GPUParticles3D
+@onready var light = $OmniLight3D
 
 enum states {
 	open,
@@ -23,8 +25,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	match state:
 		states.open:
+			#light.light_energy = 1
+			particle.emitting = true
 			scene_changer.monitoring = true
 		states.close:
+			#light.light_energy = 0
+			particle.emitting = false
 			scene_changer.monitoring = false
 
 func _open_door():
@@ -33,7 +39,9 @@ func _open_door():
 		if door_tween:
 			door_tween.kill()
 		door_tween = create_tween()
+		door_tween.set_parallel(true)
 		door_tween.tween_property(door, "rotation:y", closed_rotation_y - deg_to_rad(open_rotation_degrees), tween_speed)
+		door_tween.tween_property(light,"light_energy",1,tween_speed)
 
 func _close_door():
 	if state == states.open:
@@ -41,11 +49,13 @@ func _close_door():
 		if door_tween:
 			door_tween.kill()
 		door_tween = create_tween()
+		door_tween.set_parallel(true)
 		door_tween.tween_property(door, "rotation:y", closed_rotation_y, tween_speed)
+		door_tween.tween_property(light,"light_energy",1,tween_speed)
 
-func _register_lantern(lantern: StaticBody3D) -> void:
+func _register_lantern(lantern: Node3D) -> void:
 	lanterns.append(lantern)
-
+	
 func _check_lanterns() -> void:
 	for lantern in lanterns:
 		if lantern.state != lantern.states.lit:

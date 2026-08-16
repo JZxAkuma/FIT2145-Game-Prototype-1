@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://dgbpoe2hcfcu3" path="res://Other material/earth_wall.tres" id="2_e24q0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oupq2"]
-size = Vector3(0.751816, 1.03507, 1.00797)
+size = Vector3(1.50853, 2.00048, 1.00797)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cbh8"]
 resource_name = "standardSurface1"
@@ -54,7 +54,7 @@ script = ExtResource("1_7quyf")
 erect_speed = 10.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2.00233, 0, 0, 0, 1.94789, 0, 0, 0, 1, 0.000315078, 0.993335, -0.000134706)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0117613, 0.997979, -0.000134706)
 shape = SubResource("BoxShape3D_oupq2")
 
 [node name="Label3D" type="Label3D" parent="."]
@@ -66,3 +66,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.49012e-08)
 material_override = ExtResource("2_e24q0")
 mesh = SubResource("ArrayMesh_7quyf")
 skeleton = NodePath("")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0117613, 0.997979, -0.000134706)
+shape = SubResource("BoxShape3D_oupq2")

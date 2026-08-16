@@ -78,6 +78,8 @@ var flat_surface_threshold: float = 0.9
 
 @onready var trail_particle = $GPUParticles3D
 
+@export var push_force: float = 0.5
+
 var camera_swap = false
 enum elements {
 	water,
@@ -202,8 +204,10 @@ func _physics_process(delta: float) -> void:
 		get_tree().quit()
 
 	move_and_slide()
-
+	_push_rigid_bodies()
+	
 	_update_animation_state()
+	
 
 
 func _cast_detection():
@@ -517,3 +521,16 @@ func _selected_elements_icon() -> void:
 		# anim_tree.set("parameters/conditions/is_grounded", is_grounded)
 		# anim_tree.set("parameters/conditions/is_aiming", is_aiming)
 		# anim_tree.set("parameters/Selection/blend_position", selection)
+
+func _push_rigid_bodies() -> void:
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+
+		if collider is RigidBody3D:
+			var push_dir = -collision.get_normal()
+			collider.apply_central_impulse(push_dir * push_force * mass_scale_for(collider))
+
+
+func mass_scale_for(body: RigidBody3D) -> float:
+	return 1.0 / max(body.mass, 0.1)

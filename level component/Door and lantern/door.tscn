@@ -87,14 +87,14 @@ size = Vector3(1.87683, 3.28168, 0.434586)
 [sub_resource type="Gradient" id="Gradient_msg8v"]
 colors = PackedColorArray(1, 1, 1, 0.882353, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_s3dmt"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sq4mr"]
 gradient = SubResource("Gradient_msg8v")
 
 [sub_resource type="Curve" id="Curve_mf42f"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_dpgsl"]
+[sub_resource type="CurveTexture" id="CurveTexture_msg8v"]
 curve = SubResource("Curve_mf42f")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yikpa"]
@@ -106,9 +106,9 @@ spread = 10.0
 initial_velocity_min = 0.2
 initial_velocity_max = 0.6
 gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_dpgsl")
+scale_curve = SubResource("CurveTexture_msg8v")
 color = Color(0.969355, 0.96781, 0.977734, 1)
-color_ramp = SubResource("GradientTexture1D_s3dmt")
+color_ramp = SubResource("GradientTexture1D_sq4mr")
 
 [sub_resource type="QuadMesh" id="QuadMesh_1ua45"]
 material = ExtResource("3_sq4mr")
@@ -146,5 +146,8 @@ amount = 5
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_yikpa")
 draw_pass_1 = SubResource("QuadMesh_1ua45")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.916371, 1.33113, 0.453481)
 
 [connection signal="body_entered" from="Scene changer" to="." method="_on_scene_changer_body_entered"]
