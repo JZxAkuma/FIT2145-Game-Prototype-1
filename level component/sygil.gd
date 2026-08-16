@@ -51,7 +51,6 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	print("sygil detected: ", body)
 	if body in bodies_on_plate:
 		return
 	bodies_on_plate.append(body)
