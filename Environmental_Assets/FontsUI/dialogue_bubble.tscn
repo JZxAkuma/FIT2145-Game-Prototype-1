@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb2lpvwhgyxv7"]
+
+[ext_resource type="FontFile" uid="uid://b8nmcbfik7r5n" path="res://Environmental_Assets/FontsUI/PixelifySans-SemiBold.ttf" id="1_7ucp6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqgp8"]
+bg_color = Color(0, 0, 0, 0.666667)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.121569, 0.113725, 0.0666667, 0.917647)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="DialogueBubble" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dqgp8")
+
+[node name="Text" type="Label" parent="Background"]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_7ucp6")
+theme_override_font_sizes/font_size = 30
+text = "(Moby vibes)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
