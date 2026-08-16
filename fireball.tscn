@@ -1,25 +1,73 @@
-[gd_scene load_steps=5 format=3 uid="uid://b43rucqqu3a0p"]
+[gd_scene load_steps=14 format=3 uid="uid://b43rucqqu3a0p"]
 
 [ext_resource type="Script" uid="uid://bw6rj1tyd33e" path="res://fireball.gd" id="1_sf4mh"]
+[ext_resource type="Material" uid="uid://dpcwpjbtnlgoj" path="res://Environmental_Assets/2dParticleSprites/Squares.tres" id="2_olwj8"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wi6of"]
 radius = 0.52963
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sf4mh"]
-albedo_color = Color(1, 0.47451, 0.101961, 1)
+shading_mode = 0
+albedo_color = Color(0.949343, 0.41274, 9.62615e-07, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_olwj8"]
 material = SubResource("StandardMaterial3D_sf4mh")
+
+[sub_resource type="SphereMesh" id="SphereMesh_sf4mh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_olwj8"]
+cull_mode = 1
+shading_mode = 0
+albedo_color = Color(0.988235, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_wdani"]
+colors = PackedColorArray(1, 0, 0, 1, 0.855351, 0.959883, 0.407034, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_m4jgb"]
+gradient = SubResource("Gradient_wdani")
+
+[sub_resource type="Curve" id="Curve_nix7o"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.98718, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_lrxwi"]
+curve = SubResource("Curve_nix7o")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m4vqi"]
+emission_shape_scale = Vector3(0.3, 0.3, 0.3)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 0, 1)
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_lrxwi")
+color_ramp = SubResource("GradientTexture1D_m4jgb")
+
+[sub_resource type="QuadMesh" id="QuadMesh_lk87q"]
+material = ExtResource("2_olwj8")
+size = Vector2(0.3, 0.3)
 
 [node name="Fireball" type="Area3D"]
 script = ExtResource("1_sf4mh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.585, 0, 0, 0, 0.585, 0, 0, 0, 0.585, 0, 0, 0)
+transform = Transform3D(0.503218, 0, 0, 0, 0.503218, 0, 0, 0, 0.503218, 0, 0, 0)
 shape = SubResource("SphereShape3D_wi6of")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, 0, 0, 0)
+transform = Transform3D(0.437519, 0, 0, 0, 0.437519, 0, 0, 0, 0.437519, 0, 0, 0)
 mesh = SubResource("SphereMesh_olwj8")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.553088, 0, 0, 0, 0.553088, 0, 0, 0, 0.553088, 0, 0, 0)
+mesh = SubResource("SphereMesh_sf4mh")
+surface_material_override/0 = SubResource("StandardMaterial3D_olwj8")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00573301, -0.0151059)
+amount = 10
+lifetime = 0.1
+randomness = 0.3
+process_material = SubResource("ParticleProcessMaterial_m4vqi")
+draw_pass_1 = SubResource("QuadMesh_lk87q")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

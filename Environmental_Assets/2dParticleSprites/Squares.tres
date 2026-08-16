@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d051a86tn2ggn" path="res://Environmental_Assets/2dParticleSprites/Square.png" id="1_pg07w"]
 
 [resource]
+shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_pg07w")
 billboard_mode = 1
