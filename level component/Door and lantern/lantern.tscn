@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://dead6clwniio3"]
+[gd_scene load_steps=18 format=4 uid="uid://dead6clwniio3"]
 
 [ext_resource type="Material" uid="uid://dwa06qewrvp0n" path="res://Environmental_Assets/Pack1/AssetPack1Material.tres" id="1_qo53s"]
 [ext_resource type="Script" uid="uid://c1nj83g0mysad" path="res://level component/Door and lantern/lantern.gd" id="1_vphlf"]
 [ext_resource type="Material" uid="uid://c1l7vrr8nrtuc" path="res://Environmental_Assets/Pack2/Pack2.tres" id="3_dta71"]
+[ext_resource type="Material" uid="uid://dpcwpjbtnlgoj" path="res://Environmental_Assets/2dParticleSprites/Squares.tres" id="3_qw4v7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37l05"]
 resource_name = "lambert1"
@@ -81,7 +82,16 @@ shadow_mesh = SubResource("ArrayMesh_qw4v7")
 [sub_resource type="BoxShape3D" id="BoxShape3D_e6xen"]
 size = Vector3(1.32123, 1.06494, 1.31396)
 
-[sub_resource type="SphereMesh" id="SphereMesh_vphlf"]
+[sub_resource type="QuadMesh" id="QuadMesh_erkdw"]
+material = ExtResource("3_qw4v7")
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="Curve" id="Curve_e6xen"]
+_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_avs0x"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vphlf"]
 size = Vector3(0.986084, 1.25879, 0.995605)
@@ -149,9 +159,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.642443, 2.14177, 0.638599)
 shape = SubResource("BoxShape3D_e6xen")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.653328, 2.0562, 0.623964)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62504, 1.96415, 0.623964)
 emitting = false
-mesh = SubResource("SphereMesh_vphlf")
+amount = 5
+randomness = 1.0
+mesh = SubResource("QuadMesh_erkdw")
+emission_shape = 1
+emission_sphere_radius = 0.2
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, 1, 0)
+scale_amount_curve = SubResource("Curve_e6xen")
+color_ramp = SubResource("Gradient_avs0x")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -161,6 +179,7 @@ shape = SubResource("BoxShape3D_vphlf")
 
 [node name="LanternGlass" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.321308, 0, 0, 0, 0.321308, 0, 0, 0, 0.321308, 0.610655, 2.05771, 0.59975)
+visible = false
 material_override = ExtResource("3_dta71")
 mesh = SubResource("ArrayMesh_e6xen")
 skeleton = NodePath("")
