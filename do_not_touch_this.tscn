@@ -47,7 +47,7 @@ environment = SubResource("Environment_ysvdf")
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.483894, 0.875127, 0, -0.875127, -0.483894, 0.0366631, 9.38525, -0.0746479)
 light_color = Color(0.999998, 0.999612, 0.719504, 1)
-light_energy = 2.0
+light_energy = 0.0
 shadow_enabled = true
 directional_shadow_mode = 1
 sky_mode = 1

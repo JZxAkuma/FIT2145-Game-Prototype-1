@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://bg17k7mwbev1m"]
+
+[ext_resource type="Material" uid="uid://dpcwpjbtnlgoj" path="res://Environmental_Assets/2dParticleSprites/Squares.tres" id="1_54buw"]
+[ext_resource type="Script" uid="uid://cvatk2q4swrag" path="res://fire_blast_particle.gd" id="2_xvtgv"]
+
+[sub_resource type="Gradient" id="Gradient_xvtgv"]
+offsets = PackedFloat32Array(0, 0.727273, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.0818182, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xvtgv"]
+gradient = SubResource("Gradient_xvtgv")
+
+[sub_resource type="Curve" id="Curve_xvtgv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_sr4j8"]
+curve = SubResource("Curve_xvtgv")
+
+[sub_resource type="Curve" id="Curve_sr4j8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.98718, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_lrxwi"]
+curve = SubResource("Curve_sr4j8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rb1hn"]
+emission_shape_scale = Vector3(0.5, 0.5, 0.5)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(1, 1, 1)
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_lrxwi")
+color_ramp = SubResource("GradientTexture1D_xvtgv")
+emission_curve = SubResource("CurveTexture_sr4j8")
+
+[sub_resource type="QuadMesh" id="QuadMesh_767ox"]
+material = ExtResource("1_54buw")
+size = Vector2(0.3, 0.3)
+
+[node name="fire blast particle" type="GPUParticles3D"]
+emitting = false
+amount = 10
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 0.3
+process_material = SubResource("ParticleProcessMaterial_rb1hn")
+draw_pass_1 = SubResource("QuadMesh_767ox")
+script = ExtResource("2_xvtgv")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.821052, 0.387952, 0, 1)
+light_energy = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
