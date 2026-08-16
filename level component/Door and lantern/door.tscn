@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://yuudxo5edidq"]
+[gd_scene load_steps=17 format=4 uid="uid://yuudxo5edidq"]
 
 [ext_resource type="Script" uid="uid://c6rhn37b7isp6" path="res://level component/Door and lantern/door.gd" id="1_5y4bi"]
 [ext_resource type="Material" uid="uid://dwa06qewrvp0n" path="res://Environmental_Assets/Pack1/AssetPack1Material.tres" id="1_i8djr"]
+[ext_resource type="Material" uid="uid://c77tbcyu1me5a" path="res://Environmental_Assets/2dParticleSprites/GlowSquares.tres" id="3_sq4mr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37l05"]
 resource_name = "lambert1"
@@ -83,6 +84,36 @@ size = Vector3(1.45837, 2.52817, 0.368019)
 [sub_resource type="BoxShape3D" id="BoxShape3D_sq4mr"]
 size = Vector3(1.87683, 3.28168, 0.434586)
 
+[sub_resource type="Gradient" id="Gradient_msg8v"]
+colors = PackedColorArray(1, 1, 1, 0.882353, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s3dmt"]
+gradient = SubResource("Gradient_msg8v")
+
+[sub_resource type="Curve" id="Curve_mf42f"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_dpgsl"]
+curve = SubResource("Curve_mf42f")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yikpa"]
+emission_shape_scale = Vector3(0.8, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1.3, 0.1)
+direction = Vector3(0, 0, 0)
+spread = 10.0
+initial_velocity_min = 0.2
+initial_velocity_max = 0.6
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_dpgsl")
+color = Color(0.969355, 0.96781, 0.977734, 1)
+color_ramp = SubResource("GradientTexture1D_s3dmt")
+
+[sub_resource type="QuadMesh" id="QuadMesh_1ua45"]
+material = ExtResource("3_sq4mr")
+size = Vector2(0.2, 0.2)
+
 [node name="Door" type="StaticBody3D" groups=["door"]]
 script = ExtResource("1_5y4bi")
 open_rotation_degrees = 110.0
@@ -108,5 +139,12 @@ shape = SubResource("BoxShape3D_5y4bi")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.922424, 1.63541, 0.215843)
 shape = SubResource("BoxShape3D_sq4mr")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.926218, 1.64689, 0.404073)
+amount = 5
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_yikpa")
+draw_pass_1 = SubResource("QuadMesh_1ua45")
 
 [connection signal="body_entered" from="Scene changer" to="." method="_on_scene_changer_body_entered"]
