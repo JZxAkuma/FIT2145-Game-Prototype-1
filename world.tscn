@@ -37,7 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://bkqhrej0ky8xc" path="res://level component/Deco/water_tower.tscn" id="34_6ah6f"]
 [ext_resource type="PackedScene" uid="uid://dp15gxl53fdn6" path="res://level component/power_platform.tscn" id="34_g1i3r"]
 [ext_resource type="PackedScene" uid="uid://clnnxo4nuolkh" path="res://level component/flat_shroom.tscn" id="36_my276"]
-[ext_resource type="PackedScene" uid="uid://dgwaxykd3dvw7" path="res://level component/sygil.tscn" id="38_yx0jh"]
+[ext_resource type="PackedScene" uid="uid://1chb14rsvqvy" path="res://level component/sygil_texture.tscn" id="38_yx0jh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ic0uy"]
 shader = ExtResource("2_wse8f")

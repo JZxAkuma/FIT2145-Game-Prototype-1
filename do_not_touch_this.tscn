@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://3ftwg36iyvei"]
+[gd_scene load_steps=19 format=3 uid="uid://3ftwg36iyvei"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_5dnvj"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="1_m3ehg"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bui78i54bg7k4" path="res://level component/Deco/Trees/mushroom.tscn" id="11_ysvdf"]
 [ext_resource type="PackedScene" uid="uid://l45nsc3pipaj" path="res://level component/Deco/Castle/castle_wall.tscn" id="12_b1f4k"]
 [ext_resource type="PackedScene" uid="uid://3l83r27r00a7" path="res://earth_wall.tscn" id="13_e10v3"]
+[ext_resource type="PackedScene" uid="uid://c8iyy4ydwtace" path="res://level component/Kinematic stuff/wood_crate.tscn" id="14_lhu64"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2siwp"]
 shader = ExtResource("1_m3ehg")
@@ -128,5 +129,8 @@ transform = Transform3D(-5.96046e-08, 1, 0, -1, -5.96046e-08, 0, 0, 0, 1, -3.242
 
 [node name="player" parent="." instance=ExtResource("1_5dnvj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1645, 1.5, 12.8317)
+
+[node name="wood crate" parent="." instance=ExtResource("14_lhu64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9457, 1.05386, 2.88584)
 
 [editable path="Checkpoint"]

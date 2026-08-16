@@ -1,94 +1,22 @@
-[gd_scene load_steps=8 format=4 uid="uid://dgwaxykd3dvw7"]
+[gd_scene load_steps=4 format=3 uid="uid://begtm20kqwkly"]
 
-[ext_resource type="Material" uid="uid://b7uu1qrwr7pb8" path="res://Environmental_Assets/Sygil/SygilActive.tres" id="1_0noyv"]
+[ext_resource type="PackedScene" uid="uid://1chb14rsvqvy" path="res://level component/sygil_texture.tscn" id="1_0noyv"]
+[ext_resource type="Script" uid="uid://bd0qds8jkluxi" path="res://level component/sygil.gd" id="1_n7eyg"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qde6"]
-resource_name = "standardSurface1"
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.665185, 0.665185, 0.665185, 1)
-roughness = 0.5
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 0.0
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_n7eyg"]
+height = 0.178101
+radius = 0.998535
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0a8hp"]
-_surfaces = [{
-"aabb": AABB(-2, -2.00002, -1.90211, 4, 2.8491e-05, 3.80423),
-"format": 34359742465,
-"index_count": 30,
-"index_data": PackedByteArray("AAABAAIAAgABAAMABAABAAAAAwABAAUABgABAAQABQABAAcACAABAAYABwABAAkACgABAAgACQABAAoA"),
-"name": "standardSurface1",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 11,
-"vertex_data": PackedByteArray("yBvPP63//7/geJa/AAAAAPz//78AAAA3eDceP8H//78/ePO/fTcev+r//78/ePO//P//PyYAAMAAAAA3tRvPv/z//7/geJa/tBvPPyYAAMAgeZY/+P//v/z//78AAAA3eTceP/z//7+gePM/yBvPv04AAMAgeZY/eTcev/z//7+gePM/")
-}]
-blend_shape_mode = 0
+[node name="sygil" type="Area3D"]
+script = ExtResource("1_n7eyg")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_8ahf3"]
-resource_name = "Sygil"
-_surfaces = [{
-"aabb": AABB(-2, -2.00002, -1.90211, 4, 2.8491e-05, 3.80423),
-"attribute_data": PackedByteArray("UJHDPbgcbD4AAAA/vEMGP1TksD7AeEg96o0nP8B4SD0AAAAAvEMGP+qNZz+4HGw+UJHDPUqAUT8AAIA/vEMGP1TksD4AAIA/6o1nP0qAUT/qjSc/AACAPw=="),
-"format": 34359742487,
-"index_count": 30,
-"index_data": PackedByteArray("AAABAAIAAgABAAMABAABAAAAAwABAAUABgABAAQABQABAAcACAABAAYABwABAAkACgABAAgACQABAAoA"),
-"material": SubResource("StandardMaterial3D_8qde6"),
-"name": "standardSurface1",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 11,
-"vertex_data": PackedByteArray("yBvPP63//7/geJa/AAAAAPz//78AAAA3eDceP8H//78/ePO/fTcev+r//78/ePO//P//PyYAAMAAAAA3tRvPv/z//7/geJa/tBvPPyYAAMAgeZY/+P//v/z//78AAAA3eTceP/z//7+gePM/yBvPv04AAMAgeZY/eTcev/z//7+gePM//3/+/wAA/z//f/7/AAD/P/9//v8AAP8//3/+/wAA/z//f/7/AAD/P/9//v8AAP8//3/+/wAA/z//f/7/AAD/P/9//v8AAP8//3/+/wAA/z//f/7/AAD/Pw==")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_0a8hp")
+[node name="Sygil" parent="." instance=ExtResource("1_0noyv")]
 
-[sub_resource type="Animation" id="Animation_0noyv"]
-resource_name = "Spinning"
-length = 3.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
-}
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0872192, 0)
+shape = SubResource("CylinderShape3D_n7eyg")
 
-[sub_resource type="Animation" id="Animation_n7eyg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8lnnx"]
-_data = {
-&"RESET": SubResource("Animation_n7eyg"),
-&"Spinning": SubResource("Animation_0noyv")
-}
-
-[node name="Sygil" type="MeshInstance3D"]
-transform = Transform3D(0.596094, 0, 0, 0, 0.0426356, 0, 0, 0, 0.596094, 0, 0, 0)
-material_override = ExtResource("1_0noyv")
-mesh = SubResource("ArrayMesh_8ahf3")
-skeleton = NodePath("")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_8lnnx")
-}
-autoplay = "Spinning"
+[editable path="Sygil"]

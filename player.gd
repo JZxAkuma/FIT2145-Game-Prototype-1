@@ -76,6 +76,8 @@ var flat_surface_threshold: float = 0.9
 @export var fire_available : bool = true
 @export var earth_available : bool = true
 
+@onready var trail_particle = $GPUParticles3D
+
 var camera_swap = false
 enum elements {
 	water,
@@ -165,6 +167,11 @@ func _physics_process(delta: float) -> void:
 
 	
 	_cast_detection()
+	
+	if is_on_floor() and velocity != Vector3.ZERO:
+		trail_particle.emitting = true
+	else:
+		trail_particle.emitting = false
 
 	if not is_on_floor():
 		velocity += get_gravity() * delta

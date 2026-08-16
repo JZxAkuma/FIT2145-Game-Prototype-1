@@ -10,7 +10,7 @@ var state: states = states.erecting
 @export var erect_speed: float = 0.5
 @export var decay_speed : float = 0.1
 @export var player_made : bool = false
-const MIN_SCALE := 0.001
+const MIN_SCALE := -0.001
 
 func _ready() -> void:
 	self.scale.y = MIN_SCALE
