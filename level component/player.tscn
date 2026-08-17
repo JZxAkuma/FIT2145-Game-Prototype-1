@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bye70pqxpcpcf"]
+[gd_scene load_steps=27 format=3 uid="uid://bye70pqxpcpcf"]
 
 [ext_resource type="Script" uid="uid://btoituocs665x" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://dhphdaphrwcbm" path="res://Character_Assets/MobyRig.fbx" id="2_8v1cs"]
@@ -27,10 +27,64 @@ height = 1.60628
 
 [sub_resource type="Animation" id="Animation_os2xl"]
 resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player_mesh/MobyRig/Skeleton3D:Hip")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.707107, 0.707107, 4.32964e-17, 4.32964e-17, 0.5, 1, 0.714758, 0.699372, 0.0003658, -0.000329672, 0.84, 1, 0.689633, 0.724158, -0.000820836, 0.00073975)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player_mesh/MobyRig/Skeleton3D:LHand")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.00606678, 0.660334, 8.08676e-17, 0.4, 1, -0.150259, 0.663596, -0.000514564)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player_mesh/MobyRig/Skeleton3D:RHand")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.00606466, -0.660334, -8.08676e-17, 0.52, 1, -0.109856, -0.657865, -0.000383858)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player_mesh/MobyRig/Skeleton3D:RHand")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.52, 1, -0.00458373, -0.213676, 0.00964776, 0.976846)
+
+[sub_resource type="Animation" id="Animation_84xnk"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player_mesh/MobyRig/Skeleton3D:Hip")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.707107, 0.707107, 4.32964e-17, 4.32964e-17)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player_mesh/MobyRig/Skeleton3D:LHand")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.00606678, 0.660334, 8.08676e-17)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player_mesh/MobyRig/Skeleton3D:RHand")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.00606466, -0.660334, -8.08676e-17)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cx4s4"]
 _data = {
-&"Idle": SubResource("Animation_os2xl")
+&"Idle": SubResource("Animation_os2xl"),
+&"RESET": SubResource("Animation_84xnk")
 }
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5enqi"]
@@ -92,7 +146,14 @@ skeleton = NodePath("../..")
 transform = Transform3D(-0.72, -1.03342e-11, 1.08717e-07, 7.69493e-11, 0.72, 0.000578053, -1.08717e-07, 0.000578053, -0.72, 0, -1.312, 0.006)
 
 [node name="Skeleton3D" parent="Player_mesh/MobyRig" index="1"]
-transform = Transform3D(1, -6.93889e-18, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.998974, 0.00356573, 0.0451472, -0.0034199, 0.999989, -0.00330664, -0.0451585, 0.00314886, 0.998975, 0, 0, 0)
+bones/0/position = Vector3(0, 1, -6.98492e-10)
+bones/0/rotation = Quaternion(0.707107, 0.707107, 4.32964e-17, 4.32964e-17)
+bones/0/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(2.79761e-09, 1.74623e-10, -5.78175e-10, 1)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(-0.00117285, -0.0546739, 0.0024686, 0.998501)
+bones/9/scale = Vector3(1, 1, 1)
 
 [node name="RightFoot" parent="Player_mesh/MobyRig/Skeleton3D" index="0"]
 material_override = ExtResource("3_os2xl")
@@ -345,8 +406,10 @@ shape = SubResource("CapsuleShape3D_tlwt5")
 libraries = {
 &"": SubResource("AnimationLibrary_cx4s4")
 }
+autoplay = "Idle"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+active = false
 tree_root = SubResource("AnimationNodeStateMachine_5enqi")
 anim_player = NodePath("../AnimationPlayer")
 
