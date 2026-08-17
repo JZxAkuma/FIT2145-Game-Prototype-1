@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dp15gxl53fdn6"]
+[gd_scene load_steps=15 format=4 uid="uid://dp15gxl53fdn6"]
 
 [ext_resource type="Material" uid="uid://cbqnxdmw3y3j7" path="res://Environmental_Assets/Pack3/Pack3.tres" id="1_32s3y"]
 [ext_resource type="Material" uid="uid://cmaxwn2kqtfpn" path="res://Environmental_Assets/2dParticleSprites/Circle.tres" id="2_iqi76"]
@@ -109,22 +109,29 @@ material = ExtResource("2_iqi76")
 size = Vector2(2, 2)
 orientation = 1
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_32s3y"]
+size = Vector3(2.30219, 0.364075, 2.29309)
+
 [node name="PowerPlatform" type="Node3D"]
 
 [node name="Outlet" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.291267, 0, 0, 0, 0.0332108, 0, 0, 0, 0.291267, 0.18751, 0.952192, 0.27331)
+transform = Transform3D(0.291267, 0, 0, 0, 0.0332108, 0, 0, 0, 0.291267, 0.00764798, 0.619447, 0.00351697)
 mesh = SubResource("ArrayMesh_qf2ls")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("1_32s3y")
 
 [node name="Platform" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.173145, 0, 0, 0, 1, 0.17623, 1.27176, 0.27302)
+transform = Transform3D(1, 0, 0, 0, 0.173145, 0, 0, 0, 1, -0.00363202, 0.939015, 0.00322697)
 mesh = SubResource("ArrayMesh_80x0a")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("1_32s3y")
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.216083, 0.610064, 0.265455)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036221, 0.277319, -0.00433803)
 amount = 3
 process_material = SubResource("ParticleProcessMaterial_bt23b")
 draw_pass_1 = SubResource("QuadMesh_8dudq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008811, 0.941944, 0.0134711)
+shape = SubResource("BoxShape3D_32s3y")
