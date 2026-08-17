@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=4 uid="uid://cjpdnm3o6nrrm"]
 
-[ext_resource type="Script" uid="uid://vys6nitxr6q4" path="res://level component/Deco/npc.gd" id="1_3tqb5"]
+[ext_resource type="Script" path="res://level component/Deco/npc.gd" id="1_3tqb5"]
 [ext_resource type="FontFile" uid="uid://b8nmcbfik7r5n" path="res://Environmental_Assets/FontsUI/PixelifySans-SemiBold.ttf" id="2_lpl1l"]
 [ext_resource type="Material" uid="uid://be7o2iqhqd43h" path="res://Character_Assets/MobyTexture.tres" id="2_qg5rv"]
 [ext_resource type="PackedScene" uid="uid://bb2lpvwhgyxv7" path="res://Environmental_Assets/FontsUI/dialogue_bubble.tscn" id="4_pqudq"]

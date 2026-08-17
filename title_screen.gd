@@ -13,7 +13,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 
-
 func _on_button_pressed() -> void:
 	$Menu/Control/VBoxContainer/Button.disabled = true
 	$Menu/Control/VBoxContainer/Button2.disabled = true
@@ -25,7 +24,6 @@ func _on_button_2_pressed() -> void:
 	$Menu/Control/VBoxContainer/Button2.disabled = true
 	
 	Transition._transition_scene("res://world.tscn")
-
 
 func _on_button_3_pressed() -> void:
 	MusicHandler.toggle_mute()

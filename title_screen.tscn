@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=4 uid="uid://xeclik2roint"]
+[gd_scene load_steps=137 format=4 uid="uid://xeclik2roint"]
 
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="1_ig5kc"]
 [ext_resource type="Script" uid="uid://mtrmqtmcuj1h" path="res://title_screen.gd" id="1_lf08s"]
@@ -16,6 +16,7 @@
 [ext_resource type="Material" uid="uid://028c08pjbb83" path="res://Environmental_Assets/Grass/Grass.tres" id="14_y8ura"]
 [ext_resource type="Texture2D" uid="uid://cwr2pq16q5cap" path="res://Environmental_Assets/Water/WaterBG.png" id="15_aav61"]
 [ext_resource type="Texture2D" uid="uid://btg7exol2ibij" path="res://Environmental_Assets/Water/ThickWaterWaves.png" id="16_a64np"]
+[ext_resource type="FontFile" uid="uid://b8nmcbfik7r5n" path="res://Environmental_Assets/FontsUI/PixelifySans-SemiBold.ttf" id="17_m6xo1"]
 [ext_resource type="Texture2D" uid="uid://dv4yxj1bnndoj" path="res://Character_Assets/MobyRig_0.png" id="18_4h4vs"]
 [ext_resource type="Material" uid="uid://be7o2iqhqd43h" path="res://Character_Assets/MobyTexture.tres" id="19_y8ura"]
 [ext_resource type="PackedScene" uid="uid://d453vpva4jrf" path="res://Environmental_Assets/BackDrop/DistantMountains.fbx" id="20_a64np"]
@@ -2409,14 +2410,20 @@ grow_vertical = 2
 
 [node name="Button" type="Button" parent="Menu/Control/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("17_m6xo1")
+theme_override_font_sizes/font_size = 20
 text = "To Level 1"
 
 [node name="Button2" type="Button" parent="Menu/Control/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("17_m6xo1")
+theme_override_font_sizes/font_size = 20
 text = "To World.tscn"
 
 [node name="Button3" type="Button" parent="Menu/Control/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("17_m6xo1")
+theme_override_font_sizes/font_size = 20
 text = "Mute/Unmute Music"
 
 [node name="PixelShader" type="CanvasLayer" parent="."]
