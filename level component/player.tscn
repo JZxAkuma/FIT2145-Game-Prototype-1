@@ -444,7 +444,7 @@ _data = {
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5enqi"]
 states/End/position = Vector2(932, 127)
-states/Start/position = Vector2(344, 134)
+states/Start/position = Vector2(548, 127)
 
 [sub_resource type="Gradient" id="Gradient_mmloc"]
 colors = PackedColorArray(1, 1, 1, 0.882353, 1, 1, 1, 0)
@@ -515,7 +515,6 @@ bones/6/rotation = Quaternion(-0.481475, -0.0932315, -0.675769, 0.550297)
 bones/7/position = Vector3(0.638741, 3.55618e-16, -9.71445e-17)
 bones/8/position = Vector3(0.00606678, 0.660334, 8.08676e-17)
 bones/9/position = Vector3(0.00606466, -0.660334, -8.08676e-17)
-bones/9/rotation = Quaternion(-0.000156102, -0.00727689, 0.000328561, 0.999974)
 bones/10/position = Vector3(-0.0340323, 0.316433, 3.87519e-17)
 bones/10/rotation = Quaternion(0.0143075, 0.706962, -0.706962, -0.0143075)
 bones/10/scale = Vector3(1, 1, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://3ftwg36iyvei"]
+[gd_scene load_steps=22 format=3 uid="uid://3ftwg36iyvei"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_5dnvj"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="1_m3ehg"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://3l83r27r00a7" path="res://earth_wall.tscn" id="13_e10v3"]
 [ext_resource type="PackedScene" uid="uid://c8iyy4ydwtace" path="res://level component/Kinematic stuff/wood_crate.tscn" id="14_lhu64"]
 [ext_resource type="PackedScene" uid="uid://begtm20kqwkly" path="res://level component/sygil.tscn" id="15_tcu0g"]
+[ext_resource type="PackedScene" uid="uid://huhac7cjloau" path="res://level component/moving_platform.tscn" id="16_v2mwr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2siwp"]
 shader = ExtResource("1_m3ehg")
@@ -83,9 +84,6 @@ use_collision = true
 size = Vector3(62.3242, 1, 59.9285)
 material = SubResource("StandardMaterial3D_v2mwr")
 
-[node name="Lantern" parent="." instance=ExtResource("4_yb07g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1236, 0.537674, -3.75221)
-
 [node name="Door" parent="." instance=ExtResource("3_yb07g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.316584, 20.0425, -19.4731)
 change_scene_to = "res://world.tscn"
@@ -141,10 +139,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9457, 1.05386, 2.88584)
 [node name="Door2" parent="." instance=ExtResource("3_yb07g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5177, 0.501922, 4.24407)
 
-[node name="sygil" parent="Door2" instance=ExtResource("15_tcu0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.20589, 0.0978412, 5.55003)
-
 [node name="sygil2" parent="Door2" instance=ExtResource("15_tcu0g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.56776, 0.281781, 6.0871)
 
+[node name="Moving platform" parent="." groups=["door"] instance=ExtResource("16_v2mwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6572, 0.5, 11.463)
+
+[node name="pos 2" parent="Moving platform" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.32825, 0, 0)
+
+[node name="Lantern" parent="Moving platform" instance=ExtResource("4_yb07g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.53357, 0.037674, -3.87477)
+
 [editable path="Checkpoint"]
+[editable path="Moving platform"]
+[editable path="Moving platform/PowerPlatform"]

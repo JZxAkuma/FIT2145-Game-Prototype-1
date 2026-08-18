@@ -112,7 +112,7 @@ orientation = 1
 [sub_resource type="BoxShape3D" id="BoxShape3D_32s3y"]
 size = Vector3(2.30219, 0.364075, 2.29309)
 
-[node name="PowerPlatform" type="Node3D"]
+[node name="PowerPlatform" type="AnimatableBody3D"]
 
 [node name="Outlet" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.291267, 0, 0, 0, 0.0332108, 0, 0, 0, 0.291267, 0.00764798, 0.619447, 0.00351697)

@@ -11,3 +11,5 @@ script = ExtResource("1_6eae8")
 [node name="pos 2" type="Marker3D" parent="."]
 
 [node name="PowerPlatform" parent="." instance=ExtResource("2_mh0hq")]
+
+[node name="Timer" type="Timer" parent="."]
