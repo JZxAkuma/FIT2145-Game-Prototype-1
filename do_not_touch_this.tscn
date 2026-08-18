@@ -148,6 +148,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6572, 0.5, 11.463)
 [node name="pos 2" parent="Moving platform" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.32825, 0, 0)
 
+[node name="Outlet" parent="Moving platform/PowerPlatform" index="0"]
+surface_material_override/0 = null
+
+[node name="Platform" parent="Moving platform/PowerPlatform" index="1"]
+surface_material_override/0 = null
+
 [node name="Lantern" parent="Moving platform" instance=ExtResource("4_yb07g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.53357, 0.037674, -3.87477)
 

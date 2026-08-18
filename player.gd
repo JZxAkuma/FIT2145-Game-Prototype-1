@@ -446,6 +446,9 @@ func _update_animation_state() -> void:
 	is_moving = horizontal_speed > 0.1
 	is_grounded = is_on_floor()
 
+	if anim_tree:
+		anim_tree.set("parameters/Move/blend_amount", move_speed_ratio)
+
 func _update_elements_ui_position() -> void:
 	var world_pos = global_position + element_ui_offset
 
@@ -514,12 +517,6 @@ func _selected_elements_icon() -> void:
 	var screen_pos = camera.unproject_position(world_pos)
 	selected_icon.position = screen_pos - (selected_icon.size / 2.0)
 
-	if anim_tree:
-		pass
-		# anim_tree.set("parameters/Move/blend_position", move_speed_ratio)
-		# anim_tree.set("parameters/conditions/is_grounded", is_grounded)
-		# anim_tree.set("parameters/conditions/is_aiming", is_aiming)
-		# anim_tree.set("parameters/Selection/blend_position", selection)
 
 func _push_rigid_bodies() -> void:
 	for i in get_slide_collision_count():

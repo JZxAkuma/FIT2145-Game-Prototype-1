@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bye70pqxpcpcf"]
+[gd_scene load_steps=31 format=3 uid="uid://bye70pqxpcpcf"]
 
 [ext_resource type="Script" uid="uid://btoituocs665x" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://dhphdaphrwcbm" path="res://Character_Assets/MobyRig.fbx" id="2_8v1cs"]
@@ -442,9 +442,24 @@ _data = {
 &"Walk": SubResource("Animation_mmloc")
 }
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5enqi"]
-states/End/position = Vector2(932, 127)
-states/Start/position = Vector2(548, 127)
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mmloc"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_84xnk"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2dbpi"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_stime"]
+graph_offset = Vector2(-85.1637, 8.60875)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_mmloc")
+nodes/Idle/position = Vector2(600, -40)
+nodes/Move/node = SubResource("AnimationNodeBlend2_84xnk")
+nodes/Move/position = Vector2(920, 80)
+nodes/Walk/node = SubResource("AnimationNodeAnimation_2dbpi")
+nodes/Walk/position = Vector2(600, 140)
+nodes/output/position = Vector2(1160, 100)
+node_connections = [&"Move", 0, &"Idle", &"Move", 1, &"Walk", &"output", 0, &"Move"]
 
 [sub_resource type="Gradient" id="Gradient_mmloc"]
 colors = PackedColorArray(1, 1, 1, 0.882353, 1, 1, 1, 0)
@@ -515,6 +530,7 @@ bones/6/rotation = Quaternion(-0.481475, -0.0932315, -0.675769, 0.550297)
 bones/7/position = Vector3(0.638741, 3.55618e-16, -9.71445e-17)
 bones/8/position = Vector3(0.00606678, 0.660334, 8.08676e-17)
 bones/9/position = Vector3(0.00606466, -0.660334, -8.08676e-17)
+bones/9/rotation = Quaternion(-0.00397079, -0.185103, 0.00835765, 0.982676)
 bones/10/position = Vector3(-0.0340323, 0.316433, 3.87519e-17)
 bones/10/rotation = Quaternion(0.0143075, 0.706962, -0.706962, -0.0143075)
 bones/10/scale = Vector3(1, 1, 1)
@@ -774,12 +790,11 @@ shape = SubResource("CapsuleShape3D_tlwt5")
 libraries = {
 &"": SubResource("AnimationLibrary_cx4s4")
 }
-autoplay = "Walk"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-active = false
-tree_root = SubResource("AnimationNodeStateMachine_5enqi")
+tree_root = SubResource("AnimationNodeBlendTree_stime")
 anim_player = NodePath("../AnimationPlayer")
+parameters/Move/blend_amount = 0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.92185e-05, -0.832817, 0.170744)
