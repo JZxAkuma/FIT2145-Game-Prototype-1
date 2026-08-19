@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://3ftwg36iyvei"]
+[gd_scene load_steps=26 format=3 uid="uid://3ftwg36iyvei"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_5dnvj"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="1_m3ehg"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cuxjtjjk6sjga" path="res://level component/water_container_scale_maxr.tscn" id="17_4hmfx"]
 [ext_resource type="PackedScene" uid="uid://b7fvcx564frcv" path="res://level component/water_container_set_max.tscn" id="18_3645f"]
 [ext_resource type="PackedScene" uid="uid://cccsgyqte47e6" path="res://level component/growing_plant.tscn" id="19_syu1u"]
+[ext_resource type="PackedScene" uid="uid://c87l4eyjihsew" path="res://level component/burnable_wood_wall.tscn" id="20_uc3q2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b1f4k"]
 shader = ExtResource("3_cltf4")
@@ -174,6 +175,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.335, 0.502698, 9.77339)
 
 [node name="growing plant" parent="." instance=ExtResource("19_syu1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4045, 0.5, 13.4613)
+
+[node name="Burnable Wood Wall" parent="." instance=ExtResource("20_uc3q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.50347, 1.34027, 17.3268)
 
 [editable path="Checkpoint"]
 [editable path="Moving platform"]

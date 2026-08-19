@@ -1,10 +1,8 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dpcwpjbtnlgoj"]
-
-[ext_resource type="Texture2D" uid="uid://d051a86tn2ggn" path="res://Environmental_Assets/2dParticleSprites/Square.png" id="1_pg07w"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dpcwpjbtnlgoj"]
 
 [resource]
 shading_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_pg07w")
+albedo_color = Color(1, 1, 1, 0.227451)
 billboard_mode = 1
 billboard_keep_scale = true
