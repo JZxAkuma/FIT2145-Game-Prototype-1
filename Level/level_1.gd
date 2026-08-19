@@ -10,6 +10,9 @@ extends Node3D
 @export var camera_move_time: float = 1.5
 var camera_tween: Tween
 
+@onready var fire_image = $"menu camera anchor/Menu camera/FireImage"
+@onready var fire_image2 = $"menu camera anchor/Menu camera/FireImage2"
+
 var on_menu = true
 
 # Called when the node enters the scene tree for the first time.
@@ -40,7 +43,9 @@ func _on_to_level_pressed() -> void:
 		camera_tween.kill()
 	camera_tween = create_tween()
 	camera_tween.set_parallel(true)
-	camera_tween.tween_property(menu_control,"modulate:a",0,0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	camera_tween.tween_property(fire_image,"global_position:y",100,0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	camera_tween.tween_property(fire_image2,"global_position:y",100,0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	camera_tween.tween_property(menu_control,"modulate:a",0,0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	camera_tween.tween_property(menu_camera, "global_position", target_pos, camera_move_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	camera_tween.tween_property(menu_camera, "global_transform:basis", target_basis, camera_move_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
@@ -48,7 +53,9 @@ func _on_to_level_pressed() -> void:
 
 
 func _finish_camera_move() -> void:
-	menu.hide()
+	fire_image.hide()
+	fire_image2.hide()
+	menu_control.hide()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	player._unlock_player()
 	player_camera.current = true

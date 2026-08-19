@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://fiqtqeg3x8sk"]
+[gd_scene load_steps=52 format=4 uid="uid://fiqtqeg3x8sk"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_ef6fe"]
 [ext_resource type="Script" uid="uid://xclr3lt56xo" path="res://Level/level_1.gd" id="1_yogn7"]
@@ -35,6 +35,18 @@
 [ext_resource type="Texture2D" uid="uid://c3bth0fy8frd1" path="res://Environmental_Assets/FontsUI/MasterOfElements.png" id="32_yogn7"]
 [ext_resource type="FontFile" uid="uid://b8nmcbfik7r5n" path="res://Environmental_Assets/FontsUI/PixelifySans-SemiBold.ttf" id="33_1bsar"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yogn7"]
+transparency = 1
+albedo_texture = ExtResource("31_spqro")
+billboard_keep_scale = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p4s5p"]
+transparency = 1
+albedo_texture = ExtResource("32_yogn7")
+
+[sub_resource type="QuadMesh" id="QuadMesh_1bsar"]
+material = SubResource("StandardMaterial3D_p4s5p")
+
 [sub_resource type="Animation" id="Animation_hx5et"]
 resource_name = "camera spin"
 
@@ -42,6 +54,11 @@ resource_name = "camera spin"
 _data = {
 &"camera spin": SubResource("Animation_hx5et")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rl1io"]
+shader = ExtResource("4_3bagr")
+shader_parameter/pixel_size = 4.0
+shader_parameter/color_levels = 16.0
 
 [sub_resource type="Animation" id="Animation_1bsar"]
 length = 0.001
@@ -119,11 +136,6 @@ sky = SubResource("Sky_il2jm")
 ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rl1io"]
-shader = ExtResource("4_3bagr")
-shader_parameter/pixel_size = 4.0
-shader_parameter/color_levels = 16.0
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y2ix0"]
 resource_name = "standardSurface1"
 vertex_color_use_as_albedo = true
@@ -187,6 +199,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9159, 0, 10.8631)
 [node name="Menu camera" type="Camera3D" parent="menu camera anchor"]
 transform = Transform3D(-0.0209424, 0.595436, -0.80313, 3.48499e-11, 0.803306, 0.595566, 0.999781, 0.0124726, -0.0168232, -14.9911, 27.7285, 0.937332)
 
+[node name="FireImage" type="MeshInstance3D" parent="menu camera anchor/Menu camera"]
+transform = Transform3D(7.64485, -0.37431, 1.01472, 1.00996, 2.87775, 0.0662225, -1.36225, 0.0329488, 5.74362, -0.127041, 1.40619, -4.24835)
+material_override = SubResource("StandardMaterial3D_yogn7")
+mesh = SubResource("QuadMesh_1bsar")
+
+[node name="FireImage2" type="MeshInstance3D" parent="menu camera anchor/Menu camera"]
+transform = Transform3D(7.64485, -0.37431, 1.01472, 1.00996, 2.87775, 0.0662228, -1.36225, 0.0329487, 5.74362, 0.00834942, 0.231623, -5.21017)
+mesh = SubResource("QuadMesh_1bsar")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_6t0mt")
@@ -195,6 +216,16 @@ libraries = {
 [node name="Menu" type="CanvasLayer" parent="."]
 process_priority = 1
 layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="Menu"]
+z_index = 1
+material = SubResource("ShaderMaterial_rl1io")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Control" type="Control" parent="Menu"]
 layout_mode = 3
@@ -207,6 +238,7 @@ mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Control" parent="Menu/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -251,6 +283,7 @@ grow_vertical = 2
 texture = ExtResource("32_yogn7")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu/Control"]
+z_index = 3
 z_as_relative = false
 layout_mode = 1
 anchors_preset = 8
@@ -295,14 +328,7 @@ water_available = false
 fire_available = false
 
 [node name="Skeleton3D" parent="player/Player_mesh/MobyRig" index="1"]
-bones/0/rotation = Quaternion(0.707107, 0.707107, 4.32964e-17, 4.32964e-17)
-bones/3/rotation = Quaternion(0.346064, 0.595076, 0.315242, 0.653258)
-bones/4/position = Vector3(0.343057, 1.18144e-16, 3.45944e-18)
-bones/4/rotation = Quaternion(0.151308, -0.396979, -0.0665316, 0.902822)
-bones/6/rotation = Quaternion(-0.481475, -0.0932315, -0.675769, 0.550297)
-bones/9/rotation = Quaternion(-0.00179852, -0.0838403, 0.0037855, 0.99647)
-bones/10/rotation = Quaternion(0.0143075, 0.706962, -0.706962, -0.0143075)
-bones/12/rotation = Quaternion(-0.0143077, 0.706962, -0.706962, 0.0143077)
+bones/9/rotation = Quaternion(-0.0015046, -0.0701389, 0.00316686, 0.997531)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m7pm6")
@@ -316,15 +342,6 @@ directional_shadow_mode = 1
 sky_mode = 1
 
 [node name="PixelShader" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="PixelShader"]
-material = SubResource("ShaderMaterial_rl1io")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="Death Box" parent="." instance=ExtResource("5_6qpf1")]
 transform = Transform3D(213.15, 0, 0, 0, 1, 0, 0, 0, 220.8, 0, -3, 0)
