@@ -113,6 +113,9 @@ signal state_changed(new_state: states)
 signal selection_changed(new_selection: elements)
 
 func _ready() -> void:
+	element_ui.modulate.a = 0
+	selected_icon.modulate.a = 0
+	crosshair.modulate.a  = 0
 	wall_indicator.visible = false
 	call_deferred("_add_wall_indicator")
 	print("water: ", water_available, " fire: ", fire_available, " earth: ", earth_available)
@@ -141,6 +144,7 @@ func _lock_mouse():
 
 func _physics_process(delta: float) -> void:
 	if player_lock:
+		
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		return
 	

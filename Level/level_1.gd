@@ -4,7 +4,11 @@ extends Node3D
 @onready var player_camera = $"player/camera point/SpringArm3D/Camera3D"
 
 @onready var menu = $Menu
+@onready var menu_control = $Menu/Control
 @onready var menu_camera = $"menu camera anchor/Menu camera"
+
+@export var camera_move_time: float = 1.5
+var camera_tween: Tween
 
 var on_menu = true
 
@@ -24,10 +28,27 @@ func _process(delta: float) -> void:
 	
 
 func _on_to_level_pressed() -> void:
-	menu.hide()
-	on_menu = false
+	$AnimationPlayer.stop()
+	on_menu = false  # stops the anchor's AnimationPlayer-driven idle rotation from mattering
 	$"Menu/Control/VBoxContainer/To level".disabled = true
 	$"Menu/Control/VBoxContainer/to world".disabled = true
+
+	var target_pos = player_camera.global_position
+	var target_basis = player_camera.global_transform.basis
+
+	if camera_tween:
+		camera_tween.kill()
+	camera_tween = create_tween()
+	camera_tween.set_parallel(true)
+	camera_tween.tween_property(menu_control,"modulate:a",0,0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	camera_tween.tween_property(menu_camera, "global_position", target_pos, camera_move_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	camera_tween.tween_property(menu_camera, "global_transform:basis", target_basis, camera_move_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+
+	camera_tween.chain().tween_callback(_finish_camera_move)
+
+
+func _finish_camera_move() -> void:
+	menu.hide()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	player._unlock_player()
 	player_camera.current = true

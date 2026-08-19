@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var logo = $Control/logo
 @onready var anim_player = $AnimationPlayer
 
-var start_level = "res://title_screen.tscn"
+var start_level = "res://Level/Level_1.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	anim_player.play("fade_in")
