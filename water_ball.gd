@@ -4,32 +4,41 @@ var target_position: Vector3
 @export var speed: float = 20.0
 @export var hit_radius: float = 0.5
 @export var push_velocity: float = 5
-
 @onready var splash_particle = preload("res://water_splash_particle.tscn")
 
+var has_hit: bool = false
+
 func _physics_process(delta: float) -> void:
+	if has_hit:
+		return
+
 	var to_target = target_position - global_position
 	var distance = to_target.length()
 	var step = speed * delta
 	if distance <= max(step, hit_radius):
-		if is_instance_valid(target) and target.has_method("_set_wet"):
-			target._set_wet()
+		_register_hit()
 		global_position = target_position
 		_splash()
 		return
 	look_at(target_position, Vector3.UP)
 	global_position += -global_transform.basis.z * step
 
-
 func _on_body_entered(body: Node3D) -> void:
 	if body is RigidBody3D:
 		var push_dir = -global_transform.basis.z
 		body.apply_central_impulse(push_dir * push_velocity * body.mass)
 
+	if has_hit:
+		return
+
 	if body == target:
-		if body.has_method("_set_wet"):
-			body._set_wet()
+		_register_hit()
 		_splash()
+
+func _register_hit() -> void:
+	has_hit = true
+	if is_instance_valid(target) and target.has_method("_set_wet"):
+		target._set_wet()
 
 func _splash():
 	var part = splash_particle.instantiate()

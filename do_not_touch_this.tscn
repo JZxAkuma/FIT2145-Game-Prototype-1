@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://3ftwg36iyvei"]
+[gd_scene load_steps=24 format=3 uid="uid://3ftwg36iyvei"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_5dnvj"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="1_m3ehg"]
@@ -16,20 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://c8iyy4ydwtace" path="res://level component/Kinematic stuff/wood_crate.tscn" id="14_lhu64"]
 [ext_resource type="PackedScene" uid="uid://begtm20kqwkly" path="res://level component/sygil.tscn" id="15_tcu0g"]
 [ext_resource type="PackedScene" uid="uid://huhac7cjloau" path="res://level component/moving_platform.tscn" id="16_v2mwr"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2siwp"]
-shader = ExtResource("1_m3ehg")
-shader_parameter/sky_texture = ExtResource("2_oxja2")
-
-[sub_resource type="Sky" id="Sky_ic0uy"]
-sky_material = SubResource("ShaderMaterial_2siwp")
-
-[sub_resource type="Environment" id="Environment_ysvdf"]
-background_mode = 2
-background_color = Color(0.840869, 1, 0.97624, 1)
-sky = SubResource("Sky_ic0uy")
-ambient_light_source = 3
-ambient_light_color = Color(1, 1, 1, 1)
+[ext_resource type="PackedScene" uid="uid://cuxjtjjk6sjga" path="res://level component/water_container_scale_maxr.tscn" id="17_4hmfx"]
+[ext_resource type="PackedScene" uid="uid://b7fvcx564frcv" path="res://level component/water_container_set_max.tscn" id="18_3645f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b1f4k"]
 shader = ExtResource("3_cltf4")
@@ -39,19 +27,22 @@ shader_parameter/color_levels = 16.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v2mwr"]
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4hmfx"]
+shader = ExtResource("1_m3ehg")
+shader_parameter/sky_texture = ExtResource("2_oxja2")
+
+[sub_resource type="Sky" id="Sky_yx0jh"]
+sky_material = SubResource("ShaderMaterial_4hmfx")
+
+[sub_resource type="Environment" id="Environment_3645f"]
+background_mode = 2
+background_color = Color(0.840869, 1, 0.97624, 1)
+sky = SubResource("Sky_yx0jh")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+
 [node name="Do not touch this" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00124669, -0.0135469, 0.00641441)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_ysvdf")
-
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.483894, 0.875127, 0, -0.875127, -0.483894, 0.0366631, 9.38525, -0.0746479)
-light_color = Color(0.999998, 0.999612, 0.719504, 1)
-light_energy = 0.0
-shadow_enabled = true
-directional_shadow_mode = 1
-sky_mode = 1
 
 [node name="PixelShader" type="CanvasLayer" parent="."]
 
@@ -143,10 +134,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5177, 0.501922, 4.24407)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.56776, 0.281781, 6.0871)
 
 [node name="Moving platform" parent="." groups=["door"] instance=ExtResource("16_v2mwr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6572, 0.5, 11.463)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6999, 0.5, 11.463)
 
 [node name="pos 2" parent="Moving platform" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.32825, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.09257, 7.02964, 0)
+
+[node name="PowerPlatform" parent="Moving platform" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00575, 6.03738, 0)
 
 [node name="Outlet" parent="Moving platform/PowerPlatform" index="0"]
 surface_material_override/0 = null
@@ -156,6 +150,26 @@ surface_material_override/0 = null
 
 [node name="Lantern" parent="Moving platform" instance=ExtResource("4_yb07g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.53357, 0.037674, -3.87477)
+
+[node name="water_container" parent="." instance=ExtResource("17_4hmfx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4514, 0.502695, 9.47066)
+
+[node name="wood crate2" parent="." instance=ExtResource("14_lhu64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3979, 4.06288, 10.3355)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3645f")
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.483894, 0.875127, 0, -0.875127, -0.483894, 0.0366631, 9.38525, -0.0746479)
+light_color = Color(0.999998, 0.999612, 0.719504, 1)
+light_energy = 2.0
+shadow_enabled = true
+directional_shadow_mode = 1
+sky_mode = 1
+
+[node name="water_container_scale_max_water" parent="." instance=ExtResource("18_3645f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.335, 0.502698, 9.77339)
 
 [editable path="Checkpoint"]
 [editable path="Moving platform"]
