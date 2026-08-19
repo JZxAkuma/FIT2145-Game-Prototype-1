@@ -115,7 +115,6 @@ signal selection_changed(new_selection: elements)
 func _ready() -> void:
 	wall_indicator.visible = false
 	call_deferred("_add_wall_indicator")
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	print("water: ", water_available, " fire: ", fire_available, " earth: ", earth_available)
 
 func _add_wall_indicator():
@@ -136,11 +135,16 @@ func _sens_changer():
 		states.default:
 			sens = default_sens
 
+func _lock_mouse():
+	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta: float) -> void:
 	if player_lock:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		return
-
+	
+	_lock_mouse()
 	_controller_look(delta)
 	_sens_changer()
 	_update_wall_indicator()
