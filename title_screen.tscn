@@ -2394,49 +2394,6 @@ grow_vertical = 2
 mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Title" type="Control" parent="Menu/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_top = 17.0
-offset_bottom = 17.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.343862, 0.343862)
-
-[node name="Title" type="TextureRect" parent="Menu/Control/Title"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1250.0
-offset_top = -897.0
-offset_right = 1250.0
-offset_bottom = 103.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("29_pxij2")
-
-[node name="title text" type="TextureRect" parent="Menu/Control/Title"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1250.0
-offset_top = -500.0
-offset_right = 1250.0
-offset_bottom = 500.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("22_m6xo1")
-
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu/Control"]
 z_as_relative = false
 layout_mode = 1
@@ -2445,10 +2402,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -103.0
-offset_top = 117.5
-offset_right = 103.0
-offset_bottom = 224.5
+offset_left = -541.0
+offset_top = 160.0
+offset_right = -335.0
+offset_bottom = 267.0
 grow_horizontal = 2
 grow_vertical = 2
 

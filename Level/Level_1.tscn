@@ -1,7 +1,6 @@
-[gd_scene load_steps=52 format=4 uid="uid://fiqtqeg3x8sk"]
+[gd_scene load_steps=40 format=4 uid="uid://fiqtqeg3x8sk"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_ef6fe"]
-[ext_resource type="Script" uid="uid://xclr3lt56xo" path="res://Level/level_1.gd" id="1_yogn7"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="2_7xy2x"]
 [ext_resource type="Texture2D" uid="uid://5rxpnkcqrtao" path="res://Environmental_Assets/Skybox.png" id="3_wwjdc"]
 [ext_resource type="Shader" uid="uid://yco8p8a5gjbo" path="res://Environmental_Assets/Pixelation.gdshader" id="4_3bagr"]
@@ -31,96 +30,6 @@
 [ext_resource type="PackedScene" uid="uid://chgqcc2cl1grc" path="res://level component/Grass Blocks/grass_block_bevel_top.tscn" id="28_jhlv2"]
 [ext_resource type="PackedScene" uid="uid://ba6n14gshlvsp" path="res://level component/Mountains/Rock/close_mountain_rock_3.tscn" id="28_wnion"]
 [ext_resource type="PackedScene" uid="uid://b7hrnh1cnxlbt" path="res://level component/Rock Blocks/rock_block_bevel_top.tscn" id="29_wnion"]
-[ext_resource type="Texture2D" uid="uid://b4l46dxm0f1jw" path="res://Environmental_Assets/FontsUI/MobylandLogo.png" id="31_spqro"]
-[ext_resource type="Texture2D" uid="uid://c3bth0fy8frd1" path="res://Environmental_Assets/FontsUI/MasterOfElements.png" id="32_yogn7"]
-[ext_resource type="FontFile" uid="uid://b8nmcbfik7r5n" path="res://Environmental_Assets/FontsUI/PixelifySans-SemiBold.ttf" id="33_1bsar"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yogn7"]
-transparency = 1
-albedo_texture = ExtResource("31_spqro")
-billboard_keep_scale = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p4s5p"]
-transparency = 1
-albedo_texture = ExtResource("32_yogn7")
-
-[sub_resource type="QuadMesh" id="QuadMesh_1bsar"]
-material = SubResource("StandardMaterial3D_p4s5p")
-
-[sub_resource type="Animation" id="Animation_hx5et"]
-resource_name = "camera spin"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6t0mt"]
-_data = {
-&"camera spin": SubResource("Animation_hx5et")
-}
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rl1io"]
-shader = ExtResource("4_3bagr")
-shader_parameter/pixel_size = 4.0
-shader_parameter/color_levels = 16.0
-
-[sub_resource type="Animation" id="Animation_1bsar"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Title:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.349066]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Title:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(960, 576)]
-}
-
-[sub_resource type="Animation" id="Animation_yogn7"]
-resource_name = "title"
-length = 5.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Title:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0872665, -0.0872665]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Title:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1003, 572), Vector2(946, 576)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hx5et"]
-_data = {
-&"RESET": SubResource("Animation_1bsar"),
-&"title": SubResource("Animation_yogn7")
-}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yybeu"]
 shader = ExtResource("2_7xy2x")
@@ -135,6 +44,11 @@ background_color = Color(0.840869, 1, 0.97624, 1)
 sky = SubResource("Sky_il2jm")
 ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rl1io"]
+shader = ExtResource("4_3bagr")
+shader_parameter/pixel_size = 4.0
+shader_parameter/color_levels = 16.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y2ix0"]
 resource_name = "standardSurface1"
@@ -191,136 +105,6 @@ albedo_color = Color(0.388235, 0.772549, 1, 1)
 albedo_texture = ExtResource("25_5ylc0")
 
 [node name="Earth_Tutorial" type="Node3D"]
-script = ExtResource("1_yogn7")
-
-[node name="menu camera anchor" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9159, 0, 10.8631)
-
-[node name="Menu camera" type="Camera3D" parent="menu camera anchor"]
-transform = Transform3D(-0.0209424, 0.595436, -0.80313, 3.48499e-11, 0.803306, 0.595566, 0.999781, 0.0124726, -0.0168232, -14.9911, 27.7285, 0.937332)
-
-[node name="FireImage" type="MeshInstance3D" parent="menu camera anchor/Menu camera"]
-transform = Transform3D(7.64485, -0.37431, 1.01472, 1.00996, 2.87775, 0.0662225, -1.36225, 0.0329488, 5.74362, -0.127041, 1.40619, -4.24835)
-material_override = SubResource("StandardMaterial3D_yogn7")
-mesh = SubResource("QuadMesh_1bsar")
-
-[node name="FireImage2" type="MeshInstance3D" parent="menu camera anchor/Menu camera"]
-transform = Transform3D(7.64485, -0.37431, 1.01472, 1.00996, 2.87775, 0.0662228, -1.36225, 0.0329487, 5.74362, 0.00834942, 0.231623, -5.21017)
-mesh = SubResource("QuadMesh_1bsar")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_6t0mt")
-}
-
-[node name="Menu" type="CanvasLayer" parent="."]
-process_priority = 1
-layer = 2
-
-[node name="ColorRect" type="ColorRect" parent="Menu"]
-z_index = 1
-material = SubResource("ShaderMaterial_rl1io")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Control" type="Control" parent="Menu"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Title" type="Control" parent="Menu/Control"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_top = 36.0
-offset_bottom = 36.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = -0.349066
-scale = Vector2(0.343862, 0.343862)
-
-[node name="Title" type="TextureRect" parent="Menu/Control/Title"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1250.0
-offset_top = -897.0
-offset_right = 1250.0
-offset_bottom = 103.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("31_spqro")
-
-[node name="title text" type="TextureRect" parent="Menu/Control/Title"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1250.0
-offset_top = -500.0
-offset_right = 1250.0
-offset_bottom = 500.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("32_yogn7")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Control"]
-z_index = 3
-z_as_relative = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -103.0
-offset_top = 117.5
-offset_right = 103.0
-offset_bottom = 224.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="To level" type="Button" parent="Menu/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("33_1bsar")
-theme_override_font_sizes/font_size = 20
-text = "To Level 1"
-
-[node name="to world" type="Button" parent="Menu/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("33_1bsar")
-theme_override_font_sizes/font_size = 20
-text = "To World.tscn"
-
-[node name="mute" type="Button" parent="Menu/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("33_1bsar")
-theme_override_font_sizes/font_size = 20
-text = "Mute/Unmute Music"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Menu/Control"]
-libraries = {
-&"": SubResource("AnimationLibrary_hx5et")
-}
-autoplay = "title"
 
 [node name="player" parent="." instance=ExtResource("1_ef6fe")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 9.63344, 2, 2)
@@ -328,7 +112,7 @@ water_available = false
 fire_available = false
 
 [node name="Skeleton3D" parent="player/Player_mesh/MobyRig" index="1"]
-bones/9/rotation = Quaternion(-0.00233623, -0.108906, 0.00491727, 0.994037)
+bones/9/rotation = Quaternion(-0.000562716, -0.0262317, 0.0011844, 0.999655)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m7pm6")
@@ -342,6 +126,16 @@ directional_shadow_mode = 1
 sky_mode = 1
 
 [node name="PixelShader" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="PixelShader"]
+z_index = 1
+material = SubResource("ShaderMaterial_rl1io")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Death Box" parent="." instance=ExtResource("5_6qpf1")]
 transform = Transform3D(213.15, 0, 0, 0, 1, 0, 0, 0, 220.8, 0, -3, 0)
@@ -776,10 +570,6 @@ transform = Transform3D(2.99994, 0, 0, 0, 2.99994, 0, 0, 0, 2.99994, 23.7863, -0
 
 [node name="rock_block_bevel_top3" parent="." instance=ExtResource("29_wnion")]
 transform = Transform3D(2.99994, 0, 0, 0, 2.99994, 0, 0, 0, 2.99994, 27.6437, -0.245834, 1.01972)
-
-[connection signal="pressed" from="Menu/Control/VBoxContainer/To level" to="." method="_on_to_level_pressed"]
-[connection signal="pressed" from="Menu/Control/VBoxContainer/to world" to="." method="_on_to_world_pressed"]
-[connection signal="pressed" from="Menu/Control/VBoxContainer/mute" to="." method="_on_mute_pressed"]
 
 [editable path="player"]
 [editable path="player/Player_mesh/MobyRig"]

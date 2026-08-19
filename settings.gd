@@ -8,5 +8,5 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("quit"):
-		Transition._transition_scene("res://Level/Level_1.tscn")
+		Transition._transition_scene("res://title_screen.tscn")
 		
