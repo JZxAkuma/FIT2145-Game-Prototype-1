@@ -41,6 +41,7 @@ folder_colors={
 
 floor=""
 sygil_detect=""
+door=""
 
 [input]
 

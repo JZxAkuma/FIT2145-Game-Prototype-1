@@ -11,6 +11,7 @@ var state:states = states.not_lit
 @onready var fire_detector = $CollisionShape3D
 @onready var light = $OmniLight3D
 
+@export var light_power: float = 5.0
 @export var is_lit:bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,7 +37,7 @@ func _process(delta: float) -> void:
 	match state:
 		states.lit:
 			particles.emitting = true
-			light.light_energy = 2
+			light.light_energy = light_power
 		states.not_lit:
 			particles.emitting = false
 			light.light_energy = 0

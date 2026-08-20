@@ -101,7 +101,7 @@ var flat_surface_threshold: float = 0.9
 @onready var cast_controller_button = load("res://Environmental_Assets/FontsUI/Control_Icons/RT.png")
 @onready var aim_controller_button = load("res://Environmental_Assets/FontsUI/Control_Icons/LT.png")
 
-@export var swap_camera_keyboard_texture = load("res://Environmental_Assets/FontsUI/Control_Icons/Shift.png")
+@export var swap_camera_keyboard_texture = load("res://Environmental_Assets/FontsUI/Control_Icons/Tab.png")
 @export var change_element_keyboard_texture = load("res://Environmental_Assets/FontsUI/Control_Icons/Shift.png")
 @export var cast_keyboard_texture = load("res://Environmental_Assets/FontsUI/Control_Icons/M1Key.png")
 @export var aim_keyboard_texture = load("res://Environmental_Assets/FontsUI/Control_Icons/M2Key.png")

@@ -135,7 +135,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5177, 0.501922, 4.24407)
 [node name="sygil2" parent="Door2" instance=ExtResource("15_tcu0g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.56776, 0.281781, 6.0871)
 
-[node name="Moving platform" parent="." groups=["door"] instance=ExtResource("16_v2mwr")]
+[node name="Moving platform" parent="." instance=ExtResource("16_v2mwr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6999, 0.5, 11.463)
 
 [node name="pos 2" parent="Moving platform" index="1"]

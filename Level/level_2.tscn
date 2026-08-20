@@ -1,20 +1,78 @@
-[gd_scene load_steps=5 format=3 uid="uid://p8x8kanykwb8"]
+[gd_scene load_steps=6 format=3 uid="uid://p8x8kanykwb8"]
 
 [ext_resource type="PackedScene" uid="uid://d31a4mjnbjw41" path="res://level component/Grass Blocks/grass_block_no_bevel.tscn" id="1_rjurc"]
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="2_mpmgm"]
 [ext_resource type="PackedScene" uid="uid://cca0v3u6pvybl" path="res://level component/death_box.tscn" id="3_cd4c1"]
 [ext_resource type="PackedScene" uid="uid://dead6clwniio3" path="res://level component/Door and lantern/lantern.tscn" id="4_lqe3k"]
+[ext_resource type="PackedScene" uid="uid://huhac7cjloau" path="res://level component/moving_platform.tscn" id="5_lqe3k"]
 
 [node name="Level_2" type="Node3D"]
 
 [node name="Ground" parent="." instance=ExtResource("1_rjurc")]
-transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 13)
 
 [node name="player" parent="." instance=ExtResource("2_mpmgm")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 2, 2)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 2, 6)
+water_available = false
+earth_available = false
 
 [node name="Death Box" parent="." instance=ExtResource("3_cd4c1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
+[node name="Moving platform" parent="." instance=ExtResource("5_lqe3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 6)
+move_speed = 10.0
+
+[node name="pos 2" parent="Moving platform" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 0)
+
+[node name="Lantern4" parent="Moving platform" instance=ExtResource("4_lqe3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -4)
+light_power = 30.0
+is_lit = true
+
 [node name="Lantern" parent="." instance=ExtResource("4_lqe3k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 2)
+light_power = 30.0
+
+[node name="Lantern2" parent="." instance=ExtResource("4_lqe3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 10)
+light_power = 30.0
+
+[node name="Lantern3" parent="." instance=ExtResource("4_lqe3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 10)
+light_power = 30.0
+
+[node name="Lantern5" parent="." instance=ExtResource("4_lqe3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1, 10)
+light_power = 30.0
+
+[node name="Lantern6" parent="." instance=ExtResource("4_lqe3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 1, 2)
+light_power = 30.0
+
+[node name="Lantern7" parent="." instance=ExtResource("4_lqe3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 1, 10)
+light_power = 30.0
+
+[node name="Lantern8" parent="." instance=ExtResource("4_lqe3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 1, 2)
+light_power = 30.0
+
+[node name="Lantern9" parent="." instance=ExtResource("4_lqe3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 1, 10)
+light_power = 30.0
+is_lit = true
+
+[node name="Lantern10" parent="." instance=ExtResource("4_lqe3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 1, 2)
+light_power = 30.0
+
+[node name="Lantern11" parent="." instance=ExtResource("4_lqe3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 1, 10)
+light_power = 30.0
+
+[node name="grass_block_no_bevel" parent="." instance=ExtResource("1_rjurc")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 9, 0, 0, 2)
+
+[editable path="Moving platform"]

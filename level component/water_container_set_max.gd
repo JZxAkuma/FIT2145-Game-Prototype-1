@@ -1,7 +1,7 @@
 extends StaticBody3D
 @onready var water = $Node3D
 @export var max_water: int = 5
-var current_water = 0
+@export var current_water = 0
 @onready var radius_part = $"radius particle"
 @onready var vertical_part = $"vertical particles"
 @onready var steam_detector = $"Steam detector origin/steam detector"
@@ -26,8 +26,12 @@ var radius_base_scale_max: float
 var vertical_base_scale_min: float
 var vertical_base_scale_max: float
 
+@export var unlimited_water:bool = false
 
 func _ready() -> void:
+	if unlimited_water:
+		current_water = max_water
+
 	radius_base_velocity_min = radius_part.process_material.initial_velocity_min
 	radius_base_velocity_max = radius_part.process_material.initial_velocity_max
 	vertical_base_velocity_min = vertical_part.process_material.initial_velocity_min

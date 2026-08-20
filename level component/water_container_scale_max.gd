@@ -7,6 +7,8 @@ var current_water = 0
 @onready var steam_detector = $"Steam detector origin/steam detector"
 @onready var steam_detector_origin = $"Steam detector origin"
 
+@export var unlimited_water:bool = false
+
 @export var steam_duration: float = 1.5
 @export var max_upward_force: float = 12.0
 @export var max_detector_height: float = 3.0
@@ -43,6 +45,9 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if unlimited_water:
+		current_water = max_water
+
 	water.scale.y = (float(current_water) / max_water) * full_visual_scale
 
 	if steam_active:
