@@ -1,12 +1,12 @@
 extends Node3D
 
 @export var scenes_to_preload: Array[PackedScene] = []
-@onready var progress_label = $CanvasLayer/Control/Label  # optional, for a loading %
+@onready var progress_label = $CanvasLayer/Control/Label  
 
 var loaded_count := 0
 
 func _ready() -> void:
-	await get_tree().process_frame  # let the loading screen actually render first
+	await get_tree().process_frame 
 	_warm_up_shaders()
 
 
@@ -15,8 +15,6 @@ func _warm_up_shaders() -> void:
 		var instance = scene.instantiate()
 		add_child(instance)
 
-		# force at least one render frame with this thing on screen
-		# (off in a far corner, or behind the camera) so its shaders compile
 		if instance is Node3D:
 			instance.position = Vector3(0, -9999, 0)
 
