@@ -112,13 +112,13 @@ water_available = false
 fire_available = false
 
 [node name="Skeleton3D" parent="player/Player_mesh/MobyRig" index="1"]
-bones/9/rotation = Quaternion(-6.53744e-05, -0.00304751, 0.000137599, 0.999995)
+bones/9/rotation = Quaternion(-0.000529799, -0.0246972, 0.00111511, 0.999694)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m7pm6")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.483894, 0.875127, 0, -0.875127, -0.483894, 0.0366631, 9.38525, -0.0746479)
+transform = Transform3D(0.724444, 0.529636, -0.44121, 0.677077, -0.666875, 0.311199, -0.129409, -0.524179, -0.841718, 0.0366631, 9.38525, -0.0746479)
 light_color = Color(0.999998, 0.999612, 0.719504, 1)
 light_energy = 2.0
 shadow_enabled = true

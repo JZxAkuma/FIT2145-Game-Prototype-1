@@ -1,20 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://p8x8kanykwb8"]
+[gd_scene load_steps=8 format=3 uid="uid://p8x8kanykwb8"]
 
 [ext_resource type="PackedScene" uid="uid://d31a4mjnbjw41" path="res://level component/Grass Blocks/grass_block_no_bevel.tscn" id="1_rjurc"]
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="2_mpmgm"]
 [ext_resource type="PackedScene" uid="uid://cca0v3u6pvybl" path="res://level component/death_box.tscn" id="3_cd4c1"]
 [ext_resource type="PackedScene" uid="uid://dead6clwniio3" path="res://level component/Door and lantern/lantern.tscn" id="4_lqe3k"]
 [ext_resource type="PackedScene" uid="uid://huhac7cjloau" path="res://level component/moving_platform.tscn" id="5_lqe3k"]
+[ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="6_vtmy8"]
+[ext_resource type="PackedScene" uid="uid://jyehtpsrttln" path="res://level component/Mountains/Rock/close_mountain_rock_1.tscn" id="7_slhlm"]
 
 [node name="Level_2" type="Node3D"]
 
 [node name="Ground" parent="." instance=ExtResource("1_rjurc")]
-transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 13)
+transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 30, 44, 0, -10)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.999769, -0.0195583, -0.00888878, -0.0214727, 0.922845, 0.384572, 0.000681389, 0.384674, -0.923052, 2.03666, 9.38525, -0.0746479)
+light_color = Color(0.999998, 0.999612, 0.719504, 1)
+light_energy = 2.0
+shadow_enabled = true
+directional_shadow_mode = 1
+sky_mode = 1
 
 [node name="player" parent="." instance=ExtResource("2_mpmgm")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 2, 6)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18, 2, 6)
 water_available = false
-earth_available = false
 
 [node name="Death Box" parent="." instance=ExtResource("3_cd4c1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -24,55 +33,147 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 6)
 move_speed = 10.0
 
 [node name="pos 2" parent="Moving platform" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -1)
 
-[node name="Lantern4" parent="Moving platform" instance=ExtResource("4_lqe3k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -4)
-light_power = 30.0
-is_lit = true
+[node name="PowerPlatform" parent="Moving platform" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="Timer" parent="Moving platform" index="3"]
+wait_time = 3.0
+
+[node name="Lantern2" parent="Moving platform" instance=ExtResource("4_lqe3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, -6)
+light_power = 50.0
 
 [node name="Lantern" parent="." instance=ExtResource("4_lqe3k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 2)
-light_power = 30.0
-
-[node name="Lantern2" parent="." instance=ExtResource("4_lqe3k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 10)
-light_power = 30.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, 0)
+light_power = 50.0
 
 [node name="Lantern3" parent="." instance=ExtResource("4_lqe3k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 10)
-light_power = 30.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, 9)
+light_power = 50.0
 
 [node name="Lantern5" parent="." instance=ExtResource("4_lqe3k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1, 10)
-light_power = 30.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 1, 9)
+light_power = 50.0
 
 [node name="Lantern6" parent="." instance=ExtResource("4_lqe3k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 1, 2)
-light_power = 30.0
-
-[node name="Lantern7" parent="." instance=ExtResource("4_lqe3k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 1, 10)
-light_power = 30.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 1, 0)
+light_power = 50.0
 
 [node name="Lantern8" parent="." instance=ExtResource("4_lqe3k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 1, 2)
-light_power = 30.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 1, 0)
+light_power = 50.0
 
 [node name="Lantern9" parent="." instance=ExtResource("4_lqe3k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 1, 10)
-light_power = 30.0
-is_lit = true
-
-[node name="Lantern10" parent="." instance=ExtResource("4_lqe3k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 1, 2)
-light_power = 30.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 1, 9)
+light_power = 50.0
 
 [node name="Lantern11" parent="." instance=ExtResource("4_lqe3k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 1, 10)
-light_power = 30.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 1, 9)
+light_power = 50.0
 
 [node name="grass_block_no_bevel" parent="." instance=ExtResource("1_rjurc")]
-transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 9, 0, 0, 2)
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 10, -20, 0, 0)
+
+[node name="Grass block Bevel Bottom" parent="." instance=ExtResource("6_vtmy8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 8.5, -1, -0.5)
+
+[node name="Grass block Bevel Bottom3" parent="." instance=ExtResource("6_vtmy8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 18.5, -1, -0.5)
+
+[node name="Grass block Bevel Bottom4" parent="." instance=ExtResource("6_vtmy8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 28.5, -1, -0.5)
+
+[node name="Grass block Bevel Bottom5" parent="." instance=ExtResource("6_vtmy8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.5, -1, -0.5)
+
+[node name="Grass block Bevel Bottom6" parent="." instance=ExtResource("6_vtmy8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 8.5, -1, 8.5)
+
+[node name="Grass block Bevel Bottom7" parent="." instance=ExtResource("6_vtmy8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 18.5, -1, 8.5)
+
+[node name="Grass block Bevel Bottom8" parent="." instance=ExtResource("6_vtmy8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 28.5, -1, 8.5)
+
+[node name="Grass block Bevel Bottom9" parent="." instance=ExtResource("6_vtmy8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.5, -1, 8.5)
+
+[node name="Grass block Bevel Bottom2" parent="." instance=ExtResource("6_vtmy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 9)
+
+[node name="Close Mountain Rock 1" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -3, -8)
+
+[node name="Close Mountain Rock 2" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -3, -8)
+
+[node name="Close Mountain Rock 3" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -3, -8)
+
+[node name="Close Mountain Rock 4" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -3, -8)
+
+[node name="Close Mountain Rock 5" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, -3, -8)
+
+[node name="Close Mountain Rock 6" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, -3, -8)
+
+[node name="Close Mountain Rock 7" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, -3, -8)
+
+[node name="Close Mountain Rock 8" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, -3, -8)
+
+[node name="Close Mountain Rock 9" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -3, 10)
+
+[node name="Close Mountain Rock 10" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -3, 10)
+
+[node name="Close Mountain Rock 11" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -3, 10)
+
+[node name="Close Mountain Rock 12" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -3, 10)
+
+[node name="Close Mountain Rock 13" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, -3, 10)
+
+[node name="Close Mountain Rock 14" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, -3, 10)
+
+[node name="Close Mountain Rock 15" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, -3, 10)
+
+[node name="Close Mountain Rock 16" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, -3, 10)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 20, 0, 0, 0, 1, 25, 10, -14)
+
+[node name="Moving platform2" parent="." instance=ExtResource("5_lqe3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 5)
+move_speed = 10.0
+
+[node name="pos 2" parent="Moving platform2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="Timer" parent="Moving platform2" index="3"]
+wait_time = 3.0
+
+[node name="Moving platform3" parent="." instance=ExtResource("5_lqe3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 5)
+move_speed = 10.0
+
+[node name="pos 2" parent="Moving platform3" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="Timer" parent="Moving platform3" index="3"]
+wait_time = 3.0
 
 [editable path="Moving platform"]
+[editable path="Moving platform2"]
+[editable path="Moving platform3"]
