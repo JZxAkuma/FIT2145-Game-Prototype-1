@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://p8x8kanykwb8"]
+[gd_scene load_steps=5 format=3 uid="uid://p8x8kanykwb8"]
+
+[ext_resource type="PackedScene" uid="uid://d31a4mjnbjw41" path="res://level component/Grass Blocks/grass_block_no_bevel.tscn" id="1_rjurc"]
+[ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="2_mpmgm"]
+[ext_resource type="PackedScene" uid="uid://cca0v3u6pvybl" path="res://level component/death_box.tscn" id="3_cd4c1"]
+[ext_resource type="PackedScene" uid="uid://dead6clwniio3" path="res://level component/Door and lantern/lantern.tscn" id="4_lqe3k"]
 
 [node name="Level_2" type="Node3D"]
+
+[node name="Ground" parent="." instance=ExtResource("1_rjurc")]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+
+[node name="player" parent="." instance=ExtResource("2_mpmgm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 2, 2)
+
+[node name="Death Box" parent="." instance=ExtResource("3_cd4c1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Lantern" parent="." instance=ExtResource("4_lqe3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 2)
