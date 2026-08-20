@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bye70pqxpcpcf"]
+[gd_scene load_steps=41 format=3 uid="uid://bye70pqxpcpcf"]
 
 [ext_resource type="Script" uid="uid://btoituocs665x" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://dhphdaphrwcbm" path="res://Character_Assets/MobyRig.fbx" id="2_8v1cs"]
@@ -7,11 +7,21 @@
 [ext_resource type="Material" uid="uid://be7o2iqhqd43h" path="res://Character_Assets/MobyTexture.tres" id="3_os2xl"]
 [ext_resource type="Texture2D" uid="uid://c22e1kg63lvjw" path="res://Icons/WaterActive.png" id="4_8v1cs"]
 [ext_resource type="PackedScene" uid="uid://bvqyn8jdhd2uh" path="res://Character_Assets/MobyTail.fbx" id="4_cx4s4"]
+[ext_resource type="Texture2D" uid="uid://dtdca377upiwo" path="res://Environmental_Assets/FontsUI/Control_Icons/PSCircle.png" id="5_65nnk"]
+[ext_resource type="Texture2D" uid="uid://x50o86qt31si" path="res://Environmental_Assets/FontsUI/Control_Icons/Scroll.png" id="5_c5xpo"]
 [ext_resource type="Texture2D" uid="uid://b4aqh2xplkjks" path="res://Icons/FireInactive.png" id="5_os2xl"]
 [ext_resource type="Texture2D" uid="uid://b82u8pqbd754g" path="res://Icons/FireActive.png" id="6_cx4s4"]
+[ext_resource type="Texture2D" uid="uid://by28gwnttdw1p" path="res://Environmental_Assets/FontsUI/Control_Icons/XController.png" id="6_u4irt"]
 [ext_resource type="Texture2D" uid="uid://dpfnb02w8cyq3" path="res://Icons/EarthInactive.png" id="7_84xnk"]
 [ext_resource type="Texture2D" uid="uid://cpn8kogxjm8cn" path="res://Icons/EarthActive.png" id="8_mmloc"]
+[ext_resource type="Texture2D" uid="uid://bjqd56yotq50r" path="res://Environmental_Assets/FontsUI/Control_Icons/YController.png" id="9_65nnk"]
+[ext_resource type="Texture2D" uid="uid://csnojotohyhl8" path="res://Environmental_Assets/FontsUI/Control_Icons/Shift.png" id="11_stime"]
+[ext_resource type="Texture2D" uid="uid://358gex8jfloa" path="res://Environmental_Assets/FontsUI/Control_Icons/BController.png" id="12_7pas8"]
 [ext_resource type="Material" uid="uid://dpcwpjbtnlgoj" path="res://Environmental_Assets/2dParticleSprites/Squares.tres" id="12_84xnk"]
+[ext_resource type="FontFile" uid="uid://b8nmcbfik7r5n" path="res://Environmental_Assets/FontsUI/PixelifySans-SemiBold.ttf" id="12_qg01u"]
+[ext_resource type="Texture2D" uid="uid://du4dkmxivvunq" path="res://Environmental_Assets/FontsUI/Control_Icons/M2Key.png" id="13_c5xpo"]
+[ext_resource type="Texture2D" uid="uid://cptlonuoaephj" path="res://Environmental_Assets/FontsUI/Control_Icons/M1Key.png" id="14_qg01u"]
+[ext_resource type="Texture2D" uid="uid://dpvrfcwlym4sj" path="res://Environmental_Assets/FontsUI/Control_Icons/Tab.png" id="16_pi2i5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5enqi"]
 albedo_color = Color(1, 0, 0, 1)
@@ -529,7 +539,7 @@ bones/6/rotation = Quaternion(-0.481475, -0.0932315, -0.675769, 0.550297)
 bones/7/position = Vector3(0.638741, 3.55618e-16, -9.71445e-17)
 bones/8/position = Vector3(0.00606678, 0.660334, 8.08676e-17)
 bones/9/position = Vector3(0.00606466, -0.660334, -8.08676e-17)
-bones/9/rotation = Quaternion(-0.00258016, -0.120277, 0.00543068, 0.992722)
+bones/9/rotation = Quaternion(-0.00251582, -0.117278, 0.00529526, 0.993082)
 bones/10/position = Vector3(-0.0340323, 0.316433, 3.87519e-17)
 bones/10/rotation = Quaternion(0.0143075, 0.706962, -0.706962, -0.0143075)
 bones/10/scale = Vector3(1, 1, 1)
@@ -694,32 +704,84 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -328.0
-offset_top = -185.0
-offset_right = 2680.0
-offset_bottom = 815.0
+offset_left = -398.0
+offset_top = -291.0
+offset_right = 4618.0
+offset_bottom = 1713.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.213167, 0.207023)
+scale = Vector2(0.156936, 0.152412)
 size_flags_horizontal = 4
+alignment = 1
 
-[node name="water" type="TextureButton" parent="CanvasLayer2/Elements UI/HBoxContainer"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="CanvasLayer2/Elements UI/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer4"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+texture = ExtResource("5_65nnk")
+
+[node name="SW" type="TextureRect" parent="CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer4"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_c5xpo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/Elements UI/HBoxContainer"]
+layout_mode = 2
+
+[node name="Controller_water" type="TextureRect" parent="CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_u4irt")
+
+[node name="water" type="TextureButton" parent="CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_5enqi")
 texture_hover = ExtResource("4_8v1cs")
 stretch_mode = 0
 
-[node name="fire" type="TextureButton" parent="CanvasLayer2/Elements UI/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer2/Elements UI/HBoxContainer"]
+layout_mode = 2
+
+[node name="Controller_fire" type="TextureRect" parent="CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("9_65nnk")
+
+[node name="fire" type="TextureButton" parent="CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 texture_normal = ExtResource("5_os2xl")
 texture_hover = ExtResource("6_cx4s4")
 stretch_mode = 0
 
-[node name="earth" type="TextureButton" parent="CanvasLayer2/Elements UI/HBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer2/Elements UI/HBoxContainer"]
+layout_mode = 2
+
+[node name="Controller_earth" type="TextureRect" parent="CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("12_7pas8")
+
+[node name="earth" type="TextureButton" parent="CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
 texture_normal = ExtResource("7_84xnk")
 texture_hover = ExtResource("8_mmloc")
 stretch_mode = 0
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="CanvasLayer2/Elements UI/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer5"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+texture = ExtResource("5_65nnk")
+
+[node name="SW" type="TextureRect" parent="CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer5"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_c5xpo")
 
 [node name="selected_ui" type="Control" parent="CanvasLayer2"]
 layout_mode = 3
@@ -756,13 +818,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="casting to" type="Label" parent="CanvasLayer/Crosshair"]
+visible = false
 layout_mode = 1
 offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Crosshair" type="TextureRect" parent="CanvasLayer/Crosshair"]
-modulate = Color(0.833336, 0.425044, 0.572867, 1)
-top_level = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -777,6 +838,112 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_onrkg")
 expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Crosshair"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -417.0
+offset_right = 4922.0
+offset_bottom = 2591.0
+grow_vertical = 0
+scale = Vector2(0.112325, 0.112325)
+alignment = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/Crosshair/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Swap camera side" type="TextureRect" parent="CanvasLayer/Crosshair/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("16_pi2i5")
+
+[node name="Label" type="Label" parent="CanvasLayer/Crosshair/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_qg01u")
+theme_override_font_sizes/font_size = 356
+text = "Camera Swap Side"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Crosshair/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="change element icon" type="TextureRect" parent="CanvasLayer/Crosshair/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("11_stime")
+
+[node name="Label" type="Label" parent="CanvasLayer/Crosshair/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_qg01u")
+theme_override_font_sizes/font_size = 356
+text = "(hold) Change element"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Crosshair/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Cast Icon" type="TextureRect" parent="CanvasLayer/Crosshair/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("14_qg01u")
+
+[node name="Label" type="Label" parent="CanvasLayer/Crosshair/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_qg01u")
+theme_override_font_sizes/font_size = 356
+text = "Cast"
+
+[node name="Not aiming" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Not aiming"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -297.0
+offset_right = 3858.0
+offset_bottom = 1707.0
+grow_vertical = 0
+scale = Vector2(0.112325, 0.112325)
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Not aiming/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="change element icon" type="TextureRect" parent="CanvasLayer/Not aiming/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("11_stime")
+
+[node name="Label" type="Label" parent="CanvasLayer/Not aiming/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_qg01u")
+theme_override_font_sizes/font_size = 356
+text = "(hold) Change element"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Not aiming/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Aim icon" type="TextureRect" parent="CanvasLayer/Not aiming/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("13_c5xpo")
+
+[node name="Label" type="Label" parent="CanvasLayer/Not aiming/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_qg01u")
+theme_override_font_sizes/font_size = 356
+text = "(hold) Aim"
 
 [node name="HurtBox" type="Area3D" parent="."]
 collision_layer = 2

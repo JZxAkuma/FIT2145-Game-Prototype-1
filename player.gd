@@ -15,7 +15,7 @@ var sens = 0.5
 @onready var castline: RayCast3D = $"camera point/SpringArm3D/Camera3D/RayCast3D"
 @onready var debug_label: Label = $"CanvasLayer/Crosshair/casting to"
 @onready var cast_point: Marker3D = $"cast point"
-@onready var crosshair: TextureRect = $CanvasLayer/Crosshair/Crosshair
+@onready var crosshair = $CanvasLayer/Crosshair
 @onready var camera: Camera3D = $"camera point/SpringArm3D/Camera3D"
 @onready var camerapoint: Node3D = $"camera point"
 @onready var springarm: SpringArm3D = $"camera point/SpringArm3D"
@@ -34,9 +34,9 @@ var aim_tween: Tween
 var last_world_facing_angle: float = 0.0
 
 @onready var element_ui = $"CanvasLayer2/Elements UI"
-@onready var water_icon: TextureButton = $"CanvasLayer2/Elements UI/HBoxContainer/water"
-@onready var fire_icon: TextureButton = $"CanvasLayer2/Elements UI/HBoxContainer/fire"
-@onready var earth_icon: TextureButton = $"CanvasLayer2/Elements UI/HBoxContainer/earth"
+@onready var water_icon: TextureButton = $"CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer/water"
+@onready var fire_icon: TextureButton = $"CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer2/fire"
+@onready var earth_icon: TextureButton = $"CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer3/earth"
 @onready var water_normal_tex = water_icon.texture_normal
 @onready var fire_normal_tex = fire_icon.texture_normal
 @onready var earth_normal_tex = earth_icon.texture_normal
@@ -80,6 +80,41 @@ var flat_surface_threshold: float = 0.9
 
 @export var push_force: float = 0.5
 
+@onready var not_aim_ui = $"CanvasLayer/Not aiming"
+
+#to swap to controller
+@onready var Swap_camera_ui_slot = $"CanvasLayer/Crosshair/VBoxContainer/HBoxContainer3/Swap camera side"
+@onready var change_element_icon_ui_slot = $"CanvasLayer/Crosshair/VBoxContainer/HBoxContainer/change element icon"
+@onready var cast_button_ui_slot = $"CanvasLayer/Crosshair/VBoxContainer/HBoxContainer2/Cast Icon"
+@onready var change_element_icon_ui_slot_2 = $"CanvasLayer/Not aiming/VBoxContainer/HBoxContainer/change element icon"
+@onready var aim_button_icon_slot = $"CanvasLayer/Not aiming/VBoxContainer/HBoxContainer2/Aim icon"
+
+#to hide
+@onready var mouse_wheel1 = $"CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer5"
+@onready var mouse_wheel2 = $"CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer4"
+@onready var controller_water_icon = $"CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer/Controller_water"
+@onready var controller_fire_icon = $"CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer2/Controller_fire"
+@onready var controller_earth_icon = $"CanvasLayer2/Elements UI/HBoxContainer/VBoxContainer3/Controller_earth"
+
+@onready var swap_camera_controller_button = load("res://Environmental_Assets/FontsUI/Control_Icons/LS.png")
+@onready var change_element_controller_button = load("res://Environmental_Assets/FontsUI/Control_Icons/RBController.png")
+@onready var cast_controller_button = load("res://Environmental_Assets/FontsUI/Control_Icons/RT.png")
+@onready var aim_controller_button = load("res://Environmental_Assets/FontsUI/Control_Icons/LT.png")
+
+@export var swap_camera_keyboard_texture = load("res://Environmental_Assets/FontsUI/Control_Icons/Shift.png")
+@export var change_element_keyboard_texture = load("res://Environmental_Assets/FontsUI/Control_Icons/Shift.png")
+@export var cast_keyboard_texture = load("res://Environmental_Assets/FontsUI/Control_Icons/M1Key.png")
+@export var aim_keyboard_texture = load("res://Environmental_Assets/FontsUI/Control_Icons/M2Key.png")
+
+@export var controller_stick_deadzone: float = 0.3
+enum input_device {
+	keyboard,
+	controller
+}
+var current_input_device: input_device = input_device.keyboard
+
+
+
 var camera_swap = false
 enum elements {
 	water,
@@ -102,7 +137,6 @@ var state: states = states.default
 var selection: elements = elements.water
 var player_lock = false
 
-# ANIMATION-TREE-READY STATE
 
 var is_moving: bool = false
 var move_speed_ratio: float = 0.0     
@@ -118,6 +152,7 @@ func _ready() -> void:
 	crosshair.modulate.a  = 0
 	wall_indicator.visible = false
 	call_deferred("_add_wall_indicator")
+	_update_input_device_ui()
 	print("water: ", water_available, " fire: ", fire_available, " earth: ", earth_available)
 
 func _add_wall_indicator():
@@ -130,6 +165,26 @@ func _input(event: InputEvent) -> void:
 		pivot.rotate_x(deg_to_rad(-event.relative.y * sens))
 		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
 
+	_detect_input_device(event)
+
+
+func _detect_input_device(event: InputEvent) -> void:
+	if event is InputEventKey or event is InputEventMouseButton or event is InputEventMouseMotion:
+		_set_input_device(input_device.keyboard)
+
+	elif event is InputEventJoypadButton:
+		_set_input_device(input_device.controller)
+
+	elif event is InputEventJoypadMotion:
+		if abs(event.axis_value) > controller_stick_deadzone:
+			_set_input_device(input_device.controller)
+
+
+func _set_input_device(device: input_device) -> void:
+	if current_input_device == device:
+		return
+	current_input_device = device
+	_update_input_device_ui()
 
 func _sens_changer():
 	match state:
@@ -316,13 +371,14 @@ func _camera_state():
 
 	match state:
 		states.aiming:
-			
+			aim_tween.tween_property(not_aim_ui, "modulate:a", 0, aim_tween_legnht)
 			aim_tween.tween_property(selected_icon, "modulate:a", 1, aim_tween_legnht)
 			aim_tween.tween_property(crosshair, "modulate:a", 1, aim_tween_legnht)
 			aim_tween.tween_property(camerapoint, "position", aim_camera_pos, aim_tween_legnht)
 			aim_tween.tween_property(springarm, "spring_length", aim_spring_length, aim_tween_legnht)
 
 		states.default:
+			aim_tween.tween_property(not_aim_ui, "modulate:a", 1, aim_tween_legnht)
 			aim_tween.tween_property(selected_icon, "modulate:a", 0, aim_tween_legnht)
 			aim_tween.tween_property(crosshair, "modulate:a", 0, aim_tween_legnht)
 			aim_tween.tween_property(camerapoint, "position", Vector3.ZERO, aim_tween_legnht)
@@ -538,3 +594,31 @@ func _push_rigid_bodies() -> void:
 
 func mass_scale_for(body: RigidBody3D) -> float:
 	return 1.0 / max(body.mass, 0.1)
+
+func _update_input_device_ui() -> void:
+	match current_input_device:
+		input_device.keyboard:
+			Swap_camera_ui_slot.texture = swap_camera_keyboard_texture
+			change_element_icon_ui_slot.texture = change_element_keyboard_texture
+			cast_button_ui_slot.texture = cast_keyboard_texture
+			change_element_icon_ui_slot_2.texture = change_element_keyboard_texture
+			aim_button_icon_slot.texture = aim_keyboard_texture
+
+			mouse_wheel1.modulate.a = 1
+			mouse_wheel2.modulate.a = 1
+			controller_water_icon.modulate.a = 0
+			controller_fire_icon.modulate.a = 0
+			controller_earth_icon.modulate.a = 0
+
+		input_device.controller:
+			Swap_camera_ui_slot.texture = swap_camera_controller_button
+			change_element_icon_ui_slot.texture = change_element_controller_button
+			cast_button_ui_slot.texture = cast_controller_button
+			change_element_icon_ui_slot_2.texture = change_element_controller_button
+			aim_button_icon_slot.texture = aim_controller_button
+
+			mouse_wheel1.modulate.a = 0
+			mouse_wheel2.modulate.a = 0
+			controller_water_icon.modulate.a = 1
+			controller_fire_icon.modulate.a = 1
+			controller_earth_icon.modulate.a = 1
