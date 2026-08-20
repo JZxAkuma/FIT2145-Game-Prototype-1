@@ -1,0 +1,99 @@
+[gd_scene load_steps=54 format=3 uid="uid://dyaj3iwk8apo1"]
+
+[ext_resource type="Script" uid="uid://12mhihfuwnr0" path="res://cache_preload.gd" id="1_8xgou"]
+[ext_resource type="PackedScene" uid="uid://ry5xjblnnw7e" path="res://Character_Assets/moby_tail.tscn" id="2_nuer2"]
+[ext_resource type="PackedScene" uid="uid://cvwuhpmowc7vx" path="res://Environmental_Assets/Structure/tall_path.tscn" id="3_ct8bu"]
+[ext_resource type="PackedScene" uid="uid://ex03kti07uqb" path="res://Environmental_Assets/Structure/water_tower.tscn" id="4_dsfdu"]
+[ext_resource type="PackedScene" uid="uid://gcthslii3g5a" path="res://level component/Deco/Castle/castle_tower.tscn" id="5_8y1y1"]
+[ext_resource type="PackedScene" uid="uid://l45nsc3pipaj" path="res://level component/Deco/Castle/castle_wall.tscn" id="6_0yka6"]
+[ext_resource type="PackedScene" uid="uid://bui78i54bg7k4" path="res://level component/Deco/Trees/mushroom.tscn" id="7_bladb"]
+[ext_resource type="PackedScene" uid="uid://1v3yumh8vrod" path="res://level component/Deco/Trees/palm_tree.tscn" id="8_ardip"]
+[ext_resource type="PackedScene" uid="uid://goasctnx4yg3" path="res://level component/Deco/Trees/Pine/pine_tree_big.tscn" id="9_k5glr"]
+[ext_resource type="PackedScene" uid="uid://cctneuw004bw7" path="res://level component/Deco/Trees/Pine/pine_tree_small.tscn" id="10_ssb66"]
+[ext_resource type="PackedScene" uid="uid://bdkerhb0b85q2" path="res://level component/Deco/bush.tscn" id="11_eerju"]
+[ext_resource type="PackedScene" uid="uid://bxvjo2y018838" path="res://level component/Deco/moby_house.tscn" id="12_koq4i"]
+[ext_resource type="PackedScene" uid="uid://cjpdnm3o6nrrm" path="res://level component/Deco/moby_prop.tscn" id="13_n7bb4"]
+[ext_resource type="PackedScene" uid="uid://v245p8f6nnsr" path="res://level component/Deco/rock.tscn" id="14_0uyd2"]
+[ext_resource type="PackedScene" uid="uid://cfi57rfl0n3hh" path="res://level component/Deco/round_moby_house.tscn" id="15_vf2rw"]
+[ext_resource type="PackedScene" uid="uid://bvsuboh5lviut" path="res://level component/Deco/tulip.tscn" id="16_ovd2r"]
+[ext_resource type="PackedScene" uid="uid://bkqhrej0ky8xc" path="res://level component/Deco/water_tower.tscn" id="17_y0tg7"]
+[ext_resource type="PackedScene" uid="uid://mnuogexd636q" path="res://level component/Deco/Wood/bridge.tscn" id="18_640cd"]
+[ext_resource type="PackedScene" uid="uid://btv50087nq4jk" path="res://level component/Deco/Wood/wood_fences.tscn" id="19_nwcuq"]
+[ext_resource type="PackedScene" uid="uid://yuudxo5edidq" path="res://level component/Door and lantern/door.tscn" id="20_vd1el"]
+[ext_resource type="PackedScene" uid="uid://dead6clwniio3" path="res://level component/Door and lantern/lantern.tscn" id="21_50k44"]
+[ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="22_w2nfr"]
+[ext_resource type="PackedScene" uid="uid://dvtafyqvs75ib" path="res://level component/Grass Blocks/grass_block_bevel_rim.tscn" id="23_oig4i"]
+[ext_resource type="PackedScene" uid="uid://bk4qflpdvxsx1" path="res://level component/Grass Blocks/grass_block_bevel_sides.tscn" id="24_02xgw"]
+[ext_resource type="PackedScene" uid="uid://chgqcc2cl1grc" path="res://level component/Grass Blocks/grass_block_bevel_top.tscn" id="25_2mo61"]
+[ext_resource type="PackedScene" uid="uid://d31a4mjnbjw41" path="res://level component/Grass Blocks/grass_block_no_bevel.tscn" id="26_cwv4f"]
+[ext_resource type="PackedScene" uid="uid://bl0at38vfaxk3" path="res://level component/Kinematic stuff/kinematic_door.tscn" id="27_w2v20"]
+[ext_resource type="PackedScene" uid="uid://c8iyy4ydwtace" path="res://level component/Kinematic stuff/wood_crate.tscn" id="28_7i1rw"]
+[ext_resource type="PackedScene" uid="uid://cvkfs4ab287vt" path="res://level component/Mountains/Grass/close_mountain_grass_1.tscn" id="29_eqf3i"]
+[ext_resource type="PackedScene" uid="uid://bo58vdbddaw64" path="res://level component/Mountains/Grass/close_mountain_grass_2.tscn" id="30_b82wk"]
+[ext_resource type="PackedScene" uid="uid://cmbirrmnxcuyr" path="res://level component/Mountains/Grass/close_mountain_grass_3.tscn" id="31_6phfl"]
+[ext_resource type="PackedScene" uid="uid://jyehtpsrttln" path="res://level component/Mountains/Rock/close_mountain_rock_1.tscn" id="32_4d8wo"]
+[ext_resource type="PackedScene" uid="uid://b0xjs3vhvrrbc" path="res://level component/Mountains/Rock/close_mountain_rock_2.tscn" id="33_ang2l"]
+[ext_resource type="PackedScene" uid="uid://ba6n14gshlvsp" path="res://level component/Mountains/Rock/close_mountain_rock_3.tscn" id="34_162hb"]
+[ext_resource type="PackedScene" uid="uid://bdkrj3i614fqb" path="res://level component/Rock Blocks/rock_block_bevel_bottom.tscn" id="35_ikb3h"]
+[ext_resource type="PackedScene" uid="uid://ce8xcoegr1xsj" path="res://level component/Rock Blocks/rock_block_bevel_rim.tscn" id="36_efiqi"]
+[ext_resource type="PackedScene" uid="uid://coyj86rw84xir" path="res://level component/Rock Blocks/rock_block_bevel_sides.tscn" id="37_eolfb"]
+[ext_resource type="PackedScene" uid="uid://b7hrnh1cnxlbt" path="res://level component/Rock Blocks/rock_block_bevel_top.tscn" id="38_bawxb"]
+[ext_resource type="PackedScene" uid="uid://urioemqqu7sh" path="res://level component/Rock Blocks/rock_block_no_bevel.tscn" id="39_mu6u3"]
+[ext_resource type="PackedScene" uid="uid://c87l4eyjihsew" path="res://level component/burnable_wood_wall.tscn" id="40_xhcc6"]
+[ext_resource type="PackedScene" uid="uid://dja117pab360a" path="res://level component/checkpoint.tscn" id="41_p2b2m"]
+[ext_resource type="PackedScene" uid="uid://cca0v3u6pvybl" path="res://level component/death_box.tscn" id="42_ik3tc"]
+[ext_resource type="PackedScene" uid="uid://clnnxo4nuolkh" path="res://level component/flat_shroom.tscn" id="43_mlhwn"]
+[ext_resource type="PackedScene" uid="uid://cccsgyqte47e6" path="res://level component/growing_plant.tscn" id="44_g618i"]
+[ext_resource type="PackedScene" uid="uid://ced3mcg8toces" path="res://level component/invi_wall.tscn" id="45_ryed6"]
+[ext_resource type="PackedScene" uid="uid://huhac7cjloau" path="res://level component/moving_platform.tscn" id="46_jc4gt"]
+[ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="47_tfky1"]
+[ext_resource type="PackedScene" uid="uid://dp15gxl53fdn6" path="res://level component/power_platform.tscn" id="48_5ctpw"]
+[ext_resource type="PackedScene" uid="uid://begtm20kqwkly" path="res://level component/sygil.tscn" id="49_s6en7"]
+[ext_resource type="PackedScene" uid="uid://1chb14rsvqvy" path="res://level component/sygil_texture.tscn" id="50_n5ned"]
+[ext_resource type="PackedScene" uid="uid://cuxjtjjk6sjga" path="res://level component/water_container_scale_maxr.tscn" id="51_xk8em"]
+[ext_resource type="PackedScene" uid="uid://b7fvcx564frcv" path="res://Environmental_Assets/FontsUI/water_container_set_max.tscn" id="52_amwv7"]
+[ext_resource type="FontFile" uid="uid://b8nmcbfik7r5n" path="res://Environmental_Assets/FontsUI/PixelifySans-SemiBold.ttf" id="53_t10ew"]
+
+[node name="Cache_preload" type="Node3D"]
+script = ExtResource("1_8xgou")
+scenes_to_preload = Array[PackedScene]([ExtResource("2_nuer2"), ExtResource("2_nuer2"), ExtResource("2_nuer2"), ExtResource("3_ct8bu"), ExtResource("4_dsfdu"), ExtResource("5_8y1y1"), ExtResource("6_0yka6"), ExtResource("7_bladb"), ExtResource("8_ardip"), ExtResource("9_k5glr"), ExtResource("10_ssb66"), ExtResource("11_eerju"), ExtResource("12_koq4i"), ExtResource("13_n7bb4"), ExtResource("14_0uyd2"), ExtResource("15_vf2rw"), ExtResource("16_ovd2r"), ExtResource("17_y0tg7"), ExtResource("18_640cd"), ExtResource("19_nwcuq"), ExtResource("20_vd1el"), ExtResource("21_50k44"), ExtResource("22_w2nfr"), ExtResource("23_oig4i"), ExtResource("24_02xgw"), ExtResource("25_2mo61"), ExtResource("26_cwv4f"), ExtResource("27_w2v20"), ExtResource("28_7i1rw"), ExtResource("29_eqf3i"), ExtResource("30_b82wk"), ExtResource("31_6phfl"), ExtResource("32_4d8wo"), ExtResource("33_ang2l"), ExtResource("34_162hb"), ExtResource("35_ikb3h"), ExtResource("36_efiqi"), ExtResource("37_eolfb"), ExtResource("38_bawxb"), ExtResource("39_mu6u3"), ExtResource("40_xhcc6"), ExtResource("41_p2b2m"), ExtResource("42_ik3tc"), ExtResource("43_mlhwn"), ExtResource("44_g618i"), ExtResource("45_ryed6"), ExtResource("46_jc4gt"), ExtResource("47_tfky1"), ExtResource("48_5ctpw"), ExtResource("49_s6en7"), ExtResource("50_n5ned"), ExtResource("51_xk8em"), ExtResource("52_amwv7")])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("53_t10ew")
+theme_override_font_sizes/font_size = 86
+text = "ertert"
+horizontal_alignment = 1
+vertical_alignment = 1

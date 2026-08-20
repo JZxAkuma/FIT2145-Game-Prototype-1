@@ -59,6 +59,7 @@ shape = SubResource("BoxShape3D_oupq2")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.34955, 0)
+visible = false
 billboard = 1
 
 [node name="Dirt_Pillar" type="MeshInstance3D" parent="."]

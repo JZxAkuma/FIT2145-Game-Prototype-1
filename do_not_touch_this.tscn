@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://begtm20kqwkly" path="res://level component/sygil.tscn" id="15_tcu0g"]
 [ext_resource type="PackedScene" uid="uid://huhac7cjloau" path="res://level component/moving_platform.tscn" id="16_v2mwr"]
 [ext_resource type="PackedScene" uid="uid://cuxjtjjk6sjga" path="res://level component/water_container_scale_maxr.tscn" id="17_4hmfx"]
-[ext_resource type="PackedScene" uid="uid://b7fvcx564frcv" path="res://level component/water_container_set_max.tscn" id="18_3645f"]
+[ext_resource type="PackedScene" uid="uid://b7fvcx564frcv" path="res://Environmental_Assets/FontsUI/water_container_set_max.tscn" id="18_3645f"]
 [ext_resource type="PackedScene" uid="uid://cccsgyqte47e6" path="res://level component/growing_plant.tscn" id="19_syu1u"]
 [ext_resource type="PackedScene" uid="uid://c87l4eyjihsew" path="res://level component/burnable_wood_wall.tscn" id="20_uc3q2"]
 
