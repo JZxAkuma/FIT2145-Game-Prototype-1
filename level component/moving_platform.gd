@@ -16,6 +16,7 @@ enum states {
 	lit,
 	not_lit
 }
+
 var state = states.not_lit
 
 var current_target: Node3D
