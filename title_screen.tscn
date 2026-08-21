@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://btg7exol2ibij" path="res://Environmental_Assets/Water/ThickWaterWaves.png" id="16_a64np"]
 [ext_resource type="FontFile" uid="uid://b8nmcbfik7r5n" path="res://Environmental_Assets/FontsUI/PixelifySans-SemiBold.ttf" id="17_m6xo1"]
 [ext_resource type="Texture2D" uid="uid://dv4yxj1bnndoj" path="res://Character_Assets/MobyRig_0.png" id="18_4h4vs"]
-[ext_resource type="Material" uid="uid://be7o2iqhqd43h" path="res://Character_Assets/MobyTexture.tres" id="19_y8ura"]
+[ext_resource type="Material" path="res://Character_Assets/MobyTexture.tres" id="19_y8ura"]
 [ext_resource type="PackedScene" uid="uid://d453vpva4jrf" path="res://Environmental_Assets/BackDrop/DistantMountains.fbx" id="20_a64np"]
 [ext_resource type="Texture2D" uid="uid://daddx783lvspy" path="res://Environmental_Assets/BackDrop/DistantMountains_standardSurface1_BaseColor.png" id="21_g2tdu"]
 [ext_resource type="Texture2D" uid="uid://bk448ompm0qq" path="res://Environmental_Assets/FontsUI/FireActive.png" id="22_4h4vs"]
