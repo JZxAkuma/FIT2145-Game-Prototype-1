@@ -166,7 +166,6 @@ func _ready() -> void:
 		ammount += 1
 
 func _hide_change_element_button(amount:int):
-	print(amount)
 	if amount == 1:
 		$CanvasLayer/Crosshair/VBoxContainer/HBoxContainer.hide()
 		$"CanvasLayer/Not aiming/VBoxContainer/HBoxContainer".hide()
