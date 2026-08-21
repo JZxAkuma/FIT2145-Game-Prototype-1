@@ -9,6 +9,8 @@ var lanterns: Array[Node3D] = []
 
 @export var arrival_threshold: float = 0.05
 
+@export var light_energy:float = 2.0
+
 enum states {
 	lit,
 	not_lit
@@ -30,8 +32,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	match state:
 		states.not_lit:
+			$PowerPlatform/OmniLight3D.light_energy = 0
 			pass
 		states.lit:
+			$PowerPlatform/OmniLight3D.light_energy = light_energy
 			_movement(delta)
 
 
