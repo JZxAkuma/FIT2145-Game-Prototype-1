@@ -11,7 +11,7 @@
 [node name="Level_2" type="Node3D"]
 
 [node name="Ground" parent="." instance=ExtResource("1_rjurc")]
-transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 30, 52, 0, -10)
+transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 30, 44, 0, -10)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.999769, -0.0195583, -0.00888878, -0.0214727, 0.922845, 0.384572, 0.000681389, 0.384674, -0.923052, 2.03666, 9.38525, -0.0746479)
@@ -33,7 +33,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 6)
 move_speed = 10.0
 
 [node name="pos 2" parent="Moving platform" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -1)
 
 [node name="PowerPlatform" parent="Moving platform" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
