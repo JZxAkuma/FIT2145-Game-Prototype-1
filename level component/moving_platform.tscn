@@ -12,4 +12,7 @@ script = ExtResource("1_6eae8")
 
 [node name="PowerPlatform" parent="." instance=ExtResource("2_mh0hq")]
 
+[node name="OmniLight3D" type="OmniLight3D" parent="PowerPlatform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33787, 0)
+
 [node name="Timer" type="Timer" parent="."]
