@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://p8x8kanykwb8"]
+[gd_scene load_steps=10 format=3 uid="uid://p8x8kanykwb8"]
 
 [ext_resource type="PackedScene" uid="uid://d31a4mjnbjw41" path="res://level component/Grass Blocks/grass_block_no_bevel.tscn" id="1_rjurc"]
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="2_mpmgm"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://huhac7cjloau" path="res://level component/moving_platform.tscn" id="5_lqe3k"]
 [ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="6_vtmy8"]
 [ext_resource type="PackedScene" uid="uid://jyehtpsrttln" path="res://level component/Mountains/Rock/close_mountain_rock_1.tscn" id="7_slhlm"]
+[ext_resource type="PackedScene" uid="uid://c87l4eyjihsew" path="res://level component/burnable_wood_wall.tscn" id="8_ytmfw"]
+[ext_resource type="PackedScene" uid="uid://dja117pab360a" path="res://level component/checkpoint.tscn" id="9_7xwok"]
 
 [node name="Level_2" type="Node3D"]
 
@@ -173,6 +175,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 
 [node name="Timer" parent="Moving platform3" index="3"]
 wait_time = 3.0
+
+[node name="Death Box2" parent="." instance=ExtResource("3_cd4c1")]
+transform = Transform3D(168.286, 0, 0, 0, 1, 0, 0, 0, 53.773, 42.3114, -5.68561, 6.49543)
+
+[node name="Burnable Wood Wall" parent="." instance=ExtResource("8_ytmfw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4297, 1.34598, 1.37895)
+
+[node name="Burnable Wood Wall2" parent="." instance=ExtResource("8_ytmfw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7844, 1.15093, 8.60624)
+
+[node name="Checkpoint" parent="." instance=ExtResource("9_7xwok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.2291, 0.983095, 4.12126)
 
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
