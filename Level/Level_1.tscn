@@ -112,7 +112,7 @@ water_available = false
 fire_available = false
 
 [node name="Skeleton3D" parent="player/Player_mesh/MobyRig" index="1"]
-bones/9/rotation = Quaternion(-0.000529799, -0.0246972, 0.00111511, 0.999694)
+bones/9/rotation = Quaternion(-0.000495527, -0.0230996, 0.00104298, 0.999732)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m7pm6")
@@ -126,7 +126,6 @@ directional_shadow_mode = 1
 sky_mode = 1
 
 [node name="PixelShader" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="PixelShader"]
 z_index = 1
@@ -256,6 +255,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 9, 1)
 
 [node name="Door" parent="." instance=ExtResource("12_fe5yt")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.64251, 17, 16)
+change_scene_to = "res://Level/level_2.tscn"
 
 [node name="grass_block_no_bevel10" parent="." instance=ExtResource("6_5ylc0")]
 transform = Transform3D(8, 0, 0, 0, 4, 0, 0, 0, 1, 31, 13, 24)
