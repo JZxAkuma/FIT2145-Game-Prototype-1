@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://cmbirrmnxcuyr"]
+[gd_scene load_steps=7 format=4 uid="uid://b8wkeb7w3ukt1"]
 
-[ext_resource type="Texture2D" uid="uid://ktwm3opux8w8" path="res://Environmental_Assets/CloseMountains/CloseMountains_Grassy (1).png" id="1_w314c"]
+[ext_resource type="Texture2D" uid="uid://bivg20dce5afp" path="res://Environmental_Assets/CloseMountains/CloseMountains_Rocky.png" id="1_s3feu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xmwtd"]
 resource_name = "standardSurface1"
@@ -26,7 +26,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_o6mj6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_c0uk5"]
 resource_name = "Rock3"
 _surfaces = [{
 "aabb": AABB(-0.00646867, -0.00590628, -0.00670331, 0.0142904, 0.0118682, 0.0137382),
@@ -45,21 +45,20 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yr24u")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wiqt"]
-albedo_texture = ExtResource("1_w314c")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2yk8"]
+albedo_texture = ExtResource("1_s3feu")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w314c"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uouyl"]
 points = PackedVector3Array(0.00677716, 0.00329175, 0.00612311, 0.000877426, -0.00442376, -0.00681349, 0.000196304, -0.00487713, -0.00658444, -0.00502373, 0.00601667, 0.00317256, -0.00524983, -0.00533167, 0.00544274, 0.00655107, -0.00578504, 0.00408063, 0.00655107, 0.00419966, -0.00431562, -0.00547734, 0.00238265, -0.00545003, 0.00791331, -0.00419649, -0.00590407, -0.00524983, -0.00578622, -0.00340755, -0.00524983, 0.00442693, 0.00703254, 0.00745828, 0.00488148, 0.00385294, -0.00661349, -0.000338733, -0.00113738, 0.00632356, -0.00555777, -0.00408793, 0.00541492, 0.00192929, 0.00657715, -0.00252676, 0.0026111, -0.00613176, 0.00632356, -0.00351467, -0.00681349, 0.00632356, 0.00488148, -0.00363525, 0.0076858, 0.00215774, 0.00566908, -0.00479622, -0.00465103, -0.00567637, 0.00609604, -0.00533167, 0.00498735, -0.00547734, -0.00328857, 0.00612311, -0.00479622, -0.00601349, 0.00453467, 0.00655107, 0.00533367, 0.00385294, -0.00298179, -0.00601349, -0.00363389, -0.00479622, 0.00306565, -0.00545003, -0.00593095, -0.00533167, -0.00272582, -0.00638598, -0.00011146, 0.0036266, -0.00570485, 0.00533485, 0.00294622, 0.00700468, -0.00533167, 0.00430697, 0.00428161, 0.00238383, -0.00567637, -0.0041151, 0.00488148, 0.00680349)
 
-[node name="close mountain grass 3" type="StaticBody3D"]
+[node name="close_mountain_rock_3" type="StaticBody3D"]
 
 [node name="Rock3" type="MeshInstance3D" parent="."]
-transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 3.21409, 6.75015, 4.17416)
-cast_shadow = 0
-mesh = SubResource("ArrayMesh_o6mj6")
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 3.22833, 6.71776, 4.22639)
+mesh = SubResource("ArrayMesh_c0uk5")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_4wiqt")
+surface_material_override/0 = SubResource("StandardMaterial3D_q2yk8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 3.21409, 6.75015, 4.17416)
-shape = SubResource("ConvexPolygonShape3D_w314c")
+transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 3.22833, 6.71776, 4.22639)
+shape = SubResource("ConvexPolygonShape3D_uouyl")
