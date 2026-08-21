@@ -24,7 +24,7 @@ shader_parameter/emission_strength = 0.0
 [node name="Level_2" type="Node3D"]
 
 [node name="Ground" parent="." instance=ExtResource("1_rjurc")]
-transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 30, 52, 0, -10)
+transform = Transform3D(30.5523, 0, 0, 0, 7.71596, 0, 0, 0, 30, 52, -6.73199, -10)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.999769, -0.0195584, -0.00888881, -0.0209174, 0.791839, 0.610372, -0.0048994, 0.610417, -0.792065, 2.03666, 9.38525, -0.0746479)
@@ -87,7 +87,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 1, 9)
 light_power = 50.0
 
 [node name="grass_block_no_bevel" parent="." instance=ExtResource("1_rjurc")]
-transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 10, -20, 0, 0)
+transform = Transform3D(5, 0, 0, 0, 2.92851, 0, 0, 0, 10, -20, -1.9303, 0)
 
 [node name="Grass block Bevel Bottom" parent="." instance=ExtResource("6_vtmy8")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 8.5, -1, -0.5)
