@@ -112,7 +112,7 @@ water_available = false
 fire_available = false
 
 [node name="Skeleton3D" parent="player/Player_mesh/MobyRig" index="1"]
-bones/9/rotation = Quaternion(-0.00166549, -0.0776388, 0.00350549, 0.996974)
+bones/9/rotation = Quaternion(-0.000424851, -0.0198049, 0.000894219, 0.999803)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m7pm6")
