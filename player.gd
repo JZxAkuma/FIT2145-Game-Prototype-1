@@ -72,7 +72,7 @@ var squash_stretch_scale: Vector3 = Vector3.ONE
 
 var flat_surface_threshold: float = 0.9
 
-@export var water_available : bool= true
+@export var water_available : bool = true
 @export var fire_available : bool = true
 @export var earth_available : bool = true
 
@@ -146,7 +146,11 @@ var is_aiming: bool = false
 signal state_changed(new_state: states)
 signal selection_changed(new_selection: elements)
 
+var available_elements :Array = [water_available,fire_available,earth_available]
+var ammount = 0
+
 func _ready() -> void:
+
 	element_ui.modulate.a = 0
 	selected_icon.modulate.a = 0
 	crosshair.modulate.a  = 0
@@ -154,6 +158,18 @@ func _ready() -> void:
 	call_deferred("_add_wall_indicator")
 	_update_input_device_ui()
 	print("water: ", water_available, " fire: ", fire_available, " earth: ", earth_available)
+	if water_available:
+		ammount +=1
+	if fire_available:
+		ammount +=1
+	if earth_available:
+		ammount += 1
+
+func _hide_change_element_button(amount:int):
+	print(amount)
+	if amount == 1:
+		$CanvasLayer/Crosshair/VBoxContainer/HBoxContainer.hide()
+		$"CanvasLayer/Not aiming/VBoxContainer/HBoxContainer".hide()
 
 func _add_wall_indicator():
 	get_tree().current_scene.add_child(wall_indicator)
@@ -213,7 +229,7 @@ func _physics_process(delta: float) -> void:
 	if not _is_element_available(selection):
 		_set_selection(_get_next_available_selection(selection, 1))
 	_update_mesh_squash_stretch(delta)
-
+	_hide_change_element_button(ammount)
 	$CanvasLayer2/selected_ui.show()
 	$"CanvasLayer2/Elements UI".show()
 		

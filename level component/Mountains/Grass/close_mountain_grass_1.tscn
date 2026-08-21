@@ -55,6 +55,7 @@ points = PackedVector3Array(-0.00412175, 0.0014491, -0.00641508, -0.00412175, 0.
 
 [node name="Rock1" type="MeshInstance3D" parent="."]
 transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 3.54574, 6.72976, 4.01162)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_bep0g")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7kmcc")

@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://jyehtpsrttln"]
+[gd_scene load_steps=7 format=4 uid="uid://b2ufh4dt5fip6"]
 
-[ext_resource type="Texture2D" uid="uid://bivg20dce5afp" path="res://Environmental_Assets/CloseMountains/CloseMountains_Rocky.png" id="1_w8xoh"]
+[ext_resource type="Texture2D" uid="uid://bivg20dce5afp" path="res://Environmental_Assets/CloseMountains/CloseMountains_Rocky.png" id="1_uf3da"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xmwtd"]
 resource_name = "standardSurface1"
@@ -46,12 +46,12 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5o5wi")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1e52"]
-albedo_texture = ExtResource("1_w8xoh")
+albedo_texture = ExtResource("1_uf3da")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w8xoh"]
 points = PackedVector3Array(-0.00412175, 0.0014491, -0.00641508, -0.00412175, 0.00190834, -0.00641508, 0.00738438, 0.0014491, -0.00503347, 0.000709957, -0.00568429, -0.00365311, -0.00550307, -0.00499309, 0.00394139, 0.00554311, -0.00453269, 0.00417062, -0.00458171, 0.00421154, 0.00209883, 0.00646302, 0.00305994, 0.00486081, 0.00112094, 0.0052976, -0.0017199, 0.00669372, -0.0047623, -0.00503347, -0.00458171, -0.00476347, -0.00572366, -0.00688438, 0.00121831, 0.00301949, -0.0036618, 0.00305994, 0.00555223, 0.00200403, 0.00576963, 0.00177577, 0.00577237, 0.00305994, -0.00572366, -0.00481241, -0.00200103, 0.00624365, -0.00458171, 0.00305994, -0.00595413, 0.00715368, -0.0047623, -0.00135084, 0.00393254, -0.00499426, 0.00486081, -0.00504167, -0.00591508, 0.00232931, -0.00711508, -0.00223065, 0.00301949, 0.00738438, 0.00329073, -0.000891135, -0.00573377, 0.00190834, -0.00503347, 0.00209127, 0.00329073, 0.00624365, 0.00186057, 0.00329073, -0.00641508, 0.00738438, 0.0014491, 0.00348044, 0.00554311, -0.0047623, -0.00549442, 0.00554311, -0.0054535, -0.00204103, -0.00412175, -0.00522388, 0.00509252, 0.00393254, -0.00430307, 0.00532299, -0.00205123, -0.00476347, -0.00595413, 0.00232053, 0.00421037, -0.00572366)
 
-[node name="Close Mountain Rock 1" type="StaticBody3D"]
+[node name="Close Mountain Rock 1 shaded" type="StaticBody3D"]
 
 [node name="Rock1" type="MeshInstance3D" parent="."]
 transform = Transform3D(500, 0, 0, 0, 1155.36, 0, 0, 0, 634.325, 3.59515, 6.7742, 4.02873)
