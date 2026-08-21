@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dhphdaphrwcbm" path="res://Character_Assets/MobyRig.fbx" id="2_8v1cs"]
 [ext_resource type="Texture2D" uid="uid://difao83xnsjna" path="res://1545215.png" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://jqeg1l3hc3r3" path="res://Icons/WaterInactive.png" id="3_5enqi"]
-[ext_resource type="Material" uid="uid://be7o2iqhqd43h" path="res://Character_Assets/MobyTexture.tres" id="3_os2xl"]
+[ext_resource type="Material" path="res://Character_Assets/MobyTexture.tres" id="3_os2xl"]
 [ext_resource type="Texture2D" uid="uid://c22e1kg63lvjw" path="res://Icons/WaterActive.png" id="4_8v1cs"]
 [ext_resource type="PackedScene" uid="uid://bvqyn8jdhd2uh" path="res://Character_Assets/MobyTail.fbx" id="4_cx4s4"]
 [ext_resource type="Texture2D" uid="uid://dtdca377upiwo" path="res://Environmental_Assets/FontsUI/Control_Icons/PSCircle.png" id="5_65nnk"]
@@ -539,7 +539,7 @@ bones/6/rotation = Quaternion(-0.481475, -0.0932315, -0.675769, 0.550297)
 bones/7/position = Vector3(0.638741, 3.55618e-16, -9.71445e-17)
 bones/8/position = Vector3(0.00606678, 0.660334, 8.08676e-17)
 bones/9/position = Vector3(0.00606466, -0.660334, -8.08676e-17)
-bones/9/rotation = Quaternion(-0.00375088, -0.174852, 0.00789478, 0.984556)
+bones/9/rotation = Quaternion(-0.00276682, -0.128979, 0.00582357, 0.991627)
 bones/10/position = Vector3(-0.0340323, 0.316433, 3.87519e-17)
 bones/10/rotation = Quaternion(0.0143075, 0.706962, -0.706962, -0.0143075)
 bones/10/scale = Vector3(1, 1, 1)
@@ -816,6 +816,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.009, 1.009)
 
 [node name="casting to" type="Label" parent="CanvasLayer/Crosshair"]
 visible = false

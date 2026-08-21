@@ -464,6 +464,11 @@ func _unlock_player():
 func _on_hurt_box_area_entered(area: Area3D) -> void:
 	RespawnManager._respawn()
 
+
+func _to_checkpoint_spot(spawnpoint: Vector3) -> void:
+	pass
+
+
 func _elements_ui():
 	water_icon.visible = water_available
 	fire_icon.visible = fire_available
