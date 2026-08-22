@@ -180,6 +180,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4045, 0.5, 13.4613)
 [node name="Burnable Wood Wall" parent="." instance=ExtResource("20_uc3q2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.50347, 1.34027, 17.3268)
 
+[node name="Grass block Bevel Bottom" parent="." instance=ExtResource("9_ysvdf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74751, 1.90947, 12.4418)
+
 [editable path="Checkpoint"]
 [editable path="Moving platform"]
 [editable path="Moving platform/PowerPlatform"]

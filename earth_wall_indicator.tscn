@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://dyqjqoolg51yf"]
+[gd_scene load_steps=7 format=4 uid="uid://dyqjqoolg51yf"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo5bi"]
-transparency = 1
-albedo_color = Color(0, 1, 1, 0.372549)
+[ext_resource type="Script" uid="uid://b2y0cbjlpkhqd" path="res://earth_wall_indicator.gd" id="1_cc8mb"]
+[ext_resource type="Material" uid="uid://8v0n7ej0xjs1" path="res://Other material/earth_wall_indicator_invalid.tres" id="1_klefd"]
+[ext_resource type="Material" uid="uid://ditrxy3pyy8qh" path="res://Other material/earth_wall_indicator.tres" id="2_r0b8k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cbh8"]
 resource_name = "standardSurface1"
@@ -48,9 +48,12 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_klefd")
 
 [node name="earth wall indicator" type="Node3D"]
+script = ExtResource("1_cc8mb")
+valid_material = ExtResource("2_r0b8k")
+invalid_material = ExtResource("1_klefd")
 
 [node name="Dirt_Pillar" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000102997, 0.00410032, -0.00422929)
-material_override = SubResource("StandardMaterial3D_bo5bi")
+material_override = ExtResource("1_klefd")
 mesh = SubResource("ArrayMesh_cc8mb")
 skeleton = NodePath("")

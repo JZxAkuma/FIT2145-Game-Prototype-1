@@ -106,6 +106,7 @@ var flat_surface_threshold: float = 0.9
 @export var cast_keyboard_texture = load("res://Environmental_Assets/FontsUI/Control_Icons/M1Key.png")
 @export var aim_keyboard_texture = load("res://Environmental_Assets/FontsUI/Control_Icons/M2Key.png")
 
+
 @export var controller_stick_deadzone: float = 0.3
 enum input_device {
 	keyboard,
@@ -344,10 +345,17 @@ func _cast_selection():
 			if target and target.is_in_group("floor"):
 				var earthwall = earthwall_scene.instantiate()
 				earthwall.player_made = true
+
+				var spawn_pos = castline.get_collision_point()
+				var spawn_normal = castline.get_collision_normal()
+
 				get_tree().current_scene.add_child(earthwall)
-				earthwall.global_position = castline.get_collision_point()
-				_align_to_surface(earthwall, castline.get_collision_point(), castline.get_collision_normal(), true)
-			
+				await get_tree().physics_frame
+
+				if is_instance_valid(earthwall):
+					earthwall.global_position = spawn_pos
+					_align_to_surface(earthwall, spawn_pos, spawn_normal, true)
+
 			if target and target.has_method("_earth_reset"):
 				target._earth_reset()
 
@@ -401,7 +409,7 @@ func _camera_state():
 	
 	element_ui_offset.y = shortest_offset + (springarm.spring_length - aim_spring_length) * (longest_offset - shortest_offset) / (default_spring_length - aim_spring_length)
 
-func _update_wall_indicator():
+func _update_wall_indicator() -> void:
 	if not wall_indicator.is_inside_tree():
 		return
 
@@ -409,10 +417,14 @@ func _update_wall_indicator():
 
 	if state == states.aiming and selection == elements.earth and castline.is_colliding():
 		var target = castline.get_collider()
-		if target and target.is_in_group("floor"):
+		var is_earthwall = target and target.has_method("_earth_reset")
+
+		if not is_earthwall:
+			var is_valid = target and target.is_in_group("floor")
 			wall_indicator.global_position = castline.get_collision_point()
 			wall_indicator.global_rotation = global_rotation
-			_align_to_surface(wall_indicator, castline.get_collision_point(), castline.get_collision_normal(), false)
+			_align_to_surface(wall_indicator, castline.get_collision_point(), castline.get_collision_normal(), true)
+			wall_indicator.set_valid(is_valid)
 			show_indicator = true
 
 	wall_indicator.visible = show_indicator
@@ -420,6 +432,8 @@ func _update_wall_indicator():
 
 func _align_to_surface(node: Node3D, position: Vector3, normal: Vector3, flip: bool = false) -> void:
 	node.global_position = position
+
+	var existing_scale = node.scale
 
 	var is_flat: bool = normal.dot(Vector3.UP) > flat_surface_threshold
 	var up: Vector3 = normal.normalized()
@@ -443,6 +457,7 @@ func _align_to_surface(node: Node3D, position: Vector3, normal: Vector3, flip: b
 	forward = up.cross(right).normalized()
 
 	node.global_transform.basis = Basis(right, up, forward)
+	node.scale = existing_scale 
 
 	if flip:
 		node.rotate_object_local(Vector3.RIGHT, PI)
