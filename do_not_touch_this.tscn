@@ -137,6 +137,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.56776, 0.281781, 6.0871)
 
 [node name="Moving platform" parent="." instance=ExtResource("16_v2mwr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6999, 0.5, 11.463)
+mode = 2
 
 [node name="pos 2" parent="Moving platform" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.09257, 7.02964, 0)
