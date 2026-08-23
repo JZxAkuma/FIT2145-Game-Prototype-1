@@ -675,7 +675,7 @@ func _update_shadow() -> void:
 		return
 
 	player_shadow.visible = true
-	player_shadow.global_position = result["position"] + Vector3.UP * 0.05  # tiny lift to avoid z-fighting
+	player_shadow.global_position = result["position"] + Vector3.UP * 0.05
 
 	var distance = global_position.distance_to(result["position"])
 	var ratio = clamp(1.0 - (distance / shadow_max_distance), 0.0, 1.0)
