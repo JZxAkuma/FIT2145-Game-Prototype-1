@@ -57,6 +57,13 @@ var earthwall_scene = preload("res://earth_wall.tscn")
 
 @export var test_element_change_system = false
 
+@export var shadow_max_distance: float = 10.0
+@export var shadow_min_scale: float = 0.3
+@export var shadow_max_scale: float = 1.0
+@export var shadow_min_alpha: float = 0.1
+@export var shadow_max_alpha: float = 0.6
+@onready var player_shadow: Decal = $Decal
+
 var longest_offset = 1.5
 var shortest_offset = 1.1
 
@@ -226,6 +233,7 @@ func _physics_process(delta: float) -> void:
 	_camera_state()
 	_cast_lenght()
 	_elements_ui()
+	_update_shadow()
 	if not _is_element_available(selection):
 		_set_selection(_get_next_available_selection(selection, 1))
 	_update_mesh_squash_stretch(delta)
@@ -652,3 +660,28 @@ func _update_input_device_ui() -> void:
 			controller_water_icon.modulate.a = 1
 			controller_fire_icon.modulate.a = 1
 			controller_earth_icon.modulate.a = 1
+
+func _update_shadow() -> void:
+	var space_state = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(
+		global_position,
+		global_position + Vector3.DOWN * shadow_max_distance
+	)
+	query.exclude = [self]
+	var result = space_state.intersect_ray(query)
+
+	if result.is_empty():
+		player_shadow.visible = false
+		return
+
+	player_shadow.visible = true
+	player_shadow.global_position = result["position"] + Vector3.UP * 0.05  # tiny lift to avoid z-fighting
+
+	var distance = global_position.distance_to(result["position"])
+	var ratio = clamp(1.0 - (distance / shadow_max_distance), 0.0, 1.0)
+
+	var scale_amount = lerp(shadow_min_scale, shadow_max_scale, ratio)
+	player_shadow.size = Vector3(scale_amount, player_shadow.size.y, scale_amount)
+
+	var alpha = lerp(shadow_min_alpha, shadow_max_alpha, ratio)
+	player_shadow.modulate.a = alpha
