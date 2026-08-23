@@ -43,6 +43,7 @@ floor=""
 sygil_detect=""
 door=""
 earth_wall=""
+target=""
 
 [input]
 
