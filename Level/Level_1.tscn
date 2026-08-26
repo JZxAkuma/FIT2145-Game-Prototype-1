@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://fiqtqeg3x8sk"]
+[gd_scene load_steps=41 format=4 uid="uid://fiqtqeg3x8sk"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_ef6fe"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="2_7xy2x"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://jyehtpsrttln" path="res://level component/Mountains/Rock/close_mountain_rock_1.tscn" id="27_jhlv2"]
 [ext_resource type="PackedScene" uid="uid://chgqcc2cl1grc" path="res://level component/Grass Blocks/grass_block_bevel_top.tscn" id="28_jhlv2"]
 [ext_resource type="PackedScene" uid="uid://ba6n14gshlvsp" path="res://level component/Mountains/Rock/close_mountain_rock_3.tscn" id="28_wnion"]
+[ext_resource type="PackedScene" uid="uid://cjpdnm3o6nrrm" path="res://level component/Deco/moby_prop.tscn" id="29_ceggk"]
 [ext_resource type="PackedScene" uid="uid://b7hrnh1cnxlbt" path="res://level component/Rock Blocks/rock_block_bevel_top.tscn" id="29_wnion"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yybeu"]
@@ -117,6 +118,7 @@ bones/3/rotation = Quaternion(0.346064, 0.595076, 0.315242, 0.653258)
 bones/4/position = Vector3(0.343057, 1.18144e-16, 3.45944e-18)
 bones/4/rotation = Quaternion(0.151308, -0.396979, -0.0665316, 0.902822)
 bones/6/rotation = Quaternion(-0.481475, -0.0932315, -0.675769, 0.550297)
+bones/9/rotation = Quaternion(-0.00302518, -0.141022, 0.00636735, 0.989981)
 bones/10/rotation = Quaternion(0.0143075, 0.706962, -0.706962, -0.0143075)
 bones/12/rotation = Quaternion(-0.0143077, 0.706962, -0.706962, 0.0143077)
 
@@ -452,6 +454,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.15397, 4.5144, 1.8454)
 
 [node name="close_mountain_rock_3" parent="Node3D" instance=ExtResource("28_wnion")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.84832, 4.82214, 0.0815659)
+
+[node name="MobyProp" parent="Node3D/close_mountain_rock_3" instance=ExtResource("29_ceggk")]
+transform = Transform3D(-0.416852, 0, 0.908974, 0, 1, 0, -0.908974, 0, -0.416852, -6.36225, 3.77889, 20.5209)
+dialogue_text = "Your feet will be mine"
 
 [node name="Node3D6" type="Node3D" parent="."]
 transform = Transform3D(-0.105014, 0, -0.994471, 0, 1, 0, 0.994471, 0, -0.105014, 3.16163, -7.42861, -2.09923)
