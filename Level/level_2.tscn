@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://p8x8kanykwb8"]
+[gd_scene load_steps=22 format=3 uid="uid://p8x8kanykwb8"]
 
 [ext_resource type="PackedScene" uid="uid://d31a4mjnbjw41" path="res://level component/Grass Blocks/grass_block_no_bevel.tscn" id="1_rjurc"]
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="2_mpmgm"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://goasctnx4yg3" path="res://level component/Deco/Trees/Pine/pine_tree_big.tscn" id="15_sukcg"]
 [ext_resource type="PackedScene" uid="uid://1v3yumh8vrod" path="res://level component/Deco/Trees/palm_tree.tscn" id="16_lgsct"]
 [ext_resource type="PackedScene" uid="uid://cjpdnm3o6nrrm" path="res://level component/Deco/moby_prop.tscn" id="17_lgsct"]
+[ext_resource type="PackedScene" uid="uid://bdkrj3i614fqb" path="res://level component/Rock Blocks/rock_block_bevel_bottom.tscn" id="18_l3l4h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wgc5d"]
 render_priority = 0
@@ -102,9 +103,6 @@ light_power = 50.0
 [node name="grass_block_no_bevel" parent="." instance=ExtResource("1_rjurc")]
 transform = Transform3D(5, 0, 0, 0, 2.92851, 0, 0, 0, 10, -20, -1.9303, 0)
 
-[node name="Grass block Bevel Bottom" parent="." instance=ExtResource("6_vtmy8")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 8.5, -1, -0.5)
-
 [node name="Grass block Bevel Bottom3" parent="." instance=ExtResource("6_vtmy8")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 18.5, -1, -0.5)
 
@@ -114,9 +112,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 28.5, -1, -0.5)
 [node name="Grass block Bevel Bottom5" parent="." instance=ExtResource("6_vtmy8")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.5, -1, -0.5)
 
-[node name="Grass block Bevel Bottom6" parent="." instance=ExtResource("6_vtmy8")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 8.5, -1, 8.5)
-
 [node name="Grass block Bevel Bottom7" parent="." instance=ExtResource("6_vtmy8")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 18.5, -1, 8.5)
 
@@ -125,9 +120,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 28.5, -1, 8.5)
 
 [node name="Grass block Bevel Bottom9" parent="." instance=ExtResource("6_vtmy8")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.5, -1, 8.5)
-
-[node name="Grass block Bevel Bottom2" parent="." instance=ExtResource("6_vtmy8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 9)
 
 [node name="Close Mountain Rock 1" parent="." instance=ExtResource("7_slhlm")]
 transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, -2, -8.5226, -8)
@@ -341,6 +333,12 @@ wait_time = 3.0
 [node name="Lantern2" parent="Moving platform4" instance=ExtResource("4_lqe3k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, 3)
 light_power = 50.0
+
+[node name="rock block bevel bottom" parent="." instance=ExtResource("18_l3l4h")]
+transform = Transform3D(1.99247, 0, 0, 0, 1.84488, 0, 0, 0, 2.09029, 8.52907, -0.772251, -0.402321)
+
+[node name="rock block bevel bottom2" parent="." instance=ExtResource("18_l3l4h")]
+transform = Transform3D(1.99247, 0, 0, 0, 1.84488, 0, 0, 0, 2.09029, 8.52907, -0.772251, 8.47509)
 
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
