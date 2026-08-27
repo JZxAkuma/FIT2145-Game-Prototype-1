@@ -39,9 +39,9 @@ folder_colors={
 "res://level component/": "red",
 "res://level component/Codes/": "blue",
 "res://level component/Deco/": "green",
-"res://level component/Grass Blocks/": "green",
+"res://level component/Grass Blocks/": "yellow",
 "res://level component/Mountains/": "green",
-"res://level component/Rock Blocks/": "green",
+"res://level component/Rock Blocks/": "yellow",
 "res://level component/World Base/": "blue"
 }
 
