@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://5rxpnkcqrtao" path="res://Environmental_Assets/Skybox.png" id="2_ioo17"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="2_wse8f"]
-[ext_resource type="Script" uid="uid://bajk2gnxublmr" path="res://target.gd" id="3_tlwt5"]
+[ext_resource type="Script" uid="uid://bajk2gnxublmr" path="res://Codes/target.gd" id="3_tlwt5"]
 [ext_resource type="Material" uid="uid://cl51eb11ow855" path="res://Environmental_Assets/TiledTextures/TiledGrass.tres" id="4_o3ebs"]
 [ext_resource type="PackedScene" uid="uid://bl0at38vfaxk3" path="res://level component/Kinematic stuff/kinematic_door.tscn" id="5_036b0"]
 [ext_resource type="Material" uid="uid://028c08pjbb83" path="res://Environmental_Assets/Grass/Grass.tres" id="6_pkg7o"]
@@ -41,6 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://cfi57rfl0n3hh" path="res://level component/Deco/round_moby_house.tscn" id="39_1ew0l"]
 [ext_resource type="PackedScene" uid="uid://cuxjtjjk6sjga" path="res://level component/water_container_scale_maxr.tscn" id="40_ryup7"]
 [ext_resource type="PackedScene" uid="uid://c8iyy4ydwtace" path="res://level component/Kinematic stuff/wood_crate.tscn" id="41_ytpkv"]
+
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ic0uy"]
 shader = ExtResource("2_wse8f")

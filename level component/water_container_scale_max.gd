@@ -13,6 +13,11 @@ var current_water = 0
 @export var max_upward_force: float = 12.0
 @export var max_detector_height: float = 3.0
 
+#Modified by Adha
+@export var prefill_water: bool = false
+@export var starting_water: int = 0
+#end mod
+
 var steam_active: bool = false
 var steam_ratio: float = 0.0
 var steam_timer: float = 0.0
@@ -30,6 +35,12 @@ var vertical_base_scale_max: float
 @export var full_visual_scale: float = 11.0
 
 func _ready() -> void:
+	
+	# Modified by Adha
+	if prefill_water:
+		current_water = clamp(starting_water, 0, max_water)
+	#end mod
+	
 	radius_base_velocity_min = radius_part.process_material.initial_velocity_min
 	radius_base_velocity_max = radius_part.process_material.initial_velocity_max
 	vertical_base_velocity_min = vertical_part.process_material.initial_velocity_min

@@ -13,7 +13,11 @@ config_version=5
 config/name="game prototype 1"
 run/main_scene="uid://dyaj3iwk8apo1"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Other material/icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://Other material/default_bus_layout.tres"
 
 [autoload]
 

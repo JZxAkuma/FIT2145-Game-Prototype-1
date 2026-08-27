@@ -1,7 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://bg17k7mwbev1m"]
 
 [ext_resource type="Material" uid="uid://dpcwpjbtnlgoj" path="res://Environmental_Assets/2dParticleSprites/Squares.tres" id="1_54buw"]
-[ext_resource type="Script" uid="uid://cvatk2q4swrag" path="res://fire_blast_particle.gd" id="2_xvtgv"]
+[ext_resource type="Script" uid="uid://cvatk2q4swrag" path="res://Codes/fire_blast_particle.gd" id="2_xvtgv"]
+
 
 [sub_resource type="Gradient" id="Gradient_xvtgv"]
 offsets = PackedFloat32Array(0, 0.727273, 1)

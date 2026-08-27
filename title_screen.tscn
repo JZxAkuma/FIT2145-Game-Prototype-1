@@ -1,7 +1,7 @@
 [gd_scene load_steps=137 format=4 uid="uid://xeclik2roint"]
 
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="1_ig5kc"]
-[ext_resource type="Script" uid="uid://mtrmqtmcuj1h" path="res://title_screen.gd" id="1_lf08s"]
+[ext_resource type="Script" uid="uid://mtrmqtmcuj1h" path="res://Codes/title_screen.gd" id="1_lf08s"]
 [ext_resource type="Texture2D" uid="uid://5rxpnkcqrtao" path="res://Environmental_Assets/Skybox.png" id="2_05l2w"]
 [ext_resource type="Shader" uid="uid://yco8p8a5gjbo" path="res://Environmental_Assets/Pixelation.gdshader" id="3_hafda"]
 [ext_resource type="Material" uid="uid://cl51eb11ow855" path="res://Environmental_Assets/TiledTextures/TiledGrass.tres" id="4_05l2w"]

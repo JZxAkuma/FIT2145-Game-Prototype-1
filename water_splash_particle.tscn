@@ -1,7 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://blaytncgnc5hg"]
 
-[ext_resource type="Material" path="res://Environmental_Assets/2dParticleSprites/SolidCircle.tres" id="1_bpc64"]
-[ext_resource type="Script" uid="uid://nmbvyq4mnmkm" path="res://water_splash_particle.gd" id="2_nmwew"]
+[ext_resource type="Material" uid="uid://rn5sicuqjcqk" path="res://Environmental_Assets/2dParticleSprites/SolidCircle.tres" id="1_bpc64"]
+[ext_resource type="Script" uid="uid://nmbvyq4mnmkm" path="res://Codes/water_splash_particle.gd" id="2_nmwew"]
+
 
 [sub_resource type="Gradient" id="Gradient_nmwew"]
 colors = PackedColorArray(0.222344, 0.400849, 0.778927, 1, 0.514857, 0.952915, 0.925181, 1)

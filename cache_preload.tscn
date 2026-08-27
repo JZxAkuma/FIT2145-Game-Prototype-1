@@ -1,6 +1,6 @@
 [gd_scene load_steps=54 format=3 uid="uid://dyaj3iwk8apo1"]
 
-[ext_resource type="Script" uid="uid://12mhihfuwnr0" path="res://cache_preload.gd" id="1_8xgou"]
+[ext_resource type="Script" uid="uid://12mhihfuwnr0" path="res://Codes/cache_preload.gd" id="1_8xgou"]
 [ext_resource type="PackedScene" uid="uid://ry5xjblnnw7e" path="res://Character_Assets/moby_tail.tscn" id="2_nuer2"]
 [ext_resource type="PackedScene" uid="uid://cvwuhpmowc7vx" path="res://Environmental_Assets/Structure/tall_path.tscn" id="3_ct8bu"]
 [ext_resource type="PackedScene" uid="uid://ex03kti07uqb" path="res://Environmental_Assets/Structure/water_tower.tscn" id="4_dsfdu"]
@@ -44,7 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://cca0v3u6pvybl" path="res://level component/death_box.tscn" id="42_ik3tc"]
 [ext_resource type="PackedScene" uid="uid://clnnxo4nuolkh" path="res://level component/flat_shroom.tscn" id="43_mlhwn"]
 [ext_resource type="PackedScene" uid="uid://cccsgyqte47e6" path="res://level component/growing_plant.tscn" id="44_g618i"]
-[ext_resource type="PackedScene" uid="uid://ced3mcg8toces" path="res://level component/invi_wall.tscn" id="45_ryed6"]
+[ext_resource type="PackedScene" path="res://level component/invi_wall.tscn" id="45_ryed6"]
 [ext_resource type="PackedScene" uid="uid://huhac7cjloau" path="res://level component/moving_platform.tscn" id="46_jc4gt"]
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="47_tfky1"]
 [ext_resource type="PackedScene" uid="uid://dp15gxl53fdn6" path="res://level component/power_platform.tscn" id="48_5ctpw"]
@@ -53,6 +53,7 @@
 [ext_resource type="PackedScene" uid="uid://cuxjtjjk6sjga" path="res://level component/water_container_scale_maxr.tscn" id="51_xk8em"]
 [ext_resource type="PackedScene" uid="uid://b7fvcx564frcv" path="res://Environmental_Assets/FontsUI/water_container_set_max.tscn" id="52_amwv7"]
 [ext_resource type="FontFile" uid="uid://b8nmcbfik7r5n" path="res://Environmental_Assets/FontsUI/PixelifySans-SemiBold.ttf" id="53_t10ew"]
+
 
 [node name="Cache_preload" type="Node3D"]
 script = ExtResource("1_8xgou")

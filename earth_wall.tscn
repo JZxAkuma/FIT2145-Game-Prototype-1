@@ -1,7 +1,8 @@
 [gd_scene load_steps=7 format=4 uid="uid://3l83r27r00a7"]
 
-[ext_resource type="Script" uid="uid://6mvcq83wx3h8" path="res://earth_wall.gd" id="1_7quyf"]
+[ext_resource type="Script" uid="uid://6mvcq83wx3h8" path="res://Codes/earth_wall.gd" id="1_7quyf"]
 [ext_resource type="Material" uid="uid://dgbpoe2hcfcu3" path="res://Other material/earth_wall.tres" id="2_e24q0"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oupq2"]
 size = Vector3(1.50853, 2.00048, 1.00797)
