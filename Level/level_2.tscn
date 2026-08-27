@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://p8x8kanykwb8"]
+[gd_scene load_steps=38 format=4 uid="uid://p8x8kanykwb8"]
 
 [ext_resource type="PackedScene" uid="uid://d31a4mjnbjw41" path="res://level component/Grass Blocks/grass_block_no_bevel.tscn" id="1_rjurc"]
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="2_mpmgm"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://v245p8f6nnsr" path="res://level component/Deco/rock.tscn" id="27_lu1xx"]
 [ext_resource type="PackedScene" uid="uid://d453vpva4jrf" path="res://Environmental_Assets/BackDrop/DistantMountains.fbx" id="28_lcdom"]
 [ext_resource type="Texture2D" uid="uid://daddx783lvspy" path="res://Environmental_Assets/BackDrop/DistantMountains_standardSurface1_BaseColor.png" id="29_1mjlq"]
+[ext_resource type="PackedScene" uid="uid://cfi57rfl0n3hh" path="res://level component/Deco/round_moby_house.tscn" id="30_lcdom"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wgc5d"]
 render_priority = 0
@@ -759,6 +760,21 @@ transform = Transform3D(1, 0, 0, 0, 1.38991, 0, 0, 0, 5.39689, 140.612, 20.4056,
 
 [node name="close_mountain_rock_28" parent="." instance=ExtResource("25_4pyl2")]
 transform = Transform3D(0.236465, 0, -5.72484, 0, 1.05227, 0, 0.97164, 0, 1.39324, 137.622, 23.1209, 41.441)
+
+[node name="Lantern2" parent="." instance=ExtResource("4_lqe3k")]
+transform = Transform3D(10.6332, 0, 0, 0, 9.34688, 0, 0, 0, 7.22973, 77.5596, 27.7475, 56.2705)
+
+[node name="Lantern4" parent="." instance=ExtResource("4_lqe3k")]
+transform = Transform3D(9.11028, 0, 0, 0, 7.98922, 0, 0, 0, 7.89269, 116.823, 29.6656, -53.1821)
+
+[node name="Lantern7" parent="." instance=ExtResource("4_lqe3k")]
+transform = Transform3D(7.58271, 0, 0, 0, 5.58977, 0, 0, 0, 7.53395, 36.7385, 39.5814, 26.9833)
+
+[node name="Lantern10" parent="." instance=ExtResource("4_lqe3k")]
+transform = Transform3D(4.61136, -3.53496, 2.62417, 3.80769, 4.99039, 1.05906, -3.30424, 0.817418, 4.88268, 5.7667, 16.2443, 8.17757)
+
+[node name="RoundMobyHouse" parent="." instance=ExtResource("30_lcdom")]
+transform = Transform3D(-0.142034, 0, -0.687612, 0, 0.692552, 0, 0.70581, 0, -0.138372, 71.7052, 0.862446, -0.90403)
 
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
