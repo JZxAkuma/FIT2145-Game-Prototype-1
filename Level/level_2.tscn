@@ -727,6 +727,39 @@ transform = Transform3D(1.06906, 0, 1.02812, 0, 4.03297, 0, -0.163819, 0, 6.7094
 [node name="close_mountain_rock_17" parent="." instance=ExtResource("25_4pyl2")]
 transform = Transform3D(0.369468, 0.5115, 0.896536, 4.90264, 0.0896637, -0.0934352, -0.420821, 1.49368, -0.301404, 32.0112, 9.09944, -0.673978)
 
+[node name="close_mountain_rock_18" parent="." instance=ExtResource("25_4pyl2")]
+transform = Transform3D(-7.22133, 0.108738, 0, -0.205621, -3.81885, 0, 0, 0, 1.29305, 99.9637, 37.2272, -45.4202)
+
+[node name="close_mountain_rock_19" parent="." instance=ExtResource("25_4pyl2")]
+transform = Transform3D(-10.8789, -0.33949, 0.403825, 0, 0.455824, 5.96248, -2.5074, 1.47296, -1.75209, 154.606, -19.4346, -40.4458)
+
+[node name="close_mountain_rock_20" parent="." instance=ExtResource("25_4pyl2")]
+transform = Transform3D(1.59425, 0, -0.830037, 0, 2.99266, 0, 7.06733, 0, 0.18724, 141.878, -11.8745, -38.2043)
+
+[node name="close_mountain_rock_21" parent="." instance=ExtResource("25_4pyl2")]
+transform = Transform3D(-1.61792, -0.44294, -0.975845, -0.305855, 2.34307, -0.184476, 6.40742, 0, -0.255214, 155.086, -6.37026, -4.90097)
+
+[node name="close_mountain_rock_22" parent="." instance=ExtResource("25_4pyl2")]
+transform = Transform3D(0.000878183, 0, 6.91972, 0, 2.84684, 0, -2.09661, 0, 0.00289838, 42.3303, -7.94645, 65.012)
+
+[node name="close_mountain_rock_23" parent="." instance=ExtResource("25_4pyl2")]
+transform = Transform3D(0.922459, 1.16777, -0.0710021, 0, 0.121468, 3.60378, 0.445914, -2.41576, 0.146881, 120.138, -10.4251, 62.4501)
+
+[node name="close_mountain_rock_24" parent="." instance=ExtResource("25_4pyl2")]
+transform = Transform3D(5.36617, 0, 0, 0, 2.8064, 0, 0, 0, 1, 91.9122, -7.88993, 53.0221)
+
+[node name="close_mountain_rock_25" parent="." instance=ExtResource("25_4pyl2")]
+transform = Transform3D(0.925353, -0.525912, -0.862612, 0.21831, 1.69133, -1.00341, 0.30994, 0.378846, 3.28217, 139.911, 19.7785, 13.9407)
+
+[node name="close_mountain_rock_26" parent="." instance=ExtResource("25_4pyl2")]
+transform = Transform3D(1.25285, 0, 1.03799, 0, 1, 0, -2.27442, 0, 0.571772, 120.874, 13.069, 55.9631)
+
+[node name="close_mountain_rock_27" parent="." instance=ExtResource("25_4pyl2")]
+transform = Transform3D(1, 0, 0, 0, 1.38991, 0, 0, 0, 5.39689, 140.612, 20.4056, -15.5667)
+
+[node name="close_mountain_rock_28" parent="." instance=ExtResource("25_4pyl2")]
+transform = Transform3D(0.236465, 0, -5.72484, 0, 1.05227, 0, 0.97164, 0, 1.39324, 137.622, 23.1209, 41.441)
+
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
 [editable path="Moving platform3"]
