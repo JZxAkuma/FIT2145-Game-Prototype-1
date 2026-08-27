@@ -1,9 +1,10 @@
 [gd_scene load_steps=30 format=4 uid="uid://b7fvcx564frcv"]
 
 [ext_resource type="Material" uid="uid://c1l7vrr8nrtuc" path="res://Environmental_Assets/Pack2/Pack2.tres" id="1_m156i"]
-[ext_resource type="Script" uid="uid://b6rov4wqyfkui" path="res://level component/water_container_set_max.gd" id="1_oemlg"]
+[ext_resource type="Script" uid="uid://b6rov4wqyfkui" path="res://level component/Codes/water_container_set_max.gd" id="1_oemlg"]
 [ext_resource type="Material" uid="uid://b1feelcw1cj5n" path="res://Environmental_Assets/Pack2/Glass.tres" id="2_oemlg"]
 [ext_resource type="Material" uid="uid://btquq4vbniybt" path="res://Environmental_Assets/2dParticleSprites/Steam.tres" id="3_fq4gm"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pd5l7"]
 size = Vector3(2.21576, 1.39908, 1.35874)

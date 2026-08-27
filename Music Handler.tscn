@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dhi5eniphhbnd"]
 
-[ext_resource type="Script" uid="uid://biwhv1sksq4gb" path="res://Codes/Music Handler.gd" id="1_3muth"]
+[ext_resource type="Script" uid="uid://biwhv1sksq4gb" path="res://Music Handler.gd" id="1_3muth"]
 
 
 [node name="Music Handler" type="Node"]

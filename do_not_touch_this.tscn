@@ -1,8 +1,8 @@
 [gd_scene load_steps=26 format=3 uid="uid://3ftwg36iyvei"]
 
-[ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="1_5dnvj"]
+[ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="1_5dnvj"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="1_m3ehg"]
-[ext_resource type="PackedScene" uid="uid://dja117pab360a" path="res://level component/checkpoint.tscn" id="1_o3iqb"]
+[ext_resource type="PackedScene" uid="uid://dja117pab360a" path="res://level component/World Base/checkpoint.tscn" id="1_o3iqb"]
 [ext_resource type="Texture2D" uid="uid://5rxpnkcqrtao" path="res://Environmental_Assets/Skybox.png" id="2_oxja2"]
 [ext_resource type="Shader" uid="uid://yco8p8a5gjbo" path="res://Environmental_Assets/Pixelation.gdshader" id="3_cltf4"]
 [ext_resource type="PackedScene" uid="uid://yuudxo5edidq" path="res://level component/Door and lantern/door.tscn" id="3_yb07g"]
@@ -14,12 +14,12 @@
 [ext_resource type="PackedScene" uid="uid://l45nsc3pipaj" path="res://level component/Deco/Castle/castle_wall.tscn" id="12_b1f4k"]
 [ext_resource type="PackedScene" uid="uid://3l83r27r00a7" path="res://earth_wall.tscn" id="13_e10v3"]
 [ext_resource type="PackedScene" uid="uid://c8iyy4ydwtace" path="res://level component/Kinematic stuff/wood_crate.tscn" id="14_lhu64"]
-[ext_resource type="PackedScene" uid="uid://begtm20kqwkly" path="res://level component/sygil.tscn" id="15_tcu0g"]
+[ext_resource type="PackedScene" uid="uid://begtm20kqwkly" path="res://level component/Interactables/sygil.tscn" id="15_tcu0g"]
 [ext_resource type="PackedScene" uid="uid://huhac7cjloau" path="res://level component/moving_platform.tscn" id="16_v2mwr"]
-[ext_resource type="PackedScene" uid="uid://cuxjtjjk6sjga" path="res://level component/water_container_scale_maxr.tscn" id="17_4hmfx"]
+[ext_resource type="PackedScene" uid="uid://cuxjtjjk6sjga" path="res://level component/Interactables/water_container_scale_maxr.tscn" id="17_4hmfx"]
 [ext_resource type="PackedScene" uid="uid://b7fvcx564frcv" path="res://Environmental_Assets/FontsUI/water_container_set_max.tscn" id="18_3645f"]
-[ext_resource type="PackedScene" uid="uid://cccsgyqte47e6" path="res://level component/growing_plant.tscn" id="19_syu1u"]
-[ext_resource type="PackedScene" uid="uid://c87l4eyjihsew" path="res://level component/burnable_wood_wall.tscn" id="20_uc3q2"]
+[ext_resource type="PackedScene" uid="uid://cccsgyqte47e6" path="res://level component/Interactables/growing_plant.tscn" id="19_syu1u"]
+[ext_resource type="PackedScene" uid="uid://c87l4eyjihsew" path="res://level component/Interactables/burnable_wood_wall.tscn" id="20_uc3q2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b1f4k"]
 shader = ExtResource("3_cltf4")

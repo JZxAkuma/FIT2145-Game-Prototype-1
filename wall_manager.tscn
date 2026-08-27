@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bvuah0sabxsiu"]
 
-[ext_resource type="Script" uid="uid://jrr51a7de6cn" path="res://Codes/wall_manager.gd" id="1_fy5e7"]
+[ext_resource type="Script" uid="uid://jrr51a7de6cn" path="res://wall_manager.gd" id="1_fy5e7"]
 
 
 [node name="wall_manager" type="Node"]

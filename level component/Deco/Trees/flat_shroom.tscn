@@ -1,7 +1,8 @@
 [gd_scene load_steps=10 format=4 uid="uid://clnnxo4nuolkh"]
 
 [ext_resource type="Material" uid="uid://cbqnxdmw3y3j7" path="res://Environmental_Assets/Pack3/Pack3.tres" id="1_2aclb"]
-[ext_resource type="Script" uid="uid://coh358gd0lnet" path="res://level component/flat_shroom.gd" id="1_sii66"]
+[ext_resource type="Script" uid="uid://coh358gd0lnet" path="res://level component/Codes/flat_shroom.gd" id="1_sii66"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_61x3h"]
 resource_name = "standardSurface1"

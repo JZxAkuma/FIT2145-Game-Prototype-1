@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://b43rucqqu3a0p"]
 
-[ext_resource type="Script" uid="uid://bw6rj1tyd33e" path="res://Codes/fireball.gd" id="1_sf4mh"]
+[ext_resource type="Script" uid="uid://bw6rj1tyd33e" path="res://fireball.gd" id="1_sf4mh"]
 [ext_resource type="Material" uid="uid://dpcwpjbtnlgoj" path="res://Environmental_Assets/2dParticleSprites/Squares.tres" id="2_olwj8"]
 
 

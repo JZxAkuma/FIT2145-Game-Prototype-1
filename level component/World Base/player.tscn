@@ -1,6 +1,6 @@
 [gd_scene load_steps=42 format=3 uid="uid://bye70pqxpcpcf"]
 
-[ext_resource type="Script" uid="uid://btoituocs665x" path="res://Codes/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://btoituocs665x" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://dhphdaphrwcbm" path="res://Character_Assets/MobyRig.fbx" id="2_8v1cs"]
 [ext_resource type="Texture2D" uid="uid://difao83xnsjna" path="res://Other material/1545215.png" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://jqeg1l3hc3r3" path="res://Icons/WaterInactive.png" id="3_5enqi"]

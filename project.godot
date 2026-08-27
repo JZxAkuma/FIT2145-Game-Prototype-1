@@ -37,8 +37,12 @@ window/size/viewport_height=1080
 folder_colors={
 "res://Environmental_Assets/": "teal",
 "res://level component/": "red",
-"res://level component/Grass Blocks/": "yellow",
-"res://level component/Rock Blocks/": "yellow"
+"res://level component/Codes/": "blue",
+"res://level component/Deco/": "green",
+"res://level component/Grass Blocks/": "green",
+"res://level component/Mountains/": "green",
+"res://level component/Rock Blocks/": "green",
+"res://level component/World Base/": "blue"
 }
 
 [global_group]

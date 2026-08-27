@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=4 uid="uid://cuxjtjjk6sjga"]
 
-[ext_resource type="Script" uid="uid://k4x0c34auld1" path="res://level component/water_container_scale_max.gd" id="1_8nqex"]
+[ext_resource type="Script" uid="uid://k4x0c34auld1" path="res://level component/Codes/water_container_scale_max.gd" id="1_8nqex"]
 [ext_resource type="Material" uid="uid://c1l7vrr8nrtuc" path="res://Environmental_Assets/Pack2/Pack2.tres" id="1_pd5l7"]
 [ext_resource type="Material" uid="uid://b1feelcw1cj5n" path="res://Environmental_Assets/Pack2/Glass.tres" id="2_8nqex"]
 [ext_resource type="Material" uid="uid://btquq4vbniybt" path="res://Environmental_Assets/2dParticleSprites/Steam.tres" id="4_b4lwa"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://dhiy5eean2ge3"]
 
-[ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/player.tscn" id="2_5ii16"]
+[ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="2_5ii16"]
 [ext_resource type="PackedScene" uid="uid://l45nsc3pipaj" path="res://level component/Deco/Castle/castle_wall.tscn" id="3_5ii16"]
 [ext_resource type="PackedScene" uid="uid://d31a4mjnbjw41" path="res://level component/Grass Blocks/grass_block_no_bevel.tscn" id="4_le0xd"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="6_tab02"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ce8xcoegr1xsj" path="res://level component/Rock Blocks/rock_block_bevel_rim.tscn" id="8_m7pm6"]
 [ext_resource type="PackedScene" uid="uid://gcthslii3g5a" path="res://level component/Deco/Castle/castle_tower.tscn" id="8_p5lns"]
 [ext_resource type="PackedScene" uid="uid://dvtafyqvs75ib" path="res://level component/Grass Blocks/grass_block_bevel_rim.tscn" id="8_yybeu"]
-[ext_resource type="PackedScene" uid="uid://cca0v3u6pvybl" path="res://level component/death_box.tscn" id="9_p5lns"]
+[ext_resource type="PackedScene" uid="uid://cca0v3u6pvybl" path="res://level component/World Base/death_box.tscn" id="9_p5lns"]
 [ext_resource type="PackedScene" uid="uid://urioemqqu7sh" path="res://level component/Rock Blocks/rock_block_no_bevel.tscn" id="11_ay5la"]
 [ext_resource type="PackedScene" uid="uid://3l83r27r00a7" path="res://earth_wall.tscn" id="11_yybeu"]
 [ext_resource type="PackedScene" uid="uid://yuudxo5edidq" path="res://level component/Door and lantern/door.tscn" id="12_rl1io"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://goasctnx4yg3" path="res://level component/Deco/Trees/Pine/pine_tree_big.tscn" id="19_6fre4"]
 [ext_resource type="PackedScene" uid="uid://cctneuw004bw7" path="res://level component/Deco/Trees/Pine/pine_tree_small.tscn" id="20_al6ok"]
 [ext_resource type="PackedScene" uid="uid://btv50087nq4jk" path="res://level component/Deco/Wood/wood_fences.tscn" id="21_vn2tu"]
+
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yybeu"]
 shader = ExtResource("6_tab02")

@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bl0at38vfaxk3"]
 
-[ext_resource type="Script" uid="uid://b6iacypa7atpk" path="res://level component/kinematic_door.gd" id="1_acfo8"]
+[ext_resource type="Script" uid="uid://b6iacypa7atpk" path="res://level component/Codes/kinematic_door.gd" id="1_acfo8"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s51nj"]
 

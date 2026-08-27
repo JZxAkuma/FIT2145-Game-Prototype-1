@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://huhac7cjloau"]
 
-[ext_resource type="Script" uid="uid://cn466nbv7eaec" path="res://level component/moving_platform.gd" id="1_6eae8"]
+[ext_resource type="Script" uid="uid://cn466nbv7eaec" path="res://level component/Codes/moving_platform.gd" id="1_6eae8"]
 [ext_resource type="PackedScene" uid="uid://dp15gxl53fdn6" path="res://level component/power_platform.tscn" id="2_mh0hq"]
 
 [node name="Moving platform" type="Node3D" groups=["door"]]

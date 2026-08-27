@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c3bcefjy6wa6t"]
 
-[ext_resource type="Script" uid="uid://b6sdwt8kocq2y" path="res://Codes/respawn_manager.gd" id="1_6b7t4"]
+[ext_resource type="Script" uid="uid://b6sdwt8kocq2y" path="res://respawn_manager.gd" id="1_6b7t4"]
 
 
 [node name="Respawn manager" type="Node"]

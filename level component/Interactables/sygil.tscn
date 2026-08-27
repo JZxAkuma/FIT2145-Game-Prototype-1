@@ -1,8 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://begtm20kqwkly"]
 
-[ext_resource type="PackedScene" uid="uid://1chb14rsvqvy" path="res://level component/sygil_texture.tscn" id="1_0noyv"]
-[ext_resource type="Script" uid="uid://bd0qds8jkluxi" path="res://level component/sygil.gd" id="1_n7eyg"]
+[ext_resource type="PackedScene" uid="uid://1chb14rsvqvy" path="res://level component/Interactables/sygil_texture.tscn" id="1_0noyv"]
+[ext_resource type="Script" uid="uid://bd0qds8jkluxi" path="res://level component/Codes/sygil.gd" id="1_n7eyg"]
 [ext_resource type="Material" uid="uid://c77tbcyu1me5a" path="res://Environmental_Assets/2dParticleSprites/GlowSquares.tres" id="3_8lnnx"]
+
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_n7eyg"]
 height = 0.178101

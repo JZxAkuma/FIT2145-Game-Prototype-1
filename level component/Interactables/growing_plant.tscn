@@ -1,7 +1,8 @@
 [gd_scene load_steps=17 format=4 uid="uid://cccsgyqte47e6"]
 
-[ext_resource type="Script" uid="uid://b6es3d0833gkf" path="res://level component/growing_plant.gd" id="1_aeg4w"]
+[ext_resource type="Script" uid="uid://b6es3d0833gkf" path="res://level component/Codes/growing_plant.gd" id="1_aeg4w"]
 [ext_resource type="Material" uid="uid://c1l7vrr8nrtuc" path="res://Environmental_Assets/Pack2/Pack2.tres" id="1_oxoee"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpo6o"]
 resource_name = "standardSurface1"

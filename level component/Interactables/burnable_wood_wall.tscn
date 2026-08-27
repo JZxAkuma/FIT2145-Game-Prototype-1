@@ -1,8 +1,9 @@
 [gd_scene load_steps=21 format=4 uid="uid://c87l4eyjihsew"]
 
 [ext_resource type="Material" uid="uid://c1l7vrr8nrtuc" path="res://Environmental_Assets/Pack2/Pack2.tres" id="1_7huvv"]
-[ext_resource type="Script" uid="uid://dj5elmrrwke3d" path="res://level component/burnable_wood_wall.gd" id="1_p0g2u"]
+[ext_resource type="Script" uid="uid://dj5elmrrwke3d" path="res://level component/Codes/burnable_wood_wall.gd" id="1_p0g2u"]
 [ext_resource type="Material" uid="uid://dpcwpjbtnlgoj" path="res://Environmental_Assets/2dParticleSprites/Squares.tres" id="3_muubs"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpo6o"]
 resource_name = "standardSurface1"

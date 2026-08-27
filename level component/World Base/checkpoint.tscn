@@ -1,7 +1,8 @@
 [gd_scene load_steps=11 format=4 uid="uid://dja117pab360a"]
 
-[ext_resource type="Script" uid="uid://b3xr7rwb8cmku" path="res://level component/checkpoint.gd" id="1_njdjk"]
+[ext_resource type="Script" uid="uid://b3xr7rwb8cmku" path="res://level component/Codes/checkpoint.gd" id="1_njdjk"]
 [ext_resource type="Material" uid="uid://dwa06qewrvp0n" path="res://Environmental_Assets/Pack1/AssetPack1Material.tres" id="2_x10pa"]
+
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1rb3n"]
 radius = 1.00407

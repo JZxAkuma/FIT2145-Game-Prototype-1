@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dphue818l1f60"]
 
-[ext_resource type="Script" uid="uid://3rnfehv2i3px" path="res://Codes/water_ball.gd" id="1_vun2w"]
+[ext_resource type="Script" uid="uid://3rnfehv2i3px" path="res://water_ball.gd" id="1_vun2w"]
 [ext_resource type="Material" uid="uid://rn5sicuqjcqk" path="res://Environmental_Assets/2dParticleSprites/SolidCircle.tres" id="2_m4jgb"]
 
 
