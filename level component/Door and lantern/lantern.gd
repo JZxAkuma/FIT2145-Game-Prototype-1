@@ -19,7 +19,10 @@ func _ready() -> void:
 		state = states.lit
 	var parent = self.get_parent()
 	if parent.is_in_group("door"):
-		state = states.not_lit
+		if !is_lit:
+			state = states.not_lit
+		else:
+			state = states.lit
 		parent._register_lantern(self)
 		fire_detector.show()
 		glass.hide()

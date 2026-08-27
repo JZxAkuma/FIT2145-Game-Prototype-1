@@ -77,7 +77,7 @@ func _move_toward(target: Vector3, delta: float) -> void:
 	var step = move_speed * delta
 	if step > distance:
 		step = distance
-	platform.global_position += to_target.normalized() * step * delta
+	platform.global_position += to_target.normalized() * step 
 
 
 func _switch() -> void:
