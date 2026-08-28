@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://p8x8kanykwb8"]
+[gd_scene load_steps=30 format=3 uid="uid://p8x8kanykwb8"]
 
 [ext_resource type="PackedScene" uid="uid://d31a4mjnbjw41" path="res://level component/Grass Blocks/grass_block_no_bevel.tscn" id="1_rjurc"]
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="2_mpmgm"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://urioemqqu7sh" path="res://level component/Rock Blocks/rock_block_no_bevel.tscn" id="23_36v0u"]
 [ext_resource type="PackedScene" uid="uid://3mcone88io0e" path="res://level component/Mountains/Rock/close_mountain_rock_2_shaded.tscn" id="24_upyy3"]
 [ext_resource type="PackedScene" uid="uid://b2ufh4dt5fip6" path="res://level component/Mountains/Rock/close_mountain_rock_1_shaded.tscn" id="25_hf0r0"]
+[ext_resource type="PackedScene" uid="uid://b0xjs3vhvrrbc" path="res://level component/Mountains/Rock/close_mountain_rock_2.tscn" id="26_umonj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wgc5d"]
 render_priority = 0
@@ -48,7 +49,7 @@ shader_parameter/emission_strength = 0.0
 transform = Transform3D(31.3677, 0, 0, 0, 7.71596, 0, 0, 0, 19.3742, 52, -6.73199, -4.01519)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.999769, -0.0195584, -0.00888881, -0.0205647, 0.990961, 0.132565, 0.00621569, 0.132717, -0.991135, 2.03666, 9.38525, -0.0746479)
+transform = Transform3D(0.999604, 0.0161405, 0.0230368, 0.0226216, 0.0254507, -0.99942, -0.0167175, 0.999546, 0.0250755, 2.03666, 1.54197, -0.0746479)
 light_color = Color(0.999998, 0.999612, 0.719504, 1)
 light_energy = 0.66
 shadow_enabled = true
@@ -609,6 +610,39 @@ transform = Transform3D(2.04485, 0, 0, 0, 1.04854, -0.341341, 0, 0.279092, 1.282
 
 [node name="Close Mountain Rock 8" parent="." instance=ExtResource("7_slhlm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0002, 1.61878, 18.4099)
+
+[node name="Close Mountain Rock 16" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(0.069954, 1.91886, 0.0294447, -1.09595, 0.0958808, 0.290382, 0.330579, -0.0881821, 0.956458, 1.39616, 13.5271, -6.14817)
+
+[node name="Close Mountain Rock 17" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(-0.0144743, 1.2091, 1.52842, -0.705102, -0.0248203, -0.0313755, 0, -1.21392, 1.52299, 10.3019, 15.0712, 7.16678)
+
+[node name="Close Mountain Rock 18" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(-0.124723, -1.55523, 0, 1.05932, -0.183111, 0, 0, 0, 1, 40.7409, 5.40339, -7.69524)
+
+[node name="Close Mountain Rock 19" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(2.55338, 0, 0, 0, 0.572369, 0, 0, 0, 1, 13.7009, 4.36709, 10.6002)
+
+[node name="Close Mountain Rock 20" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1.43244, 0, 0, 0, 0.564376, 0.825518, 0, -0.825518, 0.564376, 30.3385, 6.32241, 13.3327)
+
+[node name="Close Mountain Rock 21" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1.3527, 0, 0, 0, 1.11429, -0.458339, 0, 0.574638, 0.888777, 32.6028, 6.09733, -7.27633)
+
+[node name="close_mountain_rock_10" parent="." instance=ExtResource("26_umonj")]
+transform = Transform3D(1, 0, 0, 0, 2.92768, 0, 0, 0, 4.28163, 33.955, -7.09653, -38.9264)
+
+[node name="close_mountain_rock_11" parent="." instance=ExtResource("26_umonj")]
+transform = Transform3D(-0.999995, 0, 0.00326386, 0.000649592, 0.979994, 0.199025, -0.00319856, 0.199026, -0.979989, 41.8306, 10.5059, -2.33859)
+
+[node name="close_mountain_rock_12" parent="." instance=ExtResource("26_umonj")]
+transform = Transform3D(-1.04298, 0, 0.0815024, 0, 1.26737, 0, -0.0249434, 0, -3.40794, 40.6488, 15.3797, 17.1964)
+
+[node name="close_mountain_rock_13" parent="." instance=ExtResource("26_umonj")]
+transform = Transform3D(0.531683, 0.671348, 0, -7.23151, 0.0493596, 0, 0, 0, 4.55509, 29.1994, 31.0869, 12.8724)
+
+[node name="Lantern4" parent="." instance=ExtResource("4_lqe3k")]
+transform = Transform3D(4.01065, 4.15364, -1.61458, -3.81475, 4.67804, 0.20689, 1.22571, 0.968206, 5.927, 34.0871, 17.3569, -29.5568)
 
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
