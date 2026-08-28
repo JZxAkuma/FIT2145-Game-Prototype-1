@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bwck6ojrsaixy"]
+[gd_scene load_steps=45 format=3 uid="uid://bwck6ojrsaixy"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="1_cvs6x"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="2_46n42"]
@@ -24,12 +24,18 @@
 [ext_resource type="PackedScene" uid="uid://1v3yumh8vrod" path="res://level component/Deco/Trees/palm_tree.tscn" id="15_33bvb"]
 [ext_resource type="PackedScene" uid="uid://bui78i54bg7k4" path="res://level component/Deco/Trees/mushroom.tscn" id="15_t8mcq"]
 [ext_resource type="PackedScene" uid="uid://dvtafyqvs75ib" path="res://level component/Grass Blocks/grass_block_bevel_rim.tscn" id="16_1gpcf"]
+[ext_resource type="PackedScene" uid="uid://goasctnx4yg3" path="res://level component/Deco/Trees/Pine/pine_tree_big.tscn" id="17_1scfp"]
 [ext_resource type="PackedScene" uid="uid://cuxjtjjk6sjga" path="res://level component/Interactables/water_container_scale_maxr.tscn" id="17_kj7ho"]
+[ext_resource type="PackedScene" uid="uid://cctneuw004bw7" path="res://level component/Deco/Trees/Pine/pine_tree_small.tscn" id="18_adlso"]
 [ext_resource type="PackedScene" uid="uid://yuudxo5edidq" path="res://level component/Door and lantern/door.tscn" id="18_oam4g"]
+[ext_resource type="PackedScene" uid="uid://cfi57rfl0n3hh" path="res://level component/Deco/round_moby_house.tscn" id="19_jt2qk"]
+[ext_resource type="PackedScene" uid="uid://cjpdnm3o6nrrm" path="res://level component/Deco/moby_prop.tscn" id="20_i7n88"]
+[ext_resource type="PackedScene" uid="uid://bvsuboh5lviut" path="res://level component/Deco/tulip.tscn" id="21_umd2f"]
 [ext_resource type="PackedScene" uid="uid://cmbirrmnxcuyr" path="res://level component/Mountains/Grass/close_mountain_grass_3.tscn" id="25_enmym"]
 [ext_resource type="PackedScene" uid="uid://cvkfs4ab287vt" path="res://level component/Mountains/Grass/close_mountain_grass_1.tscn" id="26_5g6dm"]
 [ext_resource type="PackedScene" uid="uid://bo58vdbddaw64" path="res://level component/Mountains/Grass/close_mountain_grass_2.tscn" id="27_g11h5"]
 [ext_resource type="PackedScene" uid="uid://c8iyy4ydwtace" path="res://level component/Kinematic stuff/wood_crate.tscn" id="30_nxnga"]
+[ext_resource type="PackedScene" uid="uid://clnnxo4nuolkh" path="res://level component/Deco/Trees/flat_shroom.tscn" id="36_jvo5f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8cxox"]
 shader = ExtResource("2_46n42")
@@ -107,7 +113,7 @@ bones/3/rotation = Quaternion(0.346064, 0.595076, 0.315242, 0.653258)
 bones/4/position = Vector3(0.343057, 1.18144e-16, 3.45944e-18)
 bones/4/rotation = Quaternion(0.151308, -0.396979, -0.0665316, 0.902822)
 bones/6/rotation = Quaternion(-0.481475, -0.0932315, -0.675769, 0.550297)
-bones/9/rotation = Quaternion(-0.00200048, -0.0932548, 0.00421058, 0.995631)
+bones/9/rotation = Quaternion(-0.00220502, -0.10279, 0.00464109, 0.99469)
 bones/10/rotation = Quaternion(0.0143075, 0.706962, -0.706962, -0.0143075)
 bones/12/rotation = Quaternion(-0.0143077, 0.706962, -0.706962, 0.0143077)
 
@@ -414,6 +420,33 @@ transform = Transform3D(-0.383819, 0, 1.09093, 0, 1, 0, -1.43243, 0, -0.292313, 
 
 [node name="close_mountain_rock_9" parent="2nd_Segment/Decor" instance=ExtResource("7_33bvb")]
 transform = Transform3D(7.26096e-05, -0.997147, -0.0754864, -0.998288, -0.00448728, 0.0583157, -0.058488, 0.075353, -0.99544, 38.6339, 7.45944, 4.57336)
+
+[node name="Pine Tree Big" parent="2nd_Segment/Decor" instance=ExtResource("17_1scfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.2745, 1.00659, 45.9479)
+
+[node name="Pine Tree Small" parent="2nd_Segment/Decor" instance=ExtResource("18_adlso")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5746, 1.00072, 36.7227)
+
+[node name="RoundMobyHouse" parent="2nd_Segment/Decor" instance=ExtResource("19_jt2qk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4918, 2.02255, 41.4814)
+
+[node name="MobyProp" parent="2nd_Segment/Decor" instance=ExtResource("20_i7n88")]
+transform = Transform3D(0.46597, 0, 0.884801, 0, 1, 0, -0.884801, 0, 0.46597, 28.9735, 0.286331, 36.7377)
+
+[node name="Rock" parent="2nd_Segment/Decor" instance=ExtResource("6_33bvb")]
+transform = Transform3D(0.95063, 0, -0.310328, 0, 1, 0, 0.310328, 0, 0.95063, 35.2679, 1, 47.9146)
+
+[node name="Tulip" parent="2nd_Segment/Decor" instance=ExtResource("21_umd2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.4785, 1, 47.1622)
+
+[node name="Tulip2" parent="2nd_Segment/Decor" instance=ExtResource("21_umd2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.293, 1, 43.5277)
+
+[node name="Rock2" parent="2nd_Segment/Decor" instance=ExtResource("6_33bvb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.2278, 1, 46.3879)
+
+[node name="Pine Tree Small2" parent="2nd_Segment/Decor" instance=ExtResource("18_adlso")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.8977, 1.00072, 42.7431)
 
 [node name="TunnelFloor2" parent="2nd_Segment" instance=ExtResource("5_5fwn8")]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 10, 12, 0, 0)
@@ -1005,6 +1038,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.1325, 4.72244, 35.7285)
 
 [node name="wood crate3" parent="." instance=ExtResource("30_nxnga")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.3599, 4.72244, 36.08)
+
+[node name="Tulip" parent="." instance=ExtResource("21_umd2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.8715, 1, 43.3037)
+
+[node name="Tulip2" parent="." instance=ExtResource("21_umd2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.0142, 1.45416, 44.9672)
+
+[node name="Tulip3" parent="." instance=ExtResource("21_umd2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.4907, 1, 38.2706)
+
+[node name="Tulip4" parent="." instance=ExtResource("21_umd2f")]
+transform = Transform3D(0.177428, 0, 0.984134, 0, 1, 0, -0.984134, 0, 0.177428, 81.2885, 1, 45.9224)
+
+[node name="Tulip5" parent="." instance=ExtResource("21_umd2f")]
+transform = Transform3D(-0.399101, 0, -0.916907, 0, 1, 0, 0.916907, 0, -0.399101, 78.79, 1, 40.0925)
+
+[node name="FlatShroom" parent="." instance=ExtResource("36_jvo5f")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 75.5141, 1.20275, 46.377)
+
+[node name="FlatShroom2" parent="." instance=ExtResource("36_jvo5f")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 78.5141, 1.20275, 47.377)
 
 [editable path="player"]
 [editable path="player/Player_mesh/MobyRig"]
