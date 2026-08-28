@@ -234,7 +234,7 @@ mode = 2
 transform = Transform3D(1, 0, 0, 0, 1, 3.72529e-09, 0, -2.32831e-10, 1, 0, -0.100443, -2.91034)
 
 [node name="sygil" parent="Moving platform2" instance=ExtResource("12_ly1jq")]
-transform = Transform3D(0.597859, 0, 0, 0, -0.00875685, 2.06388, 0, -0.253734, -0.00483177, -5.09185, 5.26342, 0.839119)
+transform = Transform3D(0.681587, 9.51664e-05, -0.0247863, 0.00794683, -0.0087563, 2.12588, -1.86044e-05, -0.253733, -0.00497692, -5.16698, 5.37791, 0.838851)
 
 [node name="rock block bevel bottom4" parent="." instance=ExtResource("6_b7axc")]
 transform = Transform3D(10.6285, 0, 0, 0, 1, 0, 0, 0, 7.8833, -8.81952, -0.371018, -19.6572)
@@ -355,7 +355,7 @@ mode = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86988, -0.316667, 0)
 
 [node name="sygil" parent="Moving platform3" instance=ExtResource("12_ly1jq")]
-transform = Transform3D(0.175277, -0.00017739, 1.4238e-05, -0.0010545, -1.04145, 0.00614313, 1.38424e-05, -0.00108491, -0.183923, 0.942857, 12.2705, 0.806693)
+transform = Transform3D(0.0797056, -0.000175174, 6.42802e-06, -0.000479526, -1.02844, 0.00277343, 6.29469e-06, -0.00107135, -0.0830356, 0.942857, 12.2705, 0.820628)
 
 [node name="Grass block Bevel Bottom12" parent="." instance=ExtResource("2_to4kk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.70841, 2.90004, -43.2648)
@@ -426,7 +426,7 @@ mode = 2
 transform = Transform3D(1, 0, 0, 0, 1, 7.45058e-09, 0, 0, 1, 3.43752, 0, 0)
 
 [node name="sygil" parent="Moving platform5" instance=ExtResource("12_ly1jq")]
-transform = Transform3D(-0.0145634, 0.391618, -0.010583, -1.10234, -0.103018, 0.0282597, -0.00453029, -0.0139848, -0.252791, -0.326458, 27.3464, -0.184529)
+transform = Transform3D(0.189186, 0, 0, 0, -1.77663, -0.0121307, 0, -0.00468131, 0.188022, -0.685679, 25.6256, -0.165331)
 
 [node name="Moving platform6" parent="." instance=ExtResource("10_b7yrp")]
 transform = Transform3D(2.51827, 0, 0, 0, -0.0113967, 2.77311, 0, 0.560421, 0.0563938, -0.0929742, 2.99778, -70.497)
@@ -436,7 +436,7 @@ mode = 2
 transform = Transform3D(1, 0, 0, 0, 1, 7.45058e-09, 0, 0, 1, 3.4334, 0, 0)
 
 [node name="sygil" parent="Moving platform6" instance=ExtResource("12_ly1jq")]
-transform = Transform3D(0.227622, 0, 0, 0, 1.33071, 0.050053, 0, 0.0111114, -0.244814, 0.798024, 22.8224, 0.233309)
+transform = Transform3D(0.196905, 0, 0, 0, 1.3378, 0.0373228, 0, 0.0111706, -0.182549, 0.798024, 22.8113, 0.233264)
 
 [node name="rock block bevel bottom27" parent="." instance=ExtResource("6_b7axc")]
 transform = Transform3D(4.91247, 0, 0, 0, 1, 0, 0, 0, 6.59212, -2.5976, -1.63629, -69.8828)
