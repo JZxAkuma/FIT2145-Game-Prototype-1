@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dhphdaphrwcbm" path="res://Character_Assets/MobyRig.fbx" id="2_8v1cs"]
 [ext_resource type="Texture2D" uid="uid://difao83xnsjna" path="res://Other material/1545215.png" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://jqeg1l3hc3r3" path="res://Icons/WaterInactive.png" id="3_5enqi"]
-[ext_resource type="Material" path="res://Character_Assets/MobyTexture.tres" id="3_os2xl"]
+[ext_resource type="Material" uid="uid://be7o2iqhqd43h" path="res://Character_Assets/MobyTexture.tres" id="3_os2xl"]
 [ext_resource type="Texture2D" uid="uid://c22e1kg63lvjw" path="res://Icons/WaterActive.png" id="4_8v1cs"]
 [ext_resource type="PackedScene" uid="uid://bvqyn8jdhd2uh" path="res://Character_Assets/MobyTail.fbx" id="4_cx4s4"]
 [ext_resource type="Texture2D" uid="uid://dtdca377upiwo" path="res://Environmental_Assets/FontsUI/Control_Icons/PSCircle.png" id="5_65nnk"]
@@ -23,7 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://cptlonuoaephj" path="res://Environmental_Assets/FontsUI/Control_Icons/M1Key.png" id="14_qg01u"]
 [ext_resource type="Texture2D" uid="uid://dpvrfcwlym4sj" path="res://Environmental_Assets/FontsUI/Control_Icons/Tab.png" id="16_pi2i5"]
 [ext_resource type="Texture2D" uid="uid://bdxq3mf6ubl77" path="res://Other material/spotshadow.png" id="23_7pas8"]
-
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5enqi"]
 albedo_color = Color(1, 0, 0, 1)
@@ -541,7 +540,7 @@ bones/6/rotation = Quaternion(-0.481475, -0.0932315, -0.675769, 0.550297)
 bones/7/position = Vector3(0.638741, 3.55618e-16, -9.71445e-17)
 bones/8/position = Vector3(0.00606678, 0.660334, 8.08676e-17)
 bones/9/position = Vector3(0.00606466, -0.660334, -8.08676e-17)
-bones/9/rotation = Quaternion(-0.000416864, -0.0194326, 0.000877409, 0.999811)
+bones/9/rotation = Quaternion(-0.0033678, -0.156994, 0.00708849, 0.987568)
 bones/10/position = Vector3(-0.0340323, 0.316433, 3.87519e-17)
 bones/10/rotation = Quaternion(0.0143075, 0.706962, -0.706962, -0.0143075)
 bones/10/scale = Vector3(1, 1, 1)
@@ -662,7 +661,7 @@ settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
 [node name="cast point" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.792579, 1.1859, -0.677856)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.723947, -0.0459887, -0.337461)
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42485, 0)
