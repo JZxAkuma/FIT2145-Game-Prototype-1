@@ -567,6 +567,27 @@ We fear what we do not understand"
 [node name="close_mountain_rock_2" parent="." instance=ExtResource("24_upyy3")]
 transform = Transform3D(1, 0, 0, 0, 2.72128, 0, 0, 0, 3.99643, -28.5425, -11.7248, -13.7326)
 
+[node name="close_mountain_rock_3" parent="." instance=ExtResource("24_upyy3")]
+transform = Transform3D(1.64316, 0.718178, 0, -0.648616, 1.81938, 0, 0, 0, 1, -29.8552, -8.67045, -16.2227)
+
+[node name="close_mountain_rock_4" parent="." instance=ExtResource("24_upyy3")]
+transform = Transform3D(3.29846, 0.269414, 0, -0.910591, 0.975906, 0, 0, 0, 1.16135, -31.8294, -3.59528, 15.2104)
+
+[node name="close_mountain_rock_5" parent="." instance=ExtResource("24_upyy3")]
+transform = Transform3D(0.0362195, 0.152047, 2.07813, -0.217525, 1.4808, -0.116096, -0.470023, -0.673591, 0.213867, -28.7585, 3.46489, 24.0024)
+
+[node name="close_mountain_rock_6" parent="." instance=ExtResource("24_upyy3")]
+transform = Transform3D(1.83198, 0, 0, 0, 1.53586, 0, 0, 0, 1.51678, -10.2199, -8.27665, 13.6114)
+
+[node name="close_mountain_rock_7" parent="." instance=ExtResource("24_upyy3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2958, -5.8449, -11.8471)
+
+[node name="close_mountain_rock_8" parent="." instance=ExtResource("24_upyy3")]
+transform = Transform3D(0.378575, 0, 1.8238, 0, 1, 0, -1.22396, 0, 0.564108, -20.1771, -8.64086, -7.94523)
+
+[node name="close_mountain_rock_9" parent="." instance=ExtResource("24_upyy3")]
+transform = Transform3D(0.251978, 0.829435, -0.498542, -0.908574, 0.380125, 0.173201, 0.333167, 0.409319, 0.849386, -10.5825, 6.07643, -17.3514)
+
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
 [editable path="Moving platform3"]
