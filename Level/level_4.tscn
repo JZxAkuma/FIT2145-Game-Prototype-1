@@ -347,15 +347,18 @@ transform = Transform3D(1.37603, 0, 0, 0, 9.55929, 0, 0, 0, 1.32373, 3.30086, 3.
 transform = Transform3D(1.10894, 0, 0, 0, 8.02697, 0, 0, 0, 1.12424, 3.44008, -5.07543, -42.5791)
 
 [node name="Moving platform3" parent="." instance=ExtResource("10_b7yrp")]
-transform = Transform3D(0.0785626, 0.960089, 0, -5.70471, 0.0132219, 0, 0, 0, 5.43695, 5.61278, 6.00669, -42.0191)
+transform = Transform3D(0.0785626, 0.960089, 0, -5.70471, 0.0132219, 0, 0, 0, 5.43695, 6.75741, 6.00669, -42.0191)
 move_speed = 10.0
 mode = 2
 
 [node name="pos 2" parent="Moving platform3" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86988, -0.316667, 0)
 
+[node name="PowerPlatform" parent="Moving platform3" index="2"]
+transform = Transform3D(0.990337, 0, 0, 7.45058e-09, 0.298363, 0, 0, 0, 1.23089, 0.00333619, 1.43943, 0)
+
 [node name="sygil" parent="Moving platform3" instance=ExtResource("12_ly1jq")]
-transform = Transform3D(0.0797056, -0.000175174, 6.42802e-06, -0.000479526, -1.02844, 0.00277343, 6.29469e-06, -0.00107135, -0.0830356, 0.942857, 12.2705, 0.820628)
+transform = Transform3D(0.0797056, -0.000175174, 6.42802e-06, -0.000479525, -1.02844, 0.00277343, 6.29469e-06, -0.00107135, -0.0830356, 0.940094, 11.0787, 0.820628)
 
 [node name="Grass block Bevel Bottom12" parent="." instance=ExtResource("2_to4kk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.70841, 2.90004, -43.2648)
@@ -485,10 +488,10 @@ transform = Transform3D(-0.517228, 0, -0.345229, 0, 0.578731, 0, 0.466844, 0, -0
 dialogue_text = "I think I'm better than you"
 
 [node name="Invi wall6" parent="." instance=ExtResource("13_hloeb")]
-transform = Transform3D(1, 0, 0, 0, 19.3695, 0, 0, 0, 13.2458, 1.8845, 13.4908, -14.6936)
+transform = Transform3D(1, 0, 0, 0, 19.3695, 0, 0, 0, 13.2458, 0.896901, 13.4908, -14.6936)
 
 [node name="Invi wall7" parent="." instance=ExtResource("13_hloeb")]
-transform = Transform3D(1, 0, 0, 0, 17.5846, 0, 0, 0, 31.3327, -7.95127, 14.9325, -5.33012)
+transform = Transform3D(1, 0, 0, 0, 17.5846, 0, 0, 0, 31.3327, -7.2914, 14.9325, -5.33012)
 
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
