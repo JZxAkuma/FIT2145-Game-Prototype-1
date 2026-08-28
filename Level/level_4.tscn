@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c6rda67r3t0ij"]
+[gd_scene load_steps=27 format=3 uid="uid://c6rda67r3t0ij"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="1_ncm42"]
 [ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="2_to4kk"]
@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://ced3mcg8toces" path="res://level component/World Base/invi_wall.tscn" id="13_hloeb"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="14_gxrqi"]
 [ext_resource type="Texture2D" uid="uid://5rxpnkcqrtao" path="res://Environmental_Assets/Skybox.png" id="15_g21ss"]
+[ext_resource type="PackedScene" uid="uid://dja117pab360a" path="res://level component/World Base/checkpoint.tscn" id="16_75q7r"]
+[ext_resource type="PackedScene" uid="uid://b7hrnh1cnxlbt" path="res://level component/Rock Blocks/rock_block_bevel_top.tscn" id="17_l3pq7"]
+[ext_resource type="PackedScene" uid="uid://cca0v3u6pvybl" path="res://level component/World Base/death_box.tscn" id="18_l3pq7"]
 
 [sub_resource type="Shader" id="Shader_ytpkv"]
 code = "shader_type spatial;
@@ -230,19 +233,19 @@ mode = 2
 transform = Transform3D(1, 0, 0, 0, 1, 3.72529e-09, 0, -2.32831e-10, 1, 0, -0.100443, -2.91034)
 
 [node name="sygil" parent="Moving platform2" instance=ExtResource("12_ly1jq")]
-transform = Transform3D(0.436374, 0, 0, 0, -0.00875684, 2.3807, 0, -0.253734, -0.00557349, -4.99279, 5.32275, 0.869395)
+transform = Transform3D(0.597859, 0, 0, 0, -0.00875685, 2.06388, 0, -0.253734, -0.00483177, -5.09185, 5.26342, 0.839119)
 
 [node name="rock block bevel bottom4" parent="." instance=ExtResource("6_b7axc")]
 transform = Transform3D(10.6285, 0, 0, 0, 1, 0, 0, 0, 7.8833, -8.81952, -0.371018, -19.6572)
 
 [node name="castle wall4" parent="." instance=ExtResource("7_nn58k")]
-transform = Transform3D(0.589597, 0, 0, 0, 4.39042, 0, 0, 0, 1, -5.04261, 1.7133, -14.1926)
+transform = Transform3D(0.755734, 0, 0, 0, 4.39042, 0, 0, 0, 1, -7.20111, 1.7133, -14.1926)
 
 [node name="castle wall5" parent="." instance=ExtResource("7_nn58k")]
 transform = Transform3D(0.0176636, 0, 1.03518, 0, 4.3625, 0, -0.570951, 0, 0.0320256, 0.0537608, 1.74396, -13.5017)
 
 [node name="castle wall6" parent="." instance=ExtResource("7_nn58k")]
-transform = Transform3D(0.0211268, 0, 0.997019, 0, 4.37508, 0, -0.582264, 0, 0.0361757, -5.39691, 1.35755, -13.3957)
+transform = Transform3D(0.0211268, 0, 0.997019, 0, 4.37508, 0, -0.582264, 0, 0.0361757, -7.87149, 1.35755, -13.3957)
 
 [node name="Invi wall" parent="." instance=ExtResource("13_hloeb")]
 transform = Transform3D(1, 0, 0, 0, 6.47773, 0, 0, 0, 1.35204, 0.491626, 13.7621, -2.32833)
@@ -260,7 +263,7 @@ transform = Transform3D(-0.999782, 0, 0.0282443, 0, 6.47773, 0, -0.0208901, 0, -
 environment = SubResource("Environment_l3pq7")
 
 [node name="Water4" type="Node3D" parent="."]
-transform = Transform3D(0.111422, 0.996223, 0.000501722, 23.1305, -0.0047989, 0.104155, 0.101333, 0, -23.7751, 23.678, -25.6447, -44.8526)
+transform = Transform3D(0.111422, 0.996223, 0.000501722, 23.1305, -0.0047989, 0.104155, 0.101333, 0, -23.7751, 23.678, -25.9994, -44.8526)
 
 [node name="WaterBase" type="MeshInstance3D" parent="Water4"]
 material_override = SubResource("ShaderMaterial_nn58k")
@@ -284,6 +287,18 @@ transform = Transform3D(1.10894, 0, 0, 0, 3.8037, 0, 0, 0, 1.12424, 22.0411, -3.
 
 [node name="Invi wall5" parent="." instance=ExtResource("13_hloeb")]
 transform = Transform3D(37.3638, 0, 0, 0, 1, 0, 0, 0, 33.5754, -11.7339, 23.7072, -19.0326)
+
+[node name="Grass block Bevel Bottom6" parent="." instance=ExtResource("2_to4kk")]
+transform = Transform3D(2.98937, 0, 0, 0, 0.807314, 0, 0, 0, 4.05849, 18.9578, 0.171721, -32.6612)
+
+[node name="Checkpoint" parent="." instance=ExtResource("16_75q7r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4835, 0.989868, -31.1048)
+
+[node name="rock_block_bevel_top" parent="." instance=ExtResource("17_l3pq7")]
+transform = Transform3D(2.87641, 0, 0, 0, 4.01526, 0, 0, 0, 3.87803, 19.0627, -3.30976, -32.6028)
+
+[node name="Death Box" parent="." instance=ExtResource("18_l3pq7")]
+transform = Transform3D(202.444, 0, 0, 0, 1, 0, 0, 0, 197.032, -17.4038, -4.31329, -69.6765)
 
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
