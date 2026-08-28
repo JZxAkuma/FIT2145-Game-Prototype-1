@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://cctneuw004bw7" path="res://level component/Deco/Trees/Pine/pine_tree_small.tscn" id="20_al6ok"]
 [ext_resource type="PackedScene" uid="uid://btv50087nq4jk" path="res://level component/Deco/Wood/wood_fences.tscn" id="21_vn2tu"]
 
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yybeu"]
 shader = ExtResource("6_tab02")
 shader_parameter/sky_texture = ExtResource("7_p5lns")
