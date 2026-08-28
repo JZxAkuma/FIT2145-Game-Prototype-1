@@ -4,7 +4,6 @@
 [ext_resource type="Material" uid="uid://8v0n7ej0xjs1" path="res://Other material/earth_wall_indicator_invalid.tres" id="1_klefd"]
 [ext_resource type="Material" uid="uid://ditrxy3pyy8qh" path="res://Other material/earth_wall_indicator.tres" id="2_r0b8k"]
 
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cbh8"]
 resource_name = "standardSurface1"
 vertex_color_use_as_albedo = true

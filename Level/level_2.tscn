@@ -523,6 +523,7 @@ transform = Transform3D(6.86337, 0, 0.0486691, 0, 1.18046, 0, -0.0373744, 0, 8.9
 
 [node name="Door" parent="." instance=ExtResource("22_jsxrb")]
 transform = Transform3D(-0.847363, 0, 0.531014, 0, 1, 0, -0.531014, 0, -0.847363, 79.8171, 29.8393, 11.4028)
+change_scene_to = "res://Level/level_3.tscn"
 
 [node name="Lantern2" parent="Door" instance=ExtResource("4_lqe3k")]
 transform = Transform3D(-0.847363, 0, -0.531014, 0, 1, 0, 0.531014, 0, -0.847363, -3.47687, -8.43169, 26.7536)

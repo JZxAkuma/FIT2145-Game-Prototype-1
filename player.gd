@@ -251,7 +251,7 @@ func _physics_process(delta: float) -> void:
 	_set_state(states.aiming if Input.is_action_pressed("aim") else states.default)
 
 	if state == states.aiming:
-		if Input.is_action_just_pressed("shoot") and castline.is_colliding():
+		if Input.is_action_just_pressed("shoot") :
 			_cast_selection()
 
 	
@@ -377,7 +377,7 @@ func _spawn_projectile(scene: PackedScene):
 		projectile.target = castline.get_collider()
 		projectile.target_position = castline.get_collision_point()
 	else:
-		projectile.target_position = castline.global_position + (-castline.global_transform.basis.z * 100)
+		projectile.target_position = camera.global_position + (-camera.global_transform.basis.z * 100)
 	
 
 
