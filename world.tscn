@@ -45,13 +45,13 @@
 shader = ExtResource("2_wse8f")
 shader_parameter/sky_texture = ExtResource("2_ioo17")
 
-[sub_resource type="Sky" id="Sky_ytpkv"]
+[sub_resource type="Sky" id="Sky_ryup7"]
 sky_material = SubResource("ShaderMaterial_ic0uy")
 
 [sub_resource type="Environment" id="Environment_f3sb7"]
 background_mode = 2
 background_color = Color(0.840869, 1, 0.97624, 1)
-sky = SubResource("Sky_ytpkv")
+sky = SubResource("Sky_ryup7")
 ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
 

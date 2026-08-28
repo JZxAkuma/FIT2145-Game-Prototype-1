@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://p8x8kanykwb8"]
+[gd_scene load_steps=28 format=3 uid="uid://p8x8kanykwb8"]
 
 [ext_resource type="PackedScene" uid="uid://d31a4mjnbjw41" path="res://level component/Grass Blocks/grass_block_no_bevel.tscn" id="1_rjurc"]
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="2_mpmgm"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://ce8xcoegr1xsj" path="res://level component/Rock Blocks/rock_block_bevel_rim.tscn" id="21_uwngw"]
 [ext_resource type="PackedScene" uid="uid://yuudxo5edidq" path="res://level component/Door and lantern/door.tscn" id="22_jsxrb"]
 [ext_resource type="PackedScene" uid="uid://urioemqqu7sh" path="res://level component/Rock Blocks/rock_block_no_bevel.tscn" id="23_36v0u"]
+[ext_resource type="PackedScene" uid="uid://3mcone88io0e" path="res://level component/Mountains/Rock/close_mountain_rock_2_shaded.tscn" id="24_upyy3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wgc5d"]
 render_priority = 0
@@ -562,6 +563,9 @@ transform = Transform3D(0.0582811, 0, 0.999528, 0, 2.82623, 0, -1.89671, 0, 0.03
 transform = Transform3D(0.443431, 0, 0.896309, 0, 1, 0, -0.896309, 0, 0.443431, 80.8603, 29.1392, 5.64429)
 dialogue_text = "Moby fun fact! 
 We fear what we do not understand"
+
+[node name="close_mountain_rock_2" parent="." instance=ExtResource("24_upyy3")]
+transform = Transform3D(1, 0, 0, 0, 2.72128, 0, 0, 0, 3.99643, -28.5425, -11.7248, -13.7326)
 
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
