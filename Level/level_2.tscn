@@ -583,6 +583,33 @@ transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 29, -9, -9)
 [node name="Close Mountain Rock 1 shaded7" parent="." instance=ExtResource("25_hf0r0")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 35, -9, -9)
 
+[node name="Close Mountain Rock 1" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(3.35578, 0, 0, 0, 0.773383, -1.23656, 0, 1.59399, 0.599961, -26.7338, 18.3659, -9.64217)
+
+[node name="Close Mountain Rock 2" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(-1.25352, 0.043977, -0.053134, 0.0890727, 1.00178, -0.39663, 0.0516606, -0.660174, -0.605404, -8.93417, 9.23648, 22.5353)
+
+[node name="Close Mountain Rock 3" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(2.80564, 0, 0, 0, -0.438832, -1.2673, 0, 1.3772, -0.403813, -2.82978, 20.9545, 3.48925)
+
+[node name="Close Mountain Rock 4" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(2.77496, 0, 0, 0, 1, 0, 0, 0, 0.865873, 2.59869, 7.91542, -3.54508)
+
+[node name="Close Mountain Rock 5" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1.72457, -0.123946, 0, 0.0396081, 0.334586, -1.07484, 0.154063, 1.30143, 0.276332, -6.22013, 14.9331, -11.3944)
+
+[node name="Close Mountain Rock 6" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(0.00414655, -1.91757, 0, 1.61622, 0.00491968, 0, 0, 0, 1, -3.6048, 7.28005, -11.7517)
+
+[node name="Lantern2" parent="." instance=ExtResource("4_lqe3k")]
+transform = Transform3D(6.67252, 0, 0, 0, 6.05363, -1.71893, 0, 1.77158, 5.87371, 9.12058, 20.8388, 18.1346)
+
+[node name="Close Mountain Rock 7" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(2.04485, 0, 0, 0, 1.04854, -0.341341, 0, 0.279092, 1.2824, 4.85243, 10.9693, 14.3155)
+
+[node name="Close Mountain Rock 8" parent="." instance=ExtResource("7_slhlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0002, 1.61878, 18.4099)
+
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
 [editable path="Moving platform3"]

@@ -113,7 +113,7 @@ bones/3/rotation = Quaternion(0.346064, 0.595076, 0.315242, 0.653258)
 bones/4/position = Vector3(0.343057, 1.18144e-16, 3.45944e-18)
 bones/4/rotation = Quaternion(0.151308, -0.396979, -0.0665316, 0.902822)
 bones/6/rotation = Quaternion(-0.481475, -0.0932315, -0.675769, 0.550297)
-bones/9/rotation = Quaternion(-0.00452502, -0.210939, 0.00952419, 0.977442)
+bones/9/rotation = Quaternion(-0.000720017, -0.0335644, 0.00151548, 0.999435)
 bones/10/rotation = Quaternion(0.0143075, 0.706962, -0.706962, -0.0143075)
 bones/12/rotation = Quaternion(-0.0143077, 0.706962, -0.706962, 0.0143077)
 
@@ -428,7 +428,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.2745, 1.00659, 45.9479)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5746, 1.00072, 36.7227)
 
 [node name="RoundMobyHouse" parent="2nd_Segment/Decor" instance=ExtResource("19_jt2qk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4918, 2.02255, 41.4814)
+transform = Transform3D(0.576613, 0, 0, 0, 0.671113, 0, 0, 0, 0.54452, 28.6932, 1.0183, 40.0169)
 
 [node name="MobyProp" parent="2nd_Segment/Decor" instance=ExtResource("20_i7n88")]
 transform = Transform3D(0.46597, 0, 0.884801, 0, 1, 0, -0.884801, 0, 0.46597, 28.9735, 0.286331, 36.7377)
