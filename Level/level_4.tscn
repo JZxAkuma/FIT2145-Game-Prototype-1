@@ -1,3 +1,214 @@
-[gd_scene format=3 uid="uid://c6rda67r3t0ij"]
+[gd_scene load_steps=18 format=3 uid="uid://c6rda67r3t0ij"]
+
+[ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="1_ncm42"]
+[ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="2_to4kk"]
+[ext_resource type="PackedScene" uid="uid://b0xjs3vhvrrbc" path="res://level component/Mountains/Rock/close_mountain_rock_2.tscn" id="3_31jwm"]
+[ext_resource type="Texture2D" uid="uid://cwr2pq16q5cap" path="res://Environmental_Assets/Water/WaterBG.png" id="4_yu7s3"]
+[ext_resource type="Texture2D" uid="uid://btg7exol2ibij" path="res://Environmental_Assets/Water/ThickWaterWaves.png" id="5_sc8kj"]
+[ext_resource type="PackedScene" uid="uid://bdkrj3i614fqb" path="res://level component/Rock Blocks/rock_block_bevel_bottom.tscn" id="6_b7axc"]
+[ext_resource type="PackedScene" uid="uid://l45nsc3pipaj" path="res://level component/Deco/Castle/castle_wall.tscn" id="7_nn58k"]
+[ext_resource type="PackedScene" uid="uid://cuxjtjjk6sjga" path="res://level component/Interactables/water_container_scale_maxr.tscn" id="8_b7yrp"]
+[ext_resource type="PackedScene" uid="uid://c8iyy4ydwtace" path="res://level component/Kinematic stuff/wood_crate.tscn" id="9_g815r"]
+[ext_resource type="PackedScene" uid="uid://huhac7cjloau" path="res://level component/moving_platform.tscn" id="10_b7yrp"]
+[ext_resource type="PackedScene" uid="uid://1chb14rsvqvy" path="res://level component/Interactables/sygil_texture.tscn" id="11_ly1jq"]
+[ext_resource type="PackedScene" uid="uid://ce8xcoegr1xsj" path="res://level component/Rock Blocks/rock_block_bevel_rim.tscn" id="12_hloeb"]
+
+[sub_resource type="Shader" id="Shader_ytpkv"]
+code = "shader_type spatial;
+render_mode unshaded;
+
+uniform sampler2D water_texture;
+uniform float scroll_speed = 0.05;
+
+void fragment() {
+    vec2 uv = UV;
+
+    uv.x += TIME * scroll_speed;
+
+    vec3 water = texture(water_texture, uv).rgb;
+
+    ALBEDO = water;
+}
+
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nn58k"]
+render_priority = 0
+shader = SubResource("Shader_ytpkv")
+shader_parameter/water_texture = ExtResource("4_yu7s3")
+shader_parameter/scroll_speed = 0.1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_b7yrp"]
+
+[sub_resource type="Shader" id="Shader_jas3d"]
+code = "shader_type spatial;
+render_mode blend_mix, unshaded;
+
+uniform sampler2D water_texture;
+uniform float scroll_speed = 0.05;
+
+void fragment() {
+    vec2 uv = UV;
+    uv.x += TIME * scroll_speed;
+
+    vec4 tex = texture(water_texture, uv);
+
+    ALBEDO = tex.rgb;
+    ALPHA = tex.a;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g815r"]
+render_priority = 0
+shader = SubResource("Shader_jas3d")
+shader_parameter/water_texture = ExtResource("5_sc8kj")
+shader_parameter/scroll_speed = 0.04
 
 [node name="level_4" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource("1_ncm42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0006, 2.19242, -1.46095)
+
+[node name="Grass block Bevel Bottom" parent="." instance=ExtResource("2_to4kk")]
+transform = Transform3D(32.123, 0, 0, 0, 6.30414, 0, 0, 0, 24.6941, -7.86138, -6.32202, -21.1519)
+
+[node name="Grass block Bevel Bottom2" parent="." instance=ExtResource("2_to4kk")]
+transform = Transform3D(55.2413, 0, 0, 0, 12.4774, 0, 0, 0, 24.5735, -66.2392, 12.4954, -21.3422)
+
+[node name="close_mountain_rock_2" parent="." instance=ExtResource("3_31jwm")]
+transform = Transform3D(-0.977832, -4.73908e-11, -0.0740205, 0.0550481, -0.276929, -1.27812, -0.00933145, -1.63366, 0.216659, -6.43774, 7.91168, 1.19988)
+
+[node name="close_mountain_rock_3" parent="." instance=ExtResource("3_31jwm")]
+transform = Transform3D(0.0616036, 0.103946, 0.992673, -0.971424, 0.234646, 0.0357143, -0.229215, -0.966507, 0.115431, -16.5935, 4.16913, -6.80788)
+
+[node name="close_mountain_rock_4" parent="." instance=ExtResource("3_31jwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3343, -5.51928, 0.384065)
+
+[node name="close_mountain_rock_5" parent="." instance=ExtResource("3_31jwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4074, -4.86582, -23.6932)
+
+[node name="close_mountain_rock_6" parent="." instance=ExtResource("3_31jwm")]
+transform = Transform3D(0.944273, 0.329163, 0, -0.329163, 0.944273, 0, 0, 0, 1, -16.569, -2.97864, -16.3784)
+
+[node name="Water" type="Node3D" parent="."]
+transform = Transform3D(-20.9567, 0, -0.103803, 0, 1, 0, 0.091809, 0, -23.6946, 2.90359, -2.83789, -44.8526)
+
+[node name="WaterBase" type="MeshInstance3D" parent="Water"]
+material_override = SubResource("ShaderMaterial_nn58k")
+mesh = SubResource("PlaneMesh_b7yrp")
+skeleton = NodePath("../..")
+
+[node name="WaterRipples" type="MeshInstance3D" parent="Water"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0467014, 0)
+material_override = SubResource("ShaderMaterial_g815r")
+mesh = SubResource("PlaneMesh_b7yrp")
+skeleton = NodePath("../..")
+
+[node name="Water2" type="Node3D" parent="."]
+transform = Transform3D(0.0484912, 1.00249, 0.000498886, 10.0665, -0.00482909, 0.103566, 0.0441006, 0, -23.6407, -16.319, 7.35686, -44.8526)
+
+[node name="WaterBase" type="MeshInstance3D" parent="Water2"]
+material_override = SubResource("ShaderMaterial_nn58k")
+mesh = SubResource("PlaneMesh_b7yrp")
+skeleton = NodePath("../..")
+
+[node name="WaterRipples" type="MeshInstance3D" parent="Water2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0467014, 0)
+material_override = SubResource("ShaderMaterial_g815r")
+mesh = SubResource("PlaneMesh_b7yrp")
+skeleton = NodePath("../..")
+
+[node name="rock block bevel bottom" parent="." instance=ExtResource("6_b7axc")]
+transform = Transform3D(42.0853, 0, 0, 0, 14.3271, 0, 0, 0, 24.7229, -53.0588, -0.0178866, -21.3057)
+
+[node name="Water3" type="Node3D" parent="."]
+transform = Transform3D(-20.9567, 0, -0.103803, 0, 1, 0, 0.091809, 0, -23.6946, -37.2703, 17.1623, -44.8526)
+
+[node name="WaterBase" type="MeshInstance3D" parent="Water3"]
+material_override = SubResource("ShaderMaterial_nn58k")
+mesh = SubResource("PlaneMesh_b7yrp")
+skeleton = NodePath("../..")
+
+[node name="WaterRipples" type="MeshInstance3D" parent="Water3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0467014, 0)
+material_override = SubResource("ShaderMaterial_g815r")
+mesh = SubResource("PlaneMesh_b7yrp")
+skeleton = NodePath("../..")
+
+[node name="Grass block Bevel Bottom3" parent="." instance=ExtResource("2_to4kk")]
+transform = Transform3D(32.123, 0, 0, 0, 6.30414, 0, 0, 0, 24.6941, -7.86138, -6.32202, -93.6381)
+
+[node name="Grass block Bevel Bottom4" parent="." instance=ExtResource("2_to4kk")]
+transform = Transform3D(55.2413, 0, 0, 0, 12.4774, 0, 0, 0, 24.5735, -66.2392, 12.4954, -93.8284)
+
+[node name="rock block bevel bottom2" parent="." instance=ExtResource("6_b7axc")]
+transform = Transform3D(42.0853, 0, 0, 0, 14.3271, 0, 0, 0, 24.7229, -53.0588, -0.0178866, -93.7919)
+
+[node name="close_mountain_rock_7" parent="." instance=ExtResource("3_31jwm")]
+transform = Transform3D(0.928259, -0.0275368, 0.0774244, 0.0522731, -0.277162, -1.27426, 0.024498, 1.6348, -0.214731, -13.5861, 7.91168, -92.5176)
+
+[node name="close_mountain_rock_8" parent="." instance=ExtResource("3_31jwm")]
+transform = Transform3D(-0.0652389, -0.11948, -0.941027, -0.968213, 0.233222, 0.0339274, 0.227391, 0.958763, -0.125522, -4.07269, 4.16913, -84.34)
+
+[node name="close_mountain_rock_9" parent="." instance=ExtResource("3_31jwm")]
+transform = Transform3D(-0.949365, 0, 0.016856, 0, 1, 0, -0.0159912, 0, -1.00071, -8.0012, -5.51928, -91.6026)
+
+[node name="close_mountain_rock_10" parent="." instance=ExtResource("3_31jwm")]
+transform = Transform3D(-0.949365, 0, 0.016856, 0, 1, 0, -0.0159912, 0, -1.00071, -6.41817, -4.86582, -67.4939)
+
+[node name="close_mountain_rock_11" parent="." instance=ExtResource("3_31jwm")]
+transform = Transform3D(-0.899117, -0.323646, 0.016856, -0.313467, 0.928576, 0, -0.0151448, -0.00545153, -1.00071, -4.24907, -2.97864, -74.7712)
+
+[node name="close_mountain_rock_12" parent="." instance=ExtResource("3_31jwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5277, -9.81989, -23.7943)
+
+[node name="close_mountain_rock_13" parent="." instance=ExtResource("3_31jwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2976, -9.78586, -73.3911)
+
+[node name="castle wall" parent="." instance=ExtResource("7_nn58k")]
+transform = Transform3D(2.9214, 0, 0, 0, 4.17524, 0, 0, 0, 1, -6.63722, -0.906758, 3.15844)
+
+[node name="castle wall2" parent="." instance=ExtResource("7_nn58k")]
+transform = Transform3D(2.09887, 0, 0, 0, 4.17524, 0, 0, 0, 1, -6.63722, -0.906758, -21.6879)
+
+[node name="castle wall3" parent="." instance=ExtResource("7_nn58k")]
+transform = Transform3D(0.0238924, 0, 1.00177, 0, 4.17524, 0, -2.38897, 0, 0.0100188, 23.594, -0.906758, 3.97707)
+
+[node name="water_container" parent="." instance=ExtResource("8_b7yrp")]
+transform = Transform3D(-0.0540265, 0, 0.99854, 0, 1, 0, -0.99854, 0, -0.0540265, -1.58667, 6.8452, -1.7013)
+max_upward_force = 15.0
+max_detector_height = 20.0
+
+[node name="wood crate" parent="." instance=ExtResource("9_g815r")]
+transform = Transform3D(-0.0540265, 0, 0.99854, 0, 1, 0, -0.99854, 0, -0.0540265, -0.911266, 10.4054, -2.38589)
+
+[node name="rock block bevel bottom3" parent="." instance=ExtResource("6_b7axc")]
+transform = Transform3D(1.98195, 0, 0, 0, 7.48501, 0, 0, 0, 1.64654, -1.95514, -0.664897, -3.18206)
+
+[node name="Sygil" parent="." instance=ExtResource("11_ly1jq")]
+transform = Transform3D(0.955968, 0, 0, 0, 0.0426356, 0, 0, 0, 0.972452, -1.30571, 0.366243, -13.9977)
+
+[node name="rock_block_bevel_rim" parent="." instance=ExtResource("12_hloeb")]
+transform = Transform3D(2.93088, 0, 0, 0, 3.6579, 0, 0, 0, 1.73964, -3.32223, 10.8734, -17.4226)
+
+[node name="Moving platform" parent="." instance=ExtResource("10_b7yrp")]
+transform = Transform3D(1.65935, 0, 0, 0, 1, 0, 0, 0, 1.61608, -1.16785, 14.5565, -2.3523)
+move_speed = 30.0
+mode = 2
+
+[node name="pos 1" parent="Moving platform" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.0411607, 0.999153, 0, -0.999153, -0.0411607, 0, 4.49559, 5.41473)
+
+[node name="pos 2" parent="Moving platform" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.35043, -1.51177)
+
+[node name="PowerPlatform" parent="Moving platform" index="2"]
+transform = Transform3D(1, 0, 0, 0, -0.0161958, 1.70196, 0, -1.01076, -0.0272714, 0, 4.41189, 5.30601)
+
+[node name="Sygil2" parent="Moving platform" instance=ExtResource("11_ly1jq")]
+transform = Transform3D(0.57611, 0, 0, 0, 0.0426356, 0, 0, 0, 0.601736, 5.53844, -14.0742, 0.273543)
+
+[node name="Moving platform2" parent="." instance=ExtResource("10_b7yrp")]
+transform = Transform3D(4.5115, 0, 0, 0, -0.00922591, -3.94082, 0, 1.02639, -0.0354227, 19.9244, 4.30669, -22.0201)
+
+[editable path="Moving platform"]

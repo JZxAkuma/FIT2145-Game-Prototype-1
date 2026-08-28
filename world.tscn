@@ -454,7 +454,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8arjy")
 
-[sub_resource type="Shader" id="Shader_ytpkv"]
+[sub_resource type="Shader" id="Shader_ryup7"]
 code = "shader_type spatial;
 render_mode unshaded;
 
@@ -475,13 +475,13 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_70uel"]
 render_priority = 0
-shader = SubResource("Shader_ytpkv")
+shader = SubResource("Shader_ryup7")
 shader_parameter/water_texture = ExtResource("14_70uel")
 shader_parameter/scroll_speed = 0.1
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hiqwa"]
 
-[sub_resource type="Shader" id="Shader_jas3d"]
+[sub_resource type="Shader" id="Shader_ytpkv"]
 code = "shader_type spatial;
 render_mode blend_mix, unshaded;
 
@@ -501,7 +501,7 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2u3nc"]
 render_priority = 0
-shader = SubResource("Shader_jas3d")
+shader = SubResource("Shader_ytpkv")
 shader_parameter/water_texture = ExtResource("13_2u3nc")
 shader_parameter/scroll_speed = 0.04
 
@@ -3195,20 +3195,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1902, 1.02001, -39.9039)
 
 [node name="WaterTower" parent="." instance=ExtResource("34_6ah6f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.675, 0.284966, -49.59)
-
-[node name="FlatShroom" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0549, 0.326663, -44.8889)
-bounce_scale = 10.0
-script = null
 
 [node name="DistantMountains2" parent="." instance=ExtResource("23_mc2jv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8364, 0)
