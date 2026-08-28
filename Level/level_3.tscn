@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=38 format=3 uid="uid://cecdcaxk0y2e0"]
-=======
-[gd_scene load_steps=26 format=3 uid="uid://bachueui0fbiq"]
->>>>>>> 3c228dc70bd3cf9dee92a75dde15c7eca4adbc04
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="1_cvs6x"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="2_46n42"]
@@ -110,11 +106,7 @@ bones/3/rotation = Quaternion(0.346064, 0.595076, 0.315242, 0.653258)
 bones/4/position = Vector3(0.343057, 1.18144e-16, 3.45944e-18)
 bones/4/rotation = Quaternion(0.151308, -0.396979, -0.0665316, 0.902822)
 bones/6/rotation = Quaternion(-0.481475, -0.0932315, -0.675769, 0.550297)
-<<<<<<< HEAD
 bones/9/rotation = Quaternion(-0.0031867, -0.148552, 0.00670731, 0.988877)
-=======
-bones/9/rotation = Quaternion(-0.00133252, -0.0621168, 0.00280466, 0.998064)
->>>>>>> 3c228dc70bd3cf9dee92a75dde15c7eca4adbc04
 bones/10/rotation = Quaternion(0.0143075, 0.706962, -0.706962, -0.0143075)
 bones/12/rotation = Quaternion(-0.0143077, 0.706962, -0.706962, 0.0143077)
 

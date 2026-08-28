@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d4j2rd0gjvgrc" path="res://logo_splash_screen.gd" id="1_0p1qn"]
 [ext_resource type="Texture2D" uid="uid://c0s1jwac64a27" path="res://Other material/studioLogo.png" id="2_efeqv"]
 
+
 [sub_resource type="Animation" id="Animation_0p1qn"]
 length = 0.001
 tracks/0/type = "value"
