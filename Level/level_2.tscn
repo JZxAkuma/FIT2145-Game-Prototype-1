@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://p8x8kanykwb8"]
+[gd_scene load_steps=27 format=3 uid="uid://p8x8kanykwb8"]
 
 [ext_resource type="PackedScene" uid="uid://d31a4mjnbjw41" path="res://level component/Grass Blocks/grass_block_no_bevel.tscn" id="1_rjurc"]
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="2_mpmgm"]
@@ -23,13 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://ce8xcoegr1xsj" path="res://level component/Rock Blocks/rock_block_bevel_rim.tscn" id="21_uwngw"]
 [ext_resource type="PackedScene" uid="uid://yuudxo5edidq" path="res://level component/Door and lantern/door.tscn" id="22_jsxrb"]
 [ext_resource type="PackedScene" uid="uid://urioemqqu7sh" path="res://level component/Rock Blocks/rock_block_no_bevel.tscn" id="23_36v0u"]
-[ext_resource type="PackedScene" uid="uid://b2ufh4dt5fip6" path="res://level component/Mountains/Rock/close_mountain_rock_1_shaded.tscn" id="24_umonj"]
-[ext_resource type="PackedScene" uid="uid://b0xjs3vhvrrbc" path="res://level component/Mountains/Rock/close_mountain_rock_2.tscn" id="25_4pyl2"]
-[ext_resource type="PackedScene" uid="uid://3mcone88io0e" path="res://level component/Mountains/Rock/close_mountain_rock_2_shaded.tscn" id="26_a0yxw"]
-[ext_resource type="PackedScene" uid="uid://v245p8f6nnsr" path="res://level component/Deco/rock.tscn" id="27_lu1xx"]
-[ext_resource type="PackedScene" uid="uid://d453vpva4jrf" path="res://Environmental_Assets/BackDrop/DistantMountains.fbx" id="28_lcdom"]
-[ext_resource type="Texture2D" uid="uid://daddx783lvspy" path="res://Environmental_Assets/BackDrop/DistantMountains_standardSurface1_BaseColor.png" id="29_1mjlq"]
-[ext_resource type="PackedScene" uid="uid://cfi57rfl0n3hh" path="res://level component/Deco/round_moby_house.tscn" id="30_lcdom"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wgc5d"]
 render_priority = 0
@@ -46,53 +39,6 @@ shader = ExtResource("8_8sig8")
 shader_parameter/lava_texture = ExtResource("9_hkd23")
 shader_parameter/scroll_speed = 0.01
 shader_parameter/emission_strength = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owxgx"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("29_1mjlq")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7y5ox"]
-resource_name = "standardSurface1"
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.665185, 0.665185, 0.665185, 1)
-roughness = 0.5
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_bbuh1"]
-_surfaces = [{
-"aabb": AABB(-0.01, -0.01, -0.01, 0.02, 0.02, 0.02),
-"format": 34359742465,
-"index_count": 120,
-"index_data": PackedByteArray("AAABAAIAAwACAAEAAgAEAAAAAQAFAAMABgAAAAQABwADAAUABAAIAAYABQAJAAcACgAGAAgACwAHAAkACAAMAAoACQANAAsADgAKAAwADwALAA0ADAAQAA4ADQARAA8AEgAOABAAEwAPABEAEAAUABIAEQAVABMAFgASABQAFwATABUAFAAYABYAFQAZABcAGgAWABgAGwAXABkAGAAcABoAGQAdABsAHgAaABwAHwAbAB0AHAAgAB4AHQAhAB8AIgAeACAAIwAfACEAIAAkACIAIQAlACMAJgAiACQAJwAjACUAJQAmACcAJAAnACYA"),
-"name": "standardSurface1",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 40,
-"vertex_data": PackedByteArray("qIwEPArXIzwIm8C7O9IbPArXIzx7hEq7O9IbPArXI7x7hEq7CtcjPArXI7wAAAAAqIwEPArXI7wIm8C7CtcjPArXIzwAAAAACJvAOwrXIzynjAS8NNIbPArXI7x0hEo7CJvAOwrXI7ynjAS8NNIbPArXIzx0hEo7e4RKOwrXIzw60hu8o4wEPArXI7wDm8A7e4RKOwrXI7w60hu8o4wEPArXIzwDm8A7AAAAAArXIzwP1yO8AZvAOwrXI7yjjAQ8AAAAAArXI7wP1yO8AZvAOwrXIzyjjAQ8e4RKuwrXIzw40hu8coRKOwrXI7w00hs8e4RKuwrXI7w40hu8coRKOwrXIzw00hs8BpvAuwrXIzyljAS8CtejrwrXI7wM1yM8BpvAuwrXI7yljAS8CtejrwrXIzwM1yM8pYwEvArXIzwFm8C7doRKuwrXI7w20hs8pYwEvArXI7wFm8C7doRKuwrXIzw20hs8NtIbvArXIzx2hEq7A5vAuwrXI7yjjAQ8NtIbvArXI7x2hEq7A5vAuwrXIzyjjAQ8DtcjvArXIzwAAAAApIwEvArXI7wDm8A7DtcjvArXI7wAAAAApIwEvArXIzwDm8A7NtIbvArXIzx2hEo7NtIbvArXI7x2hEo7")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_e1evs"]
-resource_name = "pCylinder1"
-_surfaces = [{
-"aabb": AABB(-0.01, -0.01, -0.01, 0.02, 0.02, 0.02),
-"attribute_data": PackedByteArray("JGcmP0X5bD/WMzM/sPpsP7sxMz9/938/bv4/P+r4fz8JZSY/FPZ/P4gAQD8b/Gw/cpoZP9r3bD8fy0w/VPp/P1eYGT+p9H8/Os1MP4b9bD+/zQw/cPZsP9GXWT/A+38/pcsMPz/zfz/smVk/8P5sPw0BAD8F9Ww/g2RmPyr9fz/m/f8+1PF/P51mZj9aAG0/tmjmPprzbD81MXM/lv5/P4Fk5j5q8H8/UDNzP8YBbT/m/X8/AACAPwAAgD8wA20/Us/MPi/ybD8dy8w+/+5/P+41sz7F8Gw/uTGzPpTtfz+KnJk+Wu9sP1WYmT4p7H8/JgOAPu/tbD/k/X8+vup/P4XTTD6E7Gw/HMtMPlTpfz+8oBk+GutsP1SYGT7p538/6NvMPa7pbD8Yy8w9fuZ/P7DsTD1E6Gw/EMtMPRTlfz8AYAY42eZsPwAAAACo438/"),
-"format": 34359742487,
-"index_count": 120,
-"index_data": PackedByteArray("AAABAAIAAwACAAEAAgAEAAAAAQAFAAMABgAAAAQABwADAAUABAAIAAYABQAJAAcACgAGAAgACwAHAAkACAAMAAoACQANAAsADgAKAAwADwALAA0ADAAQAA4ADQARAA8AEgAOABAAEwAPABEAEAAUABIAEQAVABMAFgATABUAFQAXABYAGAASABQAFAAZABgAGgAYABkAGQAbABoAHAAaABsAGwAdABwAHgAcAB0AHQAfAB4AIAAeAB8AHwAhACAAIgAgACEAIQAjACIAJAAiACMAIwAlACQAJgAkACUAJQAnACYAKAAmACcAJwApACgA"),
-"material": SubResource("StandardMaterial3D_7y5ox"),
-"name": "standardSurface1",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 42,
-"vertex_data": PackedByteArray("qIwEPArXIzwIm8C7O9IbPArXIzx7hEq7O9IbPArXI7x7hEq7CtcjPArXI7wAAAAAqIwEPArXI7wIm8C7CtcjPArXIzwAAAAACJvAOwrXIzynjAS8NNIbPArXI7x0hEo7CJvAOwrXI7ynjAS8NNIbPArXIzx0hEo7e4RKOwrXIzw60hu8o4wEPArXI7wDm8A7e4RKOwrXI7w60hu8o4wEPArXIzwDm8A7AAAAAArXIzwP1yO8AZvAOwrXI7yjjAQ8AAAAAArXI7wP1yO8AZvAOwrXIzyjjAQ8e4RKuwrXIzw40hu8coRKOwrXI7w00hs8e4RKuwrXI7w40hu8coRKOwrXIzw00hs8CtejrwrXI7wM1yM8CtejrwrXIzwM1yM8BpvAuwrXIzyljAS8BpvAuwrXI7yljAS8pYwEvArXIzwFm8C7pYwEvArXI7wFm8C7NtIbvArXIzx2hEq7NtIbvArXI7x2hEq7DtcjvArXIzwAAAAADtcjvArXI7wAAAAANtIbvArXIzx2hEo7NtIbvArXI7x2hEo7pIwEvArXIzwDm8A7pIwEvArXI7wDm8A7A5vAuwrXIzyjjAQ8A5vAuwrXI7yjjAQ8doRKuwrXIzw20hs8doRKuwrXI7w20hs8CtejrwrXIzwM1yM8CtejrwrXI7wM1yM83DX/f8m1FcBjH/9/V58XwGMf/39XnxfAAAD/f/9/HsDcNf9/ybUVwAAA/3//fx7AIkr/fwjKFcAAAGOfp2AXwCJK/38IyhXAAABjn6dgF8CbYP9/duAXwAAA3LU1ShXAm2D/f3bgF8AAANy1NUoVwP9//3/B/x7AAAAiyvY1FcD/f/9/wf8ewAAAIsr2NRXAY5//f83/w88AAJvgiB8XwGOf/3/O/8PPAACb4IgfF8AAAP7/PQAewAAA/v89AB7A3LX/f9L/+trctf9/0v/62iLK/3/S/xnlIsr/f9L/GeWb4P9/zf9T8Jvg/3/N/1Pw////f8H///////9/wf//////Y58wAFPw//9jnzAAU/D//9y1LAAZ5f//3LUsABnl//8iyiwA+tr//yLKLAD62v//m+AwAMPP//+b4DEAw88AAP7/PQAewAAA/v89AB7A")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_bbuh1")
 
 [node name="Level_2" type="Node3D"]
 
@@ -247,7 +193,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7844, 1.15093, 8.60624)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.5319, 0.983095, 5.43614)
 
 [node name="Lava" type="Node3D" parent="."]
-transform = Transform3D(20.8993, 0, 0, 0, 0.999579, 0, 0, 0, 71.2224, -7.74819, -5.47714, 5.08102)
+transform = Transform3D(20.8993, 0, 0, 0, 0.999579, 0, 0, 0, 44.1213, -7.74819, -5.47714, 4.83687)
 
 [node name="LavaBase" type="MeshInstance3D" parent="Lava"]
 transform = Transform3D(0.987553, 0, 0, 0, 0.987553, 0, 0, 0, 0.987553, 0, 0.000290751, 0)
@@ -298,7 +244,7 @@ transform = Transform3D(-0.021505, 0, 1.18317, 0, 1.33476, 0, -1.05749, 0, -0.02
 transform = Transform3D(-0.021505, 0, 1.18317, 0, 1.33476, 0, -1.05749, 0, -0.0240608, 83.0811, 0.913839, 15.6011)
 
 [node name="Lava2" type="Node3D" parent="."]
-transform = Transform3D(20.8993, 0, 0, 0, 0.999579, 0, 0, 0, 71.2224, 33.6014, -5.47714, 4.42209)
+transform = Transform3D(20.8993, 0, 0, 0, 0.999579, 0, 0, 0, 44.1213, 33.6014, -5.47714, 4.42867)
 
 [node name="LavaBase" type="MeshInstance3D" parent="Lava2"]
 transform = Transform3D(0.987553, 0, 0, 0, 0.987553, 0, 0, 0, 0.987553, 0, 0.000290751, 0)
@@ -313,7 +259,7 @@ mesh = SubResource("PlaneMesh_sukcg")
 skeleton = NodePath("../..")
 
 [node name="Lava3" type="Node3D" parent="."]
-transform = Transform3D(20.8993, 0, 0, 0, 0.999579, 0, 0, 0, 71.2224, 72.3723, -5.47714, 3.81507)
+transform = Transform3D(20.8993, 0, 0, 0, 0.999579, 0, 0, 0, 44.1213, 72.3723, -5.47714, 4.05263)
 
 [node name="LavaBase" type="MeshInstance3D" parent="Lava3"]
 transform = Transform3D(0.987553, 0, 0, 0, 0.987553, 0, 0, 0, 0.987553, 0, 0.000290751, 0)
@@ -436,7 +382,7 @@ transform = Transform3D(0.877791, 0.104965, 0.467403, 0, 0.975699, -0.219114, -0
 transform = Transform3D(1.95781, 0, 0.01101, 0, 1.18122, 0, -0.0106612, 0, 2.02187, 83.7655, 9.93936, 4.07561)
 
 [node name="Lava4" type="Node3D" parent="."]
-transform = Transform3D(20.8993, 0, 0, 0, 0.999579, 0, 0, 0, 71.2224, 107.491, -5.47714, 5.08102)
+transform = Transform3D(20.8993, 0, 0, 0, 0.999579, 0, 0, 0, 44.1213, 107.491, -5.47714, 4.83687)
 
 [node name="LavaBase" type="MeshInstance3D" parent="Lava4"]
 transform = Transform3D(0.987553, 0, 0, 0, 0.987553, 0, 0, 0, 0.987553, 0, 0.000290751, 0)
@@ -451,7 +397,7 @@ mesh = SubResource("PlaneMesh_sukcg")
 skeleton = NodePath("../..")
 
 [node name="Lava5" type="Node3D" parent="."]
-transform = Transform3D(20.8993, 0, 0, 0, 0.999579, 0, 0, 0, 71.2224, 148.841, -5.47714, 4.42209)
+transform = Transform3D(20.8993, 0, 0, 0, 0.999579, 0, 0, 0, 44.1213, 148.841, -5.47714, 4.42867)
 
 [node name="LavaBase" type="MeshInstance3D" parent="Lava5"]
 transform = Transform3D(0.987553, 0, 0, 0, 0.987553, 0, 0, 0, 0.987553, 0, 0.000290751, 0)
@@ -466,7 +412,7 @@ mesh = SubResource("PlaneMesh_sukcg")
 skeleton = NodePath("../..")
 
 [node name="Lava6" type="Node3D" parent="."]
-transform = Transform3D(20.8993, 0, 0, 0, 0.999579, 0, 0, 0, 71.2224, 187.612, -5.47714, 3.81507)
+transform = Transform3D(20.8993, 0, 0, 0, 0.999579, 0, 0, 0, 44.1213, 187.612, -5.47714, 4.05263)
 
 [node name="LavaBase" type="MeshInstance3D" parent="Lava6"]
 transform = Transform3D(0.987553, 0, 0, 0, 0.987553, 0, 0, 0, 0.987553, 0, 0.000290751, 0)
@@ -616,166 +562,6 @@ transform = Transform3D(0.443431, 0, 0.896309, 0, 1, 0, -0.896309, 0, 0.443431, 
 dialogue_text = "Moby fun fact! 
 We fear what we do not understand"
 
-[node name="Close Mountain Rock 17" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(2.07517, 0.110983, 0.329848, 0.561711, 0.130358, -1.16709, -0.275667, 1.10109, 0.104926, -37.0982, -1.55746, -2.57693)
-
-[node name="Close Mountain Rock 18" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(0.950281, 0.550063, -0.579149, 0, 0.644908, 1.12002, 0.844114, -0.619246, 0.65199, -28.7702, -4.14389, -3.41452)
-
-[node name="Close Mountain Rock 19" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1, 0, 0, 0, -0.827923, 0.560841, 0, -0.560841, -0.827923, -28.9878, 6.61571, 11.6895)
-
-[node name="Close Mountain Rock 20" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1.60284, 0, 1.344, 0, 1, 0, -0.979186, 0, 2.20002, -36.4994, -2.36689, 12.4365)
-
-[node name="Close Mountain Rock 21" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(0.396046, -0.115076, 0, 0.347518, 0.131145, 0, 0, 0, 1, -21.8374, -1.9143, 3.68717)
-
-[node name="Close Mountain Rock 1 shaded" parent="." instance=ExtResource("24_umonj")]
-transform = Transform3D(0.112091, 0.0361741, 0.109885, -0.0197949, 0.20484, -0.0194054, -0.742899, 0, 0.0170969, -20.966, 0.757435, 5.30015)
-
-[node name="Close Mountain Rock 22" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(-0.0191157, 0.00554477, 0.973693, 0.347836, 0.13104, -1.34918e-08, -0.395946, 0.11485, -0.0470084, -21.8374, -1.9143, 0.611876)
-
-[node name="Close Mountain Rock 23" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(0.0767678, 0.00480432, 1.14037, 0.508064, 0.0564065, -0.164449, -0.174706, 0.166147, 0.022855, -24.2416, -0.838533, 10.2862)
-
-[node name="close_mountain_rock_2" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(0.0948803, 0.0405149, -1.98566, -0.16072, 1.43955, 0.018027, 0.893663, 0.254593, 0.21406, -5.30446, -9.66622, 16.7076)
-
-[node name="close_mountain_rock_3" parent="." instance=ExtResource("26_a0yxw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4961, -10.5605, 11.9568)
-
-[node name="close_mountain_rock_4" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(0.871992, -0.158858, 0.39604, 0, 0.446694, 0.587757, -0.489519, -0.282977, 0.705474, -9.91779, -12.9421, 19.7096)
-
-[node name="close_mountain_rock_5" parent="." instance=ExtResource("26_a0yxw")]
-transform = Transform3D(0.9169, 0, -0.518825, 0, 1.21902, 0, 0.399117, 0, 1.19191, -3.93201, -8.90884, 13.8977)
-
-[node name="close_mountain_rock_6" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(1, 0, 0, 0, 0.115189, 1.05166, 0, -0.615683, 0.196755, -17.7568, -4.34698, 25.4913)
-
-[node name="Rock" parent="." instance=ExtResource("27_lu1xx")]
-transform = Transform3D(0.903545, -0.428494, 0, 0.428494, 0.903545, 0, 0, 0, 1, -19.3548, -0.961082, 10.3786)
-
-[node name="Rock2" parent="." instance=ExtResource("27_lu1xx")]
-transform = Transform3D(1.11452, 0, 0, 0, 1, 0, 0, 0, 2.05104, -19.5873, -0.209835, -1.44441)
-
-[node name="DistantMountains" parent="." instance=ExtResource("28_lcdom")]
-transform = Transform3D(2.15055, 0, 0, 0, 1.37463, 0, 0, 0, 1.90055, 0, -10.2949, 0)
-
-[node name="pCylinder1" parent="DistantMountains" index="0"]
-transform = Transform3D(11673.9, 0, 0, 0, 1992.6, 0, 0, 0, 8586.48, 0, 8.90985, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_owxgx")
-
-[node name="Close Mountain Rock 1 shaded2" parent="." instance=ExtResource("24_umonj")]
-transform = Transform3D(1, 0, 0, 0, 3.50026, 0, 0, 0, 4.33745, -30.7717, -9.18442, -9.36196)
-
-[node name="close_mountain_rock_7" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(3.56184, 0.555389, 0, -1.28157, 1.54358, 0, 0, 0, 1, -32.953, -6.14175, -16.2447)
-
-[node name="close_mountain_rock_8" parent="." instance=ExtResource("26_a0yxw")]
-transform = Transform3D(1.22842, -0.809019, 0, 1.69389, 0.586709, 0, 0, 0, 1, -3.08384, -9.143, -14.2116)
-
-[node name="close_mountain_rock_9" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(3.92691, 0, 0, 0, 0.80462, -1.1245, 0, 1.29132, 0.700677, -33.5918, 15.1887, -12.3137)
-
-[node name="Close Mountain Rock 1 shaded3" parent="." instance=ExtResource("24_umonj")]
-transform = Transform3D(-0.224824, 1.63424, -0.101539, 0.491616, 0.689595, 0.66559, 0.184183, 0.154193, -1.90052, -25.0388, 9.63554, 20.6187)
-
-[node name="Close Mountain Rock 24" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(-0.103166, 0, -4.59192, 0.14004, 1.2387, -0.169759, 0.609249, -0.284725, -0.73854, 3.46832, 6.92598, 21.9482)
-
-[node name="pCylinder1" type="MeshInstance3D" parent="."]
-transform = Transform3D(36913.7, 0, 0, 0, 13807.2, 0, 0, 0, 67450.1, 0, 116.267, 0)
-mesh = SubResource("ArrayMesh_e1evs")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_owxgx")
-
-[node name="close_mountain_rock_10" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(-0.19927, -0.196238, 1.31386, -0.117995, 1.1717, -1.13987, -0.0890069, -1.11397, -1.4304, -3.73876, 7.21342, 34.0585)
-
-[node name="close_mountain_rock_11" parent="." instance=ExtResource("26_a0yxw")]
-transform = Transform3D(1.89877, 0, 0, 0, 1.12826, -0.579108, 0, 0.618603, 1.05623, -12.2028, 10.7357, -12.3695)
-
-[node name="close_mountain_rock_12" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(2.53738, 0, 0, 0, 1.19071, 0, 0, 0, 1, -11.2677, -2.78514, -13.4997)
-
-[node name="Close Mountain Rock 1 shaded4" parent="." instance=ExtResource("24_umonj")]
-transform = Transform3D(0.793126, 2.44948, -0.0293732, -1.83775, 1.00941, -0.18824, -0.328661, 0.266848, 0.981684, -3.66126, 14.5499, -10.7655)
-
-[node name="close_mountain_rock_13" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(0.00731985, 3.33867, 0, -0.921108, 0.0255722, -0.288475, -0.178428, 0.00495359, 1.48921, -1.06795, 21.5495, -5.09707)
-
-[node name="Close Mountain Rock 1 shaded5" parent="." instance=ExtResource("24_umonj")]
-transform = Transform3D(0.37167, 2.80292, -0.0167787, 1.56882, -0.485868, -0.525325, -1.05584, 0.264741, -0.786462, -0.987142, 12.1981, 16.1373)
-
-[node name="Close Mountain Rock 1 shaded6" parent="." instance=ExtResource("24_umonj")]
-transform = Transform3D(2.42188, 0, 0, 0, -0.0920859, -0.779732, 0, 1.37229, -0.0523228, 28.1577, 12.2804, -3.73411)
-
-[node name="Close Mountain Rock 1 shaded7" parent="." instance=ExtResource("24_umonj")]
-transform = Transform3D(-0.713118, -0.702545, 0.631443, 0.856785, -0.492868, 0.575498, -0.06805, 1.15673, 0.628722, 34.0311, 11.9243, -6.65875)
-
-[node name="close_mountain_rock_14" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(3.64833, 0, 0.486855, 0, 4.28093, 0, -7.17232, 0, 0.247648, 37.8393, -12.5101, -1.94605)
-
-[node name="close_mountain_rock_15" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(1, 0, 0, 0, 0.261846, 0.382506, 0, -0.108401, 0.923953, 26.7396, 8.51585, -7.6858)
-
-[node name="close_mountain_rock_16" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(1.06906, 0, 1.02812, 0, 4.03297, 0, -0.163819, 0, 6.7094, 38.9381, -11.1711, 13.0669)
-
-[node name="close_mountain_rock_17" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(0.369468, 0.5115, 0.896536, 4.90264, 0.0896637, -0.0934352, -0.420821, 1.49368, -0.301404, 32.0112, 9.09944, -0.673978)
-
-[node name="close_mountain_rock_18" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(-7.22133, 0.108738, 0, -0.205621, -3.81885, 0, 0, 0, 1.29305, 99.9637, 37.2272, -45.4202)
-
-[node name="close_mountain_rock_19" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(-10.8789, -0.33949, 0.403825, 0, 0.455824, 5.96248, -2.5074, 1.47296, -1.75209, 154.606, -19.4346, -40.4458)
-
-[node name="close_mountain_rock_20" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(1.59425, 0, -0.830037, 0, 2.99266, 0, 7.06733, 0, 0.18724, 141.878, -11.8745, -38.2043)
-
-[node name="close_mountain_rock_21" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(-1.61792, -0.44294, -0.975845, -0.305855, 2.34307, -0.184476, 6.40742, 0, -0.255214, 155.086, -6.37026, -4.90097)
-
-[node name="close_mountain_rock_22" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(0.000878183, 0, 6.91972, 0, 2.84684, 0, -2.09661, 0, 0.00289838, 42.3303, -7.94645, 65.012)
-
-[node name="close_mountain_rock_23" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(0.922459, 1.16777, -0.0710021, 0, 0.121468, 3.60378, 0.445914, -2.41576, 0.146881, 120.138, -10.4251, 62.4501)
-
-[node name="close_mountain_rock_24" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(5.36617, 0, 0, 0, 2.8064, 0, 0, 0, 1, 91.9122, -7.88993, 53.0221)
-
-[node name="close_mountain_rock_25" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(0.925353, -0.525912, -0.862612, 0.21831, 1.69133, -1.00341, 0.30994, 0.378846, 3.28217, 139.911, 19.7785, 13.9407)
-
-[node name="close_mountain_rock_26" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(1.25285, 0, 1.03799, 0, 1, 0, -2.27442, 0, 0.571772, 120.874, 13.069, 55.9631)
-
-[node name="close_mountain_rock_27" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(1, 0, 0, 0, 1.38991, 0, 0, 0, 5.39689, 140.612, 20.4056, -15.5667)
-
-[node name="close_mountain_rock_28" parent="." instance=ExtResource("25_4pyl2")]
-transform = Transform3D(0.236465, 0, -5.72484, 0, 1.05227, 0, 0.97164, 0, 1.39324, 137.622, 23.1209, 41.441)
-
-[node name="Lantern2" parent="." instance=ExtResource("4_lqe3k")]
-transform = Transform3D(10.6332, 0, 0, 0, 9.34688, 0, 0, 0, 7.22973, 77.5596, 27.7475, 56.2705)
-
-[node name="Lantern4" parent="." instance=ExtResource("4_lqe3k")]
-transform = Transform3D(9.11028, 0, 0, 0, 7.98922, 0, 0, 0, 7.89269, 116.823, 29.6656, -53.1821)
-
-[node name="Lantern7" parent="." instance=ExtResource("4_lqe3k")]
-transform = Transform3D(7.58271, 0, 0, 0, 5.58977, 0, 0, 0, 7.53395, 36.7385, 39.5814, 26.9833)
-
-[node name="Lantern10" parent="." instance=ExtResource("4_lqe3k")]
-transform = Transform3D(4.61136, -3.53496, 2.62417, 3.80769, 4.99039, 1.05906, -3.30424, 0.817418, 4.88268, 5.7667, 16.2443, 8.17757)
-
-[node name="RoundMobyHouse" parent="." instance=ExtResource("30_lcdom")]
-transform = Transform3D(-0.142034, 0, -0.687612, 0, 0.692552, 0, 0.70581, 0, -0.138372, 71.7052, 0.862446, -0.90403)
-
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
 [editable path="Moving platform3"]
@@ -792,4 +578,3 @@ transform = Transform3D(-0.142034, 0, -0.687612, 0, 0.692552, 0, 0.70581, 0, -0.
 [editable path="Moving platform14"]
 [editable path="Moving platform15"]
 [editable path="Door"]
-[editable path="DistantMountains"]
