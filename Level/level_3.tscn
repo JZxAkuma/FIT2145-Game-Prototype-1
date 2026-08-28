@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bwck6ojrsaixy"]
+[gd_scene load_steps=39 format=3 uid="uid://bwck6ojrsaixy"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="1_cvs6x"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="2_46n42"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://cmbirrmnxcuyr" path="res://level component/Mountains/Grass/close_mountain_grass_3.tscn" id="25_enmym"]
 [ext_resource type="PackedScene" uid="uid://cvkfs4ab287vt" path="res://level component/Mountains/Grass/close_mountain_grass_1.tscn" id="26_5g6dm"]
 [ext_resource type="PackedScene" uid="uid://bo58vdbddaw64" path="res://level component/Mountains/Grass/close_mountain_grass_2.tscn" id="27_g11h5"]
+[ext_resource type="PackedScene" uid="uid://c8iyy4ydwtace" path="res://level component/Kinematic stuff/wood_crate.tscn" id="30_nxnga"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8cxox"]
 shader = ExtResource("2_46n42")
@@ -106,7 +107,7 @@ bones/3/rotation = Quaternion(0.346064, 0.595076, 0.315242, 0.653258)
 bones/4/position = Vector3(0.343057, 1.18144e-16, 3.45944e-18)
 bones/4/rotation = Quaternion(0.151308, -0.396979, -0.0665316, 0.902822)
 bones/6/rotation = Quaternion(-0.481475, -0.0932315, -0.675769, 0.550297)
-bones/9/rotation = Quaternion(-0.00240592, -0.112155, 0.00506394, 0.993675)
+bones/9/rotation = Quaternion(-0.00200048, -0.0932548, 0.00421058, 0.995631)
 bones/10/rotation = Quaternion(0.0143075, 0.706962, -0.706962, -0.0143075)
 bones/12/rotation = Quaternion(-0.0143077, 0.706962, -0.706962, 0.0143077)
 
@@ -403,16 +404,16 @@ transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, -1, 40, 6, 31)
 transform = Transform3D(-4.37114e-08, 0, 1, 0, -1, 0, 1, 0, 4.37114e-08, 40, 5, 18)
 
 [node name="close_mountain_rock_6" parent="2nd_Segment/Decor" instance=ExtResource("6_b41hc")]
-transform = Transform3D(-4.37114e-08, 1.77636e-15, 1, -5.96046e-08, 1, -1.77636e-15, -1, -1.49012e-07, -4.37114e-08, 40, -8, 19)
+transform = Transform3D(-4.37114e-08, 1.77636e-15, 1, -5.96046e-08, 1, -1.77636e-15, -1, -1.49012e-07, -4.37114e-08, 40, -6.94762, 19)
 
 [node name="close_mountain_rock_7" parent="2nd_Segment/Decor" instance=ExtResource("7_33bvb")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 36.6339, -7, 10.5734)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 36.6339, -5.25534, 10.5734)
 
 [node name="close_mountain_rock_8" parent="2nd_Segment/Decor" instance=ExtResource("7_33bvb")]
-transform = Transform3D(-0.383819, 0, 1.09093, 0, 1, 0, -1.43243, 0, -0.292313, 37.6339, -6, 11.5734)
+transform = Transform3D(-0.383819, 0, 1.09093, 0, 1, 0, -1.43243, 0, -0.292313, 37.6339, -5.01354, 11.5734)
 
 [node name="close_mountain_rock_9" parent="2nd_Segment/Decor" instance=ExtResource("7_33bvb")]
-transform = Transform3D(7.26096e-05, -0.997147, -0.0754864, -0.998288, -0.00448728, 0.0583157, -0.058488, 0.075353, -0.99544, 38.6339, 7, 4.57336)
+transform = Transform3D(7.26096e-05, -0.997147, -0.0754864, -0.998288, -0.00448728, 0.0583157, -0.058488, 0.075353, -0.99544, 38.6339, 7.45944, 4.57336)
 
 [node name="TunnelFloor2" parent="2nd_Segment" instance=ExtResource("5_5fwn8")]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 10, 12, 0, 0)
@@ -995,6 +996,15 @@ transform = Transform3D(12, 0, 0, 0, 9, 0, 0, 0, 8, 73, 0, 27)
 [node name="Door" parent="." instance=ExtResource("18_oam4g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 9, 30)
 change_scene_to = "res://Level/level_4.tscn"
+
+[node name="wood crate" parent="." instance=ExtResource("30_nxnga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.2859, 4.72244, 36.0132)
+
+[node name="wood crate2" parent="." instance=ExtResource("30_nxnga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.1325, 4.72244, 35.7285)
+
+[node name="wood crate3" parent="." instance=ExtResource("30_nxnga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.3599, 4.72244, 36.08)
 
 [editable path="player"]
 [editable path="player/Player_mesh/MobyRig"]
