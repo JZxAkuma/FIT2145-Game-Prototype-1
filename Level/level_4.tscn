@@ -442,13 +442,13 @@ transform = Transform3D(0.227622, 0, 0, 0, 1.33071, 0.050053, 0, 0.0111114, -0.2
 transform = Transform3D(4.91247, 0, 0, 0, 1, 0, 0, 0, 6.59212, -2.5976, -1.63629, -69.8828)
 
 [node name="castle wall7" parent="." instance=ExtResource("7_nn58k")]
-transform = Transform3D(0.854505, 0, 0, 0, 1.49797, 0, 0, 0, 1, -11.4538, -0.0630825, -69.656)
+transform = Transform3D(0.854505, 0, 0, 0, 2.7833, 0, 0, 0, 1, -11.4538, -0.0410579, -69.656)
 
 [node name="castle wall8" parent="." instance=ExtResource("7_nn58k")]
-transform = Transform3D(0.982771, 0, 0, 0, 1.4922, 0, 0, 0, 1, 2.44809, -0.0735155, -69.6087)
+transform = Transform3D(0.982771, 0, 0, 0, 2.77257, 0, 0, 0, 1, 2.44809, -0.060443, -69.6087)
 
 [node name="castle wall9" parent="." instance=ExtResource("7_nn58k")]
-transform = Transform3D(0.982771, 0, 0, 0, 1.4922, 0, 0, 0, 1, 13.9399, -0.0735155, -69.6087)
+transform = Transform3D(0.982771, 0, 0, 0, 2.77257, 0, 0, 0, 1, 13.9399, -0.060443, -69.6087)
 
 [node name="MobyProp" parent="." instance=ExtResource("19_v23k1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.176096, -0.736866, -79.0441)
@@ -456,25 +456,25 @@ dialogue_text = "You did it!
 You will never escape your fate"
 
 [node name="castle wall10" parent="." instance=ExtResource("7_nn58k")]
-transform = Transform3D(-0.00596908, 0, 0.999982, 0, 1.4922, 0, -0.982753, 0, -0.00607372, 23.571, -0.0735155, -68.847)
+transform = Transform3D(-0.00596908, 0, 0.999982, 0, 2.77257, 0, -0.982753, 0, -0.00607372, 23.571, -0.060443, -68.847)
 
 [node name="castle wall11" parent="." instance=ExtResource("7_nn58k")]
-transform = Transform3D(0.00101194, 0, 0.999999, 0, 1.4922, 0, -0.98277, 0, 0.00102969, 23.4868, -0.221065, -83.2535)
+transform = Transform3D(0.00101194, 0, 0.999999, 0, 2.77257, 0, -0.98277, 0, 0.00102969, 23.4868, -0.334597, -83.2535)
 
 [node name="castle wall12" parent="." instance=ExtResource("7_nn58k")]
-transform = Transform3D(0.00403397, 0, 1.00119, 0, 1.4922, 0, -0.760281, 0, 0.00531219, 23.5152, -0.0735155, -77.2987)
+transform = Transform3D(0.00403397, 0, 1.00119, 0, 2.77257, 0, -0.760281, 0, 0.00531219, 23.5152, -0.060443, -77.2987)
 
 [node name="castle wall13" parent="." instance=ExtResource("7_nn58k")]
-transform = Transform3D(0.982771, 0, 0, 0, 1.4922, 0, 0, 0, 1, 13.9399, -0.0735155, -93.8139)
+transform = Transform3D(0.982771, 0, 0, 0, 2.77257, 0, 0, 0, 1, 13.9399, -0.060443, -93.8139)
 
 [node name="castle wall14" parent="." instance=ExtResource("7_nn58k")]
-transform = Transform3D(0.982771, 0, 0, 0, 1.4922, 0, 0, 0, 1, 4.20329, -0.0735155, -93.8593)
+transform = Transform3D(0.982771, 0, 0, 0, 2.77257, 0, 0, 0, 1, 4.20329, -0.060443, -93.8593)
 
 [node name="castle wall15" parent="." instance=ExtResource("7_nn58k")]
-transform = Transform3D(0.982771, 0, 0, 0, 1.4922, 0, 0, 0, 1, -5.59011, -0.0735155, -93.9064)
+transform = Transform3D(0.982771, 0, 0, 0, 2.77257, 0, 0, 0, 1, -5.59011, -0.060443, -93.9064)
 
 [node name="castle wall16" parent="." instance=ExtResource("7_nn58k")]
-transform = Transform3D(0.982771, 0, 0, 0, 1.4922, 0, 0, 0, 1, -15.5648, -0.0735155, -93.7497)
+transform = Transform3D(0.982771, 0, 0, 0, 2.7956, 0, 0, 0, 1, -15.5648, -0.0735155, -93.7497)
 
 [node name="MobyProp2" parent="." instance=ExtResource("19_v23k1")]
 transform = Transform3D(-0.997592, 0, -0.0693559, 0, 1, 0, 0.0693559, 0, -0.997592, 13.4399, -0.668912, -70.9928)
