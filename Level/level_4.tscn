@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c6rda67r3t0ij"]
+[gd_scene load_steps=19 format=3 uid="uid://c6rda67r3t0ij"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="1_ncm42"]
 [ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="2_to4kk"]
@@ -10,8 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://cuxjtjjk6sjga" path="res://level component/Interactables/water_container_scale_maxr.tscn" id="8_b7yrp"]
 [ext_resource type="PackedScene" uid="uid://c8iyy4ydwtace" path="res://level component/Kinematic stuff/wood_crate.tscn" id="9_g815r"]
 [ext_resource type="PackedScene" uid="uid://huhac7cjloau" path="res://level component/moving_platform.tscn" id="10_b7yrp"]
-[ext_resource type="PackedScene" uid="uid://1chb14rsvqvy" path="res://level component/Interactables/sygil_texture.tscn" id="11_ly1jq"]
 [ext_resource type="PackedScene" uid="uid://ce8xcoegr1xsj" path="res://level component/Rock Blocks/rock_block_bevel_rim.tscn" id="12_hloeb"]
+[ext_resource type="PackedScene" uid="uid://begtm20kqwkly" path="res://level component/Interactables/sygil.tscn" id="12_ly1jq"]
+[ext_resource type="PackedScene" uid="uid://ced3mcg8toces" path="res://level component/World Base/invi_wall.tscn" id="13_hloeb"]
 
 [sub_resource type="Shader" id="Shader_ytpkv"]
 code = "shader_type spatial;
@@ -185,28 +186,25 @@ transform = Transform3D(-0.0540265, 0, 0.99854, 0, 1, 0, -0.99854, 0, -0.0540265
 [node name="rock block bevel bottom3" parent="." instance=ExtResource("6_b7axc")]
 transform = Transform3D(1.98195, 0, 0, 0, 7.48501, 0, 0, 0, 1.64654, -1.95514, -0.664897, -3.18206)
 
-[node name="Sygil" parent="." instance=ExtResource("11_ly1jq")]
-transform = Transform3D(1.40519, 0, 0, 0, 0.0426356, 0, 0, 0, 1.32266, -1.76399, 11.5761, -16.3024)
-
 [node name="rock_block_bevel_rim" parent="." instance=ExtResource("12_hloeb")]
-transform = Transform3D(12.6305, 0, 0, 0, 19.9711, 0, 0, 0, 1.73964, -10.7909, -0.400985, -21.1208)
+transform = Transform3D(12.6305, 0, 0, 0, 24.8331, 0, 0, 0, 1.73964, -10.7909, -0.400985, -21.1208)
 
 [node name="Moving platform" parent="." instance=ExtResource("10_b7yrp")]
 transform = Transform3D(1.65935, 0, 0, 0, 1, 0, 0, 0, 1.61608, -1.16785, 14.5565, -2.3523)
-move_speed = 30.0
+move_speed = 50.0
 mode = 2
 
 [node name="pos 1" parent="Moving platform" index="0"]
 transform = Transform3D(1, 0, 0, 0, -0.0411607, 0.999153, 0, -0.999153, -0.0411607, 0, 4.49559, 5.41473)
 
 [node name="pos 2" parent="Moving platform" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.35043, -1.51177)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.35043, 0.60823)
 
 [node name="PowerPlatform" parent="Moving platform" index="2"]
 transform = Transform3D(1, 0, 0, 0, -0.0161958, 1.70196, 0, -1.01076, -0.0272714, 0, 4.41189, 5.30601)
 
-[node name="Sygil2" parent="Moving platform" instance=ExtResource("11_ly1jq")]
-transform = Transform3D(0.57611, 0, 0, 0, 0.0426356, 0, 0, 0, 0.601736, 5.53844, -13.7195, 0.273543)
+[node name="sygil" parent="Moving platform" instance=ExtResource("12_ly1jq")]
+transform = Transform3D(0.689923, 0, 0, 0, 1.19274, 0, 0, 0, 0.855164, 8.67747, -13.9654, 0.738414)
 
 [node name="Moving platform2" parent="." instance=ExtResource("10_b7yrp")]
 transform = Transform3D(4.5115, 0, 0, 0, -0.00922591, -3.94082, 0, 1.02639, -0.0354227, 19.9244, 4.30669, -22.0201)
@@ -214,8 +212,32 @@ transform = Transform3D(4.5115, 0, 0, 0, -0.00922591, -3.94082, 0, 1.02639, -0.0
 [node name="pos 2" parent="Moving platform2" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 3.72529e-09, 0, -2.32831e-10, 1, 0, -0.100443, -2.91034)
 
+[node name="sygil" parent="Moving platform2" instance=ExtResource("12_ly1jq")]
+transform = Transform3D(0.436374, 0, 0, 0, -0.00875684, 2.3807, 0, -0.253734, -0.00557349, -4.99279, 5.32275, 0.869395)
+
 [node name="rock block bevel bottom4" parent="." instance=ExtResource("6_b7axc")]
-transform = Transform3D(6.18369, 0, 0, 0, 1, 0, 0, 0, 5.95922, -5.20014, 10.1258, -19.6572)
+transform = Transform3D(10.6285, 0, 0, 0, 1, 0, 0, 0, 7.8833, -8.81952, -0.371018, -19.6572)
+
+[node name="castle wall4" parent="." instance=ExtResource("7_nn58k")]
+transform = Transform3D(0.589597, 0, 0, 0, 2.39477, 0, 0, 0, 1, -5.04261, 1.7133, -14.1926)
+
+[node name="castle wall5" parent="." instance=ExtResource("7_nn58k")]
+transform = Transform3D(0.0176636, 0, 1.03518, 0, 2.39477, 0, -0.570951, 0, 0.0320256, 0.0537608, 1.65681, -13.5017)
+
+[node name="castle wall6" parent="." instance=ExtResource("7_nn58k")]
+transform = Transform3D(0.021066, 0, 0.994153, 0, 2.39477, 0, -0.58059, 0, 0.0360717, -5.39691, 1.44469, -13.3957)
+
+[node name="Invi wall" parent="." instance=ExtResource("13_hloeb")]
+transform = Transform3D(1, 0, 0, 0, 6.47773, 0, 0, 0, 1.35204, 0.491626, 13.7621, -2.32833)
+
+[node name="Invi wall2" parent="." instance=ExtResource("13_hloeb")]
+transform = Transform3D(1, 0, 0, 0, 6.47773, 0, 0, 0, 1.35204, -0.988786, 13.7621, -3.90829)
+
+[node name="Invi wall3" parent="." instance=ExtResource("13_hloeb")]
+transform = Transform3D(-0.999782, 0, 0.0282443, 0, 6.47773, 0, -0.0208901, 0, -1.35175, -2.25073, 13.7621, -2.38567)
+
+[node name="Invi wall4" parent="." instance=ExtResource("13_hloeb")]
+transform = Transform3D(-0.999782, 0, 0.0282443, 0, 6.47773, 0, -0.0208901, 0, -1.35175, -0.803647, 13.7621, -0.775121)
 
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
