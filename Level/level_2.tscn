@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://p8x8kanykwb8"]
+[gd_scene load_steps=29 format=3 uid="uid://p8x8kanykwb8"]
 
 [ext_resource type="PackedScene" uid="uid://d31a4mjnbjw41" path="res://level component/Grass Blocks/grass_block_no_bevel.tscn" id="1_rjurc"]
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="2_mpmgm"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://yuudxo5edidq" path="res://level component/Door and lantern/door.tscn" id="22_jsxrb"]
 [ext_resource type="PackedScene" uid="uid://urioemqqu7sh" path="res://level component/Rock Blocks/rock_block_no_bevel.tscn" id="23_36v0u"]
 [ext_resource type="PackedScene" uid="uid://3mcone88io0e" path="res://level component/Mountains/Rock/close_mountain_rock_2_shaded.tscn" id="24_upyy3"]
+[ext_resource type="PackedScene" uid="uid://b2ufh4dt5fip6" path="res://level component/Mountains/Rock/close_mountain_rock_1_shaded.tscn" id="25_hf0r0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wgc5d"]
 render_priority = 0
@@ -47,7 +48,7 @@ shader_parameter/emission_strength = 0.0
 transform = Transform3D(31.3677, 0, 0, 0, 7.71596, 0, 0, 0, 19.3742, 52, -6.73199, -4.01519)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.999769, -0.0195584, -0.00888881, -0.0209174, 0.791839, 0.610372, -0.0048994, 0.610417, -0.792065, 2.03666, 9.38525, -0.0746479)
+transform = Transform3D(-0.999769, -0.0195584, -0.00888881, -0.0205647, 0.990961, 0.132565, 0.00621569, 0.132717, -0.991135, 2.03666, 9.38525, -0.0746479)
 light_color = Color(0.999998, 0.999612, 0.719504, 1)
 light_energy = 0.66
 shadow_enabled = true
@@ -109,53 +110,26 @@ light_power = 50.0
 [node name="grass_block_no_bevel" parent="." instance=ExtResource("1_rjurc")]
 transform = Transform3D(5, 0, 0, 0, 2.92851, 0, 0, 0, 10, -20, -1.9303, 0)
 
-[node name="Close Mountain Rock 1" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, -2, -8.5226, -8)
-
-[node name="Close Mountain Rock 2" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 3, -8.5226, -8)
-
-[node name="Close Mountain Rock 3" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 9, -8.5226, -8)
-
-[node name="Close Mountain Rock 4" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 15, -8.5226, -8)
-
-[node name="Close Mountain Rock 5" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 21, -8.5226, -8)
-
-[node name="Close Mountain Rock 6" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 27, -8.5226, -8)
-
-[node name="Close Mountain Rock 7" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 33, -8.5226, -8)
-
-[node name="Close Mountain Rock 8" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 38, -8.5226, -8)
-
 [node name="Close Mountain Rock 9" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, -2, -8.5226, 10)
+transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, -1, -8.5226, 10)
 
 [node name="Close Mountain Rock 10" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 3, -8.5226, 10)
+transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 5, -8.5226, 10)
 
 [node name="Close Mountain Rock 11" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 9, -8.5226, 10)
+transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 11, -8.5226, 10)
 
 [node name="Close Mountain Rock 12" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 15, -8.5226, 10)
+transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 17, -8.5226, 10)
 
 [node name="Close Mountain Rock 13" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 21, -8.5226, 10)
+transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 23, -8.5226, 10)
 
 [node name="Close Mountain Rock 14" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 27, -8.5226, 10)
+transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 29, -8.5226, 10)
 
 [node name="Close Mountain Rock 15" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 33, -8.5226, 10)
-
-[node name="Close Mountain Rock 16" parent="." instance=ExtResource("7_slhlm")]
-transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 38, -8.5226, 10)
+transform = Transform3D(1, 0, 0, 0, 1.58353, 0, 0, 0, 1, 35, -8.5226, 10)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 20, 0, 0, 0, 1, 25, 10, -14)
@@ -203,7 +177,7 @@ mesh = SubResource("PlaneMesh_sukcg")
 skeleton = NodePath("../..")
 
 [node name="LavaRipples" type="MeshInstance3D" parent="Lava"]
-transform = Transform3D(0.988928, 0, 0, 0, 0.988928, 0, 0, 0, 0.988928, 0, 0.0464107, 0)
+transform = Transform3D(0.988928, 0, 0, 0, 0.988928, 0, 0, 0, 0.988928, 0, 0.0464106, 0)
 material_override = SubResource("ShaderMaterial_lgsct")
 mesh = SubResource("PlaneMesh_sukcg")
 skeleton = NodePath("../..")
@@ -587,6 +561,27 @@ transform = Transform3D(0.378575, 0, 1.8238, 0, 1, 0, -1.22396, 0, 0.564108, -20
 
 [node name="close_mountain_rock_9" parent="." instance=ExtResource("24_upyy3")]
 transform = Transform3D(0.251978, 0.829435, -0.498542, -0.908574, 0.380125, 0.173201, 0.333167, 0.409319, 0.849386, -10.5825, 6.07643, -17.3514)
+
+[node name="Close Mountain Rock 1 shaded" parent="." instance=ExtResource("25_hf0r0")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -1, -9, -9)
+
+[node name="Close Mountain Rock 1 shaded2" parent="." instance=ExtResource("25_hf0r0")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 5, -9, -9)
+
+[node name="Close Mountain Rock 1 shaded3" parent="." instance=ExtResource("25_hf0r0")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 11, -9, -9)
+
+[node name="Close Mountain Rock 1 shaded4" parent="." instance=ExtResource("25_hf0r0")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 17, -9, -9)
+
+[node name="Close Mountain Rock 1 shaded5" parent="." instance=ExtResource("25_hf0r0")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 23, -9, -9)
+
+[node name="Close Mountain Rock 1 shaded6" parent="." instance=ExtResource("25_hf0r0")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 29, -9, -9)
+
+[node name="Close Mountain Rock 1 shaded7" parent="." instance=ExtResource("25_hf0r0")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 35, -9, -9)
 
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
