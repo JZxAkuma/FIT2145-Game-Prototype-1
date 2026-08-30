@@ -158,6 +158,7 @@ var available_elements :Array = [water_available,fire_available,earth_available]
 var ammount = 0
 
 func _ready() -> void:
+	$AnimationTree.active = true
 	castline.add_exception(self)
 	element_ui.modulate.a = 0
 	selected_icon.modulate.a = 0
