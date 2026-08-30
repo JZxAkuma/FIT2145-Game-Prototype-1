@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://cukcq1hsiubx0"]
+
+[ext_resource type="Texture2D" uid="uid://csnojotohyhl8" path="res://Environmental_Assets/FontsUI/Control_Icons/Shift.png" id="1_ck3t1"]
+[ext_resource type="Script" uid="uid://bqqhyx7kd4cn7" path="res://level component/level_2_tutorial_thingy.gd" id="1_eeoml"]
+[ext_resource type="FontFile" uid="uid://b8nmcbfik7r5n" path="res://Environmental_Assets/FontsUI/PixelifySans-SemiBold.ttf" id="2_eeoml"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tilxh"]
+
+[node name="Level_2_tutorial_thingy" type="Area3D"]
+script = ExtResource("1_eeoml")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_tilxh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -536.0
+offset_top = -313.0
+offset_right = 4306.0
+offset_bottom = 687.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.235965, 0.235965)
+size_flags_horizontal = 0
+
+[node name="change element icon" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_ck3t1")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_eeoml")
+theme_override_font_sizes/font_size = 356
+text = "(hold) Change element"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 120.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

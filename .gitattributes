@@ -1,2 +1,41 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Normalize all text files to LF line endings.
+# This is the #1 fix for "single line change, nobody touched it" diffs
+# when teammates are on different OSes (Windows uses CRLF by default).
+* text=auto eol=lf
+
+# Godot-specific text files
+*.gd text eol=lf
+*.gdshader text eol=lf
+*.tscn text eol=lf
+*.tres text eol=lf
+*.import text eol=lf
+*.uid text eol=lf
+*.godot text eol=lf
+*.cfg text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+
+# Binary assets - do NOT let git try to diff/merge these as text
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ttf binary
+*.otf binary
+*.wav binary
+*.ogg binary
+*.mp3 binary
+*.glb binary
+*.gltf binary
+*.fbx binary
+*.blend binary
+*.zip binary
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary
+
+# Treat binary-format scenes/resources as binary if your team ever
+# accidentally saves in binary mode (safety net, doesn't hurt text saves)
+*.scn binary
+*.res binary
