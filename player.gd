@@ -4,8 +4,8 @@ const SPEED = 5.0
 @export var JUMP_VELOCITY = 4.5
 @export var jump_cut_multiplier: float = 0.5
 
-@export var default_sens = 0.5
-@export var aim_sens = 0.3
+@export var default_sens = 0.2
+@export var aim_sens = 0.1
 @export var controller_sens: float = 3.0
 @export var controller_aim_sens: float = 3.0
 @export var controller_deadzone: float = 0.15
