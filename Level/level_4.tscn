@@ -493,6 +493,14 @@ transform = Transform3D(1, 0, 0, 0, 19.3695, 0, 0, 0, 13.2458, 0.896901, 13.4908
 [node name="Invi wall7" parent="." instance=ExtResource("13_hloeb")]
 transform = Transform3D(1, 0, 0, 0, 17.5846, 0, 0, 0, 31.3327, -7.2914, 14.9325, -5.33012)
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.483894, 0.875127, 0, -0.875127, -0.483894, 0.0366631, 9.38525, -0.0746479)
+light_color = Color(0.999998, 0.999612, 0.719504, 1)
+light_energy = 2.0
+shadow_enabled = true
+directional_shadow_mode = 1
+sky_mode = 1
+
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
 [editable path="Moving platform3"]
