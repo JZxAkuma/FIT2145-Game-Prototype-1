@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=4 uid="uid://3l83r27r00a7"]
+[gd_scene load_steps=12 format=4 uid="uid://3l83r27r00a7"]
 
 [ext_resource type="Script" uid="uid://6mvcq83wx3h8" path="res://earth_wall.gd" id="1_7quyf"]
 [ext_resource type="Material" uid="uid://dgbpoe2hcfcu3" path="res://Other material/earth_wall.tres" id="2_e24q0"]
 [ext_resource type="AudioStream" uid="uid://cgewiy68miqbd" path="res://SFX/casting_earth.mp3" id="3_3fea5"]
-[ext_resource type="Texture2D" uid="uid://ktwm3opux8w8" path="res://Environmental_Assets/CloseMountains/CloseMountains_Grassy (1).png" id="4_lmiq1"]
+[ext_resource type="Material" uid="uid://bvjp5vll15opr" path="res://Environmental_Assets/TiledTextures/TiledSoil.tres" id="4_lmiq1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oupq2"]
 size = Vector3(1.50853, 2.00048, 1.00797)
@@ -94,9 +94,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fcgni")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aq4e8"]
-albedo_texture = ExtResource("4_lmiq1")
-
 [node name="earth_wall" type="AnimatableBody3D" groups=["earth_wall", "target"]]
 sync_to_physics = false
 script = ExtResource("1_7quyf")
@@ -132,4 +129,4 @@ transform = Transform3D(114.93, 0, 0, 0, 206.503, 0, 0, 0, 78.2246, -0.095926, 0
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_lmiq1")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_aq4e8")
+surface_material_override/0 = ExtResource("4_lmiq1")
