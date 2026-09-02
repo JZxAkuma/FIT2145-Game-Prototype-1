@@ -113,6 +113,16 @@ var flat_surface_threshold: float = 0.9
 @export var cast_keyboard_texture = load("res://Environmental_Assets/FontsUI/Control_Icons/M1Key.png")
 @export var aim_keyboard_texture = load("res://Environmental_Assets/FontsUI/Control_Icons/M2Key.png")
 
+@onready var footstep_grass_sfx = load("res://SFX/footstep_grass.mp3")
+@onready var footstep_stone_sfx = load("res://SFX/footstep_stone.mp3")
+@onready var jump_sfx = load("res://SFX/movement_jump.mp3")
+@onready var cast_water_sfx = load("res://SFX/casting_water.mp3")
+@onready var cast_fire_sfx = load("res://SFX/casting_fire.mp3")
+
+@onready var movement_audio_player = $movement_audio_stream
+@onready var casting_audio_player = $casting_audio_stream
+@onready var jump_audio_player = $jump_audio_player
+
 
 @export var controller_stick_deadzone: float = 0.3
 enum input_device {
@@ -222,6 +232,7 @@ func _lock_mouse():
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta: float) -> void:
+	
 	if player_lock:
 		
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -269,6 +280,8 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump_audio_player.stream = jump_sfx
+		jump_audio_player.play()
 
 	if Input.is_action_just_released("jump") and velocity.y > 0:
 		velocity.y *= jump_cut_multiplier
@@ -294,6 +307,7 @@ func _physics_process(delta: float) -> void:
 	_push_rigid_bodies()
 	
 	_update_animation_state()
+	_update_footstep_audio()
 	
 
 
@@ -345,9 +359,15 @@ func _cast_selection():
 		elements.water:
 			_spawn_projectile(waterball_scene)
 			Input.start_joy_vibration(0,0.5,0,0.1)
+			casting_audio_player.stream = cast_water_sfx
+			casting_audio_player.stream.loop = false
+			casting_audio_player.play()
 		elements.fire:
 			_spawn_projectile(fireball_scene)
 			Input.start_joy_vibration(0,0,0.5,0.1)
+			casting_audio_player.stream = cast_fire_sfx
+			casting_audio_player.stream.loop = false
+			casting_audio_player.play()
 
 		elements.earth:
 			var target = castline.get_collider()
@@ -686,3 +706,21 @@ func _update_shadow() -> void:
 
 	var alpha = lerp(shadow_min_alpha, shadow_max_alpha, ratio)
 	player_shadow.modulate.a = alpha
+
+func _update_footstep_audio() -> void:
+	if is_grounded and velocity.length() > 0.5:
+		var floor_collider = get_slide_collision(0).get_collider() if get_slide_collision_count() > 0 else null
+		var target_stream = footstep_stone_sfx
+
+		if floor_collider and floor_collider.is_in_group("floor"):
+			target_stream = footstep_grass_sfx
+
+		if movement_audio_player.stream != target_stream:
+			movement_audio_player.stream = target_stream
+			movement_audio_player.stream.loop = true
+			movement_audio_player.play()
+		elif not movement_audio_player.playing:
+			movement_audio_player.play()
+	else:
+		if movement_audio_player.playing:
+			movement_audio_player.stop()

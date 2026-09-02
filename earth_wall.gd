@@ -15,6 +15,8 @@ func _ready() -> void:
 	self.scale.y = MIN_SCALE
 	if player_made:
 		WallManager.register_wall(self)
+		$AudioStreamPlayer3D.playing = true
+		
 
 func _physics_process(delta: float) -> void:
 	match state:

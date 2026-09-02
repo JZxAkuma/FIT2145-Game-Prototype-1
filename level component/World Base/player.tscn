@@ -976,6 +976,19 @@ draw_pass_1 = SubResource("QuadMesh_qg01u")
 [node name="Decal" type="Decal" parent="."]
 texture_albedo = ExtResource("23_7pas8")
 
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.234574, 0)
+
+[node name="movement_audio_stream" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.841709, 0)
+bus = &"SFX"
+
+[node name="casting_audio_stream" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.841709, 0)
+bus = &"SFX"
+
+[node name="jump_audio_player" type="AudioStreamPlayer3D" parent="."]
+
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 
 [editable path="Player_mesh/MobyRig"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://3l83r27r00a7"]
+[gd_scene load_steps=8 format=4 uid="uid://3l83r27r00a7"]
 
 [ext_resource type="Script" uid="uid://6mvcq83wx3h8" path="res://earth_wall.gd" id="1_7quyf"]
 [ext_resource type="Material" uid="uid://dgbpoe2hcfcu3" path="res://Other material/earth_wall.tres" id="2_e24q0"]
+[ext_resource type="AudioStream" uid="uid://cgewiy68miqbd" path="res://SFX/casting_earth.mp3" id="3_3fea5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oupq2"]
 size = Vector3(1.50853, 2.00048, 1.00797)
@@ -74,3 +75,6 @@ transform = Transform3D(0.97, 0, 0, 0, 0.995, 0, 0, 0, 0.965, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0117613, 0.997979, -0.000134706)
 shape = SubResource("BoxShape3D_oupq2")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_3fea5")
