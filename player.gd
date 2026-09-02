@@ -384,7 +384,7 @@ func _cast_selection():
 				if is_instance_valid(earthwall):
 					earthwall.global_position = spawn_pos
 					_align_to_surface(earthwall, spawn_pos, spawn_normal, true)
-
+					earthwall._spawn_effects()
 			if target and target.has_method("_earth_reset"):
 				target._earth_reset()
 

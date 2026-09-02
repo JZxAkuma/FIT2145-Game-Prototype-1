@@ -15,7 +15,8 @@ func _ready() -> void:
 	self.scale.y = MIN_SCALE
 	if player_made:
 		WallManager.register_wall(self)
-		$AudioStreamPlayer3D.playing = true
+		#$AudioStreamPlayer3D.playing = true
+		#$GPUParticles3D.emitting = true
 		
 
 func _physics_process(delta: float) -> void:
@@ -49,3 +50,8 @@ func _earth_reset():
 
 func _expire():
 	self.queue_free()
+	
+func _spawn_effects() -> void:
+	if player_made:
+		$AudioStreamPlayer3D.playing = true
+		$GPUParticles3D.emitting = true
