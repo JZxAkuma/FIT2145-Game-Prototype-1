@@ -46,7 +46,7 @@ render_priority = 0
 shader = ExtResource("8_8sig8")
 shader_parameter/lava_texture = ExtResource("9_hkd23")
 shader_parameter/scroll_speed = 0.01
-shader_parameter/emission_strength = 0.0
+shader_parameter/emission_strength = 1.65
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lcdom"]
 transparency = 2
