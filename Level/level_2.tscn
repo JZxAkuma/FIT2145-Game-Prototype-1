@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://p8x8kanykwb8"]
+[gd_scene load_steps=43 format=3 uid="uid://p8x8kanykwb8"]
 
 [ext_resource type="PackedScene" uid="uid://d31a4mjnbjw41" path="res://level component/Grass Blocks/grass_block_no_bevel.tscn" id="1_rjurc"]
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="2_mpmgm"]
@@ -31,6 +31,9 @@
 [ext_resource type="PackedScene" uid="uid://cuxjtjjk6sjga" path="res://level component/Interactables/water_container_scale_maxr.tscn" id="29_1mjlq"]
 [ext_resource type="PackedScene" uid="uid://coyj86rw84xir" path="res://level component/Rock Blocks/rock_block_bevel_sides.tscn" id="30_owxgx"]
 [ext_resource type="PackedScene" uid="uid://b7hrnh1cnxlbt" path="res://level component/Rock Blocks/rock_block_bevel_top.tscn" id="31_3cbl8"]
+[ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="32_3cbl8"]
+[ext_resource type="Texture2D" uid="uid://5rxpnkcqrtao" path="res://Environmental_Assets/Skybox.png" id="33_xq26b"]
+[ext_resource type="Shader" uid="uid://yco8p8a5gjbo" path="res://Environmental_Assets/Pixelation.gdshader" id="34_xq26b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wgc5d"]
 render_priority = 0
@@ -53,6 +56,25 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("28_lu1xx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nugnn"]
+shader = ExtResource("32_3cbl8")
+shader_parameter/sky_texture = ExtResource("33_xq26b")
+
+[sub_resource type="Sky" id="Sky_ryup7"]
+sky_material = SubResource("ShaderMaterial_nugnn")
+
+[sub_resource type="Environment" id="Environment_41df0"]
+background_mode = 2
+background_color = Color(0.840869, 1, 0.97624, 1)
+sky = SubResource("Sky_ryup7")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_41df0"]
+shader = ExtResource("34_xq26b")
+shader_parameter/pixel_size = 4.0
+shader_parameter/color_levels = 16.0
 
 [node name="Level_2" type="Node3D"]
 
@@ -833,6 +855,21 @@ light_energy = 0.66
 shadow_enabled = true
 directional_shadow_mode = 1
 sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_41df0")
+
+[node name="PixelShader" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="PixelShader"]
+material = SubResource("ShaderMaterial_41df0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
