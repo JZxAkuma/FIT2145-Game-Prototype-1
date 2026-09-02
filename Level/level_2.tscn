@@ -826,6 +826,14 @@ transform = Transform3D(1.18804, 0, 0, 0, 1.24835, 0, 0, 0, 1.50132, 83.4824, 29
 [node name="rock_block_bevel_top2" parent="." instance=ExtResource("31_3cbl8")]
 transform = Transform3D(1.11493, 0, 0, 0, 1, 0, 0, 0, 1.67871, 83.6563, 29.4638, 10.3601)
 
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.999604, 0.0161407, 0.0230368, -0.0229803, -0.00367457, 0.999729, 0.0162209, -0.999863, -0.00330219, 2.03666, 1.54197, -0.0746479)
+light_color = Color(0.999998, 0.999612, 0.719504, 1)
+light_energy = 0.66
+shadow_enabled = true
+directional_shadow_mode = 1
+sky_mode = 1
+
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
 [editable path="Moving platform3"]
