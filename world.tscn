@@ -3204,8 +3204,17 @@ transform = Transform3D(14022.6, 0, -26333.8, 0, 12630.5, 0, 26333.8, 0, 14022.6
 surface_material_override/0 = SubResource("StandardMaterial3D_o3ebs")
 
 [node name="MobyProp" parent="." instance=ExtResource("29_k83mh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8041, -0.416674, -31.4549)
-dialogue_text = "Fuck you"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.677, -0.416674, -25.0537)
+dialogue_text = "This is the asset test world. All models are dropped in here.
+Through this door is the mechanics test world. "
+
+[node name="MobyProp2" parent="." instance=ExtResource("29_k83mh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13221, -0.416674, 3.95008)
+dialogue_text = "These are the first placeholder assets of Mobyland: MOE"
+
+[node name="MobyProp3" parent="." instance=ExtResource("29_k83mh")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -11.4581, -0.416674, 26.3791)
+dialogue_text = "Many of these assets were unused in the levels. There are many Moby cultural artifacts here."
 
 [node name="Sygil" parent="." instance=ExtResource("38_yx0jh")]
 transform = Transform3D(0.596094, 0, 0, 0, 0.0426356, 0, 0, 0, 0.596094, -18.6151, 0.366243, -33.8414)
