@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://k4x0c34auld1" path="res://level component/Codes/water_container_scale_max.gd" id="1_8nqex"]
 [ext_resource type="Material" uid="uid://c1l7vrr8nrtuc" path="res://Environmental_Assets/Pack2/Pack2.tres" id="1_pd5l7"]
-[ext_resource type="Material" uid="uid://b1feelcw1cj5n" path="res://Environmental_Assets/Pack2/Glass.tres" id="2_8nqex"]
 [ext_resource type="Material" uid="uid://btquq4vbniybt" path="res://Environmental_Assets/2dParticleSprites/Steam.tres" id="4_b4lwa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpo6o"]
@@ -47,6 +46,10 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xbx0i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h0gyr"]
+transparency = 1
+albedo_color = Color(0.513726, 0.756863, 0.733333, 0.45098)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0bsqk"]
 _surfaces = [{
@@ -315,7 +318,7 @@ skeleton = NodePath("")
 
 [node name="polySurface1" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.19796e-08, 0, -0.274062, 0, 2.69404, 0, 0.274062, 0, -1.19796e-08, 0.658314, 5.54544, 0.740956)
-material_override = ExtResource("2_8nqex")
+material_override = SubResource("StandardMaterial3D_h0gyr")
 mesh = SubResource("ArrayMesh_irpqd")
 skeleton = NodePath("")
 
