@@ -552,16 +552,16 @@ transform = Transform3D(-0.897492, -0.021951, 0.440485, 0.0388456, -0.998813, 0.
 transform = Transform3D(1.75834, 0, 0, 0, 1.52012, 0, 0, 0, 1.63328, 96.7223, 19.9883, -9.60682)
 
 [node name="Burnable Wood Wall3" parent="." instance=ExtResource("8_ytmfw")]
-transform = Transform3D(1.89761, 0, 0, 0, 2.82623, 0, 0, 0, 1, 73.7592, 2.41786, 8.55594)
+transform = Transform3D(1.89761, 0, 0, 0, 1.82719, 0, 0, 0, 1, 73.8716, 2.3505, 8.55594)
 
 [node name="Burnable Wood Wall4" parent="." instance=ExtResource("8_ytmfw")]
-transform = Transform3D(0.0689396, 0, 0.99934, 0, 3.17682, 0, -1.89635, 0, 0.0363299, 73.7669, 2.03677, 12.0352)
+transform = Transform3D(0.0689396, 0, 0.99934, 0, 2.05385, 0, -1.89635, 0, 0.0363299, 73.7669, 2.10413, 12.0352)
 
 [node name="Burnable Wood Wall5" parent="." instance=ExtResource("8_ytmfw")]
 transform = Transform3D(1.86773, 0, -0.176758, 0, 3.11252, 0, 0.335418, 0, 0.984254, 73.742, 2.44281, 11.558)
 
 [node name="Burnable Wood Wall6" parent="." instance=ExtResource("8_ytmfw")]
-transform = Transform3D(0.0582811, 0, 0.999528, 0, 2.82623, 0, -1.89671, 0, 0.030713, 77.4473, 2.69003, 12.5002)
+transform = Transform3D(-0.100967, 0, 0.998583, 0, 2.82623, 0, -1.89492, 0, -0.0532074, 77.4473, 2.69003, 12.5002)
 
 [node name="MobyProp2" parent="." instance=ExtResource("17_lgsct")]
 transform = Transform3D(0.443431, 0, 0.896309, 0, 1, 0, -0.896309, 0, 0.443431, 80.8603, 29.1392, 5.64429)

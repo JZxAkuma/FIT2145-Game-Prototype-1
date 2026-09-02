@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c6rda67r3t0ij"]
+[gd_scene load_steps=29 format=3 uid="uid://c6rda67r3t0ij"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="1_ncm42"]
 [ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="2_to4kk"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://b7hrnh1cnxlbt" path="res://level component/Rock Blocks/rock_block_bevel_top.tscn" id="17_l3pq7"]
 [ext_resource type="PackedScene" uid="uid://cca0v3u6pvybl" path="res://level component/World Base/death_box.tscn" id="18_l3pq7"]
 [ext_resource type="PackedScene" uid="uid://cjpdnm3o6nrrm" path="res://level component/Deco/moby_prop.tscn" id="19_v23k1"]
+[ext_resource type="PackedScene" uid="uid://3mcone88io0e" path="res://level component/Mountains/Rock/close_mountain_rock_2_shaded.tscn" id="20_jayos"]
 
 [sub_resource type="Shader" id="Shader_ytpkv"]
 code = "shader_type spatial;
@@ -224,7 +225,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.35043, 0.60823)
 transform = Transform3D(1, 0, 0, 0, -0.0161958, 1.70196, 0, -1.01076, -0.0272714, 0, 4.41189, 5.30601)
 
 [node name="sygil" parent="Moving platform" instance=ExtResource("12_ly1jq")]
-transform = Transform3D(0.689923, 0, 0, 0, 1.19274, 0, 0, 0, 0.855164, 8.67747, -13.9654, 0.738414)
+transform = Transform3D(0.689923, 0, 0, 0, 1.19274, 0, 0, 0, 0.855164, 8.67747, -14.4185, 0.738414)
 
 [node name="Moving platform2" parent="." instance=ExtResource("10_b7yrp")]
 transform = Transform3D(4.5115, 0, 0, 0, -0.00922591, -3.94082, 0, 1.02639, -0.0354227, 19.9244, 4.30669, -22.0201)
@@ -409,7 +410,7 @@ transform = Transform3D(1.10894, 0, 0, 0, 8.02697, 0, 0, 0, 1.12424, 1.36203, -5
 transform = Transform3D(15.8067, 0, 0, 0, 7.02759, 0, 0, 0, 9.79071, -6.51798, -6.99461, -21.1213)
 
 [node name="Grass block Bevel Bottom18" parent="." instance=ExtResource("2_to4kk")]
-transform = Transform3D(15.8067, 0, 0, 0, 0.999999, 0, 0, 0, 10.2916, -6.55539, -1.01413, -6.84438)
+transform = Transform3D(20.2069, 0, 0, 0, 6.27494, 0, 0, 0, 10.2916, -10.9648, -6.27051, -6.84438)
 
 [node name="Moving platform4" parent="." instance=ExtResource("10_b7yrp")]
 transform = Transform3D(2.51827, 0, 0, 0, -0.0113967, 2.77311, 0, 0.560421, 0.0563938, -0.0929742, 2.99778, -69.7237)
@@ -501,9 +502,29 @@ shadow_enabled = true
 directional_shadow_mode = 1
 sky_mode = 1
 
+[node name="Moving platform7" parent="." instance=ExtResource("10_b7yrp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.238, 0.502276, -5.44153)
+mode = 2
+
+[node name="pos 2" parent="Moving platform7" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.53647)
+
+[node name="sygil" parent="Moving platform7" instance=ExtResource("12_ly1jq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.84175, -0.365202, -1.10514)
+
+[node name="close_mountain_rock_14" parent="." instance=ExtResource("20_jayos")]
+transform = Transform3D(0.00226794, -1.20205, 0, 0.999539, 0.00272744, 0, 0, 0, 4.05831, 24.8457, -7.64463, -24.019)
+
+[node name="close_mountain_rock_15" parent="." instance=ExtResource("20_jayos")]
+transform = Transform3D(0.00346182, 1.5121, 0, -1.00176, 0.00522541, 0, 0, 0, 1.42073, -9.20148, -0.834072, -8.04899)
+
+[node name="close_mountain_rock_16" parent="." instance=ExtResource("20_jayos")]
+transform = Transform3D(0.0203941, 1.39738, 0.00886306, 1.00725, -0.0282968, 0, 0.000228883, 0.0156828, -0.789724, -8.37548, -8.44613, -10.3952)
+
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
 [editable path="Moving platform3"]
 [editable path="Moving platform4"]
 [editable path="Moving platform5"]
 [editable path="Moving platform6"]
+[editable path="Moving platform7"]
