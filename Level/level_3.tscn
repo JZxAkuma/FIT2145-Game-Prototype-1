@@ -964,7 +964,7 @@ transform = Transform3D(0.0210471, 0, -0.999779, 0, 1, 0, 0.999779, 0, 0.0210471
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 16, 73, 0, 35)
 
 [node name="water_container" parent="6th_Segment" instance=ExtResource("17_kj7ho")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 75, 1, 35)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 76.1591, 1, 35)
 max_water = 3
 max_upward_force = 50.0
 max_detector_height = 5.0
@@ -972,7 +972,7 @@ prefill_water = true
 starting_water = 3
 
 [node name="water_container2" parent="6th_Segment" instance=ExtResource("17_kj7ho")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 78, 1, 35)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 78.8614, 1, 35)
 max_water = 3
 max_upward_force = 50.0
 max_detector_height = 5.0
@@ -980,7 +980,7 @@ prefill_water = true
 starting_water = 2
 
 [node name="water_container3" parent="6th_Segment" instance=ExtResource("17_kj7ho")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 81, 1, 35)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 81.4718, 1, 35)
 max_water = 3
 max_upward_force = 50.0
 max_detector_height = 5.0
@@ -1031,13 +1031,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 9, 30)
 change_scene_to = "res://Level/level_4.tscn"
 
 [node name="wood crate" parent="." instance=ExtResource("30_nxnga")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.2859, 4.72244, 36.0132)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.1473, 4.72244, 36.0132)
 
 [node name="wood crate2" parent="." instance=ExtResource("30_nxnga")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.1325, 4.72244, 35.7285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.6043, 4.72244, 35.7285)
 
 [node name="wood crate3" parent="." instance=ExtResource("30_nxnga")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.3599, 4.72244, 36.08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.519, 4.72244, 36.08)
 
 [node name="Tulip" parent="." instance=ExtResource("21_umd2f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.8715, 1, 43.3037)
