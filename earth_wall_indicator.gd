@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var mesh: MeshInstance3D = $Dirt_Pillar 
+@onready var mesh: MeshInstance3D = $Rock2
 @export var valid_material: Material
 @export var invalid_material: Material
 
