@@ -28,6 +28,7 @@ func _set_wet():
 		return
 
 	$AnimationPlayer.play("grow")
+	$AudioStreamPlayer3D.play()
 	wet = true
 	
 	

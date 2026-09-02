@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://clnnxo4nuolkh"]
+[gd_scene load_steps=11 format=4 uid="uid://clnnxo4nuolkh"]
 
 [ext_resource type="Material" uid="uid://cbqnxdmw3y3j7" path="res://Environmental_Assets/Pack3/Pack3.tres" id="1_2aclb"]
 [ext_resource type="Script" uid="uid://coh358gd0lnet" path="res://level component/Codes/flat_shroom.gd" id="1_sii66"]
-
+[ext_resource type="AudioStream" uid="uid://b72xml3feh2jl" path="res://SFX/mushroom_boing.mp3" id="3_kqqba"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_61x3h"]
 resource_name = "standardSurface1"
@@ -113,5 +113,10 @@ transform = Transform3D(2, 0, 0, 0, 1.25819, 0, 0, 0, 2, -0.0381974, 1.07548, 0.
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_2aclb")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.61914, 0)
+stream = ExtResource("3_kqqba")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

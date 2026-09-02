@@ -22,6 +22,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		cap.scale = Vector3(bounce_scale,bounce_scale,bounce_scale)
 		cap_tween.tween_property(cap, "scale", Vector3.ONE, 0.2)
 		_bounce(body)
+		$AudioStreamPlayer3D.play()
 
 func _bounce(player: Node3D):
 	player.velocity.y = 0

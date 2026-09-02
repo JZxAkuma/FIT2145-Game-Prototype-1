@@ -99,11 +99,13 @@ func _check_lanterns() -> void:
 
 func _set_active() -> void:
 	if state != states.lit:
+		$AudioStreamPlayer3D.play()
 		state = states.lit
 		if mode == platform_mode.toggle_advance:
 			current_target = pos_2 if current_target == pos_1 else pos_1
 
 
 func _set_inactive() -> void:
+	$AudioStreamPlayer3D.play()
 	if state != states.not_lit:
 		state = states.not_lit

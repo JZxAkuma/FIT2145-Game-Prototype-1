@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://2ld01hc75wdv"]
+
+[ext_resource type="AudioStream" uid="uid://dmrw88qdos0hn" path="res://SFX/ambience_river.mp3" id="1_iew38"]
+
+[node name="water ambience" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_iew38")
+autoplay = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://huhac7cjloau"]
+[gd_scene load_steps=4 format=3 uid="uid://huhac7cjloau"]
 
 [ext_resource type="Script" uid="uid://cn466nbv7eaec" path="res://level component/Codes/moving_platform.gd" id="1_6eae8"]
 [ext_resource type="PackedScene" uid="uid://dp15gxl53fdn6" path="res://level component/power_platform.tscn" id="2_mh0hq"]
+[ext_resource type="AudioStream" uid="uid://da0l2wp2547dx" path="res://SFX/platform_on_off.mp3" id="3_o8n16"]
 
 [node name="Moving platform" type="Node3D" groups=["door"]]
 script = ExtResource("1_6eae8")
@@ -16,3 +17,6 @@ script = ExtResource("1_6eae8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33787, 0)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_o8n16")

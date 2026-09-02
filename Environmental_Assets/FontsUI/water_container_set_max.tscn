@@ -1,10 +1,10 @@
-[gd_scene load_steps=30 format=4 uid="uid://b7fvcx564frcv"]
+[gd_scene load_steps=31 format=4 uid="uid://b7fvcx564frcv"]
 
 [ext_resource type="Material" uid="uid://c1l7vrr8nrtuc" path="res://Environmental_Assets/Pack2/Pack2.tres" id="1_m156i"]
 [ext_resource type="Script" uid="uid://b6rov4wqyfkui" path="res://level component/Codes/water_container_set_max.gd" id="1_oemlg"]
 [ext_resource type="Material" uid="uid://b1feelcw1cj5n" path="res://Environmental_Assets/Pack2/Glass.tres" id="2_oemlg"]
 [ext_resource type="Material" uid="uid://btquq4vbniybt" path="res://Environmental_Assets/2dParticleSprites/Steam.tres" id="3_fq4gm"]
-
+[ext_resource type="AudioStream" uid="uid://b1tsxt1616yx6" path="res://SFX/tower_steam.mp3" id="5_8tui0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pd5l7"]
 size = Vector3(2.21576, 1.39908, 1.35874)
@@ -395,3 +395,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.504409, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Steam detector origin/steam detector"]
 shape = SubResource("BoxShape3D_b4lwa")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.741886, 2.7718, 0.634092)
+stream = ExtResource("5_8tui0")
+bus = &"SFX"

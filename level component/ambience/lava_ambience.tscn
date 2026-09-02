@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnqi7prgr1y0t"]
+
+[ext_resource type="AudioStream" uid="uid://do2jv78i1p0qt" path="res://SFX/ambience_lava.mp3" id="1_807pj"]
+
+[node name="Lava ambience" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_807pj")
+autoplay = true

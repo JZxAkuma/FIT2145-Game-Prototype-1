@@ -107,6 +107,7 @@ func _trigger_steam(ratio: float) -> void:
 	vertical_part.process_material.scale_max = vertical_base_scale_max * ratio
 
 	steam_detector_origin.scale.y = max_detector_height * ratio
+	$AudioStreamPlayer3D.play()
 
 
 func _end_steam() -> void:

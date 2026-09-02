@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=4 uid="uid://bui78i54bg7k4"]
+[gd_scene load_steps=16 format=4 uid="uid://bui78i54bg7k4"]
 
 [ext_resource type="Script" uid="uid://fa1xltol8rw1" path="res://level component/Deco/Trees/mushroom.gd" id="1_dcet5"]
 [ext_resource type="Material" uid="uid://dwa06qewrvp0n" path="res://Environmental_Assets/Pack1/AssetPack1Material.tres" id="1_n860u"]
+[ext_resource type="AudioStream" uid="uid://b72xml3feh2jl" path="res://SFX/mushroom_boing.mp3" id="3_rjmtm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37l05"]
 resource_name = "lambert1"
@@ -195,5 +196,10 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(70.7073, 0, 0, 0, 70.7073, 0, 0, 0, 70.7073, 0.722067, 0.70155, 0.694725)
 shape = SubResource("ConvexPolygonShape3D_amjmo")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.61914, 0)
+stream = ExtResource("3_rjmtm")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Big Cap" to="." method="_on_big_cap_body_entered"]

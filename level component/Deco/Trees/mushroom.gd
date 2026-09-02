@@ -23,6 +23,7 @@ func _on_big_cap_body_entered(body: Node3D) -> void:
 		big_cap.scale = Vector3(bounce_scale,bounce_scale,bounce_scale)
 		big_cap_tween.tween_property(big_cap, "scale", Vector3.ONE, 0.2)
 		_bounce(body)
+		$AudioStreamPlayer3D.play()
 
 
 func _bounce(player: Node3D):
