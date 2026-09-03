@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://c6rda67r3t0ij"]
+[gd_scene load_steps=46 format=3 uid="uid://c6rda67r3t0ij"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="1_ncm42"]
 [ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="2_to4kk"]
@@ -31,6 +31,11 @@
 [ext_resource type="PackedScene" uid="uid://clnnxo4nuolkh" path="res://level component/Deco/Trees/flat_shroom.tscn" id="29_2qvc2"]
 [ext_resource type="PackedScene" uid="uid://1v3yumh8vrod" path="res://level component/Deco/Trees/palm_tree.tscn" id="30_aum4m"]
 [ext_resource type="PackedScene" uid="uid://coyj86rw84xir" path="res://level component/Rock Blocks/rock_block_bevel_sides.tscn" id="31_joxwd"]
+[ext_resource type="PackedScene" uid="uid://cvkfs4ab287vt" path="res://level component/Mountains/Grass/close_mountain_grass_1.tscn" id="32_qsj1g"]
+[ext_resource type="PackedScene" uid="uid://bo58vdbddaw64" path="res://level component/Mountains/Grass/close_mountain_grass_2.tscn" id="33_ae4mk"]
+[ext_resource type="PackedScene" uid="uid://cmbirrmnxcuyr" path="res://level component/Mountains/Grass/close_mountain_grass_3.tscn" id="34_4vhla"]
+[ext_resource type="PackedScene" uid="uid://ba6n14gshlvsp" path="res://level component/Mountains/Rock/close_mountain_rock_3.tscn" id="35_4vhla"]
+[ext_resource type="PackedScene" uid="uid://jyehtpsrttln" path="res://level component/Mountains/Rock/close_mountain_rock_1.tscn" id="36_qcli5"]
 
 [sub_resource type="Shader" id="Shader_ytpkv"]
 code = "shader_type spatial;
@@ -111,7 +116,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2425, 37.8538, -86.34)
 transform = Transform3D(15.2212, 0, 0, 0, 6.30414, 0, 0, 0, 24.6941, 9.24749, -6.32202, -21.1519)
 
 [node name="Grass block Bevel Bottom2" parent="." instance=ExtResource("2_to4kk")]
-transform = Transform3D(55.2413, 0, 0, 0, 12.4774, 0, 0, 0, 24.5735, -66.2392, 12.4954, -21.3422)
+transform = Transform3D(55.2413, 0, 0, 0, 12.4774, 0, 0, 0, 24.5735, -65.8275, 12.4954, -21.3422)
 
 [node name="close_mountain_rock_2" parent="." instance=ExtResource("3_31jwm")]
 transform = Transform3D(-0.977832, -4.73908e-11, -0.0740205, 0.0550481, -0.276929, -1.27812, -0.00933145, -1.63366, 0.216659, -6.43774, 7.91168, 1.19988)
@@ -157,10 +162,10 @@ mesh = SubResource("PlaneMesh_b7yrp")
 skeleton = NodePath("../..")
 
 [node name="rock block bevel bottom" parent="." instance=ExtResource("6_b7axc")]
-transform = Transform3D(42.0853, 0, 0, 0, 14.3271, 0, 0, 0, 24.7229, -53.0588, -0.0178866, -21.3057)
+transform = Transform3D(42.0853, 0, 0, 0, 14.3271, 0, 0, 0, 24.7229, -52.6471, -0.0178866, -21.3057)
 
 [node name="Water3" type="Node3D" parent="."]
-transform = Transform3D(-20.9567, 0, -0.103803, 0, 1, 0, 0.091809, 0, -23.6946, -37.2703, 17.1623, -44.8526)
+transform = Transform3D(-32.3427, 0, -0.10405, 0, 1, 0, 0.14169, 0, -23.751, -48.6229, 17.1623, -44.8526)
 
 [node name="WaterBase" type="MeshInstance3D" parent="Water3"]
 material_override = SubResource("ShaderMaterial_nn58k")
@@ -1035,6 +1040,99 @@ transform = Transform3D(6.3318, 0.207227, 0, -1.43286, 0.915738, 0, 0, 0, 3.4763
 
 [node name="rock_block_bevel_sides2" parent="." instance=ExtResource("31_joxwd")]
 transform = Transform3D(2.53732, -0.758089, 0, 2.94949, 0.652151, 0, 0, 0, 3.06842, -10.9979, 19.1813, -87.9597)
+
+[node name="close mountain grass 1" parent="." instance=ExtResource("32_qsj1g")]
+transform = Transform3D(1.47365, 0, 0, 0, 1.15832, 0, 0, 0, 1, -24.3474, 21.0884, -99.7106)
+
+[node name="close mountain grass 2" parent="." instance=ExtResource("32_qsj1g")]
+transform = Transform3D(2.60845, 0, 0, 0, 1, 0, 0, 0, 1, -37.2463, 20.5788, -99.983)
+
+[node name="close mountain grass 3" parent="." instance=ExtResource("33_ae4mk")]
+transform = Transform3D(1.27285, 0, 0, 0, 1, 0, 0, 0, 1.05904, -41.6215, 21.2564, -100.613)
+
+[node name="close mountain grass 4" parent="." instance=ExtResource("34_4vhla")]
+transform = Transform3D(-0.232579, 0, 1.10006, 0, 1, 0, -0.886662, 0, -0.288555, -47.8489, 21.9202, -91.1397)
+
+[node name="close mountain grass 5" parent="." instance=ExtResource("33_ae4mk")]
+transform = Transform3D(-0.0252871, 0, 0.99968, 0, 1, 0, -0.99968, 0, -0.0252871, -54.4196, 20.5515, -91.6406)
+
+[node name="close_mountain_rock_9" parent="." instance=ExtResource("3_31jwm")]
+transform = Transform3D(0.508576, 0, 0.861017, 0, 1, 0, -0.861017, 0, 0.508576, -61.0028, 20.8322, -94.6037)
+
+[node name="close mountain grass 6" parent="." instance=ExtResource("34_4vhla")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.2167, 21.7107, -90.8993)
+
+[node name="close mountain grass 7" parent="." instance=ExtResource("32_qsj1g")]
+transform = Transform3D(1.60407, 0, 0, 0, 1, 0, 0, 0, 1, -67.9203, 23.1955, -95.9765)
+
+[node name="close_mountain_rock_17" parent="." instance=ExtResource("35_4vhla")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7579, 17.5563, -98.4407)
+
+[node name="Close Mountain Rock 1" parent="." instance=ExtResource("36_qcli5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.6536, 22.4306, -84.194)
+
+[node name="close_mountain_rock_18" parent="." instance=ExtResource("3_31jwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.4993, 21.5673, -78.936)
+
+[node name="close mountain grass 8" parent="." instance=ExtResource("32_qsj1g")]
+transform = Transform3D(0.752165, 0, 0, 0, 1, 0, 0, 0, 0.815939, -65.4947, 20.5949, -80.963)
+
+[node name="close mountain grass 9" parent="." instance=ExtResource("33_ae4mk")]
+transform = Transform3D(1, 0, 0, 0, 2.02601, 0, 0, 0, 3.06196, -72.7384, 12.3856, -71.0306)
+
+[node name="close mountain grass 10" parent="." instance=ExtResource("34_4vhla")]
+transform = Transform3D(1, 0, 0, 0, 1.60474, 0, 0, 0, 1, -73.3642, 16.4254, -76.2312)
+
+[node name="close mountain grass 11" parent="." instance=ExtResource("34_4vhla")]
+transform = Transform3D(1.08742, 0, 0, 0, 1.96627, 0, 0, 0, 2.1295, -75.1701, 14.3922, -48.063)
+
+[node name="Close Mountain Rock 2" parent="." instance=ExtResource("36_qcli5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.4375, 10.3903, -70.6662)
+
+[node name="Close Mountain Rock 3" parent="." instance=ExtResource("36_qcli5")]
+transform = Transform3D(1, 0, 0, 0, 2.0116, 0, 0, 0, 2.10661, -80.1814, 18.613, -55.3815)
+
+[node name="close mountain grass 12" parent="." instance=ExtResource("33_ae4mk")]
+transform = Transform3D(0.245606, 0, 0.872556, 0, 1.4327, 0, -3.49132, 0, 0.0613823, -73.3873, 14.7659, -9.81908)
+
+[node name="close_mountain_rock_19" parent="." instance=ExtResource("3_31jwm")]
+transform = Transform3D(0.0969175, 0, 0.944699, 0, 1, 0, -2.27723, 0, 0.0402058, -73.3242, 20.1006, -0.192168)
+
+[node name="close mountain grass 13" parent="." instance=ExtResource("32_qsj1g")]
+transform = Transform3D(1, 0, 0, 0, 1.176, 0, 0, 0, 1.06811, -72.39, 12.7904, -38.4601)
+
+[node name="close_mountain_rock_20" parent="." instance=ExtResource("35_4vhla")]
+transform = Transform3D(-0.998465, 0, -0.0923781, 0, 1.18012, 0, 0.0553858, 0, -1.66534, -69.4609, 27.9, -17.4071)
+
+[node name="close mountain grass 14" parent="." instance=ExtResource("34_4vhla")]
+transform = Transform3D(-1.07113, 0, -0.778072, 0, 1, 0, 0.592025, 0, -1.40773, -59.9907, 23.62, 6.40759)
+
+[node name="close mountain grass 15" parent="." instance=ExtResource("32_qsj1g")]
+transform = Transform3D(3.00013, 0, 0, 0, 1.06294, 0, 0, 0, 1.46034, -67.7426, 22.8279, 0.0708983)
+
+[node name="close mountain grass 16" parent="." instance=ExtResource("33_ae4mk")]
+transform = Transform3D(2.30232, 0, 0, 0, 1, 0, 0, 0, 1, -49.9273, 23.7817, 0.0445995)
+
+[node name="Close Mountain Rock 4" parent="." instance=ExtResource("36_qcli5")]
+transform = Transform3D(1.45808, 0, 0, 0, 0.873505, 0, 0, 0, 1, -38.4865, 23.2455, 0.837448)
+
+[node name="close mountain grass 17" parent="." instance=ExtResource("33_ae4mk")]
+transform = Transform3D(-0.03192, 0, -2.15913, 0, 1, 0, 1.03528, 0, -0.0665711, -13.885, 22.6769, 1.10342)
+
+[node name="castle wall17" parent="." instance=ExtResource("7_nn58k")]
+transform = Transform3D(0.982771, 0, 0, 0, 2.77257, 0, 0, 0, 1, -20.7082, 24.8673, 2.53542)
+
+[node name="castle wall18" parent="." instance=ExtResource("7_nn58k")]
+transform = Transform3D(-4.29583e-08, 0, 1, 0, 2.77257, 0, -0.982771, 0, -4.37114e-08, -11.1087, 24.8673, 3.40645)
+
+[node name="castle wall19" parent="." instance=ExtResource("7_nn58k")]
+transform = Transform3D(-4.29583e-08, 0, 1, 0, 2.77257, 0, -0.982771, 0, -4.37114e-08, -11.1087, 24.8673, -11.2444)
+
+[node name="castle wall20" parent="." instance=ExtResource("7_nn58k")]
+transform = Transform3D(-4.29583e-08, 0, 1, 0, 2.77257, 0, -0.982771, 0, -4.37114e-08, -11.1087, 24.8673, -4.03543)
+
+[node name="castle wall21" parent="." instance=ExtResource("7_nn58k")]
+transform = Transform3D(0.982771, 0, 0, 0, 2.77257, 0, 0, 0, 1, -21.1014, 24.8673, -94.2053)
 
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
