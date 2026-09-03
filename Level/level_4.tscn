@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://c6rda67r3t0ij"]
+[gd_scene load_steps=41 format=3 uid="uid://c6rda67r3t0ij"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="1_ncm42"]
 [ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="2_to4kk"]
@@ -29,6 +29,8 @@
 [ext_resource type="PackedScene" uid="uid://v245p8f6nnsr" path="res://level component/Deco/rock.tscn" id="27_pcy0x"]
 [ext_resource type="PackedScene" uid="uid://3l83r27r00a7" path="res://earth_wall.tscn" id="28_kurcc"]
 [ext_resource type="PackedScene" uid="uid://clnnxo4nuolkh" path="res://level component/Deco/Trees/flat_shroom.tscn" id="29_2qvc2"]
+[ext_resource type="PackedScene" uid="uid://1v3yumh8vrod" path="res://level component/Deco/Trees/palm_tree.tscn" id="30_aum4m"]
+[ext_resource type="PackedScene" uid="uid://coyj86rw84xir" path="res://level component/Rock Blocks/rock_block_bevel_sides.tscn" id="31_joxwd"]
 
 [sub_resource type="Shader" id="Shader_ytpkv"]
 code = "shader_type spatial;
@@ -103,7 +105,7 @@ shader_parameter/color_levels = 16.0
 [node name="level_4" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("1_ncm42")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1382, 3.37885, -72.933)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2425, 37.8538, -86.34)
 
 [node name="Grass block Bevel Bottom" parent="." instance=ExtResource("2_to4kk")]
 transform = Transform3D(15.2212, 0, 0, 0, 6.30414, 0, 0, 0, 24.6941, 9.24749, -6.32202, -21.1519)
@@ -185,9 +187,6 @@ transform = Transform3D(0.928259, -0.0275368, 0.0774244, 0.0522731, -0.277162, -
 
 [node name="close_mountain_rock_8" parent="." instance=ExtResource("3_31jwm")]
 transform = Transform3D(-0.0652389, -0.11948, -0.941027, -0.968213, 0.233222, 0.0339274, 0.227391, 0.958763, -0.125522, -4.07269, 4.16913, -84.34)
-
-[node name="close_mountain_rock_9" parent="." instance=ExtResource("3_31jwm")]
-transform = Transform3D(-0.949365, 0, 0.016856, 0, 1, 0, -0.0159912, 0, -1.00071, -8.0012, -5.51928, -91.6026)
 
 [node name="close_mountain_rock_10" parent="." instance=ExtResource("3_31jwm")]
 transform = Transform3D(-0.949365, 0, 0.016856, 0, 1, 0, -0.0159912, 0, -1.00071, -6.41817, -4.86582, -67.4939)
@@ -894,22 +893,32 @@ transform = Transform3D(2.53202, 0, 0, 0, 1, 0, 0, 0, 5.03724, 19.9078, 15.3695,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.2679, 16.5723, -80.4641)
 
 [node name="rock_block_no_bevel48" parent="." instance=ExtResource("26_aum4m")]
-transform = Transform3D(-0.893634, 0, 2.21961, 0, 0.686346, 0, -0.76545, 0, -2.59131, 19.8003, 23.1052, -82.0484)
+transform = Transform3D(-1.22327, 0, 3.17548, 0, 0.686346, 0, -1.04781, 0, -3.70725, 19.8003, 23.1052, -81.9589)
 
 [node name="grass_block_no_bevel24" parent="." instance=ExtResource("25_2qvc2")]
 transform = Transform3D(0.76686, 0, 0, 0, 0.75758, 0, 0, 0, 1, 18.6303, 25.9199, -83.0169)
 
 [node name="grass_block_no_bevel25" parent="." instance=ExtResource("25_2qvc2")]
-transform = Transform3D(0.76686, 0, 0, 0, 0.75758, 0, 0, 0, 1, 17.1539, 25.9199, -83.0177)
+transform = Transform3D(0.76686, 0, 0, 0, 0.75758, 0, 0, 0, 1, 18.603, 27.3918, -83.0177)
 
 [node name="grass_block_no_bevel26" parent="." instance=ExtResource("25_2qvc2")]
 transform = Transform3D(-3.35205e-08, 0, 1, 0, 0.75758, 0, -0.76686, 0, -4.37114e-08, 18.9092, 25.9199, -81.4437)
 
 [node name="Moving platform16" parent="." instance=ExtResource("10_b7yrp")]
 transform = Transform3D(1, 0, 0, 0, 0.595203, 0, 0, 0, 1, 20.627, 29.7687, -86.5547)
+mode = 2
+
+[node name="pos 1" parent="Moving platform16" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82839, 10.2298, 0)
 
 [node name="pos 2" parent="Moving platform16" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.5271, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.33145, -10.5271, -0.315002)
+
+[node name="PowerPlatform" parent="Moving platform16" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82839, 10.2298, 0)
+
+[node name="AudioStreamPlayer3D" parent="Moving platform16" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1.6801, 0, 0, 0, 1, 1.82839, 10.2298, 0)
 
 [node name="Lantern8" parent="Moving platform16" instance=ExtResource("24_kurcc")]
 transform = Transform3D(0.707096, 0, 0, 0, 1.136, 0, 0, 0, 0.649827, -6.56788, -9.31326, 2.20807)
@@ -917,23 +926,15 @@ transform = Transform3D(0.707096, 0, 0, 0, 1.136, 0, 0, 0, 0.649827, -6.56788, -
 [node name="rock_block_no_bevel49" parent="." instance=ExtResource("26_aum4m")]
 transform = Transform3D(1.23481, 0, 0, 0, 1, 0, 0, 0, 2.45232, 13.9129, 23.2593, -84.4438)
 
-[node name="sygil" parent="." instance=ExtResource("12_ly1jq")]
-transform = Transform3D(-1.37456e-08, 1, 0, -0.314463, -4.37114e-08, 0, 0, 0, 0.380968, 19.962, 26.2931, -81.8081)
-
-[node name="sygil2" parent="." instance=ExtResource("12_ly1jq")]
-transform = Transform3D(6.0084e-16, -4.37114e-08, 0.380968, -0.314463, -4.37114e-08, 0, 1.37456e-08, -1, -1.66527e-08, 19.0269, 26.2931, -83.1073)
-
-[node name="sygil3" parent="." instance=ExtResource("12_ly1jq")]
-transform = Transform3D(6.0084e-16, -4.37114e-08, 0.380968, -0.314463, -4.37114e-08, 0, 1.37456e-08, -1, -1.66527e-08, 17.5569, 26.2931, -83.1073)
-
-[node name="Lantern8" parent="." instance=ExtResource("24_kurcc")]
-transform = Transform3D(0.560248, 0, 0, 0, -2.79146e-08, 0.621509, 0, -0.638611, -2.7167e-08, 14.1281, 20.6316, -82.9547)
-
-[node name="Lantern9" parent="." instance=ExtResource("24_kurcc")]
-transform = Transform3D(0.560248, 0, 0, 0, -2.79146e-08, 0.621509, 0, -0.638611, -2.7167e-08, 14.1387, 28.4485, -82.9547)
-
 [node name="Moving platform17" parent="." instance=ExtResource("10_b7yrp")]
 transform = Transform3D(-6.74043e-08, 0.467988, 0, -1.54203, -2.04564e-08, 0, 0, 0, 1.55326, 15.1762, 25.5118, -84.763)
+mode = 2
+
+[node name="pos 2" parent="Moving platform17" index="1"]
+transform = Transform3D(1, -8.88178e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.08311)
+
+[node name="Lantern8" parent="Moving platform17" instance=ExtResource("24_kurcc")]
+transform = Transform3D(-1.58811e-08, 1.81025e-08, -0.403045, 1.19714, 2.6073e-15, -5.80507e-08, 0, -0.411143, -1.74903e-08, 3.16479, -2.23949, 1.1642)
 
 [node name="rock_block_no_bevel50" parent="." instance=ExtResource("26_aum4m")]
 transform = Transform3D(1, 0, 0, 0, 3.44327, 0, 0, 0, 2.05392, 12.9129, 23.2795, -84.4452)
@@ -961,9 +962,79 @@ transform = Transform3D(1.98732, 0, 0, 0, 2.77463, 0, 0, 0, 1, 12.9063, 19.6178,
 
 [node name="Moving platform18" parent="." instance=ExtResource("10_b7yrp")]
 transform = Transform3D(-6.74043e-08, 0.467988, 0, -1.54203, -2.04564e-08, 0, 0, 0, 1.55326, 15.1762, 28.7521, -84.763)
+mode = 2
+
+[node name="pos 2" parent="Moving platform18" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14129, 0, 0)
+
+[node name="sygil3" parent="Moving platform18" instance=ExtResource("12_ly1jq")]
+transform = Transform3D(0.203928, 2.83466e-08, -1.07992e-08, 2.93718e-08, -9.34028e-08, 0.814056, 8.84954e-09, -0.643808, -1.07211e-08, 0.646698, 8.18726, 1.06597)
 
 [node name="Moving platform19" parent="." instance=ExtResource("10_b7yrp")]
 transform = Transform3D(-6.74043e-08, 0.467988, 0, -1.54203, -2.04564e-08, 0, 0, 0, 1.55326, 15.1762, 22.0126, -84.763)
+mode = 2
+
+[node name="pos 2" parent="Moving platform19" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25832, 0, 0)
+
+[node name="Lantern9" parent="Moving platform19" instance=ExtResource("24_kurcc")]
+transform = Transform3D(-1.58811e-08, 1.81025e-08, -0.403045, 1.19714, 2.6073e-15, -5.80507e-08, 0, -0.411143, -1.74903e-08, -4.17365, -2.21681, 1.1642)
+
+[node name="Moving platform20" parent="." instance=ExtResource("10_b7yrp")]
+transform = Transform3D(-6.74043e-08, 0.467988, 0, -1.54203, -2.04564e-08, 0, 0, 0, 1.55326, 15.6144, 25.5118, -84.763)
+mode = 2
+
+[node name="pos 2" parent="Moving platform20" index="1"]
+transform = Transform3D(1, -8.88178e-16, 0, 0, 1, 0, 0, 0, 1, 2.31611, 0, 0)
+
+[node name="sygil2" parent="Moving platform20" instance=ExtResource("12_ly1jq")]
+transform = Transform3D(0.203928, 2.83466e-08, -1.07992e-08, 2.93718e-08, -9.34028e-08, 0.814057, 8.84954e-09, -0.643808, -1.07211e-08, -0.506678, 7.29183, 1.06597)
+
+[node name="Moving platform21" parent="." instance=ExtResource("10_b7yrp")]
+transform = Transform3D(-6.74043e-08, 0.467988, 0, -1.54203, -2.04564e-08, 0, 0, 0, 1.55326, 15.1762, 25.5118, -84.763)
+mode = 2
+
+[node name="pos 2" parent="Moving platform21" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.07275)
+
+[node name="sygil" parent="Moving platform21" instance=ExtResource("12_ly1jq")]
+transform = Transform3D(0.203928, 0, 0, 1.77636e-15, 2.13681, 0, 0, 0, 0.245271, -0.506678, 10.3396, 1.90239)
+
+[node name="water_container2" parent="." instance=ExtResource("8_b7yrp")]
+transform = Transform3D(-0.0540265, 0, 0.99854, 0, 1, 0, -0.99854, 0, -0.0540265, 19.1481, 34.6309, -85.6215)
+max_upward_force = 50.0
+max_detector_height = 20.0
+
+[node name="palm tree" parent="." instance=ExtResource("30_aum4m")]
+transform = Transform3D(7.23124, 0, 0, 0, 4.76304, 0, 0, 0, 6.45024, 12.1508, 32.3868, -85.0491)
+
+[node name="rock block bevel bottom28" parent="." instance=ExtResource("6_b7axc")]
+transform = Transform3D(1.46043, 0, 0, 0, 1, 0, 0, 0, 1.41887, 19.1185, 33.6398, -87.0404)
+
+[node name="water_container3" parent="." instance=ExtResource("8_b7yrp")]
+transform = Transform3D(-0.0540265, 0, 0.99854, 0, 1, 0, -0.99854, 0, -0.0540265, 6.57385, 34.6309, -85.6215)
+max_upward_force = 50.0
+max_detector_height = 20.0
+
+[node name="rock block bevel bottom29" parent="." instance=ExtResource("6_b7axc")]
+transform = Transform3D(1.46043, 0, 0, 0, 1, 0, 0, 0, 1.41887, 6.54422, 33.6398, -87.0404)
+
+[node name="Rock4" parent="." instance=ExtResource("27_pcy0x")]
+transform = Transform3D(1, 0, 0, 0, 0.396503, 0, 0, 0, 0.47381, -6.53697, -0.744355, -93.6258)
+
+[node name="water_container4" parent="." instance=ExtResource("8_b7yrp")]
+transform = Transform3D(-0.0540265, 0, 0.99854, 0, 1, 0, -0.99854, 0, -0.0540265, 12.8992, 34.6309, -85.6215)
+max_upward_force = 50.0
+max_detector_height = 20.0
+
+[node name="rock block bevel bottom30" parent="." instance=ExtResource("6_b7axc")]
+transform = Transform3D(1.46043, 0, 0, 0, 1, 0, 0, 0, 1.41887, 12.8695, 33.6398, -87.0404)
+
+[node name="rock_block_bevel_sides" parent="." instance=ExtResource("31_joxwd")]
+transform = Transform3D(6.3318, 0.207227, 0, -1.43286, 0.915738, 0, 0, 0, 3.47632, -12.4611, 22.9798, -88.0679)
+
+[node name="rock_block_bevel_sides2" parent="." instance=ExtResource("31_joxwd")]
+transform = Transform3D(2.53732, -0.758089, 0, 2.94949, 0.652151, 0, 0, 0, 3.06842, -10.9979, 19.1813, -87.9597)
 
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
@@ -981,3 +1052,8 @@ transform = Transform3D(-6.74043e-08, 0.467988, 0, -1.54203, -2.04564e-08, 0, 0,
 [editable path="Moving platform14"]
 [editable path="Moving platform15"]
 [editable path="Moving platform16"]
+[editable path="Moving platform17"]
+[editable path="Moving platform18"]
+[editable path="Moving platform19"]
+[editable path="Moving platform20"]
+[editable path="Moving platform21"]

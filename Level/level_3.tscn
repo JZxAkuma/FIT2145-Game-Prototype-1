@@ -438,6 +438,7 @@ transform = Transform3D(0.576613, 0, 0, 0, 0.671113, 0, 0, 0, 0.54452, 28.6932, 
 
 [node name="MobyProp" parent="2nd_Segment/Decor" instance=ExtResource("20_i7n88")]
 transform = Transform3D(0.46597, 0, 0.884801, 0, 1, 0, -0.884801, 0, 0.46597, 28.9735, 0.286331, 36.7377)
+dialogue_text = "This apartment cost me my arms and legs"
 
 [node name="Rock" parent="2nd_Segment/Decor" instance=ExtResource("6_33bvb")]
 transform = Transform3D(0.95063, 0, -0.310328, 0, 1, 0, 0.310328, 0, 0.95063, 35.2679, 1, 47.9146)
