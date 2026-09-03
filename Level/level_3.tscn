@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bwck6ojrsaixy"]
+[gd_scene load_steps=47 format=3 uid="uid://bwck6ojrsaixy"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="1_cvs6x"]
 [ext_resource type="Shader" uid="uid://dsqpi0lbnsh46" path="res://Environmental_Assets/SkyScroller.gdshader" id="2_46n42"]
@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://bo58vdbddaw64" path="res://level component/Mountains/Grass/close_mountain_grass_2.tscn" id="27_g11h5"]
 [ext_resource type="PackedScene" uid="uid://c8iyy4ydwtace" path="res://level component/Kinematic stuff/wood_crate.tscn" id="30_nxnga"]
 [ext_resource type="PackedScene" uid="uid://clnnxo4nuolkh" path="res://level component/Deco/Trees/flat_shroom.tscn" id="36_jvo5f"]
+[ext_resource type="Shader" uid="uid://yco8p8a5gjbo" path="res://Environmental_Assets/Pixelation.gdshader" id="37_adlso"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8cxox"]
 shader = ExtResource("2_46n42")
@@ -102,13 +103,25 @@ shader = SubResource("Shader_itvcc")
 shader_parameter/water_texture = ExtResource("14_5g6dm")
 shader_parameter/scroll_speed = 0.04
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jt2qk"]
+shader = ExtResource("37_adlso")
+shader_parameter/pixel_size = 4.0
+shader_parameter/color_levels = 16.0
+
 [node name="Level_3" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("1_cvs6x")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 3.6334, 2, 4)
 
 [node name="Skeleton3D" parent="player/Player_mesh/MobyRig" index="1"]
+bones/0/rotation = Quaternion(0.707107, 0.707107, 4.32964e-17, 4.32964e-17)
+bones/3/rotation = Quaternion(0.346064, 0.595076, 0.315242, 0.653258)
+bones/4/position = Vector3(0.343057, 1.18144e-16, 3.45944e-18)
+bones/4/rotation = Quaternion(0.151308, -0.396979, -0.0665316, 0.902822)
+bones/6/rotation = Quaternion(-0.481475, -0.0932315, -0.675769, 0.550297)
 bones/9/rotation = Quaternion(-0.00105521, -0.0491897, 0.00222098, 0.998787)
+bones/10/rotation = Quaternion(0.0143075, 0.706962, -0.706962, -0.0143075)
+bones/12/rotation = Quaternion(-0.0143077, 0.706962, -0.706962, 0.0143077)
 
 [node name="Levelbase" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, 2)
@@ -1052,6 +1065,18 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 75.5141, 1.20275, 46.37
 
 [node name="FlatShroom2" parent="." instance=ExtResource("36_jvo5f")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 78.5141, 1.20275, 47.377)
+
+[node name="PixelShader" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="PixelShader"]
+material = SubResource("ShaderMaterial_jt2qk")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [editable path="player"]
 [editable path="player/Player_mesh/MobyRig"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c6rda67r3t0ij"]
+[gd_scene load_steps=31 format=3 uid="uid://c6rda67r3t0ij"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="1_ncm42"]
 [ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="2_to4kk"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cca0v3u6pvybl" path="res://level component/World Base/death_box.tscn" id="18_l3pq7"]
 [ext_resource type="PackedScene" uid="uid://cjpdnm3o6nrrm" path="res://level component/Deco/moby_prop.tscn" id="19_v23k1"]
 [ext_resource type="PackedScene" uid="uid://3mcone88io0e" path="res://level component/Mountains/Rock/close_mountain_rock_2_shaded.tscn" id="20_jayos"]
+[ext_resource type="Shader" uid="uid://yco8p8a5gjbo" path="res://Environmental_Assets/Pixelation.gdshader" id="21_cpsbl"]
 
 [sub_resource type="Shader" id="Shader_ytpkv"]
 code = "shader_type spatial;
@@ -85,6 +86,11 @@ background_color = Color(0.840869, 1, 0.97624, 1)
 sky = SubResource("Sky_ytpkv")
 ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e8bpk"]
+shader = ExtResource("21_cpsbl")
+shader_parameter/pixel_size = 4.0
+shader_parameter/color_levels = 16.0
 
 [node name="level_4" type="Node3D"]
 
@@ -520,6 +526,18 @@ transform = Transform3D(0.00346182, 1.5121, 0, -1.00176, 0.00522541, 0, 0, 0, 1.
 
 [node name="close_mountain_rock_16" parent="." instance=ExtResource("20_jayos")]
 transform = Transform3D(0.0203941, 1.39738, 0.00886306, 1.00725, -0.0282968, 0, 0.000228883, 0.0156828, -0.789724, -8.37548, -8.44613, -10.3952)
+
+[node name="PixelShader" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="PixelShader"]
+material = SubResource("ShaderMaterial_e8bpk")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [editable path="Moving platform"]
 [editable path="Moving platform2"]

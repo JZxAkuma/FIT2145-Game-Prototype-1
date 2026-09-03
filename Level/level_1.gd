@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 
 func _on_to_level_pressed() -> void:
 	$AnimationPlayer.stop()
-	on_menu = false  # stops the anchor's AnimationPlayer-driven idle rotation from mattering
+	on_menu = false  
 	$"Menu/Control/VBoxContainer/To level".disabled = true
 	$"Menu/Control/VBoxContainer/to world".disabled = true
 
