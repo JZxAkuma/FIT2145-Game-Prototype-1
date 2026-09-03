@@ -113,7 +113,7 @@ shader_parameter/color_levels = 16.0
 [node name="level_4" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("1_ncm42")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2425, 37.8538, -86.34)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0303, 2.34883, -5.17515)
 
 [node name="Grass block Bevel Bottom" parent="." instance=ExtResource("2_to4kk")]
 transform = Transform3D(15.2212, 0, 0, 0, 6.30414, 0, 0, 0, 24.6941, 9.24749, -6.32202, -21.1519)
@@ -1191,6 +1191,12 @@ transform = Transform3D(0.907275, -0.231115, -0.200382, 0.104696, 0.609938, -0.3
 
 [node name="Burnable Wood Wall" parent="." instance=ExtResource("39_sdu0b")]
 transform = Transform3D(-8.16679e-08, 0, 1, 0, 2.61173, 0, -1.86834, 0, -4.37114e-08, 13.7432, 37.8358, -84.6341)
+
+[node name="Lantern8" parent="." instance=ExtResource("24_kurcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9073, 0.00953388, -5.50281)
+
+[node name="Lantern9" parent="." instance=ExtResource("24_kurcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9073, 0.00953388, 0.00926638)
 
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
