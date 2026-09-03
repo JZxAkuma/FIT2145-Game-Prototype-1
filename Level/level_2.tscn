@@ -90,7 +90,7 @@ directional_shadow_mode = 1
 sky_mode = 1
 
 [node name="player" parent="." instance=ExtResource("2_mpmgm")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.3811, 2.20701, 5.64244)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.3811, 2.20701, 4.95515)
 water_available = false
 
 [node name="Death Box" parent="." instance=ExtResource("3_cd4c1")]
@@ -193,10 +193,10 @@ wait_time = 3.0
 transform = Transform3D(403.385, 0, 0, 0, 1, 0, 0, 0, 82.0842, 56.0712, -5.68561, 9.70274)
 
 [node name="Burnable Wood Wall" parent="." instance=ExtResource("8_ytmfw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4297, 1.34598, 1.37895)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.178, 1.34598, 2.89625)
 
 [node name="Burnable Wood Wall2" parent="." instance=ExtResource("8_ytmfw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7844, 1.15093, 8.60624)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.1447, 1.15093, 9.39417)
 
 [node name="Checkpoint" parent="." instance=ExtResource("9_7xwok")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.5319, 0.983095, 5.43614)

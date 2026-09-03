@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://c6rda67r3t0ij"]
+[gd_scene load_steps=49 format=3 uid="uid://c6rda67r3t0ij"]
 
 [ext_resource type="PackedScene" uid="uid://bye70pqxpcpcf" path="res://level component/World Base/player.tscn" id="1_ncm42"]
 [ext_resource type="PackedScene" uid="uid://6kam6bi8678n" path="res://level component/Grass Blocks/grass_block_bevel_bottom.tscn" id="2_to4kk"]
@@ -36,6 +36,9 @@
 [ext_resource type="PackedScene" uid="uid://cmbirrmnxcuyr" path="res://level component/Mountains/Grass/close_mountain_grass_3.tscn" id="34_4vhla"]
 [ext_resource type="PackedScene" uid="uid://ba6n14gshlvsp" path="res://level component/Mountains/Rock/close_mountain_rock_3.tscn" id="35_4vhla"]
 [ext_resource type="PackedScene" uid="uid://jyehtpsrttln" path="res://level component/Mountains/Rock/close_mountain_rock_1.tscn" id="36_qcli5"]
+[ext_resource type="PackedScene" uid="uid://cfi57rfl0n3hh" path="res://level component/Deco/round_moby_house.tscn" id="37_hbj2m"]
+[ext_resource type="PackedScene" uid="uid://bxvjo2y018838" path="res://level component/Deco/moby_house.tscn" id="38_sdu0b"]
+[ext_resource type="PackedScene" uid="uid://c87l4eyjihsew" path="res://level component/Interactables/burnable_wood_wall.tscn" id="39_sdu0b"]
 
 [sub_resource type="Shader" id="Shader_ytpkv"]
 code = "shader_type spatial;
@@ -1133,6 +1136,61 @@ transform = Transform3D(-4.29583e-08, 0, 1, 0, 2.77257, 0, -0.982771, 0, -4.3711
 
 [node name="castle wall21" parent="." instance=ExtResource("7_nn58k")]
 transform = Transform3D(0.982771, 0, 0, 0, 2.77257, 0, 0, 0, 1, -21.1014, 24.8673, -94.2053)
+
+[node name="close_mountain_rock_21" parent="." instance=ExtResource("3_31jwm")]
+transform = Transform3D(0.855301, 0, -0.518132, 0, 1, 0, 0.518132, 0, 0.855301, -17.3575, 6.90286, -25.5237)
+
+[node name="RoundMobyHouse" parent="." instance=ExtResource("37_hbj2m")]
+transform = Transform3D(-0.595678, 0, 0.803223, 0, 1, 0, -0.803223, 0, -0.595678, -13.8042, 25.0118, -1.93902)
+
+[node name="MobyHouse" parent="." instance=ExtResource("38_sdu0b")]
+transform = Transform3D(-0.0654902, 0, 0.997853, 0, 1, 0, -0.997853, 0, -0.0654902, -29.3611, 25.2359, -3.94039)
+
+[node name="RoundMobyHouse2" parent="." instance=ExtResource("37_hbj2m")]
+transform = Transform3D(0.377695, 0, 0.92593, 0, 1, 0, -0.92593, 0, 0.377695, -39.2491, 25.1358, -3.88449)
+
+[node name="MobyHouse2" parent="." instance=ExtResource("38_sdu0b")]
+transform = Transform3D(-0.523867, 0, 0.8518, 0, 1, 0, -0.8518, 0, -0.523867, -19.4924, 25.2359, -1.90438)
+
+[node name="MobyHouse3" parent="." instance=ExtResource("38_sdu0b")]
+transform = Transform3D(-0.0122058, 0.776531, 0.629961, 0.0150429, 0.63008, -0.776385, -0.999812, 0, -0.0193719, -65.9423, 28.6251, -8.93923)
+
+[node name="RoundMobyHouse3" parent="." instance=ExtResource("37_hbj2m")]
+transform = Transform3D(0.438544, 0, 0.89871, 0, 1, 0, -0.89871, 0, 0.438544, -53.1992, 24.7105, -15.3372)
+
+[node name="MobyHouse4" parent="." instance=ExtResource("38_sdu0b")]
+transform = Transform3D(0.115388, 0, 0.993321, -0.578742, 0.812735, 0.0672289, -0.807306, -0.582634, 0.0937798, -42.6023, 30.6009, 1.43023)
+
+[node name="RoundMobyHouse4" parent="." instance=ExtResource("37_hbj2m")]
+transform = Transform3D(1.87878, 0, 1.68208, 0, 2.34087, 0, -1.71965, 0, 1.83773, -53.0332, 24.7348, -2.70595)
+
+[node name="MobyHouse5" parent="." instance=ExtResource("38_sdu0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3032, 25.2359, -18.4902)
+
+[node name="MobyHouse6" parent="." instance=ExtResource("38_sdu0b")]
+transform = Transform3D(3.80655, 0, 0, 0, 2.69396, 0, 0, 0, 3.87076, -54.4343, 34.7842, 6.52498)
+
+[node name="RoundMobyHouse5" parent="." instance=ExtResource("37_hbj2m")]
+transform = Transform3D(0.0129874, 0, 0.459322, 0, 0.459288, 0, -0.449769, 0, 0.0132633, -24.7504, 25.1476, -18.4605)
+
+[node name="MobyHouse7" parent="." instance=ExtResource("38_sdu0b")]
+transform = Transform3D(2.45903, -0.244604, -0.0279618, 0.322428, 1.8655, 0.213254, 0, -0.204392, 1.97984, -33.3195, 24.5731, -12.2545)
+
+[node name="MobyProp4" parent="." instance=ExtResource("19_v23k1")]
+transform = Transform3D(0.021441, 0, 8.71426, 0, 7.36213, 0, -7.72638, 0, 0.0241824, -50.134, 18.634, -79.7771)
+dialogue_text = "You have completed what the mobies have to offer!"
+
+[node name="close_mountain_rock_22" parent="." instance=ExtResource("3_31jwm")]
+transform = Transform3D(0.531905, 0, 0, 0, 0.513172, 0, 0, 0, 0.520296, 13.3625, 16.079, -81.8642)
+
+[node name="close mountain grass 18" parent="." instance=ExtResource("34_4vhla")]
+transform = Transform3D(1, 0, 0, 0, 0.772261, 0, 0, 0, 0.871706, 12.3619, 25.0241, -83.0577)
+
+[node name="close mountain grass 19" parent="." instance=ExtResource("32_qsj1g")]
+transform = Transform3D(0.907275, -0.231115, -0.200382, 0.104696, 0.609938, -0.397994, 0.407298, 0.358034, 0.548664, 14.3281, 24.7228, -84.4695)
+
+[node name="Burnable Wood Wall" parent="." instance=ExtResource("39_sdu0b")]
+transform = Transform3D(-8.16679e-08, 0, 1, 0, 2.61173, 0, -1.86834, 0, -4.37114e-08, 13.7432, 37.8358, -84.6341)
 
 [editable path="Moving platform"]
 [editable path="Moving platform2"]
