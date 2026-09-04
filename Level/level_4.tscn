@@ -993,7 +993,10 @@ transform = Transform3D(-6.74043e-08, 0.467988, 0, -1.54203, -2.04564e-08, 0, 0,
 mode = 2
 
 [node name="pos 2" parent="Moving platform20" index="1"]
-transform = Transform3D(1, -8.88178e-16, 0, 0, 1, 0, 0, 0, 1, 2.31611, 0, 0)
+transform = Transform3D(1, -8.88178e-16, 0, 0, 1, 0, 0, 0, 1, 2.31611, -0.199947, 0)
+
+[node name="PowerPlatform" parent="Moving platform20" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.926151, 0)
 
 [node name="sygil2" parent="Moving platform20" instance=ExtResource("12_ly1jq")]
 transform = Transform3D(0.203928, 2.83466e-08, -1.07992e-08, 2.93718e-08, -9.34028e-08, 0.814057, 8.84954e-09, -0.643808, -1.07211e-08, -0.506678, 7.29183, 1.06597)
@@ -1184,10 +1187,10 @@ dialogue_text = "You have completed what the mobies have to offer!"
 transform = Transform3D(0.531905, 0, 0, 0, 0.513172, 0, 0, 0, 0.520296, 13.3625, 16.079, -81.8642)
 
 [node name="close mountain grass 18" parent="." instance=ExtResource("34_4vhla")]
-transform = Transform3D(1, 0, 0, 0, 0.772261, 0, 0, 0, 0.871706, 12.3619, 25.0241, -83.0577)
+transform = Transform3D(1, 0, 0, 0, 0.772261, 0, 0, 0, 0.787332, 12.3619, 25.0241, -82.222)
 
 [node name="close mountain grass 19" parent="." instance=ExtResource("32_qsj1g")]
-transform = Transform3D(0.907275, -0.231115, -0.200382, 0.104696, 0.609938, -0.397994, 0.407298, 0.358034, 0.548664, 14.3281, 24.7228, -84.4695)
+transform = Transform3D(0.907275, -0.231115, -0.200382, 0.104696, 0.609938, -0.397994, 0.407298, 0.358034, 0.548664, 13.5186, 24.7228, -83.7499)
 
 [node name="Burnable Wood Wall" parent="." instance=ExtResource("39_sdu0b")]
 transform = Transform3D(-8.16679e-08, 0, 1, 0, 2.61173, 0, -1.86834, 0, -4.37114e-08, 13.7432, 37.8358, -84.6341)
